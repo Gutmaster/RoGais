@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-03T22:01:56-08:00
+
+====== Wisdom ======
+Created Saturday 03 March 2018
+
+Special attack power.

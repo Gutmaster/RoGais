@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-24T17:23:23-08:00
+
+====== John Henry ======
+Created Wednesday 24 January 2018
+
+Rapid hammer smash attack that drains life or kills self or something.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-05T20:00:35-08:00
+
+====== Attributes ======
+Created Tuesday 05 December 2017
+
+Attributes gauge a unit's overall capabilities. Attributes influence traits.

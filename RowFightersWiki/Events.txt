@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-11T22:32:33-08:00
+
+====== Events ======
+Created Monday 11 December 2017
+
+Events are semi-randomly occuring instances that influence the state of your party. Players will generally have a choice in how they would like to settle any given event. Events will often include a battle and may result in addition or subtraction of supplies, party members, and/or equipment.

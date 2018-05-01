@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-14T16:16:00-08:00
+
+====== Snow Place ======
+Created Wednesday 14 February 2018
+
+{{..\SnowBiome1.jpg?width=300}}{{..\SnowBiome2.jpg?width=300}}

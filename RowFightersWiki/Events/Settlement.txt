@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-27T14:48:09-08:00
+
+====== Settlement ======
+Created Tuesday 27 February 2018
+
+Allows you to visit a [[+Shop|Shop]], or recuit additional party members.

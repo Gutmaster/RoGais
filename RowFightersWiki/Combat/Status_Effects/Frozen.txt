@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-06T10:59:06-08:00
+
+====== Frozen ======
+Created Wednesday 06 December 2017
+
+Unable to take any actions, can still be targeted and takes 1/2 damage from most attacks. Thaws over time or from fire attacks.

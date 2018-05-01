@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-05T09:30:11-08:00
+
+====== Food ======
+Created Friday 05 January 2018
+
+Food is good. Food is required to keep your party in good fighting condition. A party with no food will suffer attribute penalties when [[Hunger|hunger]] kicks in.

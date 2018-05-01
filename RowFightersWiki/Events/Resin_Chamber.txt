@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-27T14:56:10-08:00
+
+====== Resin Chamber ======
+Created Tuesday 27 February 2018
+
+Allows you to store a character in resin, losing them for your current run and disallowing their selection in following runs until they are re-obtained from a Resin Chamber in a future playthough.

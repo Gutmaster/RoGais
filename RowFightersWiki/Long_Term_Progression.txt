@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-07T15:36:24-08:00
+
+====== Long Term Progression ======
+Created Thursday 07 December 2017
+
+As the player reaches certain milestones and accomplish objectives, more content will be unlocked for future playthroughs.
+
+Unlockable stuff:
+
+Characters
+Relics
+Regions
+Starting Points

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-08T10:34:57-08:00
+
+====== Strength ======
+Created Friday 08 December 2017
+
+Physical attack power.

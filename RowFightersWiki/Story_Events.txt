@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-08T00:15:51-08:00
+
+====== Story Events ======
+Created Thursday 08 March 2018
+
+Once a file events that permanently change the the world or unlock new stuff for the player once they are completed.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-03T22:27:02-08:00
+
+====== Currency ======
+Created Saturday 03 March 2018
+
+Monetary value used to trade for items, party member, or favors.

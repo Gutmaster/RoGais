@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-05T09:29:04-08:00
+
+====== Resources ======
+Created Friday 05 January 2018
+
+Resources are all of the supplies that your party collectively holds. Resources are used gradually, during events, and potentially in battle.

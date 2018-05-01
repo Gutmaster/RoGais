@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-11T22:26:11-08:00
+
+====== Navigation ======
+Created Monday 11 December 2017
+
+The party is displayed as some sort of icon from an isometric viewpoint on a map. Interractible locations and enemies stand out, navigating your party to a location or enemy will start an [[Events|event]] or encounter of some sort.
+
+Travelling gradually reduces your food reservoirs based on the number of members in your party and any other modifiers. Once you run out of food [[Hunger|hunger]] sets in.

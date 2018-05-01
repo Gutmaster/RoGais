@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-27T14:48:22-08:00
+
+====== Enemy ======
+Created Tuesday 27 February 2018
+
+Starts a battle with enemies corresponding to the current [[:Regions|Region]].

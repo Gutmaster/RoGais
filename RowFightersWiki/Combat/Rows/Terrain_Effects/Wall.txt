@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-05T20:21:46-08:00
+
+====== Wall ======
+Created Tuesday 05 December 2017
+
+When a wall is erected underneath a unit, they are pushed into an adjacent row and take minor damage. Only one wall may be erected on each side at any given time. Walls may be destroyed by damage or special effects. They also most likely have timer before crumbling.

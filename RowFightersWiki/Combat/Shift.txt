@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-03T22:06:55-08:00
+
+====== Shift ======
+Created Saturday 03 March 2018
+
+Units may spend 1 AP to shift forward or back by one [[Combat:Rows|row]].

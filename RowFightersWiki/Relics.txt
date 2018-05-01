@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-19T17:26:25-08:00
+
+====== Relics ======
+Created Friday 19 January 2018
+
+Items of great power that bestow certain effects and abilities on your party, or curses on the enemy's. Relics can be unlocked by delving into specific dungeons and recovering them, they will remain selectable after the current run, at the cost of Build Points.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-05T20:12:15-08:00
+
+====== Front ======
+Created Tuesday 05 December 2017
+
+The front row is the only row in which most [[Combat:Melee Attacks|Melee Attacks]] may be performed. It is generally the most vulnerable row because as long as you have a [[Units|unit]] residing in it, it is the only row subject to enemy Melee Attacks.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-06T15:12:02-08:00
+
+====== Actions ======
+Created Wednesday 06 December 2017
+
+Combat Actions are the actions units take  to turn the tide of a battle in their favor. Attack, support, and terrain effects.

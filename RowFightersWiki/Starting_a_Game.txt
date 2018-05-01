@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-12T00:31:00-08:00
+
+====== Starting a Game ======
+Created Tuesday 12 December 2017
+
+When a player starts a new game they will be prompted to choose from a selection of characters and equipment to make up their party. They will then choose an entry point for the "dungeon" and the game will begin.

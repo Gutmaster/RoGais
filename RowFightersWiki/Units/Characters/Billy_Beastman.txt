@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-19T17:33:22-08:00
+
+====== Billy Beastman ======
+Created Friday 19 January 2018
+
+Abilities:
+
+Stunning Smash UR{F}, EM{Melee} AP 5
+Reduces targets initiative by users atk.
+
+Protective Stance UR{F} AP 4
+Redirects all Melee attacks to the user if still in front row.

@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-06T16:41:24-08:00
+
+====== Tiki Fireballer ======
+Created Tuesday 06 February 2018
+
+Abilities:
+
+Fireball UR{FMB}, 3AP, Sp Atk
+
+Fire Dance UR{FMB}, 4AP
+Guaranteed next fire move used will critical hit.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-02-27T14:48:00-08:00
+
+====== Camp ======
+Created Tuesday 27 February 2018
+
+A place to stop and rest. The Party may choose to eat [[:Resources:Food|food]] to regain HP and cure [[:Combat:Status Effects|status effects]].

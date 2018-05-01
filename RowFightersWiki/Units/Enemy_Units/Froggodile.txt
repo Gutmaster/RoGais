@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-30T15:42:36-07:00
+
+====== Froggodile ======
+Created Friday 30 March 20
+
+A poisonous amphibian that draws his prey nearer to him with his tongue. 
+
+Actions: 
+Tongue Snatch UR{Any} TR {B, M} AP 3 atkMod -1
+Deals physical damage and pulls the target forward one row.
+
+Poison Jaws UR{Front} TR {Melee} AP 3 Poison 1
+Deals physical damage and poisons the target.
+{{.\froggodile.png}}

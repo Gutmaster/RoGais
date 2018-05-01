@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-05T09:20:05-08:00
+
+====== Dungeons ======
+Created Friday 05 January 2018
+
+Challenging areas that use a different progression system than the overworld thing, needs thinkin. New regions would ideally be accessed through a dungeon most of the time.

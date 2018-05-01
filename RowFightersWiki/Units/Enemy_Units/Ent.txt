@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-29T14:03:07-07:00
+
+====== Ent ======
+Created Thursday 29 March 2018
+
+An animated tree that lives in the swamp. Slow but with high Endurance and Strength.
+More susceptible to burning?
+
+Actions:
+Sweeping Strike UR{F}, TM{All F} AP 4 atkMod 0
+Sweeps his long limbs across the entire front row, dealing physical damage to every occupant.
+
+Blockade UR{Any}, TR{B} AP 5
+Stomps his leg into the ground erecting a barrier made of wood in the back row of the enemy side. Units currently in the row are flung forward and cannot shift back until the barrier is removed.
+{{.\treeboi.png}}
+

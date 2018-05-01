@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-05T19:56:41-08:00
+
+====== Characters ======
+Created Tuesday 05 December 2017
+
+Characters will all be preset with their own stats and upgrade trees. Completing specific goals or objectives for characters may unlock sparse permanent upgrades, but otherwise characters' stats and abilities are reset to default between runs.

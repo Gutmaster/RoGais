@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-03T22:01:50-08:00
+
+====== Endurance ======
+Created Saturday 03 March 2018
+
+A unit's resistance to physical damage and bodily status effects.

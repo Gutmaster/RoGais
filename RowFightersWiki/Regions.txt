@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-19T18:23:07-08:00
+
+====== Regions ======
+Created Friday 19 January 2018
+
+Regions are the different [[overworld]] areas that the [[party]] navigates through. Regions fall into one of the Biome categories listed below.
