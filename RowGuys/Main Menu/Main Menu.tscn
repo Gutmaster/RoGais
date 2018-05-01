@@ -6,7 +6,7 @@
 [ext_resource path="res://Main Menu/PlayPressed.png" type="Texture" id=4]
 [ext_resource path="res://Main Menu/Play.gd" type="Script" id=5]
 
-[node name="Main Menu" type="Node2D" index="0"]
+[node name="Main Menu" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
@@ -30,7 +30,6 @@ margin_top = 599.0
 margin_right = 734.0
 margin_bottom = 799.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
