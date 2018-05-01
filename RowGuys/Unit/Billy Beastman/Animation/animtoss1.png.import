@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/animtoss1.png-5e4449b2cde1da484fc6b717a50482c4.stex"
+
+[deps]
+
+source_file="res://Unit/Billy Beastman/Animation/animtoss1.png"
+source_md5="5c57d360b316d3e9d33958c8f1ad478b"
+
+dest_files=[ "res://.import/animtoss1.png-5e4449b2cde1da484fc6b717a50482c4.stex" ]
+dest_md5="ae3998feabafd2537b03ce2644e4ef69"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

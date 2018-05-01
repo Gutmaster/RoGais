@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Loop1.png-0e2791f7f7284a9e7c1a4338f284a79a.stex"
+
+[deps]
+
+source_file="res://Terrain/Ensnaring Vines/Loop1.png"
+source_md5="e610236ac945c80b0b7201f0da0afb10"
+
+dest_files=[ "res://.import/Loop1.png-0e2791f7f7284a9e7c1a4338f284a79a.stex" ]
+dest_md5="90176f981dc0fbc4b5ffc631737e71ee"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

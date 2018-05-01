@@ -1,0 +1,547 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Combat/Scripts/Combat.gd" type="Script" id=1]
+[ext_resource path="res://Combat/Queue/Queue.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Combat/Assets/Victory.png" type="Texture" id=3]
+[ext_resource path="res://Combat/Assets/Loss.png" type="Texture" id=4]
+[ext_resource path="res://Combat/Scripts/Victory.gd" type="Script" id=5]
+[ext_resource path="res://Combat/Scripts/Loss.gd" type="Script" id=6]
+[ext_resource path="res://Combat/CommandWindow/CommandWindow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Combat/Assets/Advance.png" type="Texture" id=8]
+[ext_resource path="res://Combat/Assets/AdvancePressed.png" type="Texture" id=9]
+[ext_resource path="res://Combat/Assets/AdvanceHover.png" type="Texture" id=10]
+[ext_resource path="res://Combat/Advance.gd" type="Script" id=11]
+[ext_resource path="res://Effect/EffectCatalogue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Terrain/TerrainCatalogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Combat/Background.gd" type="Script" id=14]
+[ext_resource path="res://Combat/Assets/BG.png" type="Texture" id=15]
+[ext_resource path="res://Combat/Assets/LB.png" type="Texture" id=16]
+[ext_resource path="res://Combat/Scripts/Row.gd" type="Script" id=17]
+[ext_resource path="res://Combat/Scripts/RowArea2D.gd" type="Script" id=18]
+[ext_resource path="res://Combat/Assets/LM.png" type="Texture" id=19]
+[ext_resource path="res://Combat/Assets/LF.png" type="Texture" id=20]
+[ext_resource path="res://Combat/Assets/RF.png" type="Texture" id=21]
+[ext_resource path="res://Combat/Assets/RM.png" type="Texture" id=22]
+[ext_resource path="res://Combat/Assets/RB.png" type="Texture" id=23]
+[ext_resource path="res://Unit/Team.gd" type="Script" id=24]
+[ext_resource path="res://Unit/TeamLeft.gd" type="Script" id=25]
+[ext_resource path="res://Unit/TeamRight.gd" type="Script" id=26]
+[ext_resource path="res://Combat/Deadzone.gd" type="Script" id=27]
+[ext_resource path="res://Combat/Weather/Raindrop.png" type="Texture" id=28]
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 200, 100 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 5000, 5000, 2000 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 1.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Gravity", "Initial Velocity", "Spread", "Trail" ]
+
+[node name="Combat" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="HUD" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Queue" parent="HUD" index="0" instance=ExtResource( 2 )]
+
+margin_top = -1.0
+margin_bottom = 63.0
+mouse_filter = 1
+
+[node name="Victory" type="TextureButton" parent="HUD" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 813.0
+margin_top = 183.0
+margin_right = 1113.0
+margin_bottom = 333.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 1
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Mouse", "Textures" ]
+
+[node name="Loss" type="TextureRect" parent="HUD" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="CommandWindow" parent="HUD" index="3" instance=ExtResource( 7 )]
+
+[node name="Advance" type="TextureButton" parent="HUD" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 626.0
+margin_top = 224.0
+margin_right = 826.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+script = ExtResource( 11 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="EffectCatalogue" parent="." index="1" instance=ExtResource( 12 )]
+
+[node name="TerrainCatalogue" parent="." index="2" instance=ExtResource( 13 )]
+
+[node name="Background" type="Node2D" parent="." index="3"]
+
+position = Vector2( 960, 540 )
+script = ExtResource( 14 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="BG1" type="Sprite" parent="Background" index="0"]
+
+texture = ExtResource( 15 )
+
+[node name="BG2" type="Sprite" parent="Background" index="1"]
+
+position = Vector2( 1920, -2.39496 )
+texture = ExtResource( 15 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Row" type="Sprite" parent="." index="4"]
+
+[node name="LB" type="Sprite" parent="Row" index="0"]
+
+editor/display_folded = true
+position = Vector2( 285, 610 )
+texture = ExtResource( 16 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UnitLine" type="Line2D" parent="Row/LB" index="0"]
+
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/LB/UnitLine" index="0"]
+
+position = Vector2( 153.277, -196.386 )
+
+[node name="End" type="Position2D" parent="Row/LB/UnitLine" index="1"]
+
+position = Vector2( -109.874, 167.059 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Row/LB" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LB/Area2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 95.1824, -285.47, -283.47, 298.201, -40.1553, 291.748, 251.75, -279.057 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LM" type="Sprite" parent="Row" index="1"]
+
+editor/display_folded = true
+position = Vector2( 515, 610 )
+texture = ExtResource( 19 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UnitLine" type="Line2D" parent="Row/LM" index="0"]
+
+editor/display_folded = true
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/LM/UnitLine" index="0"]
+
+position = Vector2( 111.675, -188.244 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="End" type="Position2D" parent="Row/LM/UnitLine" index="1"]
+
+position = Vector2( -71.1759, 168.823 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Row/LM" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LM/Area2D" index="0"]
+
+position = Vector2( -228.474, 291.8 )
+build_mode = 0
+polygon = PoolVector2Array( -9.57709, 6.40045, 232.313, 9.29449, 436.611, -579.85, 276.664, -574.626 )
+
+[node name="LF" type="Sprite" parent="Row" index="2"]
+
+editor/display_folded = true
+position = Vector2( 738.268, 610.615 )
+texture = ExtResource( 20 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UnitLine" type="Line2D" parent="Row/LF" index="0"]
+
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/LF/UnitLine" index="0"]
+
+position = Vector2( 79.0334, -189.201 )
+
+[node name="End" type="Position2D" parent="Row/LF/UnitLine" index="1"]
+
+position = Vector2( -38.3192, 162.857 )
+
+[node name="Area2D" type="Area2D" parent="Row/LF" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LF/Area2D" index="0"]
+
+position = Vector2( -166.133, 262.093 )
+build_mode = 0
+polygon = PoolVector2Array( -26.9517, 41.1525, 212.543, 35.3643, 332.862, -540.671, 179.4, -538.059 )
+
+[node name="RF" type="Sprite" parent="Row" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1174.08, 613.268 )
+texture = ExtResource( 21 )
+script = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="UnitLine" type="Line2D" parent="Row/RF" index="0"]
+
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/RF/UnitLine" index="0"]
+
+position = Vector2( -74.2435, -191.596 )
+
+[node name="End" type="Position2D" parent="Row/RF/UnitLine" index="1"]
+
+position = Vector2( 28.7394, 162.857 )
+
+[node name="Area2D" type="Area2D" parent="Row/RF" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RF/Area2D" index="0"]
+
+position = Vector2( -5.88074, -3.55322 )
+build_mode = 0
+polygon = PoolVector2Array( -64.9926, 297.805, 184.699, 292.033, -33.6064, -277.369, -180.584, -269.533 )
+
+[node name="RM" type="Sprite" parent="Row" index="4"]
+
+editor/display_folded = true
+position = Vector2( 1405.88, 610 )
+texture = ExtResource( 22 )
+script = ExtResource( 17 )
+
+[node name="UnitLine" type="Line2D" parent="Row/RM" index="0"]
+
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -16777216
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/RM/UnitLine" index="0"]
+
+position = Vector2( -107.773, -182.016 )
+
+[node name="End" type="Position2D" parent="Row/RM/UnitLine" index="1"]
+
+position = Vector2( 64.6637, 165.252 )
+
+[node name="Area2D" type="Area2D" parent="Row/RM" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RM/Area2D" index="0"]
+
+position = Vector2( -20.5825, 3.55322 )
+build_mode = 0
+polygon = PoolVector2Array( -11.4614, 297.541, 227.588, 285.173, -59.884, -286.841, -213.346, -281.617 )
+
+[node name="RB" type="Sprite" parent="Row" index="5"]
+
+editor/display_folded = true
+position = Vector2( 1650, 610 )
+texture = ExtResource( 23 )
+script = ExtResource( 17 )
+
+[node name="UnitLine" type="Line2D" parent="Row/RB" index="0"]
+
+editor/display_folded = true
+visible = false
+points = PoolVector2Array(  )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="Start" type="Position2D" parent="Row/RB/UnitLine" index="0"]
+
+position = Vector2( -143.697, -191.596 )
+
+[node name="End" type="Position2D" parent="Row/RB/UnitLine" index="1"]
+
+position = Vector2( 98.193, 160.462 )
+
+[node name="Area2D" type="Area2D" parent="Row/RB" index="1"]
+
+position = Vector2( 13.2684, -5.51923 )
+scale = Vector2( 1, 0.827524 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RB/Area2D" index="0"]
+
+position = Vector2( 0, 2.8941 )
+build_mode = 0
+polygon = PoolVector2Array( 3.52478, 285.173, 262.7, 301.095, -126.162, -286.841, -273.769, -280.623 )
+
+[node name="UnitList" type="Node2D" parent="." index="5"]
+
+[node name="Team" type="Node2D" parent="." index="6"]
+
+script = ExtResource( 24 )
+
+[node name="TeamLeft" type="Node2D" parent="." index="7"]
+
+script = ExtResource( 25 )
+
+[node name="TeamRight" type="Node2D" parent="." index="8"]
+
+script = ExtResource( 26 )
+
+[node name="Deadzone" type="Node2D" parent="." index="9"]
+
+position = Vector2( 423.414, 64.6882 )
+script = ExtResource( 27 )
+
+[node name="Rain" type="Particles2D" parent="." index="10"]
+
+position = Vector2( 874.139, -530.133 )
+scale = Vector2( 1, 6.96606 )
+emitting = true
+amount = 1000
+lifetime = 1.0
+one_shot = false
+preprocess = 1.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 1 )
+texture = ExtResource( 28 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="ApproachTimer" type="Timer" parent="." index="11"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[connection signal="tree_entered" from="." to="." method="_on_Combat_tree_entered"]
+
+[connection signal="tree_exited" from="." to="." method="_on_Combat_tree_exited"]
+
+[connection signal="pressed" from="HUD/Victory" to="HUD/Victory" method="_on_Victory_pressed"]
+
+[connection signal="visibility_changed" from="HUD/Loss" to="HUD/Loss" method="_on_Loss_visibility_changed"]
+
+[connection signal="pressed" from="HUD/Advance" to="HUD/Advance" method="_on_Advance_pressed"]
+
+[connection signal="mouse_entered" from="Row/LB/Area2D" to="Row/LB/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/LB/Area2D" to="Row/LB/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Row/LM/Area2D" to="Row/LM/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/LM/Area2D" to="Row/LM/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Row/LF/Area2D" to="Row/LF/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/LF/Area2D" to="Row/LF/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Row/RF/Area2D" to="Row/RF/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/RF/Area2D" to="Row/RF/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Row/RM/Area2D" to="Row/RM/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/RM/Area2D" to="Row/RM/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="Row/RB/Area2D" to="Row/RB/Area2D" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Row/RB/Area2D" to="Row/RB/Area2D" method="_on_Area2D_mouse_exited"]
+
+[connection signal="timeout" from="ApproachTimer" to="." method="_on_ApproachTimer_timeout"]
+
+

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex"
+
+[deps]
+
+source_file="res://Artifact/Pretty Rock.png"
+source_md5="aa53223d28f1838f455d36d74c0cf14b"
+
+dest_files=[ "res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex" ]
+dest_md5="4c741aee853ae65d56bdb4ae72eead33"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

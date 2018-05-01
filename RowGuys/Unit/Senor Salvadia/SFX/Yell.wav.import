@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Yell.wav-8693ec4594adbc9b3b9b8a560384efb6.sample"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/SFX/Yell.wav"
+source_md5="89758fc76734a73a7ee9a2179ac3e0ad"
+
+dest_files=[ "res://.import/Yell.wav-8693ec4594adbc9b3b9b8a560384efb6.sample" ]
+dest_md5="4dfc58cae94ce8ba75d66ac752bb185f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

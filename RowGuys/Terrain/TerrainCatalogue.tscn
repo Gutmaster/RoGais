@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Terrain/TerrainCatalogue.gd" type="Script" id=1]
+[ext_resource path="res://Terrain/Default.gd" type="Script" id=2]
+[ext_resource path="res://Terrain/Earth Barrier/Loop.png" type="Texture" id=3]
+[ext_resource path="res://Terrain/Earth Barrier/Start1.png" type="Texture" id=4]
+[ext_resource path="res://Terrain/Earth Barrier/Start2.png" type="Texture" id=5]
+[ext_resource path="res://Terrain/Earth Barrier/Earth Barrier.gd" type="Script" id=6]
+[ext_resource path="res://Party/QuickStats/hpbar.tres" type="StyleBox" id=7]
+[ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=8]
+[ext_resource path="res://Terrain/Ensnaring Vines/Loop1.png" type="Texture" id=9]
+[ext_resource path="res://Terrain/Ensnaring Vines/Start1.png" type="Texture" id=10]
+[ext_resource path="res://Terrain/Ensnaring Vines/Start2.png" type="Texture" id=11]
+[ext_resource path="res://Terrain/Ensnaring Vines/Ensnaring Vines.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Loop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Start",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Loop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Start",
+"speed": 5.0
+} ]
+
+[node name="TerrainCatalogue" type="AnimatedSprite"]
+
+animation = "default"
+playing = true
+script = ExtResource( 1 )
+
+[node name="Default" type="AnimatedSprite" parent="." index="0"]
+
+animation = "default"
+script = ExtResource( 2 )
+
+[node name="Earth Barrier" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 1 )
+animation = "Start"
+script = ExtResource( 6 )
+
+[node name="HPBar" type="ProgressBar" parent="Earth Barrier" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -80.0
+margin_top = 220.0
+margin_right = 80.0
+margin_bottom = 260.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_styles/fg = ExtResource( 7 )
+custom_styles/bg = ExtResource( 8 )
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Percent", "custom_styles" ]
+
+[node name="Ensnaring Vines" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 2 )
+animation = "Start"
+script = ExtResource( 12 )
+
+[connection signal="animation_finished" from="Earth Barrier" to="Earth Barrier" method="_on_Earth_Barrier_animation_finished"]
+
+[connection signal="animation_finished" from="Ensnaring Vines" to="Ensnaring Vines" method="_on_Ensnaring_Vines_animation_finished"]
+
+

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Portrait.png-6e9098ed290d00feb875fc4d7f79aee3.stex"
+
+[deps]
+
+source_file="res://Unit/Billy Beastman/Portrait.png"
+source_md5="d8c3ed0d6af09bac2aa1a9756f00b7f7"
+
+dest_files=[ "res://.import/Portrait.png-6e9098ed290d00feb875fc4d7f79aee3.stex" ]
+dest_md5="0ba5ed3b45c3dfa834e8c3fd463116f6"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/animtoss4.png-effd284f059029abcae2032d1645748d.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/animtoss4.png"
+source_md5="5045db36ba50a542bccfd6fdb8af84d3"
+
+dest_files=[ "res://.import/animtoss4.png-effd284f059029abcae2032d1645748d.stex" ]
+dest_md5="bba3bee238fcc0ea9471d865707c5153"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

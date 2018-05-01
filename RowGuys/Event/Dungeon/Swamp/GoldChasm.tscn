@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Event/Dungeon/BaseDungeonScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Event/Dungeon/Swamp/GoldChasm.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+
+font_path = "res://Fonts/Comfortaa-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="GoldChasm" index="0" instance=ExtResource( 1 )]
+
+layer = 1
+script = ExtResource( 2 )
+
+[node name="CenterContainer" parent="." index="0"]
+
+visible = true
+
+[node name="Dialogue" parent="CenterContainer/EventMenu" index="2"]
+
+custom_fonts/font = SubResource( 2 )
+text = "You come across a water filled chasm. Someone spots a large pile of gold glittering from the darkness at the bottom."
+
+[node name="Ignore" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="0" groups=[
+"Buttons",
+]]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 900.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Ignore it and move on."
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Retrieve" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="1" groups=[
+"Buttons",
+]]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 38.0
+margin_right = 900.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Send someone down to gather all they can."
+flat = false
+align = 1
+
+[node name="PartyChoice" parent="." index="2" instance_placeholder="res://Event/PartyChoice.tscn"]
+
+layer = 2
+
+[node name="EventResult" parent="." index="3" instance_placeholder="res://Event/EventResult.tscn"]
+
+layer = 3
+
+[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/Ignore" to="." method="_on_Ignore_pressed"]
+
+[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/Retrieve" to="." method="_on_Retrieve_pressed"]
+
+

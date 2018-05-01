@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/DankDruid.png-302568dfef6c75b8c82cec70fa33225c.stex"
+
+[deps]
+
+source_file="res://Unit/Dank Druid/Animation/DankDruid.png"
+source_md5="23da6215e2c667e79a5c3cca1f6bd861"
+
+dest_files=[ "res://.import/DankDruid.png-302568dfef6c75b8c82cec70fa33225c.stex" ]
+dest_md5="a83a3518e79fda8bfe2858ac40bf195e"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

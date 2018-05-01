@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Unit/Unit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Unit/Billy Beastman/Animation/billybeastman.png" type="Texture" id=2]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=3]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=4]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=5]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=6]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animpoised.png" type="Texture" id=7]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=8]
+[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=9]
+[ext_resource path="res://Unit/Billy Beastman/Animation/stagger1.png" type="Texture" id=10]
+[ext_resource path="res://Unit/Billy Beastman/Animation/stagger2.png" type="Texture" id=11]
+[ext_resource path="res://Unit/Billy Beastman/BillyBeastman.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Toss",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Defend",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "ShiftForward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "ShiftBack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Stagger",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+resource_local_to_scene = true
+custom_solver_bias = 0.0
+extents = Vector2( 80, 100 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="Billy Beastman" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 160, 110 )
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+
