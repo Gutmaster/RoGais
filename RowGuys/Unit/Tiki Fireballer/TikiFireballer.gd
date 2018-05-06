@@ -2,8 +2,12 @@ extends "res://Unit/Unit.gd"
 
 
 func _ready():
+	pass
+
+
+func Init():
 	idName = "Tiki Fireballer"
-	Init()
+	SharedInit()
 	
 	stats.Strength = 1
 	stats.Wisdom = 3

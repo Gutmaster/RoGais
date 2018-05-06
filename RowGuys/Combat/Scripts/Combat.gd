@@ -37,6 +37,7 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	while(PartyLeft.get_child_count()):
 		AddUnit(PartyLeft.get_child(0), SIDE.left)
 	while(PartyRight.get_child_count()):
+		PartyRight.get_child(0).Init()
 		AddUnit(PartyRight.get_child(0), SIDE.right, true)
 	
 	for i in range(uList.get_child_count()):

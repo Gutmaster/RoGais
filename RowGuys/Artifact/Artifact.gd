@@ -6,6 +6,9 @@ onready var party = get_node("/root/Globals").party
 var partyMod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 var enemyMod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 
+var description = ""
+
+onready var emptyPortrait = load("res://Unit/placeholder.png")
 
 func _ready():
 	pass

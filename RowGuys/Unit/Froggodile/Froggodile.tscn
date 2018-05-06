@@ -6,8 +6,8 @@
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=4]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=5]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=6]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=7]
-[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=8]
+[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=7]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=8]
 [ext_resource path="res://Unit/Froggodile/Animation/stagger1.png" type="Texture" id=9]
 [ext_resource path="res://Unit/Froggodile/Animation/stagger2.png" type="Texture" id=10]
 [ext_resource path="res://Unit/Froggodile/Froggodile.gd" type="Script" id=11]
@@ -27,12 +27,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "ShiftForward",
+"name": "ShiftBack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "ShiftBack",
+"name": "ShiftForward",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],

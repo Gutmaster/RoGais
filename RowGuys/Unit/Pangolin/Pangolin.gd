@@ -1,8 +1,12 @@
 extends "res://Unit/Unit.gd"
 
 func _ready():
+	pass
+
+
+func Init():
 	idName = "Pangolin"
-	Init()
+	SharedInit()
 	
 	stats.Strength = 2
 	stats.Speed = 10

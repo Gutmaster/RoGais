@@ -1,8 +1,14 @@
 extends "res://Unit/Unit.gd"
 
+
 func _ready():
+	pass
+
+
+func Init():
 	idName = "Billy Beastman"
-	Init()
+	SharedInit()
+	
 	
 	stats.Vitality = 8
 	stats.Stamina = 5

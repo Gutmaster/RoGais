@@ -12,6 +12,8 @@ var travelScene
 var dungeonScene
 var party
 
+var currentScene
+
 onready var root = get_tree().get_root()
 
 
@@ -24,7 +26,7 @@ func _ready():
 
 
 func ChangeScene(var newScene):
-	var currentScene = get_tree().get_current_scene()
+	currentScene = get_tree().get_current_scene()
 	
 	if(newScene == combatScene):
 		newScene.prevScene = currentScene
@@ -32,6 +34,8 @@ func ChangeScene(var newScene):
 	root.add_child(newScene)
 	get_tree().set_current_scene(newScene)
 	root.remove_child(currentScene)
+	
+	currentScene = newScene
 
 
 func LoadParty():

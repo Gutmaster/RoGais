@@ -2,8 +2,12 @@ extends "res://Unit/Unit.gd"
 
 
 func _ready():
+	pass
+
+
+func Init():
 	idName = "Froggodile"
-	Init()
+	SharedInit()
 	
 	stats.Stamina = 5
 	stats.Speed = 4

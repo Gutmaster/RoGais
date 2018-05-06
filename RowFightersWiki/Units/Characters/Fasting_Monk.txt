@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-04T18:01:52-07:00
+
+====== Fasting Monk ======
+Created Friday 04 May 2018
+
+Has a passive ability that buffs his Wisdom and Willpower while starving, rather than subtracts from it.
+
+Specializes from starving wizard to melee fighter.
+Maybe he has a staff/rod that he uses for incantations and melee combat.

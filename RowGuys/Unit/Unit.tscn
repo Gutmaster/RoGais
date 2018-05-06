@@ -5,8 +5,8 @@
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=3]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=4]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=5]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=6]
-[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=7]
+[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=6]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=7]
 [ext_resource path="res://Unit/Unit.gd" type="Script" id=8]
 [ext_resource path="res://Unit/Area2D.gd" type="Script" id=9]
 [ext_resource path="res://Action/ActionCatalogue.tscn" type="PackedScene" id=10]
@@ -29,12 +29,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "ShiftForward",
+"name": "ShiftBack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "ShiftBack",
+"name": "ShiftForward",
 "speed": 5.0
 } ]
 
@@ -92,6 +92,7 @@ anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1

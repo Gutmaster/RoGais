@@ -12,18 +12,16 @@ front,
 middle,
 back}
 
-
 enum STATUS{
 normal,
 poison}
-
 
 var status = STATUS.normal
 var statusMod
 
 
 var idName
-var portrait
+var portrait = null
 
 var AI = false
 var AIAction = false
@@ -31,8 +29,8 @@ var AIShift = false
 
 var team
 
-onready var defaultRow = ROW.front
-var row = defaultRow
+var defaultRow
+var row
 var rowRef
 
 var shifting = false
@@ -61,12 +59,18 @@ var cAction
 var actionList = []
 var stanceList = []
 onready var stance = get_node("StanceCatalogue/Wait")
+
 onready var combatNode = get_node("/root/Globals").combatScene
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
 onready var party = get_node("/root/Globals").party
 
 
 func _ready():
+	pass
+
+
+func SharedInit():
+	portrait = load("res://Unit/" + idName + "/Portrait.png")
 	height = frames.get_frame("Idle", 0).get_size().y
 	width = frames.get_frame("Idle", 0).get_size().x
 	
@@ -80,11 +84,17 @@ func CharCardInit():
 	quickStats = QSScene.instance()
 	quickStats.find_node("Name").set_text(get_name())
 	quickStats.unit = self
-	
+
+
 func PartyCardInit():
 	partyCard = PCScene.instance()
 	partyCard.find_node("Name").set_text(get_name())
-	#partyCard.find_node("Portrait").set_texture(portrait)
+	if(defaultRow == back):
+		partyCard.find_node("Portrait1").texture_normal = portrait
+	elif(defaultRow == middle):
+		partyCard.find_node("Portrait2").texture_normal = portrait
+	elif(defaultRow == front):
+		partyCard.find_node("Portrait3").texture_normal = portrait
 	partyCard.unit = self
 
 
@@ -93,7 +103,7 @@ func EnterCombat():
 
 
 func Init():
-	portrait = load("res://Unit/" + idName + "/Portrait.png")
+	pass#portrait = load("res://Unit/" + idName + "/Portrait.png")
 
 
 func _process(delta):

@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Party/PartyCard.gd" type="Script" id=1]
 [ext_resource path="res://Unit/placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Party/QuickStats/hpbar.tres" type="StyleBox" id=3]
 [ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=4]
 [ext_resource path="res://Party/QuickStats/apbar.tres" type="StyleBox" id=5]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Unit/skilltreebutton.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -42,7 +44,27 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Panel" type="PanelContainer" index="0"]
+[sub_resource type="DynamicFontData" id=7]
+
+font_path = "res://Fonts/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=9]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Panel" type="PanelContainer"]
 
 self_modulate = Color( 0.222656, 0.17482, 0.17482, 1 )
 anchor_left = 0.0
@@ -52,6 +74,7 @@ anchor_bottom = 0.0
 margin_right = 860.0
 margin_bottom = 250.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -70,6 +93,7 @@ margin_top = 7.0
 margin_right = 853.0
 margin_bottom = 243.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -91,6 +115,7 @@ margin_top = 10.0
 margin_right = 836.0
 margin_bottom = 226.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -103,9 +128,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 161.0
+margin_right = 269.0
 margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
@@ -113,7 +139,7 @@ size_flags_vertical = 0
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Portrait" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+[node name="Portrait1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -122,24 +148,77 @@ anchor_bottom = 0.0
 margin_right = 50.0
 margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
-stretch_mode = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Textures" ]
 
-[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+[node name="Portrait2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Portrait3" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
 margin_top = 11.0
-margin_right = 161.0
+margin_right = 269.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -159,13 +238,16 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 56.0
 margin_right = 826.0
-margin_bottom = 120.0
+margin_bottom = 184.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 0
 alignment = 0
+_sections_unfolded = [ "Material", "Visibility", "custom_constants" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
 
@@ -174,8 +256,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 104.0
-margin_bottom = 64.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -191,6 +274,7 @@ anchor_bottom = 0.0
 margin_right = 104.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -212,6 +296,7 @@ margin_top = 33.0
 margin_right = 104.0
 margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -223,16 +308,39 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="XPFrac" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 104.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "XP 12/22"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 108.0
-margin_right = 208.0
-margin_bottom = 64.0
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -250,6 +358,7 @@ margin_right = 100.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 100, 30 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
@@ -277,6 +386,7 @@ margin_right = 100.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 100, 30 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
@@ -299,10 +409,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 212.0
-margin_right = 212.0
-margin_bottom = 64.0
+margin_left = 204.0
+margin_right = 204.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -316,6 +427,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -331,6 +443,7 @@ anchor_bottom = 0.0
 margin_top = 4.0
 margin_bottom = 18.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -338,5 +451,343 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 204.0
+margin_right = 354.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 72.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VitStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 72.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = "  VIT 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="StaStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 33.0
+margin_right = 72.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = " STA 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="StrStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer3" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 72.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = " STR 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EndStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer3" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 99.0
+margin_right = 72.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = " END 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_right = 150.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="WisStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 74.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = " WIS 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="WillStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 33.0
+margin_right = 74.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = "WILL 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SpeedStat" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 74.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+text = " SPD 4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 354.0
+margin_right = 484.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_left = 10
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_right = 130.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="TrinketSlot1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 38.0
+margin_right = 50.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Mouse", "Size Flags", "Textures" ]
+
+[node name="TrinketSlot2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 38.0
+margin_right = 120.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Size Flags", "Textures", "Theme" ]
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 484.0
+margin_right = 554.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_left = 20
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="SkillTree" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 76.0
+margin_right = 70.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 12
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+_sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait2" to="." method="_on_Portrait2_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait3" to="." method="_on_Portrait3_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2/TrinketSlot1" to="." method="_on_TrinketSlot1_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2/TrinketSlot2" to="." method="_on_TrinketSlot2_pressed"]
 
 

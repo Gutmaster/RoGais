@@ -1,13 +1,16 @@
 extends CanvasLayer
 
-
 var starting_food = 20
 var food = 0
 var gold = 0
 
-
 onready var artifactContainer = find_node("ArtifactContainer")
 onready var artifactContainer2 = find_node("ArtifactContainer2")
+
+onready var foodCount = find_node("FoodCount")
+onready var foodCount2 = find_node("FoodCount2")
+onready var goldCount = find_node("GoldCount")
+onready var goldCount2 = find_node("GoldCount2")
 
 
 func _ready():
@@ -16,27 +19,25 @@ func _ready():
 	artifactContainer.get_child(0).Acquire()
 	
 	artifactContainer2.add_child(preload("res://Artifact/Pretty Rock.tscn").instance(), true)
-	artifactContainer2.get_child(0).Acquire()
 
 
 func _input(event):
 	if(event.is_action_pressed("party_pause")):
-		get_tree().paused = !(get_tree().paused)
-		$Control.visible = !($Control.visible)
-		$PanelContainer.visible = !($PanelContainer.visible)
+		PartyPause()
 
 
 func _process(delta):
 	var round_value = round(food)
-	find_node("FoodCount").text = str(round_value)
-	find_node("FoodCount2").text = str(round_value)
+	foodCount.text = str(round_value)
+	foodCount2.text = str(round_value)
 	round_value = round(gold)
-	find_node("GoldCount").text = str(round_value)
-	find_node("GoldCount2").text = str(round_value)
+	goldCount.text = str(round_value)
+	goldCount2.text = str(round_value)
 
 
 func AddUnit(var unit):
 	unit = unit.instance()
+	unit.Init()
 	$Units.add_child(unit, true)
 	unit.CharCardInit()
 	unit.PartyCardInit()
@@ -53,3 +54,23 @@ func UpdateFood(dif):
 func UpdateGold(dif):
 	$GTween.interpolate_property(self, "gold", gold, gold + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$GTween.start()
+
+func _on_PartyButton_pressed():
+	PartyPause()
+
+
+func _on_PartyButton2_pressed():
+	PartyPause()
+	
+
+func PartyPause():
+	if(Globals.currentScene == Globals.travelScene):
+		Globals.travelScene.find_node("Player").destPos = null
+		Globals.travelScene.find_node("Player").velocity = Vector2(0,0)
+		Globals.travelScene.find_node("MoveMarker").visible = false
+		
+	get_tree().paused = !(get_tree().paused)
+	$Control.visible = !($Control.visible)
+	$PanelContainer.visible = !($PanelContainer.visible)
+	
+	

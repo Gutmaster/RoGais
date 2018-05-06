@@ -2,8 +2,12 @@ extends "res://Unit/Unit.gd"
 
 
 func _ready():
+	pass
+
+
+func Init():
 	idName = "Senor Salvadia"
-	Init()
+	SharedInit()
 	
 	stats.Stamina = 5
 	stats.Speed = 6
