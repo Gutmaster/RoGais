@@ -32,5 +32,5 @@ func Execute():
 				loopo = true
 				uList.get_child(i).checkFlag = true
 				uList.get_child(i).TempPlay("Stagger")
-				uList.get_child(i).UpdateHP(-(user.stats.atk - (uList.get_child(i).stats.def + uList.get_child(i).stance.mods.def)))
+				uList.get_child(i).UpdateHP(-(user.stats.atk - (uList.get_child(i).stats.def + uList.get_child(i).stance.mod.def)))
 				break

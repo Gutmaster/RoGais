@@ -40,6 +40,6 @@ func Execute():
 			if(uList.get_child(i).rowRef == target && uList.get_child(i).checkFlag == false):
 				loopo = true
 				uList.get_child(i).checkFlag = true
-				uList.get_child(i).UpdateHP(-(user.stats.atk - (uList.get_child(i).stats.def + uList.get_child(i).stance.mods.def)))
+				uList.get_child(i).UpdateHP(-(user.stats.atk - (uList.get_child(i).stats.def + uList.get_child(i).stance.mod.def)))
 				uList.get_child(i).Shift(uList.get_child(i).PickRandShiftDir(), "Toss", "Toss")
 				break

@@ -48,9 +48,9 @@ func CombatMath(var user, var target):
 	
 	var dmg
 	if(tags.spec):
-		dmg = user.stats.Wisdom - (target.stats.Willpower + target.stance.mods.Willpower)
+		dmg = user.stats.Wisdom - (target.stats.Willpower + target.stance.mod.Willpower)
 	else:
-		dmg = user.stats.Strength - (target.stats.Endurance + target.stance.mods.Endurance)
+		dmg = user.stats.Strength - (target.stats.Endurance + target.stance.mod.Endurance)
 	
 	dmg += atkMod
 	

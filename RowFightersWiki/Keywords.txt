@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-06T11:03:57-07:00
+
+====== Keywords ======
+Created Sunday 06 May 2018
+
+Words in game that denote specific effects.

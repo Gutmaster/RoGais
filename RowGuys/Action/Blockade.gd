@@ -36,7 +36,7 @@ func Execute():
 			if(uList.get_child(i).rowRef == target && uList.get_child(i).checkFlag == false):
 				loopo = true
 				uList.get_child(i).checkFlag = true
-				uList.get_child(i).UpdateHP(-(user.stats.Strength - (uList.get_child(i).stats.Endurance + uList.get_child(i).stance.mods.Endurance)))
+				uList.get_child(i).UpdateHP(-(user.stats.Strength - (uList.get_child(i).stats.Endurance + uList.get_child(i).stance.mod.Endurance)))
 				if(uList.get_child(i) != null):
 					uList.get_child(i).Shift(uList.get_child(i).PickRandShiftDir(), 0.4, "Toss", "Toss")
 				break

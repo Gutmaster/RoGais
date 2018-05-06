@@ -1,15 +1,13 @@
 extends TextureRect
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
+var mod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
+
+
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
+func Upkeep():
+	pass
