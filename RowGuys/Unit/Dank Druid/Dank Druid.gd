@@ -7,16 +7,14 @@ func _ready():
 
 func Init():
 	idName = "Dank Druid"
+	
+	bStats.Strength = 1
+	bStats.Wisdom = 3
+	bStats.Vitality = 4
+	bStats.Stamina = 7
+	bStats.Speed = 5
+	
 	SharedInit()
-	
-	stats.Strength = 1
-	stats.Wisdom = 3
-	stats.Vitality = 4
-	stats.Stamina = 7
-	stats.Speed = 5
-	stats.hp = stats.Vitality
-	stats.ap = stats.Stamina
-	
 	defaultRow = ROW.back
 	
 	actionList.push_back(get_node("ActionCatalogue/Ensnaring Vines"))

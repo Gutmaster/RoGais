@@ -6,7 +6,7 @@ var userRows = []
 
 var animation
 
-var mod = {"Endurance": 0, "Willpower": 0}
+var mod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 var bonus = {"Strength": 0, "Wisdom": 0, "fireCrit": false}
 var apCost = 0
 
@@ -20,7 +20,7 @@ func _ready():
 
 
 func UseCheck():
-	if(combatNode.activeUnit.stats.ap < apCost):
+	if(combatNode.activeUnit.ap < apCost):
 		return false
 		
 	for i in range(userRows.size()):

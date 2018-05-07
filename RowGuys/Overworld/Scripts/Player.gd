@@ -92,6 +92,16 @@ func FoodTimer_check():
 
 
 func eat_food(count):
+	var amt = count
+	for i in range(party.get_node("Units").get_child_count()):
+		var unit = party.get_node("Units").get_child(i)
+		if(amt <= 0 || !unit.eatFlag):
+			unit.Starve()
+		else:
+			unit.Eat()
+		
+		amt -= 1
+	
 	party.UpdateFood(-count)
 	#emit_signal("food_changed", party.food)
 
@@ -114,7 +124,12 @@ func _on_Player_body_entered(body):
 
 
 func _on_FoodTimer_timeout():
-	eat_food(party.get_child_count())
+	var amt = 0
+	for i in range(party.get_node("Units").get_child_count()):
+		if(party.get_node("Units").get_child(i).eatFlag && amt < party.food):
+			amt += 1
+	
+	eat_food(amt)
 
 
 func _on_FollowTimer_timeout():

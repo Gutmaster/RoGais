@@ -17,7 +17,7 @@ func _process(delta):
 	elif(phase == 2):
 		if(!projectile.get_node("Tween").is_active()):
 			Execute()
-			if(target.stats.hp > 0):
+			if(target.hp > 0):
 				target.Shift(target.team.side != target.team.SIDE.left, 0.2, "Stagger", "Stagger")
 			phase = 3
 	elif(phase == 3):

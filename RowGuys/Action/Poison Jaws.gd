@@ -3,6 +3,7 @@ extends "Action.gd"
 
 func _ready():
 	userRows = [combatNode.ROW.front]
+	targetRows = [combatNode.ROW.front]
 	animation = "Toss"
 	apCost = 3
 	effectPower = 5
@@ -14,10 +15,6 @@ func _process(delta):
 		if(user.frame+1 >= user.frames.get_frame_count(animation)):
 			Execute()
 			actionMenu.ActionFinished()
-
-
-func FindTargetOptions(var team):
-	MeleeTargets(team)
 
 
 func Execute():

@@ -11,7 +11,7 @@ func _ready():
 func _on_Stance_id_pressed(ID):
 	var user = combatNode.activeUnit
 	user.ChangeStance(user.stanceList[ID])
-	user.stats.ap -= user.stance.apCost
+	user.ap -= user.stance.apCost
 	combatNode.call_deferred("PassTurn")
 	#combatNode.PassTurn()
 

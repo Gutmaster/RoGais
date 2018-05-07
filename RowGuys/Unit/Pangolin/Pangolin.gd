@@ -6,11 +6,10 @@ func _ready():
 
 func Init():
 	idName = "Pangolin"
+	
+	bStats.Strength = 2
+	bStats.Speed = 2
+	bStats.Vitality = 5
+	
 	SharedInit()
-	
-	stats.Strength = 2
-	stats.Speed = 10
-	stats.Vitality = 5
-	stats.hp = stats.Vitality
-	
 	defaultRow = ROW.front

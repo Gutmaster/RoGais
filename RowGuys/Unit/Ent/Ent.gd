@@ -7,15 +7,13 @@ func _ready():
 
 func Init():
 	idName = "Ent"
+	
+	bStats.Stamina = 7
+	bStats.Speed = 6
+	bStats.Strength = 6
+	bStats.Vitality = 8
+	
 	SharedInit()
-	
-	stats.Stamina = 7
-	stats.Speed = 2
-	stats.Strength = 6
-	stats.Vitality = 8
-	stats.hp = stats.Vitality
-	stats.ap = stats.Stamina
-	
 	defaultRow = ROW.middle
 	
 	actionList.push_back(get_node("ActionCatalogue/Blockade"))
@@ -26,14 +24,17 @@ func AICmd():
 	if(PassCheck()):
 		return
 		
+	if(AIAdvance()):
+		return
+	
 	if(!AIShift):
-		AIAdvance()
+		AIApproach()
 		AIShift = true
 	elif(!AIAction):
-		if(stats.ap >= FindAction("Blockade").apCost
+		if(ap >= FindAction("Blockade").apCost
 		and !team.enemy.rpos.back.terrain.tags.exists):
 			AIBlockade()
-		elif(stats.ap >= FindAction("Sweeping Strike").apCost):
+		elif(ap >= FindAction("Sweeping Strike").apCost):
 			AISweepingStrike()
 		else:
 			AIRandomMelee()

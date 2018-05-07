@@ -5,11 +5,12 @@ func _ready():
 	userRows = [combatNode.ROW.front]
 	animation = "Toss"
 	apCost = 4
+	atkMod = 4
 	tags.fire = true
 
 
 func UseCheck():
-	if(combatNode.activeUnit.stats.ap < apCost):
+	if(combatNode.activeUnit.ap < apCost):
 		return false
 	
 	if(combatNode.activeUnit.team.rpos.middle.terrain.tags.blocking):
@@ -56,5 +57,5 @@ func Execute():
 				loopo = true
 				uList.get_child(i).checkFlag = true
 				uList.get_child(i).TempPlay("Stagger")
-				uList.get_child(i).UpdateHP(-(4 - (uList.get_child(i).stats.Endurance + uList.get_child(i).stance.mod.Endurance)))
+				uList.get_child(i).UpdateHP(-(atkMod - uList.get_child(i).aStats.Endurance))
 				break

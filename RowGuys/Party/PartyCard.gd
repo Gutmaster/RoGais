@@ -12,20 +12,20 @@ func _ready():
 
 
 func _process(delta):
-	find_node("HPFrac").set_text("HP " + str(unit.stats.hp) + "/" + str(unit.stats.Vitality))
-	find_node("APFrac").set_text("AP " + str(unit.stats.ap) + "/" + str(unit.stats.Stamina))
+	find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
+	find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
 	find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
-	find_node("HPBar").set_value((float(unit.stats.hp)/unit.stats.Vitality) * 100)
-	find_node("APBar").set_value((float(unit.stats.ap)/unit.stats.Stamina) * 100)
+	find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
+	find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
 	
-	find_node("VitStat").set_text(" VIT " + str(unit.stats.Vitality))
-	find_node("StaStat").set_text(" STA " + str(unit.stats.Stamina))
-	find_node("StrStat").set_text(" STR " + str(unit.stats.Strength))
-	find_node("EndStat").set_text(" END " + str(unit.stats.Endurance))
+	find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
+	find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
+	find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
+	find_node("EndStat").set_text(" END " + str(unit.aStats.Endurance))
 	
-	find_node("WisStat").set_text(" WIS " + str(unit.stats.Wisdom))
-	find_node("WillStat").set_text("WILL " + str(unit.stats.Willpower))
-	find_node("SpeedStat").set_text(" SPD " + str(unit.stats.Speed))
+	find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
+	find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
+	find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
 
 func _on_Portrait1_pressed():
 	if(Globals.currentScene != Globals.combatScene):

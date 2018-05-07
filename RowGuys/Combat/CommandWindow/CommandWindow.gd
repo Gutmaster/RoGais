@@ -28,7 +28,7 @@ func _on_CommandWindow_visibility_changed():
 		get_parent().get_node("Advance").Check()
 		$VBoxContainer/ActionButton.LoadActions()
 		$VBoxContainer/StanceButton.LoadStances()
-		if(combatNode.activeUnit.stats.ap <= 0):
+		if(combatNode.activeUnit.ap <= 0):
 			$VBoxContainer/ShiftButton.disabled = true
 		$VBoxContainer/ShiftButton.SetOoBShift()
 		rect_position = combatNode.activeUnit.position

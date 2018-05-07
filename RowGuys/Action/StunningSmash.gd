@@ -3,6 +3,7 @@ extends "Action.gd"
 
 func _ready():
 	userRows = [combatNode.ROW.front]
+	targetRows = [combatNode.ROW.front]
 	animation = "Toss"
 	apCost = 5
 	tags.melee = true
@@ -15,12 +16,8 @@ func _process(delta):
 			actionMenu.ActionFinished()
 
 
-func FindTargetOptions(var team):
-	MeleeTargets(team)
-
-
 func Execute():
 	CombatMath(user, target)
 	target.TempPlay("Stagger")
-	target.initiative -= user.stats.Strength
+	target.initiative -= user.aStats.Strength
 	combatNode.get_node("HUD/Queue").QueuePredict()

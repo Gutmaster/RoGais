@@ -7,17 +7,14 @@ func _ready():
 
 func Init():
 	idName = "Billy Beastman"
+	
+	bStats.Vitality = 8
+	bStats.Stamina = 5
+	bStats.Endurance = 3
+	bStats.Strength = 3
+	bStats.Speed = 7
+	
 	SharedInit()
-	
-	
-	stats.Vitality = 8
-	stats.Stamina = 5
-	stats.Endurance = 3
-	stats.Strength = 3
-	stats.Speed = 7
-	stats.hp = stats.Vitality
-	stats.ap = stats.Stamina
-	
 	defaultRow = ROW.front
 	
 	actionList.push_back(get_node("ActionCatalogue/Stunning Smash"))

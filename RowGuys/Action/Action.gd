@@ -33,7 +33,7 @@ func _ready():
 
 
 func UseCheck():
-	if(combatNode.activeUnit.stats.ap < apCost):
+	if(combatNode.activeUnit.ap < apCost):
 		return false
 		
 	for i in range(userRows.size()):
@@ -43,14 +43,23 @@ func UseCheck():
 	return false
 
 
+func FindTargetOptions(var team):
+	targetOptions.clear()
+	for i in range(uList.get_child_count()):
+		if(uList.get_child(i).team == team):
+			for j in range(targetRows.size()):
+				if(uList.get_child(i).row == targetRows[j]):
+					targetOptions.push_back(uList.get_child(i))
+
+
 func CombatMath(var user, var target):
 	user.UpdateAP(-apCost)
 	
 	var dmg
 	if(tags.spec):
-		dmg = user.stats.Wisdom - (target.stats.Willpower + target.stance.mod.Willpower)
+		dmg = user.aStats.Wisdom - target.aStats.Willpower
 	else:
-		dmg = user.stats.Strength - (target.stats.Endurance + target.stance.mod.Endurance)
+		dmg = user.aStats.Strength - target.aStats.Endurance
 	
 	dmg += atkMod
 	
@@ -61,7 +70,7 @@ func CombatMath(var user, var target):
 	target.UpdateHP(-dmg)
 
 
-func MeleeTargets(var team):
+"""func MeleeTargets(var team):
 	targetOptions.clear()
 	for i in range(uList.get_child_count()):
 		if(uList.get_child(i).team == team):
@@ -78,7 +87,7 @@ func MeleeTargets(var team):
 		for i in range(uList.get_child_count()):
 			if(uList.get_child(i).team == team):
 				if(uList.get_child(i).row == combatNode.ROW.back):
-					targetOptions.push_back(uList.get_child(i))
+					targetOptions.push_back(uList.get_child(i))"""
 
 
 func Animate(var usr, var trgt):

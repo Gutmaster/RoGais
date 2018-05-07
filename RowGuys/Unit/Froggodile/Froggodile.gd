@@ -7,15 +7,13 @@ func _ready():
 
 func Init():
 	idName = "Froggodile"
+	
+	bStats.Stamina = 5
+	bStats.Speed = 4
+	bStats.Strength = 3
+	bStats.Vitality = 4
+	
 	SharedInit()
-	
-	stats.Stamina = 5
-	stats.Speed = 4
-	stats.Strength = 3
-	stats.Vitality = 4
-	stats.hp = stats.Vitality
-	stats.ap = stats.Stamina
-	
 	defaultRow = ROW.back
 	
 	actionList.push_back(get_node("ActionCatalogue/Tongue Snatch"))
@@ -28,14 +26,14 @@ func AICmd():
 		
 	if(!AIShift):
 		if(team.enemy.rpos.front.FindOccupants().size()):
-			AIAdvance()
+			AIApproach()
 		AIShift = true
 	elif(!AIAction):
 		if(rowRef == team.rpos.front and \
 		   team.enemy.rpos.front.FindOccupants().size() and \
-		   stats.ap >= FindAction("Poison Jaws").apCost):
+		   ap >= FindAction("Poison Jaws").apCost):
 			AIPoisonJaws()
-		elif(stats.ap >= FindAction("Tongue Snatch").apCost):
+		elif(ap >= FindAction("Tongue Snatch").apCost):
 			AITongueSnatch()
 		AIAction = true
 

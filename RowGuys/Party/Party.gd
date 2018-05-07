@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var starting_food = 20
+var starting_food = 5
 var food = 0
 var gold = 0
 
@@ -56,6 +56,7 @@ func UpdateFood(dif):
 func UpdateGold(dif):
 	$GTween.interpolate_property(self, "gold", gold, gold + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$GTween.start()
+
 
 func _on_PartyButton_pressed():
 	PartyPause()

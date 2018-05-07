@@ -3,6 +3,7 @@ extends "Action.gd"
 func _ready():
 	animation = "Toss"
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
+	targetRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
 	apCost = 3
 	tags.spec = true
 	tags.fire = true
@@ -19,10 +20,3 @@ func _process(delta):
 		if(!projectile.get_node("Tween").is_active()):
 			Execute()
 			actionMenu.ActionFinished()
-
-
-func FindTargetOptions(var team):
-	targetOptions.clear()
-	for i in range(uList.get_child_count()):
-		if(uList.get_child(i).team == team):
-			targetOptions.push_back(uList.get_child(i))

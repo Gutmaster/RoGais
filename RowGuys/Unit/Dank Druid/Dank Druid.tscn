@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Unit/Unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Unit/Dank Druid/Animation/DankDruid.png" type="Texture" id=2]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animpoised.png" type="Texture" id=3]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=4]
+[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=3]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=4]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=5]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=6]
 [ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=7]
-[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=8]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=9]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=10]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=11]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=8]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=9]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=10]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animpoised.png" type="Texture" id=11]
 [ext_resource path="res://Unit/Dank Druid/Dank Druid.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -21,34 +21,34 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Defend",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Toss",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "ShiftBack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "ShiftForward",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Dance",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "ShiftBack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "ShiftForward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Toss",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Defend",
 "speed": 5.0
 } ]
 

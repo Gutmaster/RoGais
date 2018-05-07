@@ -3,6 +3,7 @@ extends "Action.gd"
 
 func _ready():
 	userRows = [combatNode.ROW.middle]
+	targetRows = [combatNode.ROW.front]
 	animation = "Toss"
 	apCost = 3
 	atkMod = 1
@@ -10,7 +11,7 @@ func _ready():
 
 
 func UseCheck():
-	if(combatNode.activeUnit.stats.ap < apCost):
+	if(combatNode.activeUnit.ap < apCost):
 		return false
 	
 	if(combatNode.activeUnit.team.rpos.front.terrain.tags.blocking):
@@ -34,7 +35,3 @@ func _process(delta):
 		if(user.frame+1 >= user.frames.get_frame_count(animation) && !user.shifting):
 			Execute()
 			actionMenu.ActionFinished()
-
-
-func FindTargetOptions(var team):
-	MeleeTargets(team)

@@ -24,7 +24,7 @@ func QueueUpdate():
 	var nextUnit = combatNode.activeUnit
 	for i in range(uList.get_child_count()):
 		var temp = uList.get_child(i)
-		temp.initiative += temp.stats.Speed
+		temp.initiative += temp.aStats.Speed
 		if(temp.initiative > nextUnit.initiative):
 			nextUnit = temp
 			
@@ -43,7 +43,7 @@ func QueuePredict():
 		var nextUnit = combatNode.activeUnit
 		for j in range(uList.get_child_count()):
 			var temp = uList.get_child(j)
-			temp.qInitiative += temp.stats.Speed
+			temp.qInitiative += temp.aStats.Speed
 			if(temp.qInitiative > nextUnit.qInitiative):
 				nextUnit = temp
 				

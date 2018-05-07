@@ -43,14 +43,22 @@ var color = Color(1,1,1,1)
 var height
 var width
 
+var eatFlag = true
+var starveLvl = 0
+var starveNerf = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
+
 var partyIndex = 0
 
 var initiative = 0
 var qInitiative = 0
-var stats = {"Vitality" : 4, "Stamina" : 3, "Strength" : 2, "Wisdom" : 2, "Endurance" : 1, "Willpower" : 1, "Speed" : 1, "hp" : 4, "ap": 3, }
-var flags = {"fireCrit": false}
+var bStats = {"Vitality" : 1, "Stamina" : 1, "Strength" : 1, "Wisdom" : 1, "Endurance" : 1, "Willpower" : 1, "Speed" : 1}
+var mStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
+var aStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
+var hp = 0
+var ap = 0
 var xp = 0
 var xpReq = 0
+var flags = {"fireCrit": false}
 
 var lastAnim = null
 var tempPlay = false
@@ -60,9 +68,10 @@ var actionList = []
 var stanceList = []
 onready var stance = get_node("StanceCatalogue/Wait")
 
-onready var combatNode = get_node("/root/Globals").combatScene
+onready var globals = get_node("/root/Globals")
+onready var combatNode = globals.combatScene
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
-onready var party = get_node("/root/Globals").party
+onready var party = globals.party
 
 
 func _ready():
@@ -73,6 +82,10 @@ func SharedInit():
 	portrait = load("res://Unit/" + idName + "/Portrait.png")
 	height = frames.get_frame("Idle", 0).get_size().y
 	width = frames.get_frame("Idle", 0).get_size().x
+	
+	Addributes(bStats)
+	hp = aStats.Vitality
+	ap = aStats.Stamina
 	
 	actionList.clear()
 	actionList.push_back(get_node("ActionCatalogue/Melee"))
@@ -98,14 +111,6 @@ func PartyCardInit():
 	partyCard.unit = self
 
 
-func EnterCombat():
-	pass#combatNode.call_deferred("add_child", quickStats)
-
-
-func Init():
-	pass#portrait = load("res://Unit/" + idName + "/Portrait.png")
-
-
 func _process(delta):
 	AnimCheck()
 	HoverMod()
@@ -115,7 +120,7 @@ func Upkeep():
 	StatusCheck()
 	StanceBonus()
 	party.artifactContainer.get_child(0).Upkeep(self)
-	UpdateAP(ceil(float(stats.Stamina)/2))
+	UpdateAP(ceil(float(aStats.Stamina)/2))
 	for i in range(combatNode.get_node("Row").get_child_count()):
 		combatNode.get_node("Row").get_child(i).Decay()
 	if(animation == "Stagger"):
@@ -204,15 +209,15 @@ func PickRandShiftDir():
 
 
 func UpdateHP(var dif):
-	stats.hp += dif
-	if(stats.hp > stats.Vitality):
-		stats.hp = stats.Vitality
-	elif(stats.hp < 0):
-		stats.hp = 0
+	hp += dif
+	if(hp > aStats.Vitality):
+		hp = aStats.Vitality
+	elif(hp < 0):
+		hp = 0
 		
 	$HPChange.Set(dif, Color(1, 0, 0))
 	
-	if(stats.hp <= 0):
+	if(hp <= 0):
 		ReParent(combatNode.get_node("Deadzone"))
 		combatNode.SetUnitPos()
 		set_visible(false)
@@ -224,11 +229,11 @@ func UpdateHP(var dif):
 
 
 func UpdateAP(var dif):
-	stats.ap += dif
-	if(stats.ap > stats.Stamina):
-		stats.ap = stats.Stamina
-	elif(stats.ap < 0):
-		stats.ap = 0
+	ap += dif
+	if(ap > aStats.Stamina):
+		ap = aStats.Stamina
+	elif(ap < 0):
+		ap = 0
 
 
 func FindAction(var action):
@@ -248,6 +253,9 @@ func FindStance(var stance):
 
 
 func ChangeStance(newStance):
+	Subtributes(stance.mod)
+	Addributes(newStance.mod)
+	
 	stance.set_process(false)
 	newStance.set_process(true)
 	stance = newStance
@@ -265,6 +273,7 @@ func AnimCheck():
 		play(lastAnim)
 		lastAnim = null
 		tempPlay = false
+
 
 func StatusCheck():
 	if(status == STATUS.poison):
@@ -287,9 +296,9 @@ func StanceBonus():
 
 
 func Poison(var power):
-	if(power > stats.Endurance):
+	if(power > aStats.Endurance):
 		status = STATUS.poison
-		statusMod = power - stats.Endurance
+		statusMod = power - aStats.Endurance
 		quickStats.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
 		quickStats.find_node("StatusPower").text = str(statusMod)
 		
@@ -335,16 +344,107 @@ func Size():
 
 #version for outside of combat
 func UpdateHealth(var dif):
-	stats.hp += dif
-	if(stats.hp > stats.Vitality):
-		stats.hp = stats.Vitality
-	elif(stats.hp < 0):
-		stats.hp = 0
+	hp += dif
+	if(hp > aStats.Vitality):
+		hp = aStats.Vitality
+	elif(hp < 0):
+		hp = 0
 		
-	if(stats.hp <= 0):
+	if(hp <= 0):
 		queue_free()
+
+
+func Eat():
+	Subtributes(starveNerf)
+	starveLvl -= 1
+	if(starveLvl < 0):
+		starveLvl = 0
+	Addributes(starveNerf)
+
+
+func Starve():
+	Subtributes(starveNerf)
+	starveLvl += 1
+	starveNerf.Vitality = -starveLvl
+	starveNerf.Stamina = -starveLvl
+	starveNerf.Strength = -starveLvl
+	starveNerf.Wisdom = -starveLvl
+	starveNerf.Endurance = -starveLvl
+	starveNerf.Willpower = -starveLvl
+	starveNerf.Speed = -starveLvl
+	Addributes(starveNerf)
+
+
+func Addributes(mod):
+	mStats.Vitality += mod.Vitality
+	mStats.Strength += mod.Strength
+	mStats.Endurance += mod.Endurance
+	mStats.Stamina += mod.Stamina
+	mStats.Willpower += mod.Willpower
+	mStats.Wisdom += mod.Wisdom
+	mStats.Speed += mod.Speed
+	
+	ApplyStats()
+	
+	if(hp > aStats.Vitality):
+		hp = aStats.Vitality
+	if(ap > aStats.Stamina):
+		ap = aStats.Stamina
+
+
+func Subtributes(mod):
+	mStats.Vitality -= mod.Vitality
+	mStats.Strength -= mod.Strength
+	mStats.Endurance -= mod.Endurance
+	mStats.Stamina -= mod.Stamina
+	mStats.Willpower -= mod.Willpower
+	mStats.Wisdom -= mod.Wisdom
+	mStats.Speed -= mod.Speed
+	
+	ApplyStats()
+	
+	if(hp > aStats.Vitality):
+		hp = aStats.Vitality
+	if(ap > aStats.Stamina):
+		ap = aStats.Stamina
+
+
+func ApplyStats():
+	aStats.Vitality = mStats.Vitality
+	aStats.Strength = mStats.Strength
+	aStats.Endurance = mStats.Endurance
+	aStats.Wisdom = mStats.Wisdom
+	aStats.Willpower = mStats.Willpower
+	aStats.Stamina = mStats.Stamina
+	aStats.Speed = mStats.Speed
+	
+	if(aStats.Vitality < 1):
+		aStats.Vitality = 1
+	if(aStats.Stamina < 1):
+		aStats.Stamina = 1
+	if(aStats.Strength < 1):
+		aStats.Strength = 1
+	if(aStats.Endurance < 1):
+		aStats.Endurance = 1
+	if(aStats.Wisdom < 1):
+		aStats.Wisdom = 1
+	if(aStats.Willpower < 1):
+		aStats.Willpower = 1
+	if(aStats.Speed < 1):
+		aStats.Speed = 1
+
+
 #################AI CODE#########################################
 func AIAdvance():
+	if(!combatNode.get_node("Row/LF").FindOccupants().size() &&
+	   !combatNode.get_node("Row/RB").terrain.tags.trapping):
+		combatNode.Advance(combatNode.get_node("TeamLeft"))
+		return true
+		
+	return false
+
+
+func AIApproach():
 	if(row != ROW.front):
 		if(team == combatNode.get_node("TeamLeft")):
 			Shift(false)

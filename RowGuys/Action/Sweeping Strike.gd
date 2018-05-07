@@ -30,7 +30,7 @@ func Execute():
 				loopo = true
 				uList.get_child(i).checkFlag = true
 				uList.get_child(i).TempPlay("Stagger")
-				uList.get_child(i).UpdateHP(-(user.stats.Strength - (uList.get_child(i).stats.Endurance + uList.get_child(i).stance.mod.Endurance)))
+				uList.get_child(i).UpdateHP(-(user.aStats.Strength - uList.get_child(i).aStats.Endurance))
 				break
 	
 	for i in range(uList.get_child_count()):

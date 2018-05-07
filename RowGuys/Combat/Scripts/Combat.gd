@@ -90,7 +90,7 @@ func _process(delta):
 		#get_node("HUD/CommandWindow").show()
 	
 	if(activeUnit.AI):
-		if(!activeUnit.shifting && activeUnit.cAction == null):
+		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
 			activeUnit.AICmd()
 	
 	
@@ -185,7 +185,6 @@ func AddUnit(var unit, var team, var AI = false, var row = unit.defaultRow):
 	unit.row = row
 	unit.AI = AI
 	unit.ReParent(uList)
-	unit.EnterCombat()
 
 
 func AddTempUnit(var unit, var team, var AI = true, var row = unit.defaultRow):
@@ -195,12 +194,12 @@ func AddTempUnit(var unit, var team, var AI = true, var row = unit.defaultRow):
 		unit.flip_h = true
 		unit.team = get_node("TeamRight")
 	
+	unit.Init()
 	unit.row = row
 	unit.AI = AI
 	uList.add_child(unit, true)
 	unit.CharCardInit()
 	globals.party.get_node("PanelContainer/VBoxContainer/HBoxContainer/Unit Cards").add_child(unit.quickStats)
-	unit.EnterCombat()
 
 
 func EndBattle():
@@ -210,7 +209,7 @@ func EndBattle():
 		for i in range(uList.get_child_count()):
 			var unit = uList.get_child(i)
 			unit.ChangeStance(unit.FindStance("Wait"))
-			unit.UpdateAP(unit.stats.Stamina)
+			unit.UpdateAP(unit.aStats.Stamina)
 			if(unit.AI):
 				unit.ReParent($Deadzone)
 				loopo = true

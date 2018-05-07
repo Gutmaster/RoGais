@@ -11,10 +11,13 @@ func _ready():
 
 
 func _process(delta):
-	find_node("HPFrac").set_text("HP " + str(unit.stats.hp) + "/" + str(unit.stats.Vitality))
-	find_node("APFrac").set_text("AP " + str(unit.stats.ap) + "/" + str(unit.stats.Stamina))
-	find_node("HPBar").set_value((float(unit.stats.hp)/unit.stats.Vitality) * 100)
-	find_node("APBar").set_value((float(unit.stats.ap)/unit.stats.Stamina) * 100)
+	if(unit.idName == null):
+		return
+	
+	find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
+	find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
+	find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
+	find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
 
 
 func _on_QuickStats_mouse_entered():
