@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:24:15-07:00
+
+====== Midasian Ring ======
+Created Saturday 12 May 2018
+
+Cursed
+
+Unit no longer eats, instead converts food to gold at the rate at which he would consume food.

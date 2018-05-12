@@ -5,4 +5,4 @@ Creation-Date: 2018-03-08T00:35:46-08:00
 ====== Garuda Attack ======
 Created Thursday 08 March 2018
 
-The player's party spots a massive roc carrying off the [[Characters:Tiki Fireballer|Firewalker.]] They must ascend the [[Regions:Snow Place|snowy mountain]] to the bird's nest to rescure him.
+The player's party spots a massive roc carrying off the Firewalker. They must ascend the [[Regions:Snow Place|snowy mountain]] to the bird's nest to rescure him.

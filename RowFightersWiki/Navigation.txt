@@ -7,4 +7,4 @@ Created Monday 11 December 2017
 
 The party is displayed as some sort of icon from an isometric viewpoint on a map. Interractible locations and enemies stand out, navigating your party to a location or enemy will start an [[Events|event]] or encounter of some sort.
 
-Travelling gradually reduces your food reservoirs based on the number of members in your party and any other modifiers. Once you run out of food [[Hunger|hunger]] sets in.
+Travelling gradually reduces your food reservoirs based on the number of members in your party and any other modifiers. Once you run out of food hunger sets in.

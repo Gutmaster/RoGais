@@ -5,4 +5,10 @@ Creation-Date: 2018-01-24T20:01:52-08:00
 ====== Druid Lady ======
 Created Wednesday 24 January 2018
 
-Vine row control/beast summoning
+Abilities:
+
+Ensnaring Vines: User Row{Any}, Target Row{Any} - Prevents units from leaving the afflicted row.
+
+Minor Beast: User Row{Any} - Summons an AI controlled beast in the unit's current row to fight for your side.
+
+Nature's Blessing: User Row{Any}, Target Row{Any} - Target row applies healing and attribute buffs to all occupants.

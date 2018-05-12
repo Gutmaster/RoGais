@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:31:09-07:00
+
+====== Ring of Tribute ======
+Created Saturday 12 May 2018
+
+Cursed
+
+All [[Units:Attributes|attributes]] are raised by 1, by unit loses 1 HP at the beginning of their turn.

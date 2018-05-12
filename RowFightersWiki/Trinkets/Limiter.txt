@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:26:57-07:00
+
+====== Limiter ======
+Created Saturday 12 May 2018
+
+Cursed
+
+All of unit's attributes are lowered by 3, but they gain double XP.

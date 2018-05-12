@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2018-01-05T09:17:41-08:00
-
-====== Hunger ======
-Created Friday 05 January 2018
-
-Hunger sets in when your party runs out of food. Hunger progresses through multiple stages, most likely indicated by a color or keyword for severity. Every level of hunger reduces all of a unit's base attributes by 1.

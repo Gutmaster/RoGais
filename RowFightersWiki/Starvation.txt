@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:39:54-07:00
+
+====== Starvation ======
+Created Saturday 12 May 2018
+
+If the party tries to eat but is out of food, the members that aren't fed enter starvation. Each time they try to eat their starvation level increases. Each level of starvation decreases all [[Units:Attributes|attributes]] by 1.

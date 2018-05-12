@@ -5,4 +5,4 @@ Creation-Date: 2018-03-08T00:16:27-08:00
 ====== Pirate Treasure Race ======
 Created Thursday 08 March 2018
 
-The player must compete with [[Characters:Lady Pirate|Lady Pirate]] to chase down a [[Relics|relic]] in a dungeon located in [[Regions:Coastal Rockery|Coastal Rockery.]] This event culminates in a battle vs. Lady Pirate and her goons. Completing the event unlocks her and the relic.
+The player must compete with Lady Pirate to chase down a relic in a dungeon located in [[Regions:Coastal Rockery|Coastal Rockery.]] This event culminates in a battle vs. Lady Pirate and her goons. Completing the event unlocks her and the relic.

@@ -5,4 +5,4 @@ Creation-Date: 2018-05-04T18:01:00-07:00
 ====== Trinkets ======
 Created Friday 04 May 2018
 
-Trinkets are items for units to hold that bestow some effect on them, usually related to combat.
+Trinkets are items for units to hold that bestow some effect on them, usually related to combat. Cursed trinkets cannot be removed normally.

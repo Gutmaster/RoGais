@@ -5,4 +5,4 @@ Creation-Date: 2018-03-08T00:21:14-08:00
 ====== Nature Test ======
 Created Thursday 08 March 2018
 
-The player is presented with a choice to kill some big herbivore that is trapped in the [[Regions:Gladey Swamp|swamp]] somehow for a massive amount of [[Resources:Food|food.]] Releasing the beast instead will prompt the [[Characters:Druid Lady|druid]] to appear(maybe in a later event) and join your [[Party|party]]. Perhaps killing the beast forces you to fight the druid to the death. The event would not be permanently completed until you recruited the druid.
+The player is presented with a choice to kill some big herbivore that is trapped in the [[Regions:Gladey Swamp|swamp]] somehow for a massive amount of [[Resources:Food|food.]] Releasing the beast instead will prompt the druid to appear(maybe in a later event) and join your [[Party|party]]. Perhaps killing the beast forces you to fight the druid to the death. The event would not be permanently completed until you recruited the druid.

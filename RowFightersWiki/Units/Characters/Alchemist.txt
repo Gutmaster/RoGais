@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:47:04-07:00
+
+====== Alchemist ======
+Created Saturday 12 May 2018
+
+Passive Abilities:
+Transmute - Convert items to gold on party menu.
+
+Active Abilities:
+Petrify - Turns target into stone.
+Gild - Turns target into gold, safe effect as petrify, but awards gold if target is defeated while under the status effect.
+Unstable form - Turns target into a random enemy.
+Pacify - Turns target into a harmless creature. (Insta-kill type effect)
+Golem - Turns an ally into a powerful golem with set Attributes and Abilities for x turns.

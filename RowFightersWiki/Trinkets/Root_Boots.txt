@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:41:42-07:00
+
+====== Root Boots ======
+Created Saturday 12 May 2018
+
+For each turn that a unit does not move, they are applied an ever increasing buff. Details in balance.

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:26:31-07:00
+
+====== Effort Gauntlets ======
+Created Saturday 12 May 2018
+
+All abilities use 1 extra AP but are more effective.

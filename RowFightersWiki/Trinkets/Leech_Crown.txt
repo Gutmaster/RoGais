@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-05-12T13:33:23-07:00
+
+====== Leech Crown ======
+Created Saturday 12 May 2018
+
+At unit's upkeep, drains 1 hp from each other party member in combat.
