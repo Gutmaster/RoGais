@@ -4,6 +4,7 @@ var starting_food = 5
 var food = 0
 var gold = 0
 
+onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
 
 onready var artifactContainer = find_node("ArtifactContainer")
@@ -14,6 +15,8 @@ onready var foodCount2 = find_node("FoodCount2")
 onready var goldCount = find_node("GoldCount")
 onready var goldCount2 = find_node("GoldCount2")
 
+onready var itemList = []
+
 
 func _ready():
 	UpdateFood(starting_food)
@@ -21,6 +24,8 @@ func _ready():
 	artifactContainer.get_child(0).Acquire()
 	
 	artifactContainer2.add_child(artifactCatalogue.get_node("Pretty Rock").duplicate(), true)
+	
+	itemList.push_back(itemCatalogue.get_node("Red Goo").duplicate())
 
 
 func _input(event):

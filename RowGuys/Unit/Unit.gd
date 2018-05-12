@@ -16,9 +16,15 @@ enum STATUS{
 normal,
 poison}
 
+enum ANIMFLAG{
+temp,
+command,
+passturn}
+
+var animFlag = null
+
 var status = STATUS.normal
 var statusMod
-
 
 var idName
 var portrait = null
@@ -112,7 +118,7 @@ func PartyCardInit():
 
 
 func _process(delta):
-	AnimCheck()
+	#AnimCheck()
 	HoverMod()
 
 
@@ -264,15 +270,15 @@ func ChangeStance(newStance):
 
 func TempPlay(var anim):
 	lastAnim = animation
-	tempPlay = true
+	animFlag = ANIMFLAG.temp
 	play(anim)
 
 
-func AnimCheck():
+"""func AnimCheck():
 	if(tempPlay && frame+1 >= frames.get_frame_count(animation)):
 		play(lastAnim)
 		lastAnim = null
-		tempPlay = false
+		tempPlay = false"""
 
 
 func StatusCheck():
@@ -433,6 +439,15 @@ func ApplyStats():
 	if(aStats.Speed < 1):
 		aStats.Speed = 1
 
+
+func _on_Unit_animation_finished():
+	if(animFlag == ANIMFLAG.command):
+		play("Idle")
+		combatNode.get_node("HUD/CommandWindow").show()
+		animFlag = null
+	elif(animFlag == ANIMFLAG.temp):
+		play(lastAnim)
+		animFlag = null
 
 #################AI CODE#########################################
 func AIAdvance():

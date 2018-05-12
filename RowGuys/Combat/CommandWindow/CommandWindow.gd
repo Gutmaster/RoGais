@@ -11,6 +11,7 @@ func _ready():
 func Init():
 	$VBoxContainer/ActionButton.disabled = false
 	$VBoxContainer/ShiftButton.disabled = false
+	$VBoxContainer/ItemButton.disabled = false
 	visible = true
 
 
@@ -28,6 +29,7 @@ func _on_CommandWindow_visibility_changed():
 		get_parent().get_node("Advance").Check()
 		$VBoxContainer/ActionButton.LoadActions()
 		$VBoxContainer/StanceButton.LoadStances()
+		$VBoxContainer/ItemButton.LoadItems()
 		if(combatNode.activeUnit.ap <= 0):
 			$VBoxContainer/ShiftButton.disabled = true
 		$VBoxContainer/ShiftButton.SetOoBShift()
