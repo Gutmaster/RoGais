@@ -32,6 +32,7 @@ var portrait = null
 var AI = false
 var AIAction = false
 var AIShift = false
+var AIWait = false
 
 var team
 
@@ -129,11 +130,6 @@ func Upkeep():
 	UpdateAP(ceil(float(aStats.Stamina)/2))
 	for i in range(combatNode.get_node("Row").get_child_count()):
 		combatNode.get_node("Row").get_child(i).Decay()
-	if(animation == "Stagger"):
-		#lastAnim = "Idle"
-		play("Idle")
-	else:
-		play("Idle")
 
 
 func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advance = false):
@@ -334,8 +330,12 @@ func HoverMod():
 
 func _on_Tween_tween_completed(object, key):
 	if(cAction == null):
-		combatNode.get_node("HUD/CommandWindow").visible = true
-		play("Idle")
+		if(!AI && combatNode.activeUnit == self):
+			combatNode.get_node("HUD/CommandWindow").visible = true
+		if(lastAnim != null):
+			play(lastAnim)
+		else:
+			play("Idle")
 	else:
 		combatNode.get_node("HUD/CommandWindow").rect_position =  position
 	
@@ -443,11 +443,15 @@ func ApplyStats():
 func _on_Unit_animation_finished():
 	if(animFlag == ANIMFLAG.command):
 		play("Idle")
-		combatNode.get_node("HUD/CommandWindow").show()
+		if(!AI):
+			combatNode.get_node("HUD/CommandWindow").show()
+		AIWait = false
 		animFlag = null
 	elif(animFlag == ANIMFLAG.temp):
 		play(lastAnim)
+		AIWait = false
 		animFlag = null
+
 
 #################AI CODE#########################################
 func AIAdvance():
