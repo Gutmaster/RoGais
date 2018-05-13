@@ -53,6 +53,7 @@ func ActionSelected(action):
 
 
 func NTActionSelected(action):
+	get_parent().get_parent().hide()
 	var user = combatNode.activeUnit
 	action.set_process(true)
 	action.Animate(user, null)

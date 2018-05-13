@@ -119,7 +119,6 @@ func PartyCardInit():
 
 
 func _process(delta):
-	#AnimCheck()
 	HoverMod()
 
 
@@ -270,13 +269,6 @@ func TempPlay(var anim):
 	play(anim)
 
 
-"""func AnimCheck():
-	if(tempPlay && frame+1 >= frames.get_frame_count(animation)):
-		play(lastAnim)
-		lastAnim = null
-		tempPlay = false"""
-
-
 func StatusCheck():
 	if(status == STATUS.poison):
 		UpdateHP(-statusMod)
@@ -295,6 +287,7 @@ func StatusCheck():
 func StanceBonus():
 	flags.fireCrit = false
 	flags.fireCrit = stance.bonus.fireCrit
+	play("Idle")
 
 
 func Poison(var power):
