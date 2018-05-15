@@ -93,7 +93,7 @@ func CombatMath(var user, var target):
 func Animate(var usr, var trgt):
 	user = usr
 	target = trgt
-	user.play(animation)
+	user.ActionPlay(animation)
 
 
 func Execute():

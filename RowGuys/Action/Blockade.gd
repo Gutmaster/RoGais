@@ -23,23 +23,13 @@ func FindTargetOptions(var team):
 func Execute():
 	user.UpdateAP(-apCost)
 	
-	
 	target.terrain = combatNode.get_node("TerrainCatalogue/Earth Barrier").duplicate()
 	target.add_child(target.terrain)
 	target.terrain.Init(target.left)
 	
-	var loopo = true
-	while(loopo):
-		loopo = false
-		for i in range(uList.get_child_count()):
-			var a = uList.get_child_count()
-			if(uList.get_child(i).rowRef == target && uList.get_child(i).checkFlag == false):
-				loopo = true
-				uList.get_child(i).checkFlag = true
-				uList.get_child(i).UpdateHP(-(user.aStats.Strength - uList.get_child(i).aStats.Endurance))
-				if(uList.get_child(i) != null):
-					uList.get_child(i).Shift(uList.get_child(i).PickRandShiftDir(), 0.4, "Toss", "Toss")
-				break
-	
-	for i in range(uList.get_child_count()):
-		uList.get_child(i).checkFlag = false
+	var tList = target.FindOccupants()
+
+	for i in range(tList.size()):
+		tList[i].UpdateHP(-(user.aStats.Strength - tList[i].aStats.Endurance))
+		if(tList[i].visible):
+			tList[i].Shift(tList[i].PickRandShiftDir(), 0.4, "Toss", "Toss")
