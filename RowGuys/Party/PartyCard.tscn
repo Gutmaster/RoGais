@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Party/PartyCard.gd" type="Script" id=1]
 [ext_resource path="res://Unit/placeholder.png" type="Texture" id=2]
@@ -62,9 +62,17 @@ size = 24
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=10]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Panel" type="PanelContainer"]
+[node name="Panel" type="PanelContainer" index="0"]
 
 self_modulate = Color( 0.222656, 0.17482, 0.17482, 1 )
 anchor_left = 0.0
@@ -441,16 +449,19 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 4.0
-margin_bottom = 18.0
+margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 9 )
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="3"]
 
@@ -499,7 +510,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "  VIT 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -521,7 +532,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = " STA 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -543,7 +554,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = " STR 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -565,7 +576,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = " END 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -603,7 +614,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = " WIS 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -625,7 +636,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "WILL 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -647,7 +658,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = " SPD 4"
 percent_visible = 1.0
 lines_skipped = 0

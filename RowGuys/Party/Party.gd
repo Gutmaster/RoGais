@@ -77,7 +77,8 @@ func PartyPause():
 		Globals.travelScene.find_node("Player").velocity = Vector2(0,0)
 		Globals.travelScene.find_node("MoveMarker").visible = false
 		
-	UpdatePartyCards()
+	if($PanelContainer.visible):
+		UpdatePartyCards()
 	
 	get_tree().paused = !(get_tree().paused)
 	$Control.visible = !($Control.visible)
@@ -90,25 +91,14 @@ func UpdatePartyCards():
 
 	if(Globals.currentScene != Globals.combatScene):
 		uList = $Units
+		count = uList.get_child_count()
 	else:
 		uList = get_tree().get_nodes_in_group("Party")
+		count = uList.size()
 
 	for j in range(6):
 		var panelString = "Panel" + str(j)
-		
-		if(Globals.currentScene != Globals.combatScene):
-			if(j<uList.get_child_count()):
-				var unit = uList.get_child(j)
-				find_node(panelString).remove_child(unit.partyCard)
-		else:
-			if(j<4):
-				var unit = uList[j]
-				find_node(panelString).remove_child(unit.partyCard)
-	
-	if(Globals.currentScene != Globals.combatScene):
-		count = uList.get_child_count()
-	else:
-		count = uList.size()
+		find_node(panelString).remove_child(find_node(panelString).get_child(0))
 	
 	for i in range(count):
 		var unit
@@ -119,8 +109,11 @@ func UpdatePartyCards():
 			unit = uList[i]
 
 		var panelString = "Panel" + str(i)
-	
-		unit.PartyCardInit()
+		
+		#print(panelString)
+		#print(str(unit.idName))
+		
+		#unit.PartyCardInit()
 	
 		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
 		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))

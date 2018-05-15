@@ -223,6 +223,9 @@ func UpdateHP(var dif):
 		combatNode.SetUnitPos()
 		set_visible(false)
 		
+		if(self.is_in_group("Party")):
+			self.remove_from_group("Party")
+		
 		if(self == combatNode.activeUnit):
 			combatNode.PassTurn()
 		else:
