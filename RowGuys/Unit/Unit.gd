@@ -19,7 +19,8 @@ poison}
 enum ANIMFLAG{
 temp,
 command,
-passturn}
+passturn,
+action}
 
 var animFlag = null
 
@@ -264,6 +265,11 @@ func ChangeStance(newStance):
 	newStance.set_process(true)
 	stance = newStance
 	play(stance.animation)
+
+
+func ActionPlay(var anim):
+	animFlag = ANIMFLAG.action
+	play(anim)
 
 
 func TempPlay(var anim):

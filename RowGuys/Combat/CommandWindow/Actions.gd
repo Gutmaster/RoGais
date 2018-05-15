@@ -102,6 +102,8 @@ func ActionFinished():
 	user.AIAction = true
 	user.play("Idle")
 	user.cAction.phase = 0
+	user.cAction.targets.clear()
+	user.cAction.target = null
 	user.cAction.set_process(false)
 	user.cAction = null
 
