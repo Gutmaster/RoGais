@@ -22,10 +22,10 @@ func _on_Ignore_pressed():
 
 
 func MemberRetrieve(member):
-	var dmg = 6 - member.stats.Speed
+	var dmg = 6 - member.aStats.Speed
 	member.UpdateHealth(-dmg)
-	if(member.stats.hp > 0):
-		party.gold += member.stats.Strength
+	if(member.hp > 0):
+		party.gold += member.aStats.Strength
 		$EventResult.replace_by_instance()
 		$EventResult/CenterContainer/EventResult/Text.text = member.get_name() + " Dives deep into the pool and gathers as much treasure as they can carry. Suddenly, they are swarmed by hungry pirahnas. They manage to make it out alive, bringing back " + str(member.stats.Strength) + " gold, however they suffer " + str(dmg) + " damage in the process." 
 	else:

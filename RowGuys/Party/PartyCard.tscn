@@ -72,7 +72,7 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Panel" type="PanelContainer" index="0"]
+[node name="PartyCard" type="PanelContainer"]
 
 self_modulate = Color( 0.222656, 0.17482, 0.17482, 1 )
 anchor_left = 0.0

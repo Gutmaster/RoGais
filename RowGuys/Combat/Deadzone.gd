@@ -8,5 +8,5 @@ func _ready():
 
 func Dump():
 	while(get_child_count() != 0):
-		get_node("/root/Globals").party.get_node("PanelContainer/VBoxContainer/HBoxContainer/Unit Cards").remove_child(get_child(0).quickStats)
+		get_node("/root/Globals").party.get_node("HUD/VBoxContainer/HBoxContainer/Unit Cards").remove_child(get_child(0).quickStats)
 		get_child(0).free()

@@ -1,7 +1,5 @@
 extends Area2D
 
-signal food_changed
-
 export (int) var SPEED  	# how fast the player will move (pixels/sec)
 
 enum STATES {STOPPED, MOVING, EVENT}
@@ -12,7 +10,6 @@ var destPos = Vector2()		# destination point
 
 var followCheck = false
 var following = false
-
 
 onready var party = get_node("/root/Globals").party
 
@@ -34,7 +31,7 @@ func _input(event):
 				if($FollowTimer.is_stopped()):
 					$FollowTimer.start()
 					followCheck = true
-					#following = true
+					
 			else:
 				followCheck = false
 				following = false
@@ -103,7 +100,6 @@ func eat_food(count):
 		amt -= 1
 	
 	party.UpdateFood(-count)
-	#emit_signal("food_changed", party.food)
 
 
 func handle_facing(velocity):
