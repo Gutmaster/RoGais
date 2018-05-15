@@ -34,7 +34,7 @@ func _input(event):
 				if($FollowTimer.is_stopped()):
 					$FollowTimer.start()
 					followCheck = true
-					following = true
+					#following = true
 			else:
 				followCheck = false
 				following = false
@@ -133,5 +133,5 @@ func _on_FoodTimer_timeout():
 
 
 func _on_FollowTimer_timeout():
-	#following = true
+	following = true
 	$FollowTimer.stop()

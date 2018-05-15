@@ -36,6 +36,7 @@ func _on_Combat_tree_entered():
 func LoadCombat(var PartyLeft, var PartyRight):
 	while(PartyLeft.get_child_count()):
 		AddUnit(PartyLeft.get_child(0), SIDE.left)
+		
 	while(PartyRight.get_child_count()):
 		PartyRight.get_child(0).Init()
 		AddUnit(PartyRight.get_child(0), SIDE.right, true)
@@ -177,6 +178,7 @@ func _on_ApproachTimer_timeout():
 func AddUnit(var unit, var team, var AI = false, var row = unit.defaultRow):
 	if(team == SIDE.left):
 		unit.team = get_node("TeamLeft")
+		unit.add_to_group("Party")
 	else:
 		party.artifactContainer.get_child(0).EnemyMod(unit)
 		unit.flip_h = true

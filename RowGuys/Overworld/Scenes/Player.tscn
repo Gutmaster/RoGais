@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Overworld/Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerN.png" type="Texture" id=2]
-[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerS.png" type="Texture" id=3]
-[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerE.png" type="Texture" id=4]
+[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerS.png" type="Texture" id=2]
+[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerE.png" type="Texture" id=3]
+[ext_resource path="res://Overworld/Assets/Sprites/Player/PlayerN.png" type="Texture" id=4]
 [ext_resource path="res://Overworld/Scripts/PlayerCam.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,17 +16,17 @@ extents = Vector2( 41.2128, 51.3897 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "north",
+"name": "south",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "south",
+"name": "east",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "east",
+"name": "north",
 "speed": 5.0
 } ]
 
@@ -63,7 +63,7 @@ autostart = false
 [node name="FollowTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 0.1
+wait_time = 0.2
 one_shot = false
 autostart = false
 
@@ -97,8 +97,6 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing" ]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
 [connection signal="timeout" from="FoodTimer" to="." method="_on_FoodTimer_timeout"]
-
-[connection signal="timeout" from="FollowTimer" to="." method="_on_HeldTimer_timeout"]
 
 [connection signal="timeout" from="FollowTimer" to="." method="_on_FollowTimer_timeout"]
 

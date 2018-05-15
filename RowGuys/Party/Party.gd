@@ -48,7 +48,7 @@ func AddUnit(var unit):
 	$Units.add_child(unit, true)
 	unit.CharCardInit()
 	unit.PartyCardInit()
-	var panelString = "Panel" + str($Units.get_child_count())
+	var panelString = "Panel" + str($Units.get_child_count() - 1)
 	find_node(panelString).add_child(unit.partyCard)
 	find_node("Unit Cards").add_child(unit.quickStats)
 
@@ -77,8 +77,64 @@ func PartyPause():
 		Globals.travelScene.find_node("Player").velocity = Vector2(0,0)
 		Globals.travelScene.find_node("MoveMarker").visible = false
 		
+	UpdatePartyCards()
+	
 	get_tree().paused = !(get_tree().paused)
 	$Control.visible = !($Control.visible)
 	$PanelContainer.visible = !($PanelContainer.visible)
 	
 	
+func UpdatePartyCards():
+	var uList
+	var count
+
+	if(Globals.currentScene != Globals.combatScene):
+		uList = $Units
+	else:
+		uList = get_tree().get_nodes_in_group("Party")
+
+	for j in range(6):
+		var panelString = "Panel" + str(j)
+		
+		if(Globals.currentScene != Globals.combatScene):
+			if(j<uList.get_child_count()):
+				var unit = uList.get_child(j)
+				find_node(panelString).remove_child(unit.partyCard)
+		else:
+			if(j<4):
+				var unit = uList[j]
+				find_node(panelString).remove_child(unit.partyCard)
+	
+	if(Globals.currentScene != Globals.combatScene):
+		count = uList.get_child_count()
+	else:
+		count = uList.size()
+	
+	for i in range(count):
+		var unit
+		
+		if(Globals.currentScene != Globals.combatScene):
+			unit = uList.get_child(i)
+		else:
+			unit = uList[i]
+
+		var panelString = "Panel" + str(i)
+	
+		unit.PartyCardInit()
+	
+		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
+		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
+		unit.partyCard.find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
+		unit.partyCard.find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
+		unit.partyCard.find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
+	
+		unit.partyCard.find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
+		unit.partyCard.find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
+		unit.partyCard.find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
+		unit.partyCard.find_node("EndStat").set_text(" END " + str(unit.aStats.Endurance))
+	
+		unit.partyCard.find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
+		unit.partyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
+		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
+		
+		find_node(panelString).add_child(unit.partyCard)
