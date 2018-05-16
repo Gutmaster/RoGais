@@ -51,7 +51,7 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	$HUD/CommandWindow.Init()
 	
 	globals.ReParentParty(self)
-	globals.enemyParty.get_node("PanelContainer").visible = true
+	globals.enemyParty.get_node("HUD").visible = true
 	globals.ReParentParty(self, globals.enemyParty)
 
 
@@ -201,7 +201,7 @@ func AddTempUnit(var unit, var team, var AI = true, var row = unit.defaultRow):
 	unit.AI = AI
 	uList.add_child(unit, true)
 	unit.CharCardInit()
-	globals.party.get_node("PanelContainer/VBoxContainer/HBoxContainer/Unit Cards").add_child(unit.quickStats)
+	globals.party.get_node("HUD/VBoxContainer/HBoxContainer/Unit Cards").add_child(unit.quickStats)
 
 
 func EndBattle():

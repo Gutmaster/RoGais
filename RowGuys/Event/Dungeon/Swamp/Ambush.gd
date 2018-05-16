@@ -8,7 +8,7 @@ func _ready():
 	party.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
 	party.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
 	party.AddUnit(load("res://Unit/Ent/Ent.tscn"))
-	party.get_node("PanelContainer").visible = false
+	party.get_node("HUD").visible = false
 
 
 func _on_Fight_pressed():

@@ -1,14 +1,9 @@
 extends PanelContainer
 
-onready var party = get_node("/root/Globals").party
-
 var unit
 onready var combatNode = get_node("/root/Globals").combatScene
-onready var emptyPortrait = load("res://Unit/placeholder.png")
+onready var emptyPortrait = preload("res://Unit/placeholder.png")
 
-
-func _ready():
-	set_process(true)
 
 func _on_Portrait1_pressed():
 	if(Globals.currentScene != Globals.combatScene):

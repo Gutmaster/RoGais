@@ -77,12 +77,12 @@ func PartyPause():
 		Globals.travelScene.find_node("Player").velocity = Vector2(0,0)
 		Globals.travelScene.find_node("MoveMarker").visible = false
 		
-	if($PanelContainer.visible):
+	if($HUD.visible):
 		UpdatePartyCards()
 	
 	get_tree().paused = !(get_tree().paused)
-	$Control.visible = !($Control.visible)
-	$PanelContainer.visible = !($PanelContainer.visible)
+	$PartyMenu.visible = !($PartyMenu.visible)
+	$HUD.visible = !($HUD.visible)
 	
 	
 func UpdatePartyCards():
@@ -109,11 +109,6 @@ func UpdatePartyCards():
 			unit = uList[i]
 
 		var panelString = "Panel" + str(i)
-		
-		#print(panelString)
-		#print(str(unit.idName))
-		
-		#unit.PartyCardInit()
 	
 		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
 		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
