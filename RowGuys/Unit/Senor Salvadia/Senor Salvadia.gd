@@ -17,7 +17,6 @@ func Init():
 	SharedInit()
 	defaultRow = ROW.middle
 	
-	#actionList.push_back(get_node("ActionCatalogue/Tongue Snatch"))
+	actionList.push_back(get_node("ActionCatalogue/Tongue Snatch"))
 	actionList.push_back(get_node("ActionCatalogue/Leaping Strike"))
 	actionList.push_back(get_node("ActionCatalogue/Firecracker Flip"))
-	actionList.push_back(get_node("ActionCatalogue/Stunning Smash"))

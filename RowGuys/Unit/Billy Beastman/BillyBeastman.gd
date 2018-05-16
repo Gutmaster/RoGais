@@ -18,3 +18,4 @@ func Init():
 	defaultRow = ROW.front
 	
 	actionList.push_back(get_node("ActionCatalogue/Stunning Smash"))
+	stanceList.push_back(get_node("StanceCatalogue/Protect"))

@@ -505,7 +505,7 @@ func AICmd():
 		return
 	
 	if(!AIShift):
-		AIAdvance()
+		AIApproach()
 		AIShift = true
 	elif(!AIAction):
 		AIRandomMelee()
