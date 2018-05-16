@@ -283,14 +283,18 @@ func StatusCheck():
 		UpdateHP(-statusMod)
 		statusMod -= 1
 		quickStats.find_node("StatusPower").text = str(statusMod)
-		partyCard.find_node("StatusPower").text = str(statusMod)
+		
+		if(self.is_in_group("Party")):
+			partyCard.find_node("StatusPower").text = str(statusMod)
+		
 		if(statusMod <= 0):
 			status = STATUS.normal
 			quickStats.find_node("StatusIcon").texture = null
 			quickStats.find_node("StatusPower").text = ""
 			
-			partyCard.find_node("StatusIcon").texture = null
-			partyCard.find_node("StatusPower").text = ""
+			if(self.is_in_group("Party")):
+				partyCard.find_node("StatusIcon").texture = null
+				partyCard.find_node("StatusPower").text = ""
 
 
 func StanceBonus():
@@ -306,8 +310,9 @@ func Poison(var power):
 		quickStats.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
 		quickStats.find_node("StatusPower").text = str(statusMod)
 		
-		partyCard.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
-		partyCard.find_node("StatusPower").text = str(statusMod)
+		if(self.is_in_group("Party")):
+			partyCard.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
+			partyCard.find_node("StatusPower").text = str(statusMod)
 
 
 func ReParent(destination):
