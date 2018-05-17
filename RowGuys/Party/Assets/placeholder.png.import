@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/partyButton.png-13acb601c0951b053dfc0d2c737842c1.stex"
+path="res://.import/placeholder.png-f61088a99dd108429d8d1f7b1b8a5b0a.stex"
 
 [deps]
 
-source_file="res://Party/partyButton.png"
-source_md5="5256f68ebf6fd0c5ccbe4dd914a99761"
+source_file="res://Party/Assets/placeholder.png"
+source_md5="3ada0ecfa7be0648c0950caab4e3416a"
 
-dest_files=[ "res://.import/partyButton.png-13acb601c0951b053dfc0d2c737842c1.stex" ]
-dest_md5="7568bec889227673d5fd026696113299"
+dest_files=[ "res://.import/placeholder.png-f61088a99dd108429d8d1f7b1b8a5b0a.stex" ]
+dest_md5="b1021cefa74d9af34524b175e99a1f99"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

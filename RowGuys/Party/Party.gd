@@ -1,5 +1,12 @@
 extends CanvasLayer
 
+
+enum ITYPE{
+artifact,
+trinket,
+item}
+
+
 var starting_food = 5
 var food = 0
 var gold = 0
@@ -8,7 +15,6 @@ onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
 
 onready var artifactContainer = find_node("ArtifactContainer")
-onready var artifactContainer2 = find_node("ArtifactContainer2")
 
 onready var foodCount = find_node("FoodCount")
 onready var foodCount2 = find_node("FoodCount2")
@@ -16,17 +22,25 @@ onready var goldCount = find_node("GoldCount")
 onready var goldCount2 = find_node("GoldCount2")
 
 onready var itemList = []
+onready var itemRef
 
 
 func _ready():
 	UpdateFood(starting_food)
-	artifactContainer.add_child(artifactCatalogue.get_node("Pretty Rock").duplicate(), true)
-	artifactContainer.get_child(0).Acquire()
+	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
+	artifactContainer.add_child(startifact)
+	artifactContainer.item = startifact
 	
-	artifactContainer2.add_child(artifactCatalogue.get_node("Pretty Rock").duplicate(), true)
 	
-	itemList.push_back(itemCatalogue.get_node("Red Goo").duplicate())
+	for i in range(1, 8):
+		 itemList.push_back(find_node("Slot" + str(i)))
+	
+	itemAdd(itemCatalogue.get_node("Red Goo"))
 
+
+func itemAdd(item):
+	itemList.push_back(item.duplicate())
+	
 
 func _input(event):
 	if(event.is_action_pressed("party_pause")):
@@ -126,3 +140,36 @@ func UpdatePartyCards():
 		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
 		
 		find_node(panelString).add_child(unit.partyCard)
+
+
+func _on_PartyInv1_pressed():
+	pass
+
+
+func _on_PartyInv2_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv3_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv4_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv5_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv6_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv7_pressed():
+	pass # replace with function body
+
+
+func _on_PartyInv8_pressed():
+	pass # replace with function body
+

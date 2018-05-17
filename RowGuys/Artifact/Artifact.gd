@@ -1,6 +1,13 @@
 extends TextureRect
 
 
+enum ITYPE{
+artifact,
+trinket,
+item}
+
+onready var iType = ITYPE.artifact
+
 onready var globals = get_node("/root/Globals")
 onready var party = globals.party
 

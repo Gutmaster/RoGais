@@ -81,6 +81,9 @@ onready var combatNode = globals.combatScene
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
 onready var party = globals.party
 
+var trinket1
+var trinket2
+
 
 func _ready():
 	pass

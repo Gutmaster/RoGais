@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/defend3.png-8ac8bc2886b3183bdf27cf291853cf51.stex"
+
+[deps]
+
+source_file="res://Unit/Billy Beastman/Animation/defend3.png"
+source_md5="1053e0e080f07b708215927f11bb106e"
+
+dest_files=[ "res://.import/defend3.png-8ac8bc2886b3183bdf27cf291853cf51.stex" ]
+dest_md5="7f51a09ff0c8825570fa6812c972d286"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

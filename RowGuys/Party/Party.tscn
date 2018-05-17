@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Party/Party.gd" type="Script" id=1]
 [ext_resource path="res://Party/Assets/FoodIcon.png" type="Texture" id=2]
 [ext_resource path="res://Party/Assets/GoldIcon.png" type="Texture" id=3]
-[ext_resource path="res://Party/partyButton.png" type="Texture" id=4]
-[ext_resource path="res://Unit/placeholder.png" type="Texture" id=5]
-[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Party/Assets/partyButton.png" type="Texture" id=4]
+[ext_resource path="res://Party/ArtifactSlot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Party/Slot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -43,7 +44,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer"]
+[node name="Party" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 5
@@ -517,33 +518,15 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
-[node name="ArtifactContainer2" type="CenterContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="1"]
+[node name="Description" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 54.0
-margin_right = 54.0
-margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
-_sections_unfolded = [ "Rect" ]
-
-[node name="Description" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 58.0
 margin_top = 15.0
-margin_right = 58.0
+margin_right = 54.0
 margin_bottom = 37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -556,6 +539,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="ArtifactContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource( 5 )]
+
+margin_left = 58.0
+margin_right = 108.0
+margin_bottom = 52.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="1"]
 
@@ -595,188 +584,52 @@ custom_constants/separation = 15
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="PartyInv1" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="0"]
+[node name="Slot1" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="0" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 50.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv2" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="1"]
+[node name="Slot2" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 65.0
 margin_right = 115.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv3" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="2"]
+[node name="Slot3" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="2" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 130.0
 margin_right = 180.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv4" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="3"]
+[node name="Slot4" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="3" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 195.0
 margin_right = 245.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv5" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="4"]
+[node name="Slot5" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="4" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 260.0
 margin_right = 310.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv6" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="5"]
+[node name="Slot6" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="5" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 325.0
 margin_right = 375.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv7" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="6"]
+[node name="Slot7" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="6" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 390.0
 margin_right = 440.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
-[node name="PartyInv8" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="7"]
+[node name="Slot8" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="7" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 455.0
 margin_right = 505.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Textures" ]
 
 [node name="HUD" type="PanelContainer" parent="." index="2"]
 
@@ -891,7 +744,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "00"
 percent_visible = 1.0
 lines_skipped = 0
@@ -934,7 +787,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "00"
 percent_visible = 1.0
 lines_skipped = 0

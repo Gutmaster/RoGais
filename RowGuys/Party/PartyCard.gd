@@ -1,8 +1,9 @@
 extends PanelContainer
 
 var unit
+onready var partyScene = get_node("/root/Globals").party
 onready var combatNode = get_node("/root/Globals").combatScene
-onready var emptyPortrait = preload("res://Unit/placeholder.png")
+onready var emptyPortrait = preload("res://Party/Assets/placeholder.png")
 
 
 func _on_Portrait1_pressed():
@@ -12,7 +13,7 @@ func _on_Portrait1_pressed():
 		find_node("Portrait3").texture_normal = emptyPortrait
 	
 		unit.defaultRow = unit.ROW.back
-	
+
 
 func _on_Portrait2_pressed():
 	if(Globals.currentScene != Globals.combatScene):
@@ -32,15 +33,27 @@ func _on_Portrait3_pressed():
 		unit.defaultRow = unit.ROW.front
 
 
-func _on_TrinketSlot1_pressed():
-	#if(party.heldItem && !unit.trinket1):
-		#pass#put heldItem in trinket1 slot
-	#elif(!party.heldItem && unit.trinket1):
-		#pass#remove trinket1, set heldItem to trinket1
-	#elif(party.heldItem && unit.trinket1):
-		#pass#swap trinkets
-	pass
+"""func _on_TrinketSlot1_pressed():
+	if(partyScene.itemRef && partyScene.itemRef.iType == trinket && !unit.trinket1):
+		unit.trinket1 = partyScene.itemRef
+		partyScene.itemRef = null
+	elif(partyScene.itemRef == null && unit.trinket1):
+		partyScene.itemRef = unit.trinket1
+		unit.trinket1 = null
+	elif(partyScene.itemRef && partyScene.itemRef.iType == trinket && unit.trinket1):
+		var tempRef = partyScene.itemRef
+		partyScene.itemRef = unit.trinket1
+		unit.trinket1 = tempRef
 
 
 func _on_TrinketSlot2_pressed():
-	pass # replace with function body
+	if(partyScene.itemRef && partyScene.itemRef.iType == trinket && !unit.trinket2):
+		unit.trinket2 = partyScene.itemRef
+		partyScene.itemRef = null
+	elif(partyScene.itemRef == null && unit.trinket2):
+		partyScene.itemRef = unit.trinket2
+		unit.trinket2 = null
+	elif(partyScene.itemRef && partyScene.itemRef.iType == trinket && unit.trinket2):
+		var tempRef = partyScene.itemRef
+		partyScene.itemRef = unit.trinket2
+		unit.trinket2 = tempRef"""

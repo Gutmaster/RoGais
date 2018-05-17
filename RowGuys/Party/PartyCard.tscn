@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Party/PartyCard.gd" type="Script" id=1]
-[ext_resource path="res://Unit/placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Party/Assets/placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Party/QuickStats/hpbar.tres" type="StyleBox" id=3]
 [ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=4]
 [ext_resource path="res://Party/QuickStats/apbar.tres" type="StyleBox" id=5]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Unit/skilltreebutton.png" type="Texture" id=7]
+[ext_resource path="res://Party/TrinketSlot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Party/Assets/skilltreebutton.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -672,7 +673,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 354.0
-margin_right = 484.0
+margin_right = 624.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -690,7 +691,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 10.0
-margin_right = 130.0
+margin_right = 270.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -702,52 +703,16 @@ custom_constants/separation = 20
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="TrinketSlot1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0"]
+[node name="Slot" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0" instance=ExtResource( 7 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 38.0
 margin_right = 50.0
-margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Mouse", "Size Flags", "Textures" ]
+margin_bottom = 128.0
 
-[node name="TrinketSlot2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="1"]
+[node name="Slot2" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="1" instance=ExtResource( 7 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 70.0
-margin_top = 38.0
 margin_right = 120.0
-margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 2 )
-_sections_unfolded = [ "Size Flags", "Textures", "Theme" ]
+margin_bottom = 128.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="5"]
 
@@ -755,8 +720,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 484.0
-margin_right = 554.0
+margin_left = 624.0
+margin_right = 694.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -788,7 +753,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
 _sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
@@ -796,9 +761,5 @@ _sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait2" to="." method="_on_Portrait2_pressed"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait3" to="." method="_on_Portrait3_pressed"]
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2/TrinketSlot1" to="." method="_on_TrinketSlot1_pressed"]
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2/TrinketSlot2" to="." method="_on_TrinketSlot2_pressed"]
 
 

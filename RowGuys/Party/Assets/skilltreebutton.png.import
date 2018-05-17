@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skilltreebutton.png-8af1e2ceb3be87fd4c8613cbefc5d3c6.stex"
+path="res://.import/skilltreebutton.png-b113f3e5b5a0b79e77f890ec33a1ef87.stex"
 
 [deps]
 
-source_file="res://Unit/skilltreebutton.png"
+source_file="res://Party/Assets/skilltreebutton.png"
 source_md5="8d5a369d980a77b3a5b0bb6087f33113"
 
-dest_files=[ "res://.import/skilltreebutton.png-8af1e2ceb3be87fd4c8613cbefc5d3c6.stex" ]
+dest_files=[ "res://.import/skilltreebutton.png-b113f3e5b5a0b79e77f890ec33a1ef87.stex" ]
 dest_md5="86560f493febc360af48812129bc11fc"
 
 [params]
