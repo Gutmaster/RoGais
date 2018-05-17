@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/leapingstrike6.png-8db845296b89a33138d353db8fcc3f06.stex"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/Animation/leapingstrike6.png"
+source_md5="95dddc21a959fa05fd7de72b4195aa5a"
+
+dest_files=[ "res://.import/leapingstrike6.png-8db845296b89a33138d353db8fcc3f06.stex" ]
+dest_md5="5b84397cf5ffa3c581f13d4ac982ec06"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

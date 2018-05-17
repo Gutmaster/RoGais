@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/firecrackerflip4.png-70915250356c101927630cf430404d78.stex"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/Animation/firecrackerflip4.png"
+source_md5="f2d73fbfe18b7e00a62cde66b5446a36"
+
+dest_files=[ "res://.import/firecrackerflip4.png-70915250356c101927630cf430404d78.stex" ]
+dest_md5="701df0b8fb95ea1fbd5fa44477f5cc50"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

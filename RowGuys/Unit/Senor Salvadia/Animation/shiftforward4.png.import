@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/shiftforward4.png-38fbd147dedddb0da006932ae184da17.stex"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/Animation/shiftforward4.png"
+source_md5="3bd5cd52bf4ecb249ea0fa9f837ac40c"
+
+dest_files=[ "res://.import/shiftforward4.png-38fbd147dedddb0da006932ae184da17.stex" ]
+dest_md5="ceb264176b10b32862b7b9f228113770"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

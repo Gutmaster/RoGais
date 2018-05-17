@@ -4,7 +4,7 @@ extends "Action.gd"
 func _ready():
 	userRows = [combatNode.ROW.middle]
 	targetRows = [combatNode.ROW.front]
-	animation = "Toss"
+	animation = "LeapingStrike"
 	apCost = 3
 	atkMod = 1
 	tags.melee = true

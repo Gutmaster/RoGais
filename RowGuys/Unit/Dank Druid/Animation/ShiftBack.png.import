@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShiftBack.png-241e5fdda640134694b609be93f07dd8.stex"
+
+[deps]
+
+source_file="res://Unit/Dank Druid/Animation/ShiftBack.png"
+source_md5="a827e3cb2c4148482295fb0b389164f3"
+
+dest_files=[ "res://.import/ShiftBack.png-241e5fdda640134694b609be93f07dd8.stex" ]
+dest_md5="d9d86c541a1bd4c384a986a4af467498"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

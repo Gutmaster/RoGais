@@ -12,7 +12,7 @@ func Init():
 	bStats.Wisdom = 3
 	bStats.Vitality = 4
 	bStats.Stamina = 7
-	bStats.Speed = 10
+	bStats.Speed = 4
 	
 	SharedInit()
 	defaultRow = ROW.back

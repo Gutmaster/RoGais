@@ -9,7 +9,7 @@ func Init():
 	idName = "Ent"
 	
 	bStats.Stamina = 7
-	bStats.Speed = 6
+	bStats.Speed = 3
 	bStats.Strength = 6
 	bStats.Vitality = 8
 	

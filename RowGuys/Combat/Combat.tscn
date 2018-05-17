@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Combat/Scripts/Combat.gd" type="Script" id=1]
 [ext_resource path="res://Combat/Queue/Queue.tscn" type="PackedScene" id=2]
@@ -14,20 +14,21 @@
 [ext_resource path="res://Effect/EffectCatalogue.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Terrain/TerrainCatalogue.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Combat/Background.gd" type="Script" id=14]
-[ext_resource path="res://Combat/Assets/BG.png" type="Texture" id=15]
-[ext_resource path="res://Combat/Assets/LB.png" type="Texture" id=16]
-[ext_resource path="res://Combat/Scripts/Row.gd" type="Script" id=17]
-[ext_resource path="res://Combat/Scripts/RowArea2D.gd" type="Script" id=18]
-[ext_resource path="res://Combat/Assets/LM.png" type="Texture" id=19]
-[ext_resource path="res://Combat/Assets/LF.png" type="Texture" id=20]
-[ext_resource path="res://Combat/Assets/RF.png" type="Texture" id=21]
-[ext_resource path="res://Combat/Assets/RM.png" type="Texture" id=22]
-[ext_resource path="res://Combat/Assets/RB.png" type="Texture" id=23]
-[ext_resource path="res://Unit/Team.gd" type="Script" id=24]
-[ext_resource path="res://Unit/TeamLeft.gd" type="Script" id=25]
-[ext_resource path="res://Unit/TeamRight.gd" type="Script" id=26]
-[ext_resource path="res://Combat/Deadzone.gd" type="Script" id=27]
-[ext_resource path="res://Combat/Weather/Raindrop.png" type="Texture" id=28]
+[ext_resource path="res://Combat/Assets/BG1.png" type="Texture" id=15]
+[ext_resource path="res://Combat/Assets/BG2.png" type="Texture" id=16]
+[ext_resource path="res://Combat/Assets/LB.png" type="Texture" id=17]
+[ext_resource path="res://Combat/Scripts/Row.gd" type="Script" id=18]
+[ext_resource path="res://Combat/Scripts/RowArea2D.gd" type="Script" id=19]
+[ext_resource path="res://Combat/Assets/LM.png" type="Texture" id=20]
+[ext_resource path="res://Combat/Assets/LF.png" type="Texture" id=21]
+[ext_resource path="res://Combat/Assets/RF.png" type="Texture" id=22]
+[ext_resource path="res://Combat/Assets/RM.png" type="Texture" id=23]
+[ext_resource path="res://Combat/Assets/RB.png" type="Texture" id=24]
+[ext_resource path="res://Unit/Team.gd" type="Script" id=25]
+[ext_resource path="res://Unit/TeamLeft.gd" type="Script" id=26]
+[ext_resource path="res://Unit/TeamRight.gd" type="Script" id=27]
+[ext_resource path="res://Combat/Deadzone.gd" type="Script" id=28]
+[ext_resource path="res://Combat/Weather/Raindrop.png" type="Texture" id=29]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -183,9 +184,8 @@ texture = ExtResource( 15 )
 
 [node name="BG2" type="Sprite" parent="Background" index="1"]
 
-position = Vector2( 1920, -2.39496 )
-texture = ExtResource( 15 )
-flip_h = true
+position = Vector2( 1920, 0 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Row" type="Sprite" parent="." index="4"]
@@ -194,8 +194,8 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 285, 610 )
-texture = ExtResource( 16 )
-script = ExtResource( 17 )
+texture = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LB" index="0"]
@@ -228,7 +228,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LB/Area2D" index="0"]
 
@@ -240,8 +240,8 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 515, 610 )
-texture = ExtResource( 19 )
-script = ExtResource( 17 )
+texture = ExtResource( 20 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LM" index="0"]
@@ -276,7 +276,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LM/Area2D" index="0"]
 
@@ -288,8 +288,8 @@ polygon = PoolVector2Array( -9.57709, 6.40045, 232.313, 9.29449, 436.611, -579.8
 
 editor/display_folded = true
 position = Vector2( 738.268, 610.615 )
-texture = ExtResource( 20 )
-script = ExtResource( 17 )
+texture = ExtResource( 21 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LF" index="0"]
@@ -321,7 +321,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LF/Area2D" index="0"]
 
@@ -333,8 +333,8 @@ polygon = PoolVector2Array( -26.9517, 41.1525, 212.543, 35.3643, 332.862, -540.6
 
 editor/display_folded = true
 position = Vector2( 1174.08, 613.268 )
-texture = ExtResource( 21 )
-script = ExtResource( 17 )
+texture = ExtResource( 22 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/RF" index="0"]
@@ -366,7 +366,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RF/Area2D" index="0"]
 
@@ -378,8 +378,8 @@ polygon = PoolVector2Array( -64.9926, 297.805, 184.699, 292.033, -33.6064, -277.
 
 editor/display_folded = true
 position = Vector2( 1405.88, 610 )
-texture = ExtResource( 22 )
-script = ExtResource( 17 )
+texture = ExtResource( 23 )
+script = ExtResource( 18 )
 
 [node name="UnitLine" type="Line2D" parent="Row/RM" index="0"]
 
@@ -410,7 +410,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RM/Area2D" index="0"]
 
@@ -422,8 +422,8 @@ polygon = PoolVector2Array( -11.4614, 297.541, 227.588, 285.173, -59.884, -286.8
 
 editor/display_folded = true
 position = Vector2( 1650, 610 )
-texture = ExtResource( 23 )
-script = ExtResource( 17 )
+texture = ExtResource( 24 )
+script = ExtResource( 18 )
 
 [node name="UnitLine" type="Line2D" parent="Row/RB" index="0"]
 
@@ -455,7 +455,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RB/Area2D" index="0"]
 
@@ -467,20 +467,20 @@ polygon = PoolVector2Array( 3.52478, 285.173, 262.7, 301.095, -126.162, -286.841
 
 [node name="Team" type="Node2D" parent="." index="6"]
 
-script = ExtResource( 24 )
+script = ExtResource( 25 )
 
 [node name="TeamLeft" type="Node2D" parent="." index="7"]
 
-script = ExtResource( 25 )
+script = ExtResource( 26 )
 
 [node name="TeamRight" type="Node2D" parent="." index="8"]
 
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 
 [node name="Deadzone" type="Node2D" parent="." index="9"]
 
 position = Vector2( 423.414, 64.6882 )
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [node name="Rain" type="Particles2D" parent="." index="10"]
 
@@ -500,7 +500,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 normal_map = null
 h_frames = 1
 v_frames = 1

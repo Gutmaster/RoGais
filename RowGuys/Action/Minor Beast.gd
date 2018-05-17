@@ -4,7 +4,7 @@ extends "Action.gd"
 func _ready():
 	tags.targeted = false
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
-	animation = "Dance"
+	animation = "GreenMagic"
 	apCost = 3
 
 

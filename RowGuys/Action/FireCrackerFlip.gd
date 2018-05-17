@@ -3,7 +3,7 @@ extends "Action.gd"
 
 func _ready():
 	userRows = [combatNode.ROW.front]
-	animation = "Toss"
+	animation = "FireCrackerFlip"
 	apCost = 4
 	atkMod = 4
 	tags.fire = true
@@ -28,7 +28,7 @@ func UseCheck():
 
 func _process(delta):
 	if(phase == 1):
-		projectile = combatNode.get_node("EffectCatalogue/Fireball").duplicate()
+		projectile = combatNode.get_node("EffectCatalogue/Firecracker").duplicate()
 		combatNode.add_child(projectile)
 		projectile.Init(user, target)
 		ActionShift(true if user.team == combatNode.get_node("TeamLeft") else false)

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Idle3.png-d83f2b7c043d54ca926441faa407d597.stex"
+
+[deps]
+
+source_file="res://Unit/Billy Beastman/Animation/Idle3.png"
+source_md5="0e85eeb3d26d3b43008d89e0648777d4"
+
+dest_files=[ "res://.import/Idle3.png-d83f2b7c043d54ca926441faa407d597.stex" ]
+dest_md5="c1f109c8ee2a3118e7b7b4ad3bc0fbf6"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

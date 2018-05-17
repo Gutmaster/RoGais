@@ -2,7 +2,7 @@ extends "Action.gd"
 
 
 func _ready():
-	animation = "Dance"
+	animation = "GreenMagic"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
 	apCost = 7
 	set_process(true)

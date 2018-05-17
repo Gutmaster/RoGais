@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShiftForward.png-dda29760514e367de701ffb29ed27976.stex"
+
+[deps]
+
+source_file="res://Unit/Dank Druid/Animation/ShiftForward.png"
+source_md5="823dbb45a13792974309582a4b074bc2"
+
+dest_files=[ "res://.import/ShiftForward.png-dda29760514e367de701ffb29ed27976.stex" ]
+dest_md5="3a16a22d93f36e37067024f22613ab6f"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

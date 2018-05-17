@@ -85,11 +85,6 @@ func SetUnitPos():
 
 
 func _process(delta):
-	#if(activeUnit.animation != "Idle" && get_node("HUD/CommandWindow").is_visible()):
-		#get_node("HUD/CommandWindow").hide()
-	#elif(!activeUnit.AI && activeUnit.animation == "Idle"):
-		#get_node("HUD/CommandWindow").show()
-	
 	if(activeUnit.AI && !activeUnit.AIWait):
 		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
 			activeUnit.AICmd()

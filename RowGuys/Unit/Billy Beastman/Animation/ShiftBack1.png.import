@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShiftBack1.png-21dee5e6bf7a2cea28fcccb3c67b2753.stex"
+
+[deps]
+
+source_file="res://Unit/Billy Beastman/Animation/ShiftBack1.png"
+source_md5="dea9415b039b1d1bb51b2be6b7f593ba"
+
+dest_files=[ "res://.import/ShiftBack1.png-21dee5e6bf7a2cea28fcccb3c67b2753.stex" ]
+dest_md5="77e5d6ea4c8c42826adc68fcd59a3224"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
