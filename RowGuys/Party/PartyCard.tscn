@@ -673,7 +673,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 354.0
-margin_right = 624.0
+margin_right = 484.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -691,7 +691,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 10.0
-margin_right = 270.0
+margin_right = 130.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -703,7 +703,7 @@ custom_constants/separation = 20
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="Slot" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0" instance=ExtResource( 7 )]
+[node name="Slot1" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0" instance=ExtResource( 7 )]
 
 margin_right = 50.0
 margin_bottom = 128.0
@@ -720,8 +720,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 624.0
-margin_right = 694.0
+margin_left = 484.0
+margin_right = 554.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

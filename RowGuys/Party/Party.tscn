@@ -44,7 +44,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer" index="0"]
+[node name="Party" type="CanvasLayer"]
 
 pause_mode = 2
 layer = 5
@@ -61,7 +61,6 @@ visible = false
 
 [node name="PartyMenu" type="Control" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -518,15 +517,21 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
-[node name="Description" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="1"]
+[node name="ArtifactContainer2" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="1" instance=ExtResource( 5 )]
+
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 52.0
+
+[node name="Description" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 54.0
+margin_left = 108.0
 margin_top = 15.0
-margin_right = 54.0
+margin_right = 108.0
 margin_bottom = 37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -539,12 +544,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
-
-[node name="ArtifactContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource( 5 )]
-
-margin_left = 58.0
-margin_right = 108.0
-margin_bottom = 52.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="1"]
 
@@ -634,7 +633,6 @@ margin_bottom = 95.0
 [node name="HUD" type="PanelContainer" parent="." index="2"]
 
 pause_mode = 2
-editor/display_folded = true
 light_mask = 2
 anchor_left = 0.0
 anchor_top = 1.0
@@ -833,7 +831,7 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
-[node name="ArtifactContainer" type="CenterContainer" parent="HUD/VBoxContainer/HBoxContainer" index="1"]
+[node name="ArtifactContainer1" type="CenterContainer" parent="HUD/VBoxContainer/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
