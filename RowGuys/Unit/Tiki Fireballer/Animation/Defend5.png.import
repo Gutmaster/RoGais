@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Defend5.png-b5e6c2740f89e0daf6bd2d54e73a277b.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/Defend5.png"
+source_md5="0c090a56defb122b1d2e19fd5ae1356a"
+
+dest_files=[ "res://.import/Defend5.png-b5e6c2740f89e0daf6bd2d54e73a277b.stex" ]
+dest_md5="d9da7bb3982e68934d905d77534e694c"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

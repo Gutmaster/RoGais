@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Dance3.png-e4070188d2afe97853a0e3ee082ed883.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/Dance3.png"
+source_md5="6f51bbfe5fc72a00772edd04e6b4e3eb"
+
+dest_files=[ "res://.import/Dance3.png-e4070188d2afe97853a0e3ee082ed883.stex" ]
+dest_md5="571ec7268fd3ad032e11c7e0e3baa3da"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

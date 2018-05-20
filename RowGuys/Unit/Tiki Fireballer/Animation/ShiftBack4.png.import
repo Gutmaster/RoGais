@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShiftBack4.png-8a131382cf94469a8061fd13d834c2a3.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/ShiftBack4.png"
+source_md5="ee4d89b348461e4851c9e69ee5c65f82"
+
+dest_files=[ "res://.import/ShiftBack4.png-8a131382cf94469a8061fd13d834c2a3.stex" ]
+dest_md5="2b517b40953a83d8044c3ffacb66c7ff"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

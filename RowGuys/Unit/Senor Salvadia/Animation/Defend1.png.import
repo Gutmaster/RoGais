@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Defend1.png-50340284f6ead694b55e8d97c3a0e23b.stex"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/Animation/Defend1.png"
+source_md5="62b62414301b2c354e91ff46fcdfdd0b"
+
+dest_files=[ "res://.import/Defend1.png-50340284f6ead694b55e8d97c3a0e23b.stex" ]
+dest_md5="c35799690ac52c38ca8aa66739d65822"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

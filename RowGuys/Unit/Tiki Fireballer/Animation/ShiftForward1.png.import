@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShiftForward1.png-5d3f01610cff85d57e3a2d374001769b.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/ShiftForward1.png"
+source_md5="b27599ff544cfde1e77dea784f1e949a"
+
+dest_files=[ "res://.import/ShiftForward1.png-5d3f01610cff85d57e3a2d374001769b.stex" ]
+dest_md5="faba79a233c15a1ac27009309daee6df"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Idle3.png-90668546ce10d54f182665121a280d2f.stex"
+
+[deps]
+
+source_file="res://Unit/Senor Salvadia/Animation/Idle3.png"
+source_md5="811fac4e8823b64b7e8e1f5c00809407"
+
+dest_files=[ "res://.import/Idle3.png-90668546ce10d54f182665121a280d2f.stex" ]
+dest_md5="dc3c652f91594e857e72578720766c04"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

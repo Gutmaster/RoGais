@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Idle2.png-8f09eb1545a5c0fc5e2f4fd1c9fa4e7e.stex"
+
+[deps]
+
+source_file="res://Unit/Tiki Fireballer/Animation/Idle2.png"
+source_md5="6391f0204dfb24cfe3f9a48a20c5df55"
+
+dest_files=[ "res://.import/Idle2.png-8f09eb1545a5c0fc5e2f4fd1c9fa4e7e.stex" ]
+dest_md5="a4b5e15874ed23ae4a21cd4b11d5fc57"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

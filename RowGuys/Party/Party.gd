@@ -14,8 +14,8 @@ var gold = 0
 onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
 
-onready var artifactContainer1 = find_node("ArtifactContainer1")
-onready var artifactContainer2 = find_node("ArtifactContainer2")
+onready var artifactSlot = find_node("ArtifactSlot")
+#onready var artifactContainer2 = find_node("ArtifactContainer2")
 
 onready var foodCount = find_node("FoodCount")
 onready var foodCount2 = find_node("FoodCount2")
@@ -31,11 +31,11 @@ func _ready():
 	
 	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
 	
-	artifactContainer2.add_child(startifact)
-	artifactContainer2.item = startifact
-	artifactContainer2.item.Acquire()
+	artifactSlot.add_child(startifact)
+	artifactSlot.item = startifact
+	artifactSlot.item.Acquire()
 	
-	artifactContainer1.add_child(startifact.duplicate())
+	artifactSlot.add_child(startifact.duplicate())
 	
 	for i in range(1, 8):
 		 itemList.push_back(find_node("Slot" + str(i)))
