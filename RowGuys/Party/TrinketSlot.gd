@@ -7,29 +7,29 @@ func _ready():
 
 func _on_Slot_focus_entered():
 	release_focus()
-	print("Trinket")
 	
-	if(partyScene.itemRef && partyScene.itemRef.iType == trinket && !item):
-		item = partyScene.itemRef
-		partyScene.itemRef = null
-		#item.Acquire()
-		#partyScene.artifactContainer1.add_child(item)
-		#partyScene.artifactContainer2.add_child(item)
-	elif(partyScene.itemRef == null && item):
-		#item.Remove()
-		partyScene.itemRef = item
+	var mouseItem = partyScene.itemHolder.item
+	
+	if(mouseItem != null && mouseItem.iType == type && !item):
+		item = mouseItem
+		partyScene.itemHolder.remove_child(item)
+		partyScene.itemHolder.item = null
+		add_child(item)
+		item.Acquire()
+	elif(mouseItem == null && item):
+		call_deferred("remove_child", item)
+		partyScene.itemHolder.item = item
+		item.Remove()
 		item = null
-		#partyScene.artifactContainer1.remove_child(partyScene.artifactContainer1.get_child(0))
-		#partyScene.artifactContainer2.remove_child(partyScene.artifactContainer2.get_child(0))
-	elif(partyScene.itemRef && partyScene.itemRef.iType == trinket && item):
-		var tempRef = partyScene.itemRef
-		#item.Remove()
-		partyScene.itemRef = item
-		#partyScene.artifactContainer1.remove_child(partyScene.artifactContainer1.get_child(0))
-		#partyScene.artifactContainer2.remove_child(partyScene.artifactContainer2.get_child(0))
-		item = partyScene.tempRef
-		#item.Acquire()
-		#partyScene.artifactContainer1.add_child(item)
-		#partyScene.artifactContainer2.add_child(item)
-		
-	#partyScene.UpdatePartyCards()
+	elif(mouseItem != null && mouseItem.iType == type && item):
+		partyScene.itemHolder.remove_child(mouseItem)
+		remove_child(item)
+		partyScene.itemHolder.add_child(item)
+		add_child(mouseItem)
+		var tempRef = mouseItem
+		mouseItem = item
+		item = tempRef
+		mouseItem.Remove()
+		item.Acquire()
+	
+	partyScene.UpdatePartyCards()

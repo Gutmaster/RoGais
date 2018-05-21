@@ -23,7 +23,7 @@ onready var goldCount = find_node("GoldCount")
 onready var goldCount2 = find_node("GoldCount2")
 
 onready var itemList = []
-onready var itemRef 
+onready var itemRef
 onready var itemHolder = $ItemHolder
 
 
@@ -46,7 +46,7 @@ func _ready():
 
 func itemAdd(item):
 	itemList.push_back(item.duplicate())
-	
+
 
 func _input(event):
 	if(event.is_action_pressed("party_pause")):
@@ -118,7 +118,8 @@ func UpdatePartyCards():
 
 	for j in range(6):
 		var panelString = "Panel" + str(j)
-		find_node(panelString).remove_child(find_node(panelString).get_child(0))
+		if(find_node(panelString).get_child_count()):
+			call_deferred("find_node(panelString).remove_child", find_node(panelString).get_child(0))
 	
 	for i in range(count):
 		var unit
