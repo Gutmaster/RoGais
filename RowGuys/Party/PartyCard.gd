@@ -32,28 +32,3 @@ func _on_Portrait3_pressed():
 	
 		unit.defaultRow = unit.ROW.front
 
-
-"""func _on_TrinketSlot1_pressed():
-	if(partyScene.itemRef && partyScene.itemRef.iType == trinket && !unit.trinket1):
-		unit.trinket1 = partyScene.itemRef
-		partyScene.itemRef = null
-	elif(partyScene.itemRef == null && unit.trinket1):
-		partyScene.itemRef = unit.trinket1
-		unit.trinket1 = null
-	elif(partyScene.itemRef && partyScene.itemRef.iType == trinket && unit.trinket1):
-		var tempRef = partyScene.itemRef
-		partyScene.itemRef = unit.trinket1
-		unit.trinket1 = tempRef
-
-
-func _on_TrinketSlot2_pressed():
-	if(partyScene.itemRef && partyScene.itemRef.iType == trinket && !unit.trinket2):
-		unit.trinket2 = partyScene.itemRef
-		partyScene.itemRef = null
-	elif(partyScene.itemRef == null && unit.trinket2):
-		partyScene.itemRef = unit.trinket2
-		unit.trinket2 = null
-	elif(partyScene.itemRef && partyScene.itemRef.iType == trinket && unit.trinket2):
-		var tempRef = partyScene.itemRef
-		partyScene.itemRef = unit.trinket2
-		unit.trinket2 = tempRef"""

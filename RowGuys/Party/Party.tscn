@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Party/Party.gd" type="Script" id=1]
 [ext_resource path="res://Party/Assets/FoodIcon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Party/ArtifactSlot.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Party/Slot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Party/ItemHolder.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -44,7 +45,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer"]
+[node name="Party" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 5
@@ -61,6 +62,8 @@ visible = false
 
 [node name="PartyMenu" type="Control" parent="." index="1"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -540,11 +543,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="ArtifactSlot" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource( 5 )]
 
-margin_left = 58.0
-margin_right = 108.0
-margin_bottom = 52.0
-_sections_unfolded = [ "Focus", "Margin" ]
-
 [node name="MarginContainer" type="MarginContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="1"]
 
 editor/display_folded = true
@@ -886,6 +884,11 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="ItemHolder" type="Node2D" parent="." index="5"]
+
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2/PartyButton2" to="." method="_on_PartyButton2_pressed"]
 

@@ -15,7 +15,7 @@ onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
 
 onready var artifactSlot = find_node("ArtifactSlot")
-#onready var artifactContainer2 = find_node("ArtifactContainer2")
+onready var artifactContainer = find_node("ArtifactContainer")
 
 onready var foodCount = find_node("FoodCount")
 onready var foodCount2 = find_node("FoodCount2")
@@ -23,7 +23,8 @@ onready var goldCount = find_node("GoldCount")
 onready var goldCount2 = find_node("GoldCount2")
 
 onready var itemList = []
-onready var itemRef
+onready var itemRef 
+onready var itemHolder = $ItemHolder
 
 
 func _ready():
@@ -35,7 +36,7 @@ func _ready():
 	artifactSlot.item = startifact
 	artifactSlot.item.Acquire()
 	
-	artifactSlot.add_child(startifact.duplicate())
+	artifactContainer.add_child(startifact.duplicate())
 	
 	for i in range(1, 8):
 		 itemList.push_back(find_node("Slot" + str(i)))
