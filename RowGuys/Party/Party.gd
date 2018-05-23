@@ -38,14 +38,25 @@ func _ready():
 	
 	artifactContainer.add_child(startifact.duplicate())
 	
-	for i in range(1, 8):
-		 itemList.push_back(find_node("Slot" + str(i)))
+	#for i in range(1, 8):
+		 #itemList.push_back(find_node("Slot" + str(i)))
 	
 	itemAdd(itemCatalogue.get_node("Red Goo"))
 
 
 func itemAdd(item):
 	itemList.push_back(item.duplicate())
+	var found = false
+	
+	for i in range(1, 8):
+		if(!found):
+			var slotString = "Slot" + str(i)
+			var slot = find_node(slotString)
+		
+			if(slot.item == null):
+				found = true
+				slot.item = item
+				slot.add_child(item.duplicate())
 
 
 func _input(event):

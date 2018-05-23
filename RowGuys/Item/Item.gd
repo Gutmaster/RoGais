@@ -1,4 +1,4 @@
-extends TextureButton
+extends TextureRect
 
 onready var partyScene = get_node("/root/Globals").party
 

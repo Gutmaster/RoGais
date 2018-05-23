@@ -14,4 +14,4 @@ func _process(delta):
 			add_child(item)
 	
 	itemLastFrame = item
-	global_position = get_global_mouse_position()
+	global_position = get_global_mouse_position() - Vector2(25,25)

@@ -5,7 +5,7 @@
 [ext_resource path="res://Artifact/Pretty Rock.png" type="Texture" id=3]
 [ext_resource path="res://Artifact/Pretty Rock.gd" type="Script" id=4]
 
-[node name="Artifact" type="TextureRect" index="0"]
+[node name="Artifact" type="TextureRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -22,7 +22,7 @@ size_flags_vertical = 1
 texture = ExtResource( 1 )
 stretch_mode = 0
 script = ExtResource( 2 )
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="Pretty Rock" type="TextureRect" parent="." index="0"]
 
@@ -41,6 +41,6 @@ size_flags_vertical = 1
 texture = ExtResource( 3 )
 stretch_mode = 0
 script = ExtResource( 4 )
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Focus" ]
 
 

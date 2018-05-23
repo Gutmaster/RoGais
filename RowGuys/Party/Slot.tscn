@@ -20,7 +20,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 script = ExtResource( 1 )
-_sections_unfolded = [ "Focus" ]
+_sections_unfolded = [ "Focus", "Rect" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -38,6 +38,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
+_sections_unfolded = [ "Anchor" ]
 
 [connection signal="focus_entered" from="." to="." method="_on_Slot_focus_entered"]
 
