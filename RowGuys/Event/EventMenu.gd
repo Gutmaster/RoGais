@@ -1,8 +1,10 @@
 extends CanvasLayer
 
+
 onready var eventMenu = $CenterContainer
 
 signal partyChoice
+
 
 func _ready():
 	pass

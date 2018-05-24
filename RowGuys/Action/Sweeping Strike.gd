@@ -1,5 +1,6 @@
 extends "Action.gd"
 
+
 func _ready():
 	animation = "BigSwing"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]

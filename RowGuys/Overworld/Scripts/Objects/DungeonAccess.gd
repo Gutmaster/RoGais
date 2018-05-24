@@ -1,5 +1,6 @@
 extends "res://Overworld/Scripts/Objects/OverworldObject.gd"
 
+
 var packedDungeon = load("res://Dungeon/Dungeon.tscn")
 
 

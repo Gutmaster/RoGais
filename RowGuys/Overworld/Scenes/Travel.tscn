@@ -1,12 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Overworld/Scenes/Travel.gd" type="Script" id=1]
+[ext_resource path="res://Overworld/Scripts/Travel.gd" type="Script" id=1]
 [ext_resource path="res://Overworld/Assets/background-1.png" type="Texture" id=2]
 [ext_resource path="res://Overworld/Scenes/Objects/Goomba.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Overworld/Scenes/Objects/DungeonAccess.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Overworld/Scenes/MoveMarker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Overworld/Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Overworld/Scripts/WorldCam.gd" type="Script" id=7]
+
+
 
 [node name="Travel" type="Node2D"]
 

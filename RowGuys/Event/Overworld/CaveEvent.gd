@@ -1,7 +1,6 @@
 extends "res://Event/EventMenu.gd"
 
 
-
 func _ready():
 	pass
 

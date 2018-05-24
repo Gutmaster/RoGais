@@ -1,6 +1,6 @@
 extends TextureRect
 
-onready var partyScene = get_node("/root/Globals").party
+onready var party = get_node("/root/Globals").party
 
 enum ITYPE{
 artifact,

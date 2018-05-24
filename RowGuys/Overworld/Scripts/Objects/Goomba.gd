@@ -1,4 +1,6 @@
 extends "res://Overworld/Scripts/Objects/OverworldObject.gd"
+
+
 onready var party = load("res://Party/EnemyParty.tscn")
 
 

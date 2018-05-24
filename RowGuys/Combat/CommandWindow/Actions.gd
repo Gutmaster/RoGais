@@ -3,6 +3,7 @@ extends MenuButton
 
 var targetMode
 var target
+
 onready var combatNode = get_node("/root/Globals").combatScene
 
 

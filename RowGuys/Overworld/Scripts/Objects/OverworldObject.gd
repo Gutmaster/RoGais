@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+
 onready var eventMenu = $EventMenu/CenterContainer
 
 

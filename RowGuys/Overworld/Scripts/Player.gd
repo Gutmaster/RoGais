@@ -1,5 +1,6 @@
 extends Area2D
 
+
 export (int) var SPEED  	# how fast the player will move (pixels/sec)
 
 enum STATES {STOPPED, MOVING, EVENT}

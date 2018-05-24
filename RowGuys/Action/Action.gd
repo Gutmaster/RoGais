@@ -1,5 +1,6 @@
 extends Control
 
+
 const critChance = 0.1
 
 var userRows = []
@@ -24,8 +25,10 @@ var effectPower = 0
 var critMod = 1
 
 onready var combatNode = get_node("/root/Globals").combatScene
-onready var uList = combatNode.get_node("UnitList")
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
+
+onready var uList = combatNode.get_node("UnitList")
+
 
 func _ready():
 	set_process(false)
@@ -68,26 +71,6 @@ func CombatMath(var user, var target):
 		dmg *= 2
 		print(dmg)
 	target.UpdateHP(-dmg)
-
-
-"""func MeleeTargets(var team):
-	targetOptions.clear()
-	for i in range(uList.get_child_count()):
-		if(uList.get_child(i).team == team):
-			if(uList.get_child(i).row == combatNode.ROW.front):
-				targetOptions.push_back(uList.get_child(i))
-	
-	if(targetOptions.size() <= 0):
-		for i in range(uList.get_child_count()):
-			if(uList.get_child(i).team == team):
-				if(uList.get_child(i).row == combatNode.ROW.middle):
-					targetOptions.push_back(uList.get_child(i))
-	
-	if(targetOptions.size() <= 0):
-		for i in range(uList.get_child_count()):
-			if(uList.get_child(i).team == team):
-				if(uList.get_child(i).row == combatNode.ROW.back):
-					targetOptions.push_back(uList.get_child(i))"""
 
 
 func Animate(var usr, var trgt):

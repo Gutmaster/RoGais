@@ -18,9 +18,10 @@ var approaching = false
 var prevScene
 
 onready var globals = get_node("/root/Globals")
-onready var uList = get_node("UnitList")
 onready var combatNode = globals.combatScene
 onready var party = globals.party
+
+onready var uList = get_node("UnitList")
 
 
 func _ready():
