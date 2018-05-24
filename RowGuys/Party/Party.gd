@@ -45,7 +45,8 @@ func _ready():
 
 
 func itemAdd(item):
-	itemList.push_back(item.duplicate())
+	item = item.duplicate()
+	itemList.push_back(item)
 	var found = false
 	
 	for i in range(1, 8):
@@ -56,7 +57,8 @@ func itemAdd(item):
 			if(slot.item == null):
 				found = true
 				slot.item = item
-				slot.add_child(item.duplicate())
+				slot.add_child(item)
+				print(slot.get_name(), slot.get_child_count())
 
 
 func _input(event):

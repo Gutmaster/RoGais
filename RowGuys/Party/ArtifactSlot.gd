@@ -17,19 +17,15 @@ func _on_Slot_focus_entered():
 		add_child(item)
 		item.Acquire()
 	elif(mouseItem == null && item):
-		call_deferred("remove_child", item)
 		partyScene.itemHolder.item = item
 		item.Remove()
 		item = null
 	elif(mouseItem != null && mouseItem.iType == type && item):
 		partyScene.itemHolder.remove_child(mouseItem)
-		remove_child(item)
-		partyScene.itemHolder.add_child(item)
 		add_child(mouseItem)
-		var tempRef = mouseItem
-		mouseItem = item
-		item = tempRef
-		mouseItem.Remove()
+		partyScene.itemHolder.item = item
+		item.Remove()
+		item = mouseItem
 		item.Acquire()
 	
 	partyScene.UpdatePartyCards()

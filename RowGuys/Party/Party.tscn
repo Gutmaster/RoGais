@@ -545,7 +545,7 @@ margin_left = 622.0
 margin_right = 672.0
 margin_bottom = 52.0
 size_flags_horizontal = 10
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
 [node name="MarginContainer" type="MarginContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="1"]
 
@@ -591,7 +591,7 @@ margin_top = 21.0
 margin_right = 50.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
 [node name="Slot2" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
 
@@ -600,7 +600,7 @@ margin_top = 21.0
 margin_right = 115.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="Slot3" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="2" instance=ExtResource( 6 )]
 
@@ -609,7 +609,7 @@ margin_top = 21.0
 margin_right = 180.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="Slot4" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="3" instance=ExtResource( 6 )]
 
@@ -618,7 +618,7 @@ margin_top = 21.0
 margin_right = 245.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="Slot5" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="4" instance=ExtResource( 6 )]
 
@@ -627,7 +627,7 @@ margin_top = 21.0
 margin_right = 310.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="Slot6" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="5" instance=ExtResource( 6 )]
 
@@ -636,7 +636,7 @@ margin_top = 21.0
 margin_right = 375.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags", "Theme" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags", "Theme" ]
 
 [node name="Slot7" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="6" instance=ExtResource( 6 )]
 
@@ -645,7 +645,7 @@ margin_top = 21.0
 margin_right = 440.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="Slot8" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="7" instance=ExtResource( 6 )]
 
@@ -654,7 +654,7 @@ margin_top = 21.0
 margin_right = 505.0
 margin_bottom = 73.0
 size_flags_vertical = 4
-_sections_unfolded = [ "Focus", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 [node name="HUD" type="PanelContainer" parent="." index="2"]
 

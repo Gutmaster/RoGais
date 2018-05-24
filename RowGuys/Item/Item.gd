@@ -10,7 +10,7 @@ item}
 onready var iType = ITYPE.item
 
 var power = 0
-
+var iteemo = 42
 
 func _ready():
 	pass
