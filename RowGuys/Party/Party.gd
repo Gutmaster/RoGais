@@ -8,6 +8,7 @@ item}
 
 
 var starting_food = 5
+var starting_gold = 5
 var food = 0
 var gold = 0
 
@@ -29,6 +30,7 @@ onready var itemHolder = $ItemHolder
 
 func _ready():
 	UpdateFood(starting_food)
+	UpdateGold(starting_gold)
 	
 	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
 	
