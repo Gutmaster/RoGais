@@ -3,6 +3,7 @@ extends PanelContainer
 
 var unit
 var mouseHover
+
 onready var combatNode = get_node("/root/Globals").combatScene
 
 

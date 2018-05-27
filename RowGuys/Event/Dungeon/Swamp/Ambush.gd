@@ -1,4 +1,6 @@
 extends "res://Event/EventMenu.gd"
+
+
 onready var party = load("res://Party/EnemyParty.tscn")
 
 

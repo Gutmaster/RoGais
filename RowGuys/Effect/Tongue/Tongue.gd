@@ -1,5 +1,6 @@
 extends "res://Effect/EffectCatalogue.gd"
 
+
 var user
 var target
 

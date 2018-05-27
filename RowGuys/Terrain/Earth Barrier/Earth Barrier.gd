@@ -1,7 +1,6 @@
 extends "res://Terrain/TerrainCatalogue.gd"
 
 
-
 func _ready():
 	tags.exists = true
 	tags.blocking = true

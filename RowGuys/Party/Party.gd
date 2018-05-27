@@ -8,6 +8,7 @@ item}
 
 
 var starting_food = 5
+var starting_gold = 5
 var food = 0
 var gold = 0
 
@@ -29,6 +30,7 @@ onready var itemHolder = $ItemHolder
 
 func _ready():
 	UpdateFood(starting_food)
+	UpdateGold(starting_gold)
 	
 	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
 	
@@ -38,27 +40,7 @@ func _ready():
 	
 	artifactContainer.add_child(startifact.duplicate())
 	
-	#for i in range(1, 8):
-		 #itemList.push_back(find_node("Slot" + str(i)))
-	
 	itemAdd(itemCatalogue.get_node("Red Goo"))
-
-
-func itemAdd(item):
-	item = item.duplicate()
-	itemList.push_back(item)
-	var found = false
-	
-	for i in range(1, 8):
-		if(!found):
-			var slotString = "Slot" + str(i)
-			var slot = find_node(slotString)
-		
-			if(slot.item == null):
-				found = true
-				slot.item = item
-				slot.add_child(item)
-				print(slot.get_name(), slot.get_child_count())
 
 
 func _input(event):
@@ -102,7 +84,7 @@ func _on_PartyButton_pressed():
 
 func _on_PartyButton2_pressed():
 	PartyPause()
-	
+
 
 func PartyPause():
 	if(Globals.currentScene == Globals.travelScene):
@@ -112,6 +94,17 @@ func PartyPause():
 		
 	if($HUD.visible):
 		UpdatePartyCards()
+	elif($PartyMenu.visible):
+		if(itemHolder.item):
+			itemHolder.itemCatcher.item = itemHolder.item
+			itemHolder.remove_child(itemHolder.itemCatcher.item)
+			itemHolder.item = null
+			itemHolder.itemCatcher.add_child(itemHolder.itemCatcher.item)
+			
+			if(itemHolder.itemCatcher.item.iType == ITYPE.artifact):
+				itemHolder.itemCatcher.item.Acquire()
+				artifactContainer.add_child(itemHolder.itemCatcher.item.duplicate())
+			
 	
 	get_tree().paused = !(get_tree().paused)
 	$PartyMenu.visible = !($PartyMenu.visible)
@@ -161,3 +154,19 @@ func UpdatePartyCards():
 		
 		find_node(panelString).add_child(unit.partyCard)
 
+
+func itemAdd(item):
+	item = item.duplicate()
+	itemList.push_back(item)
+	var found = false
+	
+	for i in range(1, 8):
+		if(!found):
+			var slotString = "Slot" + str(i)
+			var slot = find_node(slotString)
+		
+			if(slot.item == null):
+				found = true
+				slot.item = item
+				slot.add_child(item)
+				print(slot.get_name(), slot.get_child_count())

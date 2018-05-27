@@ -1,6 +1,8 @@
 extends Node2D
 
+
 var moveFlag = true
+
 onready var eventActive = false
 onready var globals = get_node("/root/Globals")
 
@@ -45,8 +47,3 @@ func Init():
 	$Room1/Light.enabled = true
 	$Party.Move($Room1)
 
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass

@@ -1,13 +1,14 @@
 extends PanelContainer
 
 var unit
-onready var partyScene = get_node("/root/Globals").party
+
+onready var party = get_node("/root/Globals").party
 onready var combatNode = get_node("/root/Globals").combatScene
 onready var emptyPortrait = preload("res://Party/Assets/placeholder.png")
 
 
 func _on_Portrait1_pressed():
-	if(Globals.currentScene != Globals.combatScene && !partyScene.itemHolder.item):
+	if(Globals.currentScene != Globals.combatScene && !party.itemHolder.item):
 		find_node("Portrait1").texture_normal = unit.portrait
 		find_node("Portrait2").texture_normal = emptyPortrait
 		find_node("Portrait3").texture_normal = emptyPortrait
@@ -16,7 +17,7 @@ func _on_Portrait1_pressed():
 
 
 func _on_Portrait2_pressed():
-	if(Globals.currentScene != Globals.combatScene && !partyScene.itemHolder.item):
+	if(Globals.currentScene != Globals.combatScene && !party.itemHolder.item):
 		find_node("Portrait1").texture_normal = emptyPortrait
 		find_node("Portrait2").texture_normal = unit.portrait
 		find_node("Portrait3").texture_normal = emptyPortrait
@@ -25,7 +26,7 @@ func _on_Portrait2_pressed():
 
 
 func _on_Portrait3_pressed():
-	if(Globals.currentScene != Globals.combatScene && !partyScene.itemHolder.item):
+	if(Globals.currentScene != Globals.combatScene && !party.itemHolder.item):
 		find_node("Portrait1").texture_normal = emptyPortrait
 		find_node("Portrait2").texture_normal = emptyPortrait
 		find_node("Portrait3").texture_normal = unit.portrait

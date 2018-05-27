@@ -1,5 +1,6 @@
 extends "Action.gd"
 
+
 func _ready():
 	animation = "TongueSnatch"
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]

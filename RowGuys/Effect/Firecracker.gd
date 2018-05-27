@@ -1,7 +1,6 @@
 extends "res://Effect/EffectCatalogue.gd"
 
 
-
 func _ready():
 	pass
 

@@ -1,8 +1,8 @@
 extends AnimatedSprite
 
 
-
 var tags = {"exists": false, "blocking": false, "target": false, "trapping": false}
+
 var maxhp = 1000
 var hp = 1000
 

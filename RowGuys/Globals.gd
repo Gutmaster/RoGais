@@ -5,12 +5,12 @@ var enemyParty
 
 var packedParty = load("res://Party/Party.tscn")
 var packedCombat = load("res://Combat/Combat.tscn")
-var packedTravel = load("res://Overworld/Scenes/Travel.tscn")
+var packedTravel = load("res://Overworld/Travel.tscn")
 
+var party
 var combatScene
 var travelScene
 var dungeonScene
-var party
 
 var currentScene
 
