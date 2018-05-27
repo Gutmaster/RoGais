@@ -76,6 +76,8 @@ var actionList = []
 var stanceList = []
 onready var stance = get_node("StanceCatalogue/Wait")
 
+var skillTree = null
+
 onready var globals = get_node("/root/Globals")
 onready var combatNode = globals.combatScene
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")

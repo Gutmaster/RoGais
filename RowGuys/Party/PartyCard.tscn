@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Party/PartyCard.gd" type="Script" id=1]
 [ext_resource path="res://Party/Assets/placeholder.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Party/TrinketSlot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Party/Assets/skilltreebutton.png" type="Texture" id=8]
+[ext_resource path="res://Party/Assets/skilltreebuttonhover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -754,6 +755,8 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
 _sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
@@ -761,5 +764,7 @@ _sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait2" to="." method="_on_Portrait2_pressed"]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait3" to="." method="_on_Portrait3_pressed"]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/SkillTree" to="." method="_on_SkillTree_pressed"]
 
 

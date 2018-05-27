@@ -16,6 +16,7 @@ func _ready():
 	events.push_back(load("res://Event/Dungeon/Swamp/Ambush.tscn"))
 	events.push_back(load("res://Event/Dungeon/Camp.tscn"))
 
+
 func AddLines():
 	for i in range(connections.size()):
 		var line = Line2D.new()

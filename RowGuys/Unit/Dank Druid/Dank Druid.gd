@@ -17,5 +17,5 @@ func Init():
 	SharedInit()
 	defaultRow = ROW.back
 	
-	actionList.push_back(get_node("ActionCatalogue/Ensnaring Vines"))
-	actionList.push_back(get_node("ActionCatalogue/Minor Beast"))
+	skillTree = load("res://Unit/Dank Druid/SkillTree/DruidTree.tscn").instance()
+	skillTree.unit = self

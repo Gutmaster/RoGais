@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/MinorBeast.png-b62f292fcd2e6f51cc2f01dacc5b4c9b.stex"
+
+[deps]
+
+source_file="res://Unit/Dank Druid/SkillTree/MinorBeast.png"
+source_md5="6c4ebb0405a06294c45bd6bb9c7f5497"
+
+dest_files=[ "res://.import/MinorBeast.png-b62f292fcd2e6f51cc2f01dacc5b4c9b.stex" ]
+dest_md5="c130f75ac708625fc8f7366ab07720fc"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

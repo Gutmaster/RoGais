@@ -33,3 +33,7 @@ func _on_Portrait3_pressed():
 	
 		unit.defaultRow = unit.ROW.front
 
+
+
+func _on_SkillTree_pressed():
+	Globals.ChangeScene(unit.skillTree)

@@ -13,6 +13,8 @@ var travelScene
 var dungeonScene
 
 var currentScene
+var prevScene
+var prevSceneST
 
 onready var root = get_tree().get_root()
 
@@ -29,7 +31,9 @@ func ChangeScene(var newScene):
 	currentScene = get_tree().get_current_scene()
 	
 	if(newScene == combatScene):
-		newScene.prevScene = currentScene
+		prevScene = currentScene
+	else:
+		prevSceneST = currentScene
 	
 	root.add_child(newScene)
 	get_tree().set_current_scene(newScene)

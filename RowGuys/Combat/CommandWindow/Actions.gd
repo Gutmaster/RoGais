@@ -30,6 +30,7 @@ func LoadActions():
 	var activeUnit = combatNode.activeUnit
 	
 	for i in range(activeUnit.actionList.size()):
+		print(activeUnit.actionList[i].get_name())
 		get_popup().add_item(activeUnit.actionList[i].get_name(), i)
 		
 		if(!activeUnit.actionList[i].UseCheck()):

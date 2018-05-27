@@ -14,9 +14,7 @@ var initialized = false
 var activeUnit
 var hoverUnit = null
 var approaching = false
-
-var prevScene
-
+var midBattle = false
 onready var globals = get_node("/root/Globals")
 onready var combatNode = globals.combatScene
 onready var party = globals.party
@@ -30,7 +28,7 @@ func _ready():
 
 
 func _on_Combat_tree_entered():
-	if(initialized):
+	if(initialized && !midBattle):
 		LoadCombat(globals.party.get_node("Units"), globals.enemyParty.get_node("Units"))
 
 
@@ -44,13 +42,13 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	
 	for i in range(uList.get_child_count()):
 		print(uList.get_child(i).get_name())
-		
+	
 	SetUnitPos()
 	activeUnit = uList.get_child(0)
 	$HUD/Queue.QueueUpdate()
-	
 	$HUD/CommandWindow.Init()
 	
+	midBattle = true
 	globals.ReParentParty(self)
 	globals.enemyParty.get_node("HUD").visible = true
 	globals.ReParentParty(self, globals.enemyParty)
@@ -219,10 +217,11 @@ func EndBattle():
 	
 	$Deadzone.Dump()
 	
+	midBattle = false
 	remove_child(globals.enemyParty)
 	globals.LoadUnitsFromBattle(uList)
-	globals.ReParentParty(prevScene)
-	globals.ChangeScene(prevScene)
+	globals.ReParentParty(globals.prevScene)
+	globals.ChangeScene(globals.prevScene)
 
 
 func _on_Combat_tree_exited():

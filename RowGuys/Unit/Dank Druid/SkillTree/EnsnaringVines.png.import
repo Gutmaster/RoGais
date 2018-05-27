@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/EnsnaringVines.png-6901ddd7bffe71247c1092ea4dc3af02.stex"
+
+[deps]
+
+source_file="res://Unit/Dank Druid/SkillTree/EnsnaringVines.png"
+source_md5="7347ea1252109b3d37d330452b6c5adc"
+
+dest_files=[ "res://.import/EnsnaringVines.png-6901ddd7bffe71247c1092ea4dc3af02.stex" ]
+dest_md5="f01d7eee5725fd1fe2420b51d32b9926"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
