@@ -9,7 +9,7 @@ func Init():
 	idName = "Senor Salvadia"
 	
 	bStats.Stamina = 5
-	bStats.Speed = 8
+	bStats.Speed = 6
 	bStats.Strength = 10
 	bStats.Vitality = 4
 	bStats.Endurance = 3

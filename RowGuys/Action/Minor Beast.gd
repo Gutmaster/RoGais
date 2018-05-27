@@ -16,6 +16,11 @@ func _process(delta):
 
 
 func Execute():
-	combatNode.AddTempUnit(load("res://Unit/Pangolin/Pangolin.tscn").instance(), combatNode.SIDE.left, true, user.row)
+	var beast = load("res://Unit/Pangolin/Pangolin.tscn").instance()
+	combatNode.AddTempUnit(beast, combatNode.SIDE.left, true, user.row)
+	if(level >= 2):
+		beast.aStats.Vitality += 1
+		beast.hp += 1
+		beast.aStats.Endurance += 1
 	combatNode.SetUnitPos()
 	combatNode.get_node("HUD/Queue").QueuePredict()

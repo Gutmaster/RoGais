@@ -20,7 +20,8 @@ enum ANIMFLAG{
 temp,
 command,
 passturn,
-action}
+action,
+next}
 
 var animFlag = null
 
@@ -70,7 +71,10 @@ var flags = {"fireCrit": false}
 
 var lastAnim = null
 var tempPlay = false
+var nextAnim
 var cAction
+
+var terrainList = []
 
 var actionList = []
 var stanceList = []
@@ -129,12 +133,26 @@ func _process(delta):
 
 
 func Upkeep():
+	TerrainUpkeep()
 	StatusCheck()
 	StanceBonus()
 	party.artifactContainer.get_child(0).Upkeep(self)
 	UpdateAP(ceil(float(aStats.Stamina)/2))
-	for i in range(combatNode.get_node("Row").get_child_count()):
-		combatNode.get_node("Row").get_child(i).Decay()
+	if(get_name() == "Dank Druid"):
+		Growth()
+	#for i in range(combatNode.get_node("Row").get_child_count()):
+		#combatNode.get_node("Row").get_child(i).Decay()
+
+
+func TerrainUpkeep():
+	var dump = []
+	for i in range(terrainList.size()):
+		if(!terrainList[i].Upkeep()):
+			dump.push_back(i)
+	
+	for i in range(dump.size()):
+		terrainList.remove(dump[i])
+
 
 
 func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advance = false):
@@ -281,6 +299,28 @@ func TempPlay(var anim):
 	lastAnim = animation
 	animFlag = ANIMFLAG.temp
 	play(anim)
+
+
+func QueuePlay(var anim):
+	nextAnim = anim
+	animFlag = ANIMFLAG.next
+
+
+func _on_Unit_animation_finished():
+	if(animFlag == ANIMFLAG.command):
+		play("Idle")
+		if(!AI):
+			combatNode.get_node("HUD/CommandWindow").show()
+		AIWait = false
+		animFlag = null
+	elif(animFlag == ANIMFLAG.temp):
+		play(lastAnim)
+		AIWait = false
+		animFlag = null
+	elif(animFlag == ANIMFLAG.next):
+		play(nextAnim)
+		AIWait = false
+		animFlag = null
 
 
 func StatusCheck():
@@ -450,19 +490,6 @@ func ApplyStats():
 		aStats.Willpower = 1
 	if(aStats.Speed < 1):
 		aStats.Speed = 1
-
-
-func _on_Unit_animation_finished():
-	if(animFlag == ANIMFLAG.command):
-		play("Idle")
-		if(!AI):
-			combatNode.get_node("HUD/CommandWindow").show()
-		AIWait = false
-		animFlag = null
-	elif(animFlag == ANIMFLAG.temp):
-		play(lastAnim)
-		AIWait = false
-		animFlag = null
 
 
 #################AI CODE#########################################

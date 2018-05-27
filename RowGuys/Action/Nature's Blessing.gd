@@ -2,9 +2,9 @@ extends "Action.gd"
 
 
 func _ready():
-	animation = "Blockade"
+	animation = "GreenMagic"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
-	apCost = 5
+	apCost = 4
 	set_process(true)
 
 
@@ -17,6 +17,11 @@ func _process(delta):
 
 func FindTargetOptions(var team):
 	targetOptions.clear()
+	targetOptions.push_back(team.rpos.front)
+	targetOptions.push_back(team.rpos.middle)
+	targetOptions.push_back(team.rpos.back)
+	targetOptions.push_back(team.enemy.rpos.front)
+	targetOptions.push_back(team.enemy.rpos.middle)
 	targetOptions.push_back(team.enemy.rpos.back)
 
 
@@ -24,14 +29,9 @@ func Execute():
 	user.UpdateAP(-apCost)
 	
 	target.ClearTerrain()
-	target.terrain = combatNode.get_node("TerrainCatalogue/Earth Barrier").duplicate()
+	target.terrain = combatNode.get_node("TerrainCatalogue/Nature's Blessing").duplicate()
 	target.add_child(target.terrain)
 	target.terrain.Init(target.left)
-	user.terrainList.push_back(target.terrain)
 	
-	var tList = target.FindOccupants()
-
-	for i in range(tList.size()):
-		tList[i].UpdateHP(-(user.aStats.Strength - tList[i].aStats.Endurance))
-		if(tList[i].visible):
-			tList[i].Shift(tList[i].PickRandShiftDir(), 0.4, "Toss", "Toss")
+	user.terrainList.push_back(target.terrain)
+	user.growthList.push_back(target.terrain)

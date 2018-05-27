@@ -192,7 +192,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="LB" type="Sprite" parent="Row" index="0"]
 
-editor/display_folded = true
 position = Vector2( 285, 610 )
 texture = ExtResource( 17 )
 script = ExtResource( 18 )

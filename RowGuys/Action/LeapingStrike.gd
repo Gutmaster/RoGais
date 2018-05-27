@@ -32,6 +32,6 @@ func _process(delta):
 		ActionShift(false if user.team == combatNode.get_node("TeamLeft") else true)
 		phase = 2
 	elif(phase == 2):
-		if(user.frame+1 >= user.frames.get_frame_count(animation) && !user.shifting):
+		if(user.frame+2 >= user.frames.get_frame_count(animation) && !user.shifting):
 			Execute()
 			actionMenu.ActionFinished()

@@ -3,6 +3,8 @@ extends Control
 
 const critChance = 0.1
 
+var level = 1
+
 var userRows = []
 var targetRows = []
 

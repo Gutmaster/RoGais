@@ -158,11 +158,13 @@ func _on_ApproachTimer_timeout():
 				$Row.get_child(i).SwapTerrain(terray[i-1])
 			else:
 				$Row.get_child(i).ClearTerrain()
+				$Row.get_child(i).terrain.hp = 0
 		elif($Background.scrollDir == SIDE.left):
 			if(i < 5):
 				$Row.get_child(i).SwapTerrain(terray[i+1])
 			else:
 				$Row.get_child(i).ClearTerrain()
+				$Row.get_child(i).terrain.hp = 0
 	
 	for i in range($Row.get_child_count()):
 		print($Row.get_child(i).terrain.get_name())

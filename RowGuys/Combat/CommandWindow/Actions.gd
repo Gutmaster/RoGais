@@ -102,6 +102,7 @@ func ActionFinished():
 		combatNode.get_node("HUD/CommandWindow").visible = true
 	
 	user.AIAction = true
+	#user.QueuePlay("Idle")
 	user.play("Idle")
 	user.cAction.phase = 0
 	user.cAction.targets.clear()

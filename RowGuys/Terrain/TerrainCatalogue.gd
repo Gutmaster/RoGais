@@ -1,14 +1,15 @@
 extends AnimatedSprite
 
-
 var tags = {"exists": false, "blocking": false, "target": false, "trapping": false}
 
-var maxhp = 1000
-var hp = 1000
+var maxhp = 10
+var hp = 10
+
+var gClock = 0
 
 
 func _ready():
-	pass
+	position = Vector2(0, 0)
 
 
 func Init(left):
@@ -19,4 +20,9 @@ func Init(left):
 
 
 func Upkeep():
-	pass
+	hp -= 1
+	if(hp <= 0):
+		return false
+		get_parent().ClearTerrain()
+	
+	return true

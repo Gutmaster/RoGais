@@ -37,10 +37,10 @@ func ClearTerrain():
 	SetTerrain(combatNode.get_node("TerrainCatalogue/Default").duplicate())
 
 
-func Decay():
-	terrain.hp -= 1
-	if(terrain.hp <= 0):
-		ClearTerrain()
+#func Decay():
+#	terrain.hp -= 1
+#	if(terrain.hp <= 0):
+#		ClearTerrain()
 
 
 func HoverMod():

@@ -6,6 +6,8 @@ func _ready():
 
 
 func Apply(level):
+	var unit = get_parent().unit
 	if(level == 1):
-		var unit = get_parent().unit
 		unit.actionList.push_back(unit.get_node("ActionCatalogue/Minor Beast"))
+	elif(level == 2):
+		unit.get_node("ActionCatalogue/Minor Beast").level = 2

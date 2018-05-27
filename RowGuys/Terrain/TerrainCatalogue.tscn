@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Terrain/TerrainCatalogue.gd" type="Script" id=1]
 [ext_resource path="res://Terrain/Default.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Terrain/Ensnaring Vines/Start1.png" type="Texture" id=10]
 [ext_resource path="res://Terrain/Ensnaring Vines/Start2.png" type="Texture" id=11]
 [ext_resource path="res://Terrain/Ensnaring Vines/Ensnaring Vines.gd" type="Script" id=12]
+[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Terrain/Nature's Blessing/Nature's Blessing.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -41,7 +43,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TerrainCatalogue" type="AnimatedSprite"]
+[node name="TerrainCatalogue" type="AnimatedSprite" index="0"]
 
 animation = "default"
 playing = true
@@ -88,12 +90,112 @@ _sections_unfolded = [ "Percent", "custom_styles" ]
 
 [node name="Ensnaring Vines" type="AnimatedSprite" parent="." index="2"]
 
+position = Vector2( 640, -10 )
 frames = SubResource( 2 )
 animation = "Start"
 script = ExtResource( 12 )
 
+[node name="GrowthLabel" type="Label" parent="Ensnaring Vines" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 250.0
+margin_right = 40.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.0583191, 0.304688, 0.0679429, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="LifeLabel" type="Label" parent="Ensnaring Vines" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = 250.0
+margin_right = -10.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.566406, 0.185852, 0.185852, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Nature's Blessing" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 1240, 0 )
+frames = SubResource( 2 )
+animation = "Start"
+script = ExtResource( 14 )
+
+[node name="GrowthLabel" type="Label" parent="Nature's Blessing" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 250.0
+margin_right = 40.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.0778656, 0.316406, 0.0815928, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="LifeLabel" type="Label" parent="Nature's Blessing" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = 250.0
+margin_right = -10.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.550781, 0.10112, 0.10112, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
 [connection signal="animation_finished" from="Earth Barrier" to="Earth Barrier" method="_on_Earth_Barrier_animation_finished"]
 
 [connection signal="animation_finished" from="Ensnaring Vines" to="Ensnaring Vines" method="_on_Ensnaring_Vines_animation_finished"]
+
+[connection signal="animation_finished" from="Nature's Blessing" to="Nature's Blessing" method="_on_Natures_Blessing_animation_finished"]
 
 

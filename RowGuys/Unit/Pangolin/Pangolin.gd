@@ -8,8 +8,9 @@ func Init():
 	idName = "Pangolin"
 	
 	bStats.Strength = 2
-	bStats.Speed = 10
+	bStats.Speed = 3
 	bStats.Vitality = 5
+	bStats.Stamina = 4
 	
 	SharedInit()
 	defaultRow = ROW.front

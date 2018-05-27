@@ -4,7 +4,7 @@ extends "Action.gd"
 func _ready():
 	animation = "GreenMagic"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
-	apCost = 7
+	apCost = 4
 	set_process(true)
 
 
@@ -28,6 +28,10 @@ func FindTargetOptions(var team):
 func Execute():
 	user.UpdateAP(-apCost)
 	
+	target.ClearTerrain()
 	target.terrain = combatNode.get_node("TerrainCatalogue/Ensnaring Vines").duplicate()
 	target.add_child(target.terrain)
 	target.terrain.Init(target.left)
+	
+	user.terrainList.push_back(target.terrain)
+	user.growthList.push_back(target.terrain)
