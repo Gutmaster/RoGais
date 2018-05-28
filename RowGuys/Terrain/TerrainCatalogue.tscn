@@ -43,7 +43,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TerrainCatalogue" type="AnimatedSprite" index="0"]
+[node name="TerrainCatalogue" type="AnimatedSprite"]
 
 animation = "default"
 playing = true

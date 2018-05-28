@@ -7,4 +7,4 @@ Created Saturday 12 May 2018
 
 Cursed
 
-All [[Units:Attributes|attributes]] are raised by 1, by unit loses 1 HP at the beginning of their turn.
+All [[Units:Attributes|attributes]] are raised by 1, but unit loses 1 HP at the beginning of their turn.

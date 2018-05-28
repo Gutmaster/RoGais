@@ -14,6 +14,7 @@ var gold = 0
 
 onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
+onready var trinketCatalogue = preload("res://Trinket/Trinket.tscn").instance()
 
 onready var artifactSlot = find_node("ArtifactSlot")
 onready var artifactContainer = find_node("ArtifactContainer")
@@ -37,6 +38,7 @@ func _ready():
 	AddArtifact(startifact)
 	
 	itemAdd(itemCatalogue.get_node("Red Goo"))
+	itemAdd(trinketCatalogue.get_node("Tribute Ring"))
 
 
 func _input(event):

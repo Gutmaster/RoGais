@@ -176,7 +176,8 @@ func AddUnit(var unit, var team, var AI = false, var row = unit.defaultRow):
 		unit.team = get_node("TeamLeft")
 		unit.add_to_group("Party")
 	else:
-		party.artifactSlot.item.EnemyMod(unit)
+		if(party.artifactSlot.item != null):
+			party.artifactSlot.item.EnemyMod(unit)
 		unit.flip_h = true
 		unit.team = get_node("TeamRight")
 	

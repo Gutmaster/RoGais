@@ -45,7 +45,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer"]
+[node name="Party" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 5
@@ -62,6 +62,7 @@ visible = false
 
 [node name="PartyMenu" type="Control" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

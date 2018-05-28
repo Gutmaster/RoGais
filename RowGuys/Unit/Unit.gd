@@ -129,6 +129,9 @@ func PartyCardInit():
 	elif(defaultRow == front):
 		partyCard.find_node("Portrait3").texture_normal = portrait
 	partyCard.unit = self
+	
+	trinket1 = partyCard.find_node("Slot")
+	trinket2 = partyCard.find_node("Slot2")
 
 
 func _process(delta):
@@ -139,7 +142,12 @@ func Upkeep():
 	TerrainUpkeep()
 	StatusCheck()
 	StanceBonus()
-	party.artifactContainer.get_child(0).Upkeep(self)
+	if(party.artifactContainer.get_child(0) != null):
+		party.artifactContainer.get_child(0).Upkeep(self)
+	if(trinket1 != null && trinket1.item != null):
+		trinket1.item.Upkeep(self)
+	if(trinket2 != null && trinket2.item != null):
+		trinket2.item.Upkeep(self)
 	if(get_name() == "Dank Druid"):
 		Growth()
 	RefreshStats()
@@ -516,10 +524,10 @@ func ApplyStats():
 func RefreshStats():
 	Reset(mStats)
 	Addributes(bStats)
-	if(trinket1 != null):
-		Addributes(trinket1.stats)
-	if(trinket2 != null):
-		Addributes(trinket2.stats)
+	if(trinket1 != null && trinket1.item != null):
+		Addributes(trinket1.item.stats)
+	if(trinket2 != null && trinket2.item != null):
+		Addributes(trinket2.item.stats)
 	if(teamLeft && party != null && party.artifactSlot.item != null):
 		Addributes(party.artifactSlot.item.stats)
 	if(rowRef != null):
