@@ -34,11 +34,7 @@ func _ready():
 	
 	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
 	
-	artifactSlot.add_child(startifact)
-	artifactSlot.item = startifact
-	artifactSlot.item.Acquire()
-	
-	artifactContainer.add_child(startifact.duplicate())
+	AddArtifact(startifact)
 	
 	itemAdd(itemCatalogue.get_node("Red Goo"))
 
@@ -63,6 +59,7 @@ func AddUnit(var unit):
 	$Units.add_child(unit, true)
 	unit.CharCardInit()
 	unit.PartyCardInit()
+	unit.teamLeft = true
 	var panelString = "Panel" + str($Units.get_child_count() - 1)
 	find_node(panelString).add_child(unit.partyCard)
 	find_node("Unit Cards").add_child(unit.quickStats)
@@ -109,8 +106,8 @@ func PartyPause():
 	get_tree().paused = !(get_tree().paused)
 	$PartyMenu.visible = !($PartyMenu.visible)
 	$HUD.visible = !($HUD.visible)
-	
-	
+
+
 func UpdatePartyCards():
 	var uList
 	var count
@@ -134,7 +131,9 @@ func UpdatePartyCards():
 			unit = uList.get_child(i)
 		else:
 			unit = uList[i]
-
+		
+		unit.RefreshStats()
+		
 		var panelString = "Panel" + str(i)
 	
 		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
@@ -153,6 +152,14 @@ func UpdatePartyCards():
 		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
 		
 		find_node(panelString).add_child(unit.partyCard)
+
+
+func AddArtifact(artifact):
+	artifactSlot.add_child(artifact)
+	artifactSlot.item = artifact
+	artifactSlot.item.Acquire()
+	
+	artifactContainer.add_child(artifact.duplicate())
 
 
 func itemAdd(item):

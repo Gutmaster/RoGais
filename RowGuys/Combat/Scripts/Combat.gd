@@ -208,6 +208,7 @@ func EndBattle():
 			var unit = uList.get_child(i)
 			unit.ChangeStance(unit.FindStance("Wait"))
 			unit.UpdateAP(unit.aStats.Stamina)
+			unit.rowRef = null
 			if(unit.AI):
 				unit.ReParent($Deadzone)
 				loopo = true

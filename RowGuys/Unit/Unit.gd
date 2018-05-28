@@ -36,11 +36,12 @@ var AIAction = false
 var AIShift = false
 var AIWait = false
 
-var team
+var team = null
+var teamLeft = false
 
 var defaultRow
 var row
-var rowRef
+var rowRef = null
 
 var shifting = false
 var checkFlag = false
@@ -63,6 +64,8 @@ var qInitiative = 0
 var bStats = {"Vitality" : 1, "Stamina" : 1, "Strength" : 1, "Wisdom" : 1, "Endurance" : 1, "Willpower" : 1, "Speed" : 1}
 var mStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 var aStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
+
+
 var hp = 0
 var ap = 0
 var xp = 0
@@ -87,8 +90,8 @@ onready var combatNode = globals.combatScene
 onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
 onready var party = globals.party
 
-var trinket1
-var trinket2
+var trinket1 = null
+var trinket2 = null
 
 
 func _ready():
@@ -100,7 +103,7 @@ func SharedInit():
 	height = frames.get_frame("Idle", 0).get_size().y
 	width = frames.get_frame("Idle", 0).get_size().x
 	
-	Addributes(bStats)
+	RefreshStats()
 	hp = aStats.Vitality
 	ap = aStats.Stamina
 	
@@ -137,9 +140,10 @@ func Upkeep():
 	StatusCheck()
 	StanceBonus()
 	party.artifactContainer.get_child(0).Upkeep(self)
-	UpdateAP(ceil(float(aStats.Stamina)/2))
 	if(get_name() == "Dank Druid"):
 		Growth()
+	RefreshStats()
+	UpdateAP(ceil(float(aStats.Stamina)/2))
 	#for i in range(combatNode.get_node("Row").get_child_count()):
 		#combatNode.get_node("Row").get_child(i).Decay()
 
@@ -281,13 +285,12 @@ func FindStance(var stance):
 
 
 func ChangeStance(newStance):
-	Subtributes(stance.mod)
-	Addributes(newStance.mod)
-	
 	stance.set_process(false)
 	newStance.set_process(true)
 	stance = newStance
 	play(stance.animation)
+	
+	RefreshStats()
 
 
 func ActionPlay(var anim):
@@ -340,6 +343,18 @@ func StatusCheck():
 			if(self.is_in_group("Party")):
 				partyCard.find_node("StatusIcon").texture = null
 				partyCard.find_node("StatusPower").text = ""
+
+
+func StatusCure():
+	quickStats.find_node("StatusIcon").texture = null
+	quickStats.find_node("StatusPower").text = ""
+	
+	if(self.is_in_group("Party")):
+		partyCard.find_node("StatusIcon").texture = null
+		partyCard.find_node("StatusPower").text = ""
+	
+	status = STATUS.normal
+	TempPlay("Defend")
 
 
 func StanceBonus():
@@ -413,15 +428,12 @@ func UpdateHealth(var dif):
 
 
 func Eat():
-	Subtributes(starveNerf)
 	starveLvl -= 1
 	if(starveLvl < 0):
 		starveLvl = 0
-	Addributes(starveNerf)
 
 
 func Starve():
-	Subtributes(starveNerf)
 	starveLvl += 1
 	starveNerf.Vitality = -starveLvl
 	starveNerf.Stamina = -starveLvl
@@ -430,7 +442,16 @@ func Starve():
 	starveNerf.Endurance = -starveLvl
 	starveNerf.Willpower = -starveLvl
 	starveNerf.Speed = -starveLvl
-	Addributes(starveNerf)
+
+
+func Reset(mod):
+	mod.Vitality = 0
+	mod.Strength = 0
+	mod.Endurance = 0
+	mod.Stamina = 0
+	mod.Willpower = 0
+	mod.Wisdom = 0
+	mod.Speed = 0
 
 
 func Addributes(mod):
@@ -450,7 +471,7 @@ func Addributes(mod):
 		ap = aStats.Stamina
 
 
-func Subtributes(mod):
+"""func Subtributes(mod):
 	mStats.Vitality -= mod.Vitality
 	mStats.Strength -= mod.Strength
 	mStats.Endurance -= mod.Endurance
@@ -464,7 +485,7 @@ func Subtributes(mod):
 	if(hp > aStats.Vitality):
 		hp = aStats.Vitality
 	if(ap > aStats.Stamina):
-		ap = aStats.Stamina
+		ap = aStats.Stamina"""
 
 
 func ApplyStats():
@@ -490,6 +511,25 @@ func ApplyStats():
 		aStats.Willpower = 1
 	if(aStats.Speed < 1):
 		aStats.Speed = 1
+
+
+func RefreshStats():
+	Reset(mStats)
+	Addributes(bStats)
+	if(trinket1 != null):
+		Addributes(trinket1.stats)
+	if(trinket2 != null):
+		Addributes(trinket2.stats)
+	if(teamLeft && party != null && party.artifactSlot.item != null):
+		Addributes(party.artifactSlot.item.stats)
+	if(rowRef != null):
+		Addributes(rowRef.terrain.stats)
+	if(starveLvl > 0):
+		Addributes(starveNerf)
+	if(stance != null):
+		Addributes(stance.stats)
+	
+	ApplyStats()
 
 
 #################AI CODE#########################################

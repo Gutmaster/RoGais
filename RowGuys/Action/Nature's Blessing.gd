@@ -28,9 +28,14 @@ func FindTargetOptions(var team):
 func Execute():
 	user.UpdateAP(-apCost)
 	
+	for i in range(user.terrainList.size()):
+		if(user.terrainList[i] == target.terrain):
+			user.terrainList.remove(i)
+	
 	target.ClearTerrain()
 	target.terrain = combatNode.get_node("TerrainCatalogue/Nature's Blessing").duplicate()
 	target.add_child(target.terrain)
+	target.terrain.level = level
 	target.terrain.Init(target.left)
 	
 	user.terrainList.push_back(target.terrain)
