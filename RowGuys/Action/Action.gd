@@ -15,6 +15,7 @@ var target
 
 var animation = null
 var projectile = null
+var projRef = null
 
 var tags = {"spec": false, "melee": false, "ranged": false, "fire": false, "targeted": true}
 
@@ -34,7 +35,6 @@ onready var uList = combatNode.get_node("UnitList")
 
 func _ready():
 	set_process(false)
-	pass#connect("finished", combatNode.get_node("UnitCommand/Action"), "ActionFinished")
 
 
 func UseCheck():
@@ -58,8 +58,6 @@ func FindTargetOptions(var team):
 
 
 func CombatMath(var user, var target):
-	user.UpdateAP(-apCost)
-	
 	var dmg
 	if(tags.spec):
 		dmg = user.aStats.Wisdom - target.aStats.Willpower
@@ -75,10 +73,15 @@ func CombatMath(var user, var target):
 	target.UpdateHP(-dmg)
 
 
-func Animate(var usr, var trgt):
+func Init(var usr, var trgt, var free = false):
 	user = usr
 	target = trgt
-	user.ActionPlay(animation)
+	if(!free):
+		user.UpdateAP(-apCost)
+	phase = 1
+	user.cAction = self
+	set_process(true)
+	user.TempPlay(animation)
 
 
 func Execute():

@@ -31,15 +31,16 @@ func _process(delta):
 		projectile = combatNode.get_node("EffectCatalogue/Firecracker").duplicate()
 		combatNode.add_child(projectile)
 		projectile.Init(user, target)
+		projRef = weakref(projectile)
 		ActionShift(true if user.team == combatNode.get_node("TeamLeft") else false)
 		phase = 2
 	if(phase == 2):
-		if(user.frame+1 >= user.frames.get_frame_count(animation) && !user.shifting):
+		if(!user.shifting):
 			phase = 3
 	if(phase == 3):
-		if(projectile && !projectile.get_node("Tween").is_active()):
+		if(projRef.get_ref() && !projectile.get_node("Tween").is_active()):
 			Execute()
-			actionMenu.ActionFinished()
+			actionMenu.ActionFinished(self)
 
 
 func FindTargetOptions(var team):

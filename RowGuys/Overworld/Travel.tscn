@@ -34,7 +34,7 @@ position = Vector2( 378, 342 )
 [node name="MoveMarker" parent="." index="4" instance=ExtResource( 6 )]
 
 visible = false
-frame = 2
+frame = 0
 
 [node name="Player" parent="." index="5" instance=ExtResource( 7 )]
 

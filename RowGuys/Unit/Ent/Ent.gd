@@ -43,23 +43,17 @@ func AICmd():
 
 func AISweepingStrike():
 	var action = FindAction("Sweeping Strike")
-	action.set_process(true)
 	action.FindTargetOptions(team)
 	
 	var target = action.targetOptions[0]
 	
-	action.Animate(self, target)
-	action.phase = 1
-	cAction = action
+	action.Init(self, target)
 
 
 func AIBlockade():
 	var action = FindAction("Blockade")
-	action.set_process(true)
 	action.FindTargetOptions(team)
 	
 	var target = action.targetOptions[0]
 	
-	action.Animate(self, target)
-	action.phase = 1
-	cAction = action
+	action.Init(self, target)

@@ -7,6 +7,8 @@ var userRows = []
 
 var animation
 
+var level = 1
+
 var stats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 var bonus = {"Strength": 0, "Wisdom": 0, "fireCrit": false}
 
@@ -18,6 +20,14 @@ onready var uList = combatNode.get_node("UnitList")
 
 func _ready():
 	set_process(false)
+
+
+func Interrupt(unit, target):
+	pass
+
+
+func PostAction(unit, target):
+	pass
 
 
 func UseCheck():

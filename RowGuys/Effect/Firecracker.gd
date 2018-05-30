@@ -15,14 +15,13 @@ func Init(var user, var target):
 	phase = 1
 
 
-func _process(delta):
-	if(phase == 2):
-		if(frame+1 >= frames.get_frame_count(animation)):
-			queue_free()
-			get_parent().remove_child(self)
-
-
 func _on_Tween_tween_completed(object, key):
 	animation = "Explode"
 	$Tween.set_active(false)
 	phase = 2
+
+
+func _on_Firecracker_animation_finished():
+	if(animation == "Explode"):
+		queue_free()
+		get_parent().remove_child(self)

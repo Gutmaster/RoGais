@@ -23,7 +23,7 @@ func _process(delta):
 			phase = 3
 	elif(phase == 3):
 		if(projectile == null):
-			actionMenu.ActionFinished()
+			actionMenu.ActionFinished(self)
 
 
 func FindTargetOptions(var enemyTeam):

@@ -20,4 +20,4 @@ func _process(delta):
 	elif(phase == 2):
 		if(!projectile.get_node("Tween").is_active()):
 			Execute()
-			actionMenu.ActionFinished()
+			actionMenu.ActionFinished(self)

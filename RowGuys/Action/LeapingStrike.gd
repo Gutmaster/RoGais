@@ -34,4 +34,4 @@ func _process(delta):
 	elif(phase == 2):
 		if(user.frame+2 >= user.frames.get_frame_count(animation) && !user.shifting):
 			Execute()
-			actionMenu.ActionFinished()
+			actionMenu.ActionFinished(self)

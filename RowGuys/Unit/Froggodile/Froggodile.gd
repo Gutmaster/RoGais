@@ -40,21 +40,17 @@ func AICmd():
 
 func AITongueSnatch():
 	var action = FindAction("Tongue Snatch")
-	action.set_process(true)
 	action.FindTargetOptions(team.enemy)
 	
 	randomize()
 	if(action.targetOptions.size()):
 		var target = action.targetOptions[randi()%action.targetOptions.size()]
 	
-		action.Animate(self, target)
-		action.phase = 1
-		cAction = action
+		action.Init(self, target)
 
 
 func AIPoisonJaws():
 	var action = FindAction("Poison Jaws")
-	action.set_process(true)
 	action.FindTargetOptions(team.enemy)
 	randomize()
 	if(action.targetOptions.size()):
@@ -62,6 +58,4 @@ func AIPoisonJaws():
 		var target = action.targetOptions[r]
 		target = actionMenu.ProtectStanceCheck(action, target)
 	
-		action.Animate(self, target)
-		action.phase = 1
-		cAction = action
+		action.Init(self, target)

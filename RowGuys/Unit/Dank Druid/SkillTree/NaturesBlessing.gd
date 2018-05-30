@@ -8,8 +8,8 @@ func _ready():
 func Apply(level):
 	var unit = get_parent().unit
 	if(level == 1):
-		unit.actionList.push_back(unit.get_node("ActionCatalogue/Nature's Blessing"))
+		unit.stanceList.push_back(unit.get_node("StanceCatalogue/Retaliate"))
 	elif(level == 2):
-		unit.get_node("ActionCatalogue/Nature's Blessing").level = 2
+		pass
 	elif(level == 3):
-		unit.get_node("ActionCatalogue/Nature's Blessing").level = 3
+		unit.get_node("StanceCatalogue/Retaliate").level = 3

@@ -58,9 +58,7 @@ func NTActionSelected(action):
 	get_parent().get_parent().hide()
 	var user = combatNode.activeUnit
 	action.set_process(true)
-	action.Animate(user, null)
-	action.phase = 1
-	user.cAction = action
+	action.Init(user, null)
 	disabled = true
 
 
@@ -91,23 +89,25 @@ func TargetSelected(action, target):
 	var user = combatNode.activeUnit
 	target = ProtectStanceCheck(action, target)
 	
-	action.Animate(user, target)
-	action.phase = 1
+	action.Init(user, target)
 	combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton").disabled = true
 
 
-func ActionFinished():
-	var user = combatNode.activeUnit
-	if(!user.AI):
+func ActionFinished(action):
+	var user = action.user
+	if(!user.AI && user == combatNode.activeUnit):
 		combatNode.get_node("HUD/CommandWindow").visible = true
+	
+	if(action.target.get_class() != "Sprite"):
+		action.target.stance.PostAction(action.target, user)
 	
 	user.AIAction = true
 	#user.QueuePlay("Idle")
-	user.play("Idle")
-	user.cAction.phase = 0
-	user.cAction.targets.clear()
-	user.cAction.target = null
-	user.cAction.set_process(false)
+	#user.play("Idle")
+	action.phase = 0
+	action.targets.clear()
+	action.target = null
+	action.set_process(false)
 	user.cAction = null
 
 

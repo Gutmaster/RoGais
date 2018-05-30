@@ -21,7 +21,8 @@ temp,
 command,
 passturn,
 action,
-next}
+next,
+stanceChange}
 
 var animFlag = null
 
@@ -34,7 +35,6 @@ var portrait = null
 var AI = false
 var AIAction = false
 var AIShift = false
-var AIWait = false
 
 var team = null
 var teamLeft = false
@@ -82,6 +82,7 @@ var terrainList = []
 var actionList = []
 var stanceList = []
 onready var stance = get_node("StanceCatalogue/Wait")
+onready var nextStance = null
 
 var skillTree = null
 
@@ -301,6 +302,11 @@ func ChangeStance(newStance):
 	RefreshStats()
 
 
+func QueueChangeStance(stance):
+	nextStance = stance
+	animFlag = ANIMFLAG.stanceChange
+
+
 func ActionPlay(var anim):
 	animFlag = ANIMFLAG.action
 	play(anim)
@@ -317,21 +323,21 @@ func QueuePlay(var anim):
 	animFlag = ANIMFLAG.next
 
 
+
 func _on_Unit_animation_finished():
 	if(animFlag == ANIMFLAG.command):
 		play("Idle")
 		if(!AI):
 			combatNode.get_node("HUD/CommandWindow").show()
-		AIWait = false
 		animFlag = null
 	elif(animFlag == ANIMFLAG.temp):
 		play(lastAnim)
-		AIWait = false
 		animFlag = null
 	elif(animFlag == ANIMFLAG.next):
 		play(nextAnim)
-		AIWait = false
 		animFlag = null
+	elif(animFlag == ANIMFLAG.stanceChange):
+		ChangeStance(nextStance)
 
 
 func StatusCheck():
@@ -368,6 +374,7 @@ func StatusCure():
 func StanceBonus():
 	flags.fireCrit = false
 	flags.fireCrit = stance.bonus.fireCrit
+	animFlag = null
 	play("Idle")
 
 

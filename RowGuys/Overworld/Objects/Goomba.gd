@@ -13,7 +13,7 @@ func LoadParty():
 	add_child(party)
 	party.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
 	party.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
-	party.AddUnit(load("res://Unit/Ent/Ent.tscn"))
+	#party.AddUnit(load("res://Unit/Ent/Ent.tscn"))
 	party.get_node("HUD").visible = false
 
 

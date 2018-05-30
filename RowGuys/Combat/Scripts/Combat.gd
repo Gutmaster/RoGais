@@ -15,6 +15,7 @@ var activeUnit
 var hoverUnit = null
 var approaching = false
 var midBattle = false
+var AIWait = false
 onready var globals = get_node("/root/Globals")
 onready var combatNode = globals.combatScene
 onready var party = globals.party
@@ -83,8 +84,17 @@ func SetUnitPos():
 		temp.position -= Vector2(0, temp.height/3)
 
 
+func WaitCheck():
+	AIWait = false
+	for i in range(uList.get_child_count()):
+		if(uList.get_child(i).cAction != null):
+			AIWait = true
+
+
 func _process(delta):
-	if(activeUnit.AI && !activeUnit.AIWait):
+	WaitCheck()
+	
+	if(activeUnit.AI && !AIWait):
 		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
 			activeUnit.AICmd()
 	

@@ -21,7 +21,7 @@ func _process(delta):
 	if(phase == 1):
 		if(user.frame+1 >= user.frames.get_frame_count(animation)):
 			Execute()
-			actionMenu.ActionFinished()
+			actionMenu.ActionFinished(self)
 
 
 func Execute():
