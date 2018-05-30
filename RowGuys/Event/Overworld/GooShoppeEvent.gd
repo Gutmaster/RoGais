@@ -5,7 +5,13 @@ func _ready():
 
 
 func _on_ShopButton_pressed():
-	pass # replace with function body
+	party.find_node("HUD").visible = false
+	$Shop.find_node("ShopMenu").visible = true
+	if(!$Shop.init):
+		$Shop.ShopInit()
+		$Shop.AddShopItem(party.itemCatalogue.get_node("Red Goo"))
+	else:
+		$Shop.UpdateMiniPartyCards()
 
 
 func _on_ExitButton_pressed():

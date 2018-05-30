@@ -11,6 +11,7 @@ var party
 var combatScene
 var travelScene
 var dungeonScene
+var eventScene
 
 var currentScene
 var prevScene

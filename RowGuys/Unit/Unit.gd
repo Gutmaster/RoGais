@@ -7,6 +7,9 @@ var quickStats
 var PCScene = load("res://Party/PartyCard.tscn")
 var partyCard
 
+var MPCScene = load("res://Party/MiniPartyCard.tscn")
+var miniPartyCard
+
 enum ROW{
 front,
 middle,
@@ -129,10 +132,20 @@ func PartyCardInit():
 		partyCard.find_node("Portrait2").texture_normal = portrait
 	elif(defaultRow == front):
 		partyCard.find_node("Portrait3").texture_normal = portrait
+		
 	partyCard.unit = self
 	
-	trinket1 = partyCard.find_node("Slot")
-	trinket2 = partyCard.find_node("Slot2")
+	trinket1 = partyCard.find_node("TrinketSlot")
+	trinket2 = partyCard.find_node("TrinketSlot2")
+
+
+func MiniPartyCardInit():
+	miniPartyCard = MPCScene.instance()
+	
+	miniPartyCard.find_node("Name").set_text(get_name())
+	miniPartyCard.find_node("Portrait").texture = portrait
+
+	miniPartyCard.unit = self
 
 
 func _process(delta):

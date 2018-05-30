@@ -12,6 +12,7 @@ onready var item = null
 
 onready var party = get_node("/root/Globals").party
 
+var shop = null
 
 func _ready():
 	print(get_child_count())
@@ -28,8 +29,10 @@ func _on_Slot_focus_entered():
 		party.itemHolder.remove_child(item)
 		party.itemHolder.item = null
 		add_child(item)
+		party.itemList.push_back(item)
 	elif(mouseItem == null && item):
 		party.itemHolder.item = item
+		party.itemList.erase(item)
 		item = null
 		party.itemHolder.itemCatcher = self
 	elif(mouseItem != null && item):
@@ -40,3 +43,6 @@ func _on_Slot_focus_entered():
 		party.itemHolder.itemCatcher = self
 	
 	party.UpdatePartyCards()
+	
+	if(shop):
+		shop.UpdateMiniPartyCards()

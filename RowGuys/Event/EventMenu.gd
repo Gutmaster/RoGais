@@ -3,17 +3,20 @@ extends CanvasLayer
 
 onready var eventMenu = $CenterContainer
 
+onready var party = get_node("/root/Globals").party
+
 signal partyChoice
 
 
 func _ready():
-	pass
+	$CenterContainer.visible = false
 
 
 func close_event():
 	if(get_tree().get_current_scene() == get_node("/root/Globals").travelScene):
 		$"../../Player".state = $"../../Player".STATES.STOPPED
 	eventMenu.visible = false
+	Globals.eventScene = null
 
 
 func _on_CenterContainer_visibility_changed():

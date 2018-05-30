@@ -10,20 +10,24 @@ func _on_Slot_focus_entered():
 	
 	var mouseItem = party.itemHolder.item
 	
-	if(mouseItem != null && mouseItem.iType == type && !item):
-		item = mouseItem
-		party.itemHolder.remove_child(item)
-		party.itemHolder.item = null
-		add_child(item)
-	elif(mouseItem == null && item):
-		party.itemHolder.item = item
-		item = null
-		party.itemHolder.itemCatcher = self
-	elif(mouseItem != null && mouseItem.iType == type && item):
-		party.itemHolder.remove_child(mouseItem)
-		add_child(mouseItem)
-		party.itemHolder.item = item
-		item = mouseItem
-		party.itemHolder.itemCatcher = self
+	if(Globals.currentScene != Globals.combatScene):
+		if(mouseItem != null && mouseItem.iType == type && !item):
+			item = mouseItem
+			party.itemHolder.remove_child(item)
+			party.itemHolder.item = null
+			add_child(item)
+		elif(mouseItem == null && item):
+			party.itemHolder.item = item
+			item = null
+			party.itemHolder.itemCatcher = self
+		elif(mouseItem != null && mouseItem.iType == type && item):
+			party.itemHolder.remove_child(mouseItem)
+			add_child(mouseItem)
+			party.itemHolder.item = item
+			item = mouseItem
+			party.itemHolder.itemCatcher = self
 	
-	party.UpdatePartyCards()
+		party.UpdatePartyCards()
+	
+	if(shop):
+		shop.UpdateMiniPartyCards()

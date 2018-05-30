@@ -24,3 +24,4 @@ func _on_WaitTimer_timeout():
 
 func create_event():
 	eventMenu.visible = true
+	Globals.eventScene = eventMenu

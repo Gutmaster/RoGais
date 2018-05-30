@@ -36,3 +36,6 @@ func _on_Slot_focus_entered():
 			party.itemHolder.itemCatcher = self
 	
 		party.UpdatePartyCards()
+		
+		if(shop):
+			shop.UpdateMiniPartyCards()

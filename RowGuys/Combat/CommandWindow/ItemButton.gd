@@ -13,7 +13,8 @@ func LoadItems():
 	get_popup().clear()
 	
 	for i in range(combatNode.party.itemList.size()):
-		get_popup().add_item(combatNode.party.itemList[i].get_name(), i)
+		if(combatNode.party.itemList[i].iType == combatNode.party.ITYPE.item):
+			get_popup().add_item(combatNode.party.itemList[i].get_name(), i)
 
 
 func _on_Item_id_pressed(ID):

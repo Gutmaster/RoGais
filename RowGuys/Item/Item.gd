@@ -12,6 +12,9 @@ onready var iType = ITYPE.item
 var power = 0
 var iteemo = 42
 
+var buyPrice = 5
+var sellPrice = 2
+
 func _ready():
 	pass
 
