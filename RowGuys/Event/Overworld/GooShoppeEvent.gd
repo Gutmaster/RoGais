@@ -8,10 +8,9 @@ func _on_ShopButton_pressed():
 	party.find_node("HUD").visible = false
 	$Shop.find_node("ShopMenu").visible = true
 	if(!$Shop.init):
-		$Shop.ShopInit()
 		$Shop.AddShopItem(party.itemCatalogue.get_node("Red Goo"))
-	else:
-		$Shop.UpdateMiniPartyCards()
+
+	$Shop.ShopInit()
 
 
 func _on_ExitButton_pressed():
