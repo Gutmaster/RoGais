@@ -66,7 +66,6 @@ func SetUnitPos():
 	
 	for j in range(get_node("Row").get_child_count()/2):
 		get_node("Row").get_child(j).SetLine(combatNode.get_node("TeamLeft"))
-		get_node("Row").get_child(j).left = true
 	for j in range(3, get_node("Row").get_child_count()):
 		get_node("Row").get_child(j).SetLine(combatNode.get_node("TeamRight"))
 	

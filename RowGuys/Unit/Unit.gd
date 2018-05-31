@@ -156,7 +156,7 @@ func Upkeep():
 	TerrainUpkeep()
 	StatusCheck()
 	StanceBonus()
-	if(party.artifactContainer.get_child(0) != null):
+	if(teamLeft && party.artifactContainer.get_child(0) != null):
 		party.artifactContainer.get_child(0).Upkeep(self)
 	if(trinket1 != null && trinket1.item != null):
 		trinket1.item.Upkeep(self)

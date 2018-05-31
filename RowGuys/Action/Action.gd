@@ -139,3 +139,24 @@ func ActionShift(var left, var speed = 0.5):
 		
 	user.get_node("Tween").interpolate_property(user, "position", user.position, user.rowRef.position - Vector2(0, user.Size().y/3) + user.rowRef.get_node("UnitLine").get_point_position(user.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	user.get_node("Tween").start()
+
+
+func TargetedShift(unit, target, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward"):
+	if(unit.rowRef.terrain.tags.trapping):
+		unit.shifting = false
+		return
+	
+	if(unit.rowRef.left != target.left):
+		unit.play(animF)
+	elif(target.row > unit.row):
+		unit.play(animB)
+	else:
+		unit.play(animF)
+	
+	unit.rowRef = target
+	unit.row = unit.rowRef.row
+	
+	unit.shifting = true
+	
+	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.height/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	unit.get_node("Tween").start()

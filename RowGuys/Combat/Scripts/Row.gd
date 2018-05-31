@@ -1,5 +1,12 @@
 extends Node2D
 
+enum ROW{
+front,
+middle,
+back}
+
+var row = null
+
 var left = false
 var mouseHover = false
 var color = Color(1,1,1,1)
@@ -11,6 +18,14 @@ onready var terrain = combatNode.get_node("TerrainCatalogue/Default").duplicate(
 
 
 func _ready():
+	if(get_name() == "LB" || get_name() == "LM" || get_name() == "LF"):
+		left = true
+	if(get_name() == "LB" || get_name() == "RB"):
+		row = ROW.back
+	if(get_name() == "LM" || get_name() == "RM"):
+		row = ROW.middle
+	if(get_name() == "LF" || get_name() == "RF"):
+		row = ROW.front
 	add_child(terrain)
 	pass
 

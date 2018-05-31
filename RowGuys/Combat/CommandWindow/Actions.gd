@@ -102,8 +102,6 @@ func ActionFinished(action):
 		action.target.stance.PostAction(action.target, user)
 	
 	user.AIAction = true
-	#user.QueuePlay("Idle")
-	#user.play("Idle")
 	action.phase = 0
 	action.targets.clear()
 	action.target = null

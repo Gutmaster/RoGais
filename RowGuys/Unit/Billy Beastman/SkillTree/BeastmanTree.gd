@@ -5,15 +5,11 @@ var unit = null
 
 
 func _ready():
-	"""$"Nature's Blessing".connections.push_back($"Minor Beast")
-	$"Nature's Blessing".connections.push_back($"Ensnaring Vines")
-	
-	$"Ensnaring Vines".connections.push_back($"Reclaim")
-	$"Reclaim".connections.push_back($"Ensnaring Vines")
+	$"Retaliate".connections.push_back($"Feral Fling")
 	
 	var skillnodes = get_tree().get_nodes_in_group("skillnodes")
 	for i in skillnodes:
-		i.AddLines()"""
+		i.AddLines()
 	
 	
 	$"Retaliate".Unlock()
