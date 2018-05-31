@@ -8,6 +8,7 @@ onready var init = false
 
 func _ready():
 	$ShopMenu.visible = false
+	find_node("ArtifactDescription").text = " "
 
 
 func ShopInit():
@@ -21,25 +22,32 @@ func ShopInit():
 	if(party.artifactSlot.item):
 		artifact = party.artifactSlot.item.duplicate()
 	
-	find_node("ArtifactSlot").add_child(artifact)
-	find_node("ArtifactSlot").item = artifact
+		find_node("ArtifactSlot").add_child(artifact)
+		find_node("ArtifactSlot").item = artifact
 	
-	find_node("ArtifactSlot").shop = self
+		find_node("ArtifactSlot").shop = self
 	
-	find_node("ArtifactDescription").text = artifact.description
+		find_node("ArtifactDescription").text = artifact.description
 	
-	for i in range(party.itemList.size()):
-		var item = party.itemList[i].duplicate()
-		
-		var slotString = "Slot" + str(i+1)
+	for i in range(1,9):
+		var slotString = "Slot" + str(i)
 		var slot = find_node(slotString)
 		
-		slot.shop = self
+		if(slot.item != null):
+			slot.remove_child(slot.get_child(1))
+			slot.item = null
+			
+		var partySlot = party.find_node(slotString)
 		
-		if(slot.item == null):
-			slot.item = item
-			slot.add_child(item)
-			print(slot.get_name(), slot.get_child_count())
+		if(partySlot.item):
+			slot.item = partySlot.item.duplicate()
+			slot.add_child(slot.item)
+			
+			slot.shop = self
+			
+			
+	
+
 			
 	for i in range(1,6):
 		find_node("ItemSlot" + str(i)).shop = self
@@ -115,6 +123,13 @@ func _on_ExitButton_pressed():
 	
 	$ShopMenu.visible = false
 	party.find_node("HUD").visible = true
+	
+	var artifactSlot = find_node("ArtifactSlot")
+	
+	if(artifactSlot.item):
+		artifactSlot.remove_child(artifactSlot.get_child(1))
+		
+	find_node("ArtifactDescription").text = " "
 
 
 func AddShopItem(item):

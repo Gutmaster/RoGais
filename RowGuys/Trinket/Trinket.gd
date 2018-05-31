@@ -12,6 +12,8 @@ var description
 
 var stats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 
+var buyPrice = 5
+var sellPrice = 2
 
 func _ready():
 	pass

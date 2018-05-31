@@ -11,6 +11,9 @@ func _ready():
 	stats.Wisdom += 1
 	stats.Willpower += 1
 	stats.Speed += 1
+	
+	buyPrice = 5
+	sellPrice = 2
 
 
 func Upkeep(unit):

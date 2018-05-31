@@ -17,6 +17,8 @@ var enemyMod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "En
 
 var description = ""
 
+var buyPrice = 5
+var sellPrice = 2
 
 func _ready():
 	pass
