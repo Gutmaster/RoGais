@@ -98,9 +98,6 @@ func ActionFinished(action):
 	if(!user.AI && user == combatNode.activeUnit):
 		combatNode.get_node("HUD/CommandWindow").visible = true
 	
-	if(action.target.get_class() != "Sprite"):
-		action.target.stance.PostAction(action.target, user)
-	
 	user.AIAction = true
 	action.phase = 0
 	action.targets.clear()

@@ -6,6 +6,7 @@ var unit = null
 
 func _ready():
 	$"Retaliate".connections.push_back($"Feral Fling")
+	$"Feral Fling".connections.push_back($"Frenzy")
 	
 	var skillnodes = get_tree().get_nodes_in_group("skillnodes")
 	for i in skillnodes:

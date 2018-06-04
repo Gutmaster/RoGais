@@ -70,7 +70,7 @@ func CombatMath(var user, var target):
 		print("crit ", dmg, "x ", critMod)
 		dmg *= 2
 		print(dmg)
-	target.UpdateHP(-dmg)
+	target.CombatDamage(user, dmg)
 
 
 func Init(var usr, var trgt, var free = false):

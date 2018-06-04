@@ -15,10 +15,6 @@ front,
 middle,
 back}
 
-enum STATUS{
-normal,
-poison}
-
 enum ANIMFLAG{
 temp,
 command,
@@ -27,10 +23,14 @@ action,
 next,
 stanceChange}
 
+enum STATUS{
+normal,
+poison,
+marked}
+
 var animFlag = null
 
-var status = STATUS.normal
-var statusMod
+var status = []
 
 var idName
 var portrait = null
@@ -259,6 +259,16 @@ func PickRandShiftDir():
 		return false
 
 
+func CombatDamage(source, dmg):
+	for i in range(status.size()):
+		if(status[i].type == STATUS.marked && status[i].hunter == source):
+			dmg *= 1.5
+			print("Marked Bonus", str(dmg))
+	
+	UpdateHP(-dmg)
+	stance.PostAction(self, source)
+
+
 func UpdateHP(var dif):
 	hp += dif
 	if(hp > aStats.Vitality):
@@ -354,22 +364,30 @@ func _on_Unit_animation_finished():
 
 
 func StatusCheck():
-	if(status == STATUS.poison):
-		UpdateHP(-statusMod)
-		statusMod -= 1
-		quickStats.find_node("StatusPower").text = str(statusMod)
+	for i in range(status.size()):
+		status[i].Upkeep(self)
+		
+		"""quickStats.find_node("StatusPower").text = str(status[i].power)
 		
 		if(self.is_in_group("Party")):
-			partyCard.find_node("StatusPower").text = str(statusMod)
+			partyCard.find_node("StatusPower").text = str(status[i].power)"""
 		
-		if(statusMod <= 0):
-			status = STATUS.normal
-			quickStats.find_node("StatusIcon").texture = null
+		if(status[i].power <= 0):
+			status.remove(i)
+			"""quickStats.find_node("StatusIcon").texture = null
 			quickStats.find_node("StatusPower").text = ""
 			
 			if(self.is_in_group("Party")):
 				partyCard.find_node("StatusIcon").texture = null
 				partyCard.find_node("StatusPower").text = ""
+"""
+
+func SeekStatus(sts):
+	for i in range(status.size()):
+		print(status[i].type, sts.type)
+		if(status[i].type == sts.type):
+			return status[i]
+	return sts
 
 
 func StatusCure():
@@ -380,7 +398,7 @@ func StatusCure():
 		partyCard.find_node("StatusIcon").texture = null
 		partyCard.find_node("StatusPower").text = ""
 	
-	status = STATUS.normal
+	status.clear()
 	TempPlay("Defend")
 
 
@@ -393,14 +411,30 @@ func StanceBonus():
 
 func Poison(var power):
 	if(power > aStats.Endurance):
-		status = STATUS.poison
-		statusMod = power - aStats.Endurance
-		quickStats.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
-		quickStats.find_node("StatusPower").text = str(statusMod)
+		var temp = find_node("Poison").duplicate()
+		temp._init()
+		var effect = SeekStatus(temp)
 		
-		if(self.is_in_group("Party")):
-			partyCard.find_node("StatusIcon").texture = load("res://Party/QuickStats/Poison.png")
-			partyCard.find_node("StatusPower").text = str(statusMod)
+		if(effect == temp):
+			status.push_back(effect)
+		
+		effect.power += power - aStats.Endurance
+		print(effect.power)
+		
+		quickStats.find_node("Status").add_child(effect)
+		
+		quickStats.print_tree()
+
+
+func Mark(hunter):
+	var temp = find_node("Marked").duplicate()
+	temp.Init(hunter)
+	var effect = SeekStatus(temp)
+	
+	if(effect == temp):
+		status.push_back(effect)
+		quickStats.find_node("Status").add_child(effect)
+		quickStats.print_tree()
 
 
 func ReParent(destination):

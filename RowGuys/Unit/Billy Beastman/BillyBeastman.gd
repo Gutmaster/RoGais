@@ -1,6 +1,9 @@
 extends "res://Unit/Unit.gd"
 
 
+var frenzy = null
+
+
 func _ready():
 	pass
 
@@ -22,3 +25,10 @@ func Init():
 
 	skillTree = load("res://Unit/Billy Beastman/SkillTree/BeastmanTree.tscn").instance()
 	skillTree.unit = self
+
+
+func CombatDamage(source, dmg):
+	UpdateHP(-dmg)
+	stance.PostAction(self, source)
+	if(frenzy):
+		source.Mark(self)
