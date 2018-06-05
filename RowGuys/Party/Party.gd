@@ -18,6 +18,7 @@ onready var trinketCatalogue = preload("res://Trinket/Trinket.tscn").instance()
 
 onready var artifactSlot = find_node("ArtifactSlot")
 onready var artifactContainer = find_node("ArtifactContainer")
+onready var bottomRow = find_node("BottomRow")
 
 onready var foodCount = find_node("FoodCount")
 onready var foodCount2 = find_node("FoodCount2")
@@ -63,7 +64,7 @@ func AddUnit(var unit):
 	$Units.add_child(unit, true)
 	unit.CharCardInit()
 	unit.PartyCardInit()
-	unit.MiniPartyCardInit()
+	#unit.MiniPartyCardInit()
 	unit.teamLeft = true
 	var panelString = "Panel" + str($Units.get_child_count())
 	find_node(panelString).add_child(unit.partyCard)
@@ -71,13 +72,15 @@ func AddUnit(var unit):
 
 
 func UpdateFood(dif):
-	$FTween.interpolate_property(self, "food", food, food + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	$FTween.start()
+	food += dif
+	#$FTween.interpolate_property(self, "food", food, food + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	#$FTween.start()
 
 
 func UpdateGold(dif):
-	$GTween.interpolate_property(self, "gold", gold, gold + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	$GTween.start()
+	gold += dif
+	#$GTween.interpolate_property(self, "gold", gold, gold + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	#$GTween.start()
 
 
 func _on_PartyButton_pressed():
@@ -162,7 +165,7 @@ func UpdatePartyCards():
 func AddArtifact(artifact):
 	artifactSlot.add_child(artifact)
 	artifactSlot.item = artifact
-	artifactSlot.item.Acquire()
+	bottomRow.find_node("Description").set_text(artifact.description)
 	
 	artifactContainer.add_child(artifact.duplicate())
 	

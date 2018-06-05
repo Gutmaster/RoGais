@@ -17,10 +17,10 @@ func _on_Slot_focus_entered():
 			party.itemHolder.item = null
 			add_child(item)
 			party.artifactContainer.add_child(item)
-			item.Acquire()
+			get_parent().get_node("Description").set_text(item.description)
 		elif(mouseItem == null && item):
 			party.itemHolder.item = item
-			item.Remove()
+			get_parent().get_node("Description").set_text("")
 			party.artifactContainer.remove_child(party.artifactContainer.get_child(0))
 			item = null
 			party.itemHolder.itemCatcher = self
@@ -28,14 +28,13 @@ func _on_Slot_focus_entered():
 			party.itemHolder.remove_child(mouseItem)
 			add_child(mouseItem)
 			party.itemHolder.item = item
-			item.Remove()
 			party.artifactContainer.remove_child(party.artifactContainer.get_child(0))
 			item = mouseItem
-			item.Acquire()
+			get_parent().get_node("Description").set_text(item.description)
 			party.artifactContainer.add_child(item)
 			party.itemHolder.itemCatcher = self
 	
 		party.UpdatePartyCards()
 		
-		if(shop):
-			shop.UpdateMiniPartyCards()
+		if(Globals.shop):
+			Globals.shop.UpdateShopPartyCards()

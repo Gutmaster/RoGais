@@ -12,7 +12,7 @@
 [ext_resource path="res://Party/Slot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Party/ShopItemHolder.gd" type="Script" id=11]
 
-[node name="Shop" type="CanvasLayer" index="0"]
+[node name="Shop" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -774,7 +774,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1242.0
-margin_bottom = 631.0
+margin_bottom = 712.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -792,7 +792,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 596.0
-margin_bottom = 631.0
+margin_bottom = 712.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -810,7 +810,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 596.0
-margin_bottom = 200.0
+margin_bottom = 227.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -825,9 +825,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 215.0
+margin_top = 242.0
 margin_right = 596.0
-margin_bottom = 415.0
+margin_bottom = 469.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -842,9 +842,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 430.0
+margin_top = 484.0
 margin_right = 596.0
-margin_bottom = 631.0
+margin_bottom = 712.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -861,7 +861,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 646.0
 margin_right = 1242.0
-margin_bottom = 631.0
+margin_bottom = 712.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -879,7 +879,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 596.0
-margin_bottom = 200.0
+margin_bottom = 227.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -894,9 +894,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 215.0
+margin_top = 242.0
 margin_right = 596.0
-margin_bottom = 415.0
+margin_bottom = 469.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -911,9 +911,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 430.0
+margin_top = 484.0
 margin_right = 596.0
-margin_bottom = 631.0
+margin_bottom = 712.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -928,7 +928,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 641.0
+margin_top = 722.0
 margin_right = 1242.0
 margin_bottom = 722.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -941,6 +941,8 @@ alignment = 0
 
 [node name="Resources" type="HBoxContainer" parent="ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom" index="0"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1036,13 +1038,14 @@ _sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
 [node name="PartyInv" type="HBoxContainer" parent="ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom" index="1"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 29.0
 margin_right = 1242.0
-margin_bottom = 81.0
+margin_bottom = 52.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1

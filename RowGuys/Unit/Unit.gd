@@ -4,11 +4,11 @@ extends AnimatedSprite
 var QSScene = load("res://Party/QuickStats/QuickStats.tscn")
 var quickStats
 
-var PCScene = load("res://Party/PartyCard.tscn")
+var PCScene = load("res://Party/MiniPartyCard.tscn")
 var partyCard
 
-var MPCScene = load("res://Party/MiniPartyCard.tscn")
-var miniPartyCard
+#var MPCScene = load("res://Party/MiniPartyCard.tscn")
+#var miniPartyCard
 
 enum ROW{
 front,
@@ -140,12 +140,13 @@ func PartyCardInit():
 
 
 func MiniPartyCardInit():
-	miniPartyCard = MPCScene.instance()
+	pass
+	#miniPartyCard = MPCScene.instance()
 	
-	miniPartyCard.find_node("Name").set_text(get_name())
-	miniPartyCard.find_node("Portrait").texture = portrait
+	#miniPartyCard.find_node("Name").set_text(get_name())
+	#miniPartyCard.find_node("Portrait").texture = portrait
 
-	miniPartyCard.unit = self
+	#miniPartyCard.unit = self
 
 
 func _process(delta):

@@ -13,6 +13,8 @@ var travelScene
 var dungeonScene
 var eventScene
 
+var shop = null
+
 var currentScene
 var prevScene
 var prevSceneST

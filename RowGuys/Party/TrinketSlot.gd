@@ -29,5 +29,5 @@ func _on_Slot_focus_entered():
 	
 		party.UpdatePartyCards()
 	
-	if(shop):
-		shop.UpdateMiniPartyCards()
+	if(Globals.shop):
+		Globals.shop.UpdateShopPartyCards()

@@ -24,14 +24,6 @@ func _ready():
 	pass
 
 
-func Acquire():
-	party.find_node("Description").set_text(description)
-
-
-func Remove():
-	party.find_node("Description").set_text("")
-
-
 func EnemyMod(unit):
 	unit.Addributes(enemyMod)
 

@@ -6,6 +6,9 @@ onready var party = get_node("/root/Globals").party
 onready var itemHolder = $ShopItemHolder
 onready var init = false
 
+var returnDest
+var bottomRow
+
 func _ready():
 	$ShopMenu.visible = false
 	find_node("ArtifactDescription").text = " "
@@ -19,7 +22,16 @@ func ShopInit():
 	
 	var artifact
 	
-	if(party.artifactSlot.item):
+	bottomRow = party.bottomRow
+	returnDest = party.bottomRow.get_parent()
+	bottomRow.get_parent().remove_child(bottomRow)
+	find_node("Bottom").add_child(bottomRow)
+	
+	
+	Globals.shop = self
+	
+	
+	"""if(party.artifactSlot.item):
 		artifact = party.artifactSlot.item.duplicate()
 	
 		find_node("ArtifactSlot").add_child(artifact)
@@ -43,7 +55,7 @@ func ShopInit():
 			slot.item = partySlot.item.duplicate()
 			slot.add_child(slot.item)
 			
-			slot.shop = self
+			slot.shop = self"""
 			
 			
 	
@@ -54,9 +66,9 @@ func ShopInit():
 		find_node("TrinketSlot" + str(i)).shop = self
 		find_node("ArtifactSlot" + str(i)).shop = self
 	
-	UpdateMiniPartyCards()
+	UpdateShopPartyCards()
 
-func UpdateMiniPartyCards():
+func UpdateShopPartyCards():
 	var uList
 	var count
 
@@ -77,26 +89,23 @@ func UpdateMiniPartyCards():
 		var panelString = "MiniPanel" + str(i+1)
 		print(panelString)
 	
-		unit.miniPartyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
-		unit.miniPartyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
-		unit.miniPartyCard.find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
-		unit.miniPartyCard.find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
-		unit.miniPartyCard.find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
+		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
+		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
+		unit.partyCard.find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
+		unit.partyCard.find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
+		unit.partyCard.find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
 	
-		unit.miniPartyCard.find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
-		unit.miniPartyCard.find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
-		unit.miniPartyCard.find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
-		unit.miniPartyCard.find_node("EndStat").set_text(" END " + str(unit.aStats.Endurance))
+		unit.partyCard.find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
+		unit.partyCard.find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
+		unit.partyCard.find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
+		unit.partyCard.find_node("EndStat").set_text(" END " + str(unit.aStats.Endurance))
 	
-		unit.miniPartyCard.find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
-		unit.miniPartyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
-		unit.miniPartyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
+		unit.partyCard.find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
+		unit.partyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
+		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
 		
-		var trinketSlot1 = unit.miniPartyCard.find_node("TrinketSlot")
-		var trinketSlot2 = unit.miniPartyCard.find_node("TrinketSlot2")
-		
-		trinketSlot1.shop = self
-		trinketSlot2.shop = self
+		"""var trinketSlot1 = unit.partyCard.find_node("TrinketSlot")
+		var trinketSlot2 = unit.partyCard.find_node("TrinketSlot2")
 		
 		if(unit.trinket1 != null):
 			var trinket = unit.trinket1.duplicate()
@@ -105,9 +114,9 @@ func UpdateMiniPartyCards():
 		elif(unit.trinket2 != null):
 			var trinket = unit.trinket2.duplicate()
 			trinketSlot2.add_child(trinket)
-			trinketSlot2.item = trinket
+			trinketSlot2.item = trinket"""
 		
-		find_node(panelString).add_child(unit.miniPartyCard)
+		find_node(panelString).add_child(unit.partyCard.duplicate())
 
 
 func _on_ExitButton_pressed():
@@ -130,6 +139,13 @@ func _on_ExitButton_pressed():
 		artifactSlot.remove_child(artifactSlot.get_child(1))
 		
 	find_node("ArtifactDescription").text = " "
+	
+	bottomRow.get_parent().remove_child(bottomRow)
+	returnDest.add_child(bottomRow)
+	bottomRow = null
+	returnDest = null
+	
+	Globals.shop = false
 
 
 func AddShopItem(item):
@@ -156,18 +172,19 @@ func _on_BuyFood_pressed():
 	var price = 7
 	
 	if(party.gold >= 7):
-		party.UpdateGold(-7)
+		party.UpdateGold(-price)
 		party.UpdateFood(1)
-		find_node("FoodCount").text = str(party.food + 1)
-		find_node("GoldCount").text = str(party.gold - price)
+		find_node("FoodCount").text = str(party.food)
+		find_node("GoldCount").text = str(party.gold)
+		
 
 
 func _on_SellFood_pressed():
 	var price = 4
 	
 	if(party.food >= 1):
-		party.UpdateGold(4)
+		party.UpdateGold(price)
 		party.UpdateFood(-1)
-		find_node("FoodCount").text = str(party.food - 1)
-		find_node("GoldCount").text = str(party.gold + price)
+		find_node("FoodCount").text = str(party.food)
+		find_node("GoldCount").text = str(party.gold)
 

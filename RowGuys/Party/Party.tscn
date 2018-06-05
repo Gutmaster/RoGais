@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Party/Party.gd" type="Script" id=1]
-[ext_resource path="res://Party/Assets/FoodIcon.png" type="Texture" id=2]
-[ext_resource path="res://Party/Assets/GoldIcon.png" type="Texture" id=3]
-[ext_resource path="res://Party/Assets/partyButton.png" type="Texture" id=4]
+[ext_resource path="res://Party/Assets/partyButton.png" type="Texture" id=2]
+[ext_resource path="res://Party/Assets/FoodIcon.png" type="Texture" id=3]
+[ext_resource path="res://Party/Assets/GoldIcon.png" type="Texture" id=4]
 [ext_resource path="res://Party/ArtifactSlot.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Party/Slot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=7]
@@ -45,7 +45,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer"]
+[node name="Party" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 5
@@ -62,7 +62,6 @@ visible = false
 
 [node name="PartyMenu" type="Control" parent="." index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -296,17 +295,59 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Material", "Size Flags" ]
 
-[node name="PanelContainer" type="PanelContainer" parent="PartyMenu" index="1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu" index="1"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 418.0
+margin_top = 937.0
+margin_right = 1308.0
+margin_bottom = 1046.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="PartyButton2" type="TextureButton" parent="PartyMenu/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 28.0
+margin_right = 50.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="BottomRow" type="PanelContainer" parent="PartyMenu/HBoxContainer" index="1"]
+
+editor/display_folded = true
 self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 245.0
-margin_top = 886.0
-margin_right = 1635.0
-margin_bottom = 995.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 54.0
+margin_right = 890.0
+margin_bottom = 109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -315,7 +356,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/PanelContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -323,7 +364,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1383.0
+margin_right = 829.0
 margin_bottom = 102.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -333,13 +374,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="ResourcesContainer" type="PanelContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="0"]
+[node name="ResourcesContainer" type="PanelContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 686.0
+margin_right = 263.0
 margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -349,7 +390,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -357,7 +398,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 679.0
+margin_right = 256.0
 margin_bottom = 88.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -367,13 +408,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Resources" type="HBoxContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer" index="0"]
+[node name="Resources" type="HBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 672.0
+margin_right = 249.0
 margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -383,8 +425,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/Resources" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/Resources" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -399,7 +442,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="FoodTex" type="TextureRect" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="0"]
+[node name="FoodTex" type="TextureRect" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -413,10 +456,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="FoodCount2" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="1"]
+[node name="FoodCount2" type="Label" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -438,7 +481,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 
-[node name="GoldTex" type="TextureRect" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="2"]
+[node name="GoldTex" type="TextureRect" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -453,10 +496,10 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 
-[node name="GoldCount2" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="3"]
+[node name="GoldCount2" type="Label" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/Resources/HBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -478,14 +521,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer" index="1"]
+[node name="ArtifactRow" type="HBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 29.0
-margin_right = 672.0
+margin_right = 249.0
 margin_bottom = 81.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -495,37 +538,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="PartyButton2" type="TextureButton" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="0"]
+[node name="Description" type="Label" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/ArtifactRow" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 50.0
-margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Size Flags", "Textures" ]
-
-[node name="Description" type="Label" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 54.0
 margin_top = 15.0
-margin_right = 249.0
+margin_right = 195.0
 margin_bottom = 37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -540,22 +560,22 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ArtifactSlot" parent="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource( 5 )]
+[node name="ArtifactSlot" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/ArtifactRow" index="1" instance=ExtResource( 5 )]
 
-margin_left = 622.0
-margin_right = 672.0
+margin_left = 199.0
+margin_right = 249.0
 margin_bottom = 52.0
 size_flags_horizontal = 10
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="PartyMenu/PanelContainer/HBoxContainer" index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 690.0
-margin_right = 1376.0
+margin_left = 267.0
+margin_right = 822.0
 margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -567,14 +587,14 @@ custom_constants/margin_right = 20
 custom_constants/margin_left = 30
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 30.0
-margin_right = 666.0
+margin_right = 535.0
 margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -586,7 +606,7 @@ custom_constants/separation = 15
 alignment = 0
 _sections_unfolded = [ "Grow Direction", "Hint", "Mouse", "Rect", "Theme", "custom_constants" ]
 
-[node name="Slot1" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="0" instance=ExtResource( 6 )]
+[node name="Slot1" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="0" instance=ExtResource( 6 )]
 
 margin_top = 21.0
 margin_right = 50.0
@@ -594,7 +614,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
-[node name="Slot2" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
+[node name="Slot2" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="1" instance=ExtResource( 6 )]
 
 margin_left = 65.0
 margin_top = 21.0
@@ -603,7 +623,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="Slot3" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="2" instance=ExtResource( 6 )]
+[node name="Slot3" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="2" instance=ExtResource( 6 )]
 
 margin_left = 130.0
 margin_top = 21.0
@@ -612,7 +632,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="Slot4" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="3" instance=ExtResource( 6 )]
+[node name="Slot4" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="3" instance=ExtResource( 6 )]
 
 margin_left = 195.0
 margin_top = 21.0
@@ -621,7 +641,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="Slot5" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="4" instance=ExtResource( 6 )]
+[node name="Slot5" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="4" instance=ExtResource( 6 )]
 
 margin_left = 260.0
 margin_top = 21.0
@@ -630,7 +650,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="Slot6" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="5" instance=ExtResource( 6 )]
+[node name="Slot6" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="5" instance=ExtResource( 6 )]
 
 margin_left = 325.0
 margin_top = 21.0
@@ -639,7 +659,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags", "Theme" ]
 
-[node name="Slot7" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="6" instance=ExtResource( 6 )]
+[node name="Slot7" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="6" instance=ExtResource( 6 )]
 
 margin_left = 390.0
 margin_top = 21.0
@@ -648,7 +668,7 @@ margin_bottom = 73.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="Slot8" parent="PartyMenu/PanelContainer/HBoxContainer/MarginContainer/HBoxContainer" index="7" instance=ExtResource( 6 )]
+[node name="Slot8" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/MarginContainer/HBoxContainer" index="7" instance=ExtResource( 6 )]
 
 margin_left = 455.0
 margin_top = 21.0
@@ -661,6 +681,7 @@ _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
 pause_mode = 2
 editor/display_folded = true
+visible = false
 light_mask = 2
 anchor_left = 0.0
 anchor_top = 1.0
@@ -749,7 +770,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 0
 _sections_unfolded = [ "Visibility" ]
 
@@ -792,7 +813,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Visibility" ]
 
@@ -855,7 +876,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 2 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="ArtifactContainer" type="CenterContainer" parent="HUD/VBoxContainer/HBoxContainer" index="1"]
@@ -916,7 +937,7 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[connection signal="pressed" from="PartyMenu/PanelContainer/HBoxContainer/ResourcesContainer/VBoxContainer/HBoxContainer2/PartyButton2" to="." method="_on_PartyButton2_pressed"]
+[connection signal="pressed" from="PartyMenu/HBoxContainer/PartyButton2" to="." method="_on_PartyButton2_pressed"]
 
 [connection signal="pressed" from="HUD/VBoxContainer/HBoxContainer/PartyButton" to="." method="_on_PartyButton_pressed"]
 
