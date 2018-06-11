@@ -237,11 +237,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LM" type="Sprite" parent="Row" index="1"]
 
-editor/display_folded = true
 position = Vector2( 515, 610 )
 texture = ExtResource( 20 )
 script = ExtResource( 18 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LM" index="0"]
 
@@ -285,7 +284,6 @@ polygon = PoolVector2Array( -9.57709, 6.40045, 232.313, 9.29449, 436.611, -579.8
 
 [node name="LF" type="Sprite" parent="Row" index="2"]
 
-editor/display_folded = true
 position = Vector2( 738.268, 610.615 )
 texture = ExtResource( 21 )
 script = ExtResource( 18 )

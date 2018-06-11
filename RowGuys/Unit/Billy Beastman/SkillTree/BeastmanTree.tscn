@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Unit/Dank Druid/SkillTree/BG.png" type="Texture" id=1]
 [ext_resource path="res://Unit/Billy Beastman/SkillTree/BeastmanTree.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Unit/Billy Beastman/SkillTree/FeralFling.png" type="Texture" id=10]
 [ext_resource path="res://Unit/Billy Beastman/SkillTree/Feral Fling.gd" type="Script" id=11]
 [ext_resource path="res://Unit/Billy Beastman/SkillTree/Frenzy.png" type="Texture" id=12]
+[ext_resource path="res://Unit/Billy Beastman/SkillTree/Frenzy.gd" type="Script" id=13]
 
 [node name="Background" type="Sprite"]
 
@@ -334,7 +335,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 12 )
 stretch_mode = 0
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Focus" ]
 
 [node name="PanelContainer" type="PanelContainer" parent="Frenzy" index="0"]

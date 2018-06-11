@@ -7,7 +7,15 @@ func _ready():
 	animation = "LeapingStrike"
 	apCost = 3
 	atkMod = 1
+	keyFrame = 3
 	tags.melee = true
+
+
+func Init(usr, trgt, free = false):
+	MeleeInit(usr, trgt, free)
+	user.rowRef = user.team.rpos.front
+	user.row = user.ROW.front
+	user.lastPos = user.rowRef.position - Vector2(0, user.Size().y/3) + user.rowRef.get_node("UnitLine").get_point_position(user.partyIndex)
 
 
 func UseCheck():
@@ -29,9 +37,9 @@ func UseCheck():
 
 func _process(delta):
 	if(phase == 1):
-		ActionShift(false if user.team == combatNode.get_node("TeamLeft") else true)
+		#ActionShift(false if user.team == combatNode.get_node("TeamLeft") else true)
 		phase = 2
 	elif(phase == 2):
-		if(user.frame+2 >= user.frames.get_frame_count(animation) && !user.shifting):
+		if(user.frame >= keyFrame):
 			Execute()
 			actionMenu.ActionFinished(self)

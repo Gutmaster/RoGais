@@ -21,6 +21,7 @@ var tags = {"spec": false, "melee": false, "ranged": false, "fire": false, "targ
 
 signal finished
 var phase = 0
+var keyFrame = 0
 
 var apCost
 var atkMod = 0
@@ -73,7 +74,7 @@ func CombatMath(var user, var target):
 	target.CombatDamage(user, dmg)
 
 
-func Init(var usr, var trgt, var free = false):
+func Init(usr, trgt, free = false):
 	user = usr
 	target = trgt
 	if(!free):
@@ -82,6 +83,28 @@ func Init(var usr, var trgt, var free = false):
 	user.cAction = self
 	set_process(true)
 	user.TempPlay(animation)
+
+
+func MeleeInit(usr, trgt, free):
+	user = usr
+	target = trgt
+	if(!free):
+		user.UpdateAP(-apCost)
+	phase = 1
+	user.cAction = self
+	set_process(true)
+	user.TempPlay(animation)
+	
+	usr.lastPos = usr.position
+	
+	var side
+	if(usr.teamLeft):
+		side = -1
+	else:
+		side = 1
+	
+	usr.get_node("MeleeTween").interpolate_property(usr, "position", usr.position, trgt.position + Vector2(side * trgt.width/2, 0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	usr.get_node("MeleeTween").start()
 
 
 func Execute():
@@ -147,11 +170,11 @@ func TargetedShift(unit, target, speed = 0.5, animB = "ShiftBack", animF = "Shif
 		return
 	
 	if(unit.rowRef.left != target.left):
-		unit.play(animF)
+		unit.TempPlay(animF)
 	elif(target.row > unit.row):
-		unit.play(animB)
+		unit.TempPlay(animB)
 	else:
-		unit.play(animF)
+		unit.TempPlay(animF)
 	
 	unit.rowRef = target
 	unit.row = unit.rowRef.row

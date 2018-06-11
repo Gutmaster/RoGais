@@ -29,6 +29,10 @@ poison,
 marked}
 
 var animFlag = null
+var animQueue = []
+
+var lastPos = Vector2(0,0)
+var tweenBack = false
 
 var status = []
 
@@ -99,7 +103,7 @@ var trinket2 = null
 
 
 func _ready():
-	pass
+	NormPlay("Idle")
 
 
 func SharedInit():
@@ -188,7 +192,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 		return
 	if(team == combatNode.get_node("TeamLeft")):
 		if(left):
-			play(animB)
+			TempPlay(animB)
 			if(row == ROW.front):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -196,7 +200,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				rowRef = team.rpos.back
 				row = ROW.back
 		else:
-			play(animF)
+			TempPlay(animF)
 			if(row == ROW.back):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -205,7 +209,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				row = ROW.front
 	else:
 		if(left):
-			play(animF)
+			TempPlay(animF)
 			if(row == ROW.back):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -213,7 +217,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				rowRef = team.rpos.front
 				row = ROW.front
 		else:
-			play(animB)
+			TempPlay(animB)
 			if(row == ROW.front):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -321,7 +325,8 @@ func ChangeStance(newStance):
 	stance.set_process(false)
 	newStance.set_process(true)
 	stance = newStance
-	play(stance.animation)
+	animQueue.push_back(stance.animation)
+	#play(animQueue.back())
 	
 	RefreshStats()
 
@@ -331,37 +336,43 @@ func QueueChangeStance(stance):
 	animFlag = ANIMFLAG.stanceChange
 
 
-func ActionPlay(var anim):
+func NormPlay(anim):
+	animQueue.push_back(anim)
+	play(anim)
+
+
+func ActionPlay(anim):
 	animFlag = ANIMFLAG.action
 	play(anim)
 
 
-func TempPlay(var anim):
-	lastAnim = animation
-	animFlag = ANIMFLAG.temp
+func TempPlay(anim):
+	animQueue.push_back(anim)
 	play(anim)
+	animFlag = ANIMFLAG.temp
 
 
 func QueuePlay(var anim):
-	nextAnim = anim
-	animFlag = ANIMFLAG.next
-
+	if(animQueue.size() > 1):
+		animQueue.insert(size() - 1, anim)
+	else:
+		print("Cannot insert, array too small")
+	#nextAnim = anim
+	animFlag = ANIMFLAG.temp
 
 
 func _on_Unit_animation_finished():
 	if(animFlag == ANIMFLAG.command):
-		play("Idle")
+		animQueue.resize(1)
 		if(!AI):
 			combatNode.get_node("HUD/CommandWindow").show()
-		animFlag = null
 	elif(animFlag == ANIMFLAG.temp):
-		play(lastAnim)
-		animFlag = null
-	elif(animFlag == ANIMFLAG.next):
-		play(nextAnim)
-		animFlag = null
+		animQueue.pop_back()
 	elif(animFlag == ANIMFLAG.stanceChange):
 		ChangeStance(nextStance)
+	
+	play(animQueue.back())
+	animFlag = null
 
 
 func StatusCheck():
@@ -373,7 +384,7 @@ func StatusCheck():
 		if(self.is_in_group("Party")):
 			partyCard.find_node("StatusPower").text = str(status[i].power)"""
 		
-		if(status[i].power <= 0):
+		if(status.size() && status[i].power <= 0):
 			status.remove(i)
 			"""quickStats.find_node("StatusIcon").texture = null
 			quickStats.find_node("StatusPower").text = ""
@@ -406,8 +417,6 @@ func StatusCure():
 func StanceBonus():
 	flags.fireCrit = false
 	flags.fireCrit = stance.bonus.fireCrit
-	animFlag = null
-	play("Idle")
 
 
 func Poison(var power):
@@ -472,6 +481,16 @@ func _on_Tween_tween_completed(object, key):
 	combatNode.get_node("HUD/CommandWindow/VBoxContainer/ShiftButton").SetOoBShift()
 	shifting = false
 	$Tween.set_active(false)
+
+
+func _on_MeleeTween_tween_completed(object, key):
+	if(tweenBack):
+		tweenBack = false
+		return
+	
+	$MeleeTween.interpolate_property(self, "position", position, lastPos, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$MeleeTween.start()
+	tweenBack = true
 
 
 func Size():

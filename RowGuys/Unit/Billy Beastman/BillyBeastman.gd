@@ -28,7 +28,6 @@ func Init():
 
 
 func CombatDamage(source, dmg):
-	UpdateHP(-dmg)
-	stance.PostAction(self, source)
+	.CombatDamage(source, dmg)
 	if(frenzy):
 		source.Mark(self)

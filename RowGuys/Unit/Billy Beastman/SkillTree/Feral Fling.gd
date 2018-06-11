@@ -8,4 +8,8 @@ func _ready():
 func Apply(level):
 	var unit = get_parent().unit
 	if(level == 1):
-		unit.frenzy = true
+		unit.actionList.push_back(unit.get_node("ActionCatalogue/Feral Fling"))
+	elif(level == 2):
+		pass
+	elif(level == 3):
+		pass
