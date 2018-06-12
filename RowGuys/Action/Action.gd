@@ -82,7 +82,7 @@ func Init(usr, trgt, free = false):
 	phase = 1
 	user.cAction = self
 	set_process(true)
-	user.TempPlay(animation)
+	user.TempPlay(animation, true)
 
 
 func MeleeInit(usr, trgt, free):
@@ -93,7 +93,7 @@ func MeleeInit(usr, trgt, free):
 	phase = 1
 	user.cAction = self
 	set_process(true)
-	user.TempPlay(animation)
+	user.TempPlay(animation, true)
 	
 	usr.lastPos = usr.position
 	
@@ -126,44 +126,45 @@ func critCheck():
 	return false
 
 
-func ActionShift(var left, var speed = 0.5):
-	if(user.team == combatNode.get_node("TeamLeft")):
+func ActionShift(unit, left, speed = 0.5):
+	if(unit.team == combatNode.get_node("TeamLeft")):
 		if(left):
-			if(user.row == user.ROW.front):
-				user.rowRef = user.team.rpos.middle
-				user.row = user.ROW.middle
-			elif(user.row == user.ROW.middle):
-				user.rowRef = user.team.rpos.back
-				user.row = user.ROW.back
+			if(unit.row == unit.ROW.front):
+				unit.rowRef = unit.team.rpos.middle
+				unit.row = unit.ROW.middle
+			elif(unit.row == unit.ROW.middle):
+				unit.rowRef = unit.team.rpos.back
+				unit.row = unit.ROW.back
 		else:
-			if(user.row == user.ROW.back):
-				user.rowRef = user.team.rpos.middle
-				user.row = user.ROW.middle
-			elif(user.row == user.ROW.middle):
-				user.rowRef = user.team.rpos.front
-				user.row = user.ROW.front
+			if(unit.row == unit.ROW.back):
+				unit.rowRef = unit.team.rpos.middle
+				unit.row = unit.ROW.middle
+			elif(unit.row == unit.ROW.middle):
+				unit.rowRef = unit.team.rpos.front
+				unit.row = unit.ROW.front
 	else:
 		if(left):
-			if(user.row == user.ROW.back):
-				user.rowRef = user.team.rpos.middle
-				user.row = user.ROW.middle
-			elif(user.row == user.ROW.middle):
-				user.rowRef = user.team.rpos.front
-				user.row = user.ROW.front
+			if(unit.row == unit.ROW.back):
+				unit.rowRef = unit.team.rpos.middle
+				unit.row = unit.ROW.middle
+			elif(unit.row == unit.ROW.middle):
+				unit.rowRef = unit.team.rpos.front
+				unit.row = unit.ROW.front
 		else:
-			if(user.row == user.ROW.front):
-				user.rowRef = user.team.rpos.middle
-				user.row = user.ROW.middle
-			elif(user.row == user.ROW.middle):
-				user.rowRef = user.team.rpos.back
-				user.row = user.ROW.back
+			if(unit.row == unit.ROW.front):
+				unit.rowRef = unit.team.rpos.middle
+				unit.row = unit.ROW.middle
+			elif(unit.row == unit.ROW.middle):
+				unit.rowRef = unit.team.rpos.back
+				unit.row = unit.ROW.back
 	
-	user.shifting = true
+	unit.shifting = true
 		
-	user.get_node("Tween").interpolate_property(user, "position", user.position, user.rowRef.position - Vector2(0, user.Size().y/3) + user.rowRef.get_node("UnitLine").get_point_position(user.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	user.get_node("Tween").start()
+	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.Size().y/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	unit.get_node("Tween").start()
 
 
+#This targets a specific row
 func TargetedShift(unit, target, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward"):
 	if(unit.rowRef.terrain.tags.trapping):
 		unit.shifting = false

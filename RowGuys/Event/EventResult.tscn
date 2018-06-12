@@ -132,8 +132,6 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="visibility_changed" from="CenterContainer" to="." method="_on_CenterContainer_visibility_changed"]
-
 [connection signal="pressed" from="CenterContainer/EventResult/Confirm" to="." method="_on_Confirm_pressed"]
 
 

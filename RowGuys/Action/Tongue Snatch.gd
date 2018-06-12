@@ -6,11 +6,17 @@ func _ready():
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
 	apCost = 3
 	atkMod = -1
+	keyFrame = 1
+
+
+func Execute():
+	CombatMath(user, target)
 
 
 func _process(delta):
 	if(phase == 1):
-		if(user.frame+1 >= user.frames.get_frame_count(animation)):
+		if(user.frame >= keyFrame):
+			user.playing = false
 			projectile = combatNode.get_node("EffectCatalogue/Tongue").duplicate()
 			combatNode.add_child(projectile)
 			projectile.Init(user, target)
@@ -19,10 +25,11 @@ func _process(delta):
 		if(!projectile.get_node("Tween").is_active()):
 			Execute()
 			if(target.hp > 0):
-				target.Shift(target.team.side != target.team.SIDE.left, 0.2, "Stagger", "Stagger")
+				ActionShift(target, !target.teamLeft, 0.2)
 			phase = 3
 	elif(phase == 3):
 		if(projectile == null):
+			user.playing = true
 			actionMenu.ActionFinished(self)
 
 

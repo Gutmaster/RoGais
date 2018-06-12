@@ -29,6 +29,7 @@ poison,
 marked}
 
 var animFlag = null
+var commandShow = false
 var animQueue = []
 
 var lastPos = Vector2(0,0)
@@ -192,7 +193,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 		return
 	if(team == combatNode.get_node("TeamLeft")):
 		if(left):
-			TempPlay(animB)
+			TempPlay(animB, true)
 			if(row == ROW.front):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -200,7 +201,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				rowRef = team.rpos.back
 				row = ROW.back
 		else:
-			TempPlay(animF)
+			TempPlay(animF, true)
 			if(row == ROW.back):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -209,7 +210,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				row = ROW.front
 	else:
 		if(left):
-			TempPlay(animF)
+			TempPlay(animF, true)
 			if(row == ROW.back):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -217,7 +218,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				rowRef = team.rpos.front
 				row = ROW.front
 		else:
-			TempPlay(animB)
+			TempPlay(animB, true)
 			if(row == ROW.front):
 				rowRef = team.rpos.middle
 				row = ROW.middle
@@ -230,7 +231,7 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 	$Tween.interpolate_property(self, "position", position, rowRef.position - Vector2(0, height/3) + rowRef.get_node("UnitLine").get_point_position(partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
 	
-	combatNode.get_node("HUD/CommandWindow").visible = false
+	combatNode.get_node("HUD/CommandWindow").hide()
 
 
 #true = left, false = right
@@ -346,10 +347,12 @@ func ActionPlay(anim):
 	play(anim)
 
 
-func TempPlay(anim):
+func TempPlay(anim, cShow = false):
+	combatNode.AIWait = true
 	animQueue.push_back(anim)
 	play(anim)
 	animFlag = ANIMFLAG.temp
+	commandShow = cShow
 
 
 func QueuePlay(var anim):
@@ -362,11 +365,12 @@ func QueuePlay(var anim):
 
 
 func _on_Unit_animation_finished():
-	if(animFlag == ANIMFLAG.command):
-		animQueue.resize(1)
+	if(commandShow):
 		if(!AI):
 			combatNode.get_node("HUD/CommandWindow").show()
-	elif(animFlag == ANIMFLAG.temp):
+		combatNode.AIWait = false
+		commandShow = false
+	if(animFlag == ANIMFLAG.temp):
 		animQueue.pop_back()
 	elif(animFlag == ANIMFLAG.stanceChange):
 		ChangeStance(nextStance)
@@ -468,15 +472,16 @@ func HoverMod():
 
 
 func _on_Tween_tween_completed(object, key):
-	if(cAction == null):
+	"""if(cAction == null):
 		if(!AI && combatNode.activeUnit == self):
 			combatNode.get_node("HUD/CommandWindow").visible = true
 		if(lastAnim != null):
 			play(lastAnim)
 		else:
 			play("Idle")
+		pass
 	else:
-		combatNode.get_node("HUD/CommandWindow").rect_position =  position
+		combatNode.get_node("HUD/CommandWindow").rect_position = position"""
 	
 	combatNode.get_node("HUD/CommandWindow/VBoxContainer/ShiftButton").SetOoBShift()
 	shifting = false

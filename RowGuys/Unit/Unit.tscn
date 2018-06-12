@@ -46,7 +46,7 @@ custom_solver_bias = 0.0
 extents = Vector2( 170, 190 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="Unit" type="AnimatedSprite" index="0"]
+[node name="Unit" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "Placeholder"

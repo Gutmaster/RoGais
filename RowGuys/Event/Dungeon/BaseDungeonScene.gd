@@ -1,9 +1,6 @@
 extends "res://Event/EventMenu.gd"
 
 
-onready var party = get_node("/root/Globals").party
-
-
 func _ready():
 	pass
 

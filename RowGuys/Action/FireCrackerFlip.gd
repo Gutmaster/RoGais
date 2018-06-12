@@ -32,7 +32,7 @@ func _process(delta):
 		combatNode.add_child(projectile)
 		projectile.Init(user, target)
 		projRef = weakref(projectile)
-		ActionShift(true if user.team == combatNode.get_node("TeamLeft") else false)
+		ActionShift(user, user.teamLeft)
 		phase = 2
 	if(phase == 2):
 		if(!user.shifting):

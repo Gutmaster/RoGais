@@ -10,6 +10,7 @@ func _ready():
 		find_node("Buttons").add_child(button)
 	
 	find_node("Example").queue_free()
+	$CenterContainer.visible = true
 
 
 func close_event():

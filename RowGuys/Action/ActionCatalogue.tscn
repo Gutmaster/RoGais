@@ -16,7 +16,7 @@
 [ext_resource path="res://Action/Reclaim.gd" type="Script" id=14]
 [ext_resource path="res://Action/Feral Fling.gd" type="Script" id=15]
 
-[node name="ActionCatalogue" type="Control"]
+[node name="ActionCatalogue" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

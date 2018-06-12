@@ -95,8 +95,8 @@ func TargetSelected(action, target):
 
 func ActionFinished(action):
 	var user = action.user
-	if(!user.AI && user == combatNode.activeUnit):
-		combatNode.get_node("HUD/CommandWindow").visible = true
+	#if(!user.AI && user == combatNode.activeUnit):
+		#combatNode.get_node("HUD/CommandWindow").visible = true
 	
 	user.AIAction = true
 	action.phase = 0

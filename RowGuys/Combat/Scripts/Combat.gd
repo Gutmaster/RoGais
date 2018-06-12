@@ -83,16 +83,7 @@ func SetUnitPos():
 		temp.position -= Vector2(0, temp.height/3)
 
 
-func WaitCheck():
-	AIWait = false
-	for i in range(uList.get_child_count()):
-		if(uList.get_child(i).cAction != null):
-			AIWait = true
-
-
 func _process(delta):
-	WaitCheck()
-	
 	if(activeUnit.AI && !AIWait):
 		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
 			activeUnit.AICmd()
@@ -114,7 +105,7 @@ func _process(delta):
 
 
 func PassTurn():
-	get_node("HUD/CommandWindow").visible = false
+	get_node("HUD/CommandWindow").hide()
 	get_node("HUD/Queue").QueueUpdate()
 	activeUnit.Upkeep()
 	

@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 func _ready():
-	pass
+	$CenterContainer.visible = true
 
 
 func _on_Confirm_pressed():

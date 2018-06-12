@@ -37,9 +37,6 @@ func UseCheck():
 
 func _process(delta):
 	if(phase == 1):
-		#ActionShift(false if user.team == combatNode.get_node("TeamLeft") else true)
-		phase = 2
-	elif(phase == 2):
 		if(user.frame >= keyFrame):
 			Execute()
 			actionMenu.ActionFinished(self)

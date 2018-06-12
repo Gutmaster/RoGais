@@ -16,7 +16,7 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GoldChasm" index="0" instance=ExtResource( 1 )]
+[node name="GoldChasm" instance=ExtResource( 1 )]
 
 layer = 1
 script = ExtResource( 2 )
@@ -87,8 +87,6 @@ flat = false
 align = 1
 
 [node name="PartyChoice" parent="." index="2" instance_placeholder="res://Event/PartyChoice.tscn"]
-
-layer = 2
 
 [node name="EventResult" parent="." index="3" instance_placeholder="res://Event/EventResult.tscn"]
 
