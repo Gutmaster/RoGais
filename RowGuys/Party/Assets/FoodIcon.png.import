@@ -7,10 +7,7 @@ path="res://.import/FoodIcon.png-04f4ce41cc8a5bc0e02ade5430ac2f5f.stex"
 [deps]
 
 source_file="res://Party/Assets/FoodIcon.png"
-source_md5="6250fefa4e64b1ee1dfe09d08c29ba74"
-
 dest_files=[ "res://.import/FoodIcon.png-04f4ce41cc8a5bc0e02ade5430ac2f5f.stex" ]
-dest_md5="2d204d9c557814d52b3550d38cde3f82"
 
 [params]
 

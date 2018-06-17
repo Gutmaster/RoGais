@@ -7,10 +7,7 @@ path="res://.import/QueuePlaceholder.png-0a0f7da6e8e87de6fd5ceaa1ed5618cd.stex"
 [deps]
 
 source_file="res://Combat/Queue/QueuePlaceholder.png"
-source_md5="becc98e6ec4fe2bf2cc62ac224e48a62"
-
 dest_files=[ "res://.import/QueuePlaceholder.png-0a0f7da6e8e87de6fd5ceaa1ed5618cd.stex" ]
-dest_md5="fe6c5fd6816df6932a2ff1ce24be88ab"
 
 [params]
 

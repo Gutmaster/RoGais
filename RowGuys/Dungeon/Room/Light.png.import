@@ -7,10 +7,7 @@ path="res://.import/Light.png-988939f7538b595096790a7aa9683c46.stex"
 [deps]
 
 source_file="res://Dungeon/Room/Light.png"
-source_md5="495872f5b42f2179663b8b63db4c41fb"
-
 dest_files=[ "res://.import/Light.png-988939f7538b595096790a7aa9683c46.stex" ]
-dest_md5="fa9e42853c126feb98e8c2414d4491b3"
 
 [params]
 

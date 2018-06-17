@@ -12,28 +12,31 @@ onready var item = null
 
 onready var party = get_node("/root/Globals").party
 
-var shop = null
 
 func _ready():
 	print(get_child_count())
-	pass
 
 
 func _on_Slot_focus_entered():
 	release_focus()
 	
-	var mouseItem = party.itemHolder.item
+	var mouseItem
+	
+	mouseItem = party.itemHolder.item
 	
 	if(mouseItem != null && !item):
 		item = mouseItem
 		party.itemHolder.remove_child(item)
 		party.itemHolder.item = null
 		add_child(item)
-		party.itemList.push_back(item)
+		
+		if(Globals.shop && Globals.shop.hasShopItem):
+			Globals.shop.hasShopItem = false
 	elif(mouseItem == null && item):
 		party.itemHolder.item = item
-		party.itemList.erase(item)
+		print(party.itemHolder.item.description)
 		item = null
+		print(party.itemHolder.item.description)
 		party.itemHolder.itemCatcher = self
 	elif(mouseItem != null && item):
 		party.itemHolder.remove_child(mouseItem)
@@ -41,8 +44,8 @@ func _on_Slot_focus_entered():
 		party.itemHolder.item = item
 		item = mouseItem
 		party.itemHolder.itemCatcher = self
+		
+		if(Globals.shop && Globals.shop.hasShopItem):
+			Globals.shop.hasShopItem = false
 	
 	party.UpdatePartyCards()
-	
-	if(shop):
-		shop.UpdateShopPartyCards()

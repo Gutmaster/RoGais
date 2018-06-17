@@ -7,10 +7,7 @@ path="res://.import/BigSwing3.png-58c5def311d1da53334d1794ee1f1019.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/BigSwing3.png"
-source_md5="bd809bc79b7d7a324451a8412d8a8093"
-
 dest_files=[ "res://.import/BigSwing3.png-58c5def311d1da53334d1794ee1f1019.stex" ]
-dest_md5="d64c1d38ced8cce6547f2c0d96512ebb"
 
 [params]
 

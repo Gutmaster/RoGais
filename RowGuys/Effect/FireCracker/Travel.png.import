@@ -7,10 +7,7 @@ path="res://.import/Travel.png-1f5da70d38c23f905a16c885d846240d.stex"
 [deps]
 
 source_file="res://Effect/FireCracker/Travel.png"
-source_md5="f1b8b10e7b9c20d5b25d6722348af962"
-
 dest_files=[ "res://.import/Travel.png-1f5da70d38c23f905a16c885d846240d.stex" ]
-dest_md5="e7e113378081783bf6cd6a3c1a418dae"
 
 [params]
 

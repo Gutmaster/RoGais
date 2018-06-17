@@ -7,10 +7,7 @@ path="res://.import/ExitButton.png-5633741cbead5493972602cafed81c3f.stex"
 [deps]
 
 source_file="res://Party/Assets/ExitButton.png"
-source_md5="9426d041875d65a0f2c253e931f34499"
-
 dest_files=[ "res://.import/ExitButton.png-5633741cbead5493972602cafed81c3f.stex" ]
-dest_md5="912536efe7e3b0fb8a468f9a1e6a210b"
 
 [params]
 

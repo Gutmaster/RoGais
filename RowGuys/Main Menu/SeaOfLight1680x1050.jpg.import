@@ -7,10 +7,7 @@ path="res://.import/SeaOfLight1680x1050.jpg-650b8e90983deb44779db93cf4da2520.ste
 [deps]
 
 source_file="res://Main Menu/SeaOfLight1680x1050.jpg"
-source_md5="3bdb7706d504721edd6724aa6fb145c6"
-
 dest_files=[ "res://.import/SeaOfLight1680x1050.jpg-650b8e90983deb44779db93cf4da2520.stex" ]
-dest_md5="cba26728067fa4b633dec247ddbcf11d"
 
 [params]
 

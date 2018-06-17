@@ -7,10 +7,7 @@ path="res://.import/Victory.png-330efd53a97caea7012c02f8f048ab59.stex"
 [deps]
 
 source_file="res://Combat/Assets/Victory.png"
-source_md5="924f5981c539e85f3e9bcce76117ba56"
-
 dest_files=[ "res://.import/Victory.png-330efd53a97caea7012c02f8f048ab59.stex" ]
-dest_md5="2939ca6192e4708a6032cb47e4da99f7"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex"
 [deps]
 
 source_file="res://Artifact/Pretty Rock.png"
-source_md5="9ab507e6b774ba2b21dd9881d182ab80"
-
 dest_files=[ "res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex" ]
-dest_md5="cea1c00d992bea6cbbcc9dbafbc9d467"
 
 [params]
 

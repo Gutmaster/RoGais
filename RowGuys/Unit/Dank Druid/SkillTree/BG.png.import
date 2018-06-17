@@ -7,10 +7,7 @@ path="res://.import/BG.png-8f29b198bf11e2b40ae097c3df1658fa.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/SkillTree/BG.png"
-source_md5="0b76b5ac7f3a5dbc7bf598af19c061b3"
-
 dest_files=[ "res://.import/BG.png-8f29b198bf11e2b40ae097c3df1658fa.stex" ]
-dest_md5="272c38aff6af7bdb6bc8e9452cfe9e2b"
 
 [params]
 

@@ -7,9 +7,6 @@ func _ready():
 func _on_ShopButton_pressed():
 	party.find_node("HUD").visible = false
 	$Shop.find_node("ShopMenu").visible = true
-	if(!$Shop.init):
-		$Shop.AddShopItem(party.itemCatalogue.get_node("Red Goo"))
-
 	$Shop.ShopInit()
 
 

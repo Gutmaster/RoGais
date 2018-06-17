@@ -7,10 +7,7 @@ path="res://.import/ShiftBack6.png-75c84cc602494062be8e13eb433ca071.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/ShiftBack6.png"
-source_md5="94c9596b2c46e4f8b842fefcd1d938cc"
-
 dest_files=[ "res://.import/ShiftBack6.png-75c84cc602494062be8e13eb433ca071.stex" ]
-dest_md5="2c7f7928286d8814bfb640618d5b75d5"
 
 [params]
 

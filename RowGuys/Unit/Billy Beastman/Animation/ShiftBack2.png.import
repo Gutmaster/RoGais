@@ -7,10 +7,7 @@ path="res://.import/ShiftBack2.png-c589fc524dae551343d85d53f212c0af.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/ShiftBack2.png"
-source_md5="2bced841fafc0a41c6387b7fc3c365f1"
-
 dest_files=[ "res://.import/ShiftBack2.png-c589fc524dae551343d85d53f212c0af.stex" ]
-dest_md5="28c1e577e38074d135258c8338fab87b"
 
 [params]
 

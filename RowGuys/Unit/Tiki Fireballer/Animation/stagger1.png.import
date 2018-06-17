@@ -7,10 +7,7 @@ path="res://.import/stagger1.png-a946bf55d6bae46c0be8de531be917b3.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/stagger1.png"
-source_md5="4a539491b0e92ad5e4906ad6d0fbe2ca"
-
 dest_files=[ "res://.import/stagger1.png-a946bf55d6bae46c0be8de531be917b3.stex" ]
-dest_md5="20a30aefce73cd12586534f15c210b99"
 
 [params]
 

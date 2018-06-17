@@ -7,10 +7,7 @@ path="res://.import/shiftforward2.png-86ff6d35b088e1472c6a71387438a32a.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/shiftforward2.png"
-source_md5="8ba33983cc940072b4452dbbfd893f77"
-
 dest_files=[ "res://.import/shiftforward2.png-86ff6d35b088e1472c6a71387438a32a.stex" ]
-dest_md5="c46131a995222f7ba176b3038512071e"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/PlayerN.png-32879749054111f467cc40d7cdc96d4e.stex"
 [deps]
 
 source_file="res://Overworld/Player/PlayerN.png"
-source_md5="dd280f9b8c3cc908608d079ea45e5507"
-
 dest_files=[ "res://.import/PlayerN.png-32879749054111f467cc40d7cdc96d4e.stex" ]
-dest_md5="725d52ce52d50fe38f7c68f51116370c"
 
 [params]
 

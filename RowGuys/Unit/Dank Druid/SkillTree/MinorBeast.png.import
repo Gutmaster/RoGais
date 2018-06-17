@@ -7,10 +7,7 @@ path="res://.import/MinorBeast.png-b62f292fcd2e6f51cc2f01dacc5b4c9b.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/SkillTree/MinorBeast.png"
-source_md5="6c4ebb0405a06294c45bd6bb9c7f5497"
-
 dest_files=[ "res://.import/MinorBeast.png-b62f292fcd2e6f51cc2f01dacc5b4c9b.stex" ]
-dest_md5="c130f75ac708625fc8f7366ab07720fc"
 
 [params]
 

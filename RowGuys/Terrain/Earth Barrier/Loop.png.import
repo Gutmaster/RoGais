@@ -7,10 +7,7 @@ path="res://.import/Loop.png-7a038c5fabc3d9e261725a2e423671f7.stex"
 [deps]
 
 source_file="res://Terrain/Earth Barrier/Loop.png"
-source_md5="6ba93c1b79df61e070bd5204765dfc5f"
-
 dest_files=[ "res://.import/Loop.png-7a038c5fabc3d9e261725a2e423671f7.stex" ]
-dest_md5="8712a31d5a5670e784447a2ff4927e68"
 
 [params]
 

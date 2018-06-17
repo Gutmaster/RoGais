@@ -7,10 +7,7 @@ path="res://.import/ShiftForward6.png-921f04767715309a2e84468e5a6f8074.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/ShiftForward6.png"
-source_md5="f818a29bd738101ccb9f3e5fcc08d5a3"
-
 dest_files=[ "res://.import/ShiftForward6.png-921f04767715309a2e84468e5a6f8074.stex" ]
-dest_md5="edf9c60d6a5682fa7b1388995fef274f"
 
 [params]
 

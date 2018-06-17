@@ -7,10 +7,7 @@ path="res://.import/animtoss4.png-5e09f589bd49b09effecee0ea8a689dd.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/animtoss4.png"
-source_md5="5045db36ba50a542bccfd6fdb8af84d3"
-
 dest_files=[ "res://.import/animtoss4.png-5e09f589bd49b09effecee0ea8a689dd.stex" ]
-dest_md5="bba3bee238fcc0ea9471d865707c5153"
 
 [params]
 

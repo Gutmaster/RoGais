@@ -40,6 +40,9 @@ func _ready():
 	
 	AddArtifact(startifact)
 	
+	for i in range(1,8):
+		itemList.push_back(find_node("Slot" + str(i)))
+		
 	AddItem(itemCatalogue.get_node("Red Goo"))
 	AddItem(trinketCatalogue.get_node("Tribute Ring"))
 
@@ -174,8 +177,7 @@ func AddArtifact(artifact):
 
 
 func AddItem(item):
-	item = item.duplicate()
-	itemList.push_back(item)
+	item = item.Clone()
 	var found = false
 	
 	for i in range(1, 8):

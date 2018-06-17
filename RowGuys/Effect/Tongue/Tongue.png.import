@@ -7,10 +7,7 @@ path="res://.import/Tongue.png-57735708582b6ade8af76d8559d4e8dc.stex"
 [deps]
 
 source_file="res://Effect/Tongue/Tongue.png"
-source_md5="f9d733e6f58f8a3b743fc04749dc6f55"
-
 dest_files=[ "res://.import/Tongue.png-57735708582b6ade8af76d8559d4e8dc.stex" ]
-dest_md5="4d25491cbfa90a96f5e21297758b55d4"
 
 [params]
 

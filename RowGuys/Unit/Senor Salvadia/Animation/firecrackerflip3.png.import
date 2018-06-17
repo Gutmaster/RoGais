@@ -7,10 +7,7 @@ path="res://.import/firecrackerflip3.png-4901c948fefa0042a531e9f69b9df46f.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/firecrackerflip3.png"
-source_md5="c910f17c840cd2f3d1724ccd73526e29"
-
 dest_files=[ "res://.import/firecrackerflip3.png-4901c948fefa0042a531e9f69b9df46f.stex" ]
-dest_md5="3ee62019630a3728a326c4a91692cd69"
 
 [params]
 

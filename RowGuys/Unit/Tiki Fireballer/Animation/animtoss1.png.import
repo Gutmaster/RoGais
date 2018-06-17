@@ -7,10 +7,7 @@ path="res://.import/animtoss1.png-7ab54b1eae97e1f8c3d4f9da68d41cf0.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/animtoss1.png"
-source_md5="5c57d360b316d3e9d33958c8f1ad478b"
-
 dest_files=[ "res://.import/animtoss1.png-7ab54b1eae97e1f8c3d4f9da68d41cf0.stex" ]
-dest_md5="ae3998feabafd2537b03ce2644e4ef69"
 
 [params]
 

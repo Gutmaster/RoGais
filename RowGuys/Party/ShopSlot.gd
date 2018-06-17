@@ -1,9 +1,6 @@
 extends "res://Party/Slot.gd"
 
 
-#onready var itemHolder = find_node("Shop").itemHolder
-
-
 func _ready():
 	type = ITYPE.item
 
@@ -11,15 +8,23 @@ func _ready():
 func _on_Slot_focus_entered():
 	release_focus()
 	
-	var itemHolder = shop.itemHolder
-	var mouseItem = itemHolder.item
+	var mouseItem = party.itemHolder.item
 	
 	if(mouseItem == null && item && party.gold >= item.buyPrice):
-		mouseItem = item
-		itemHolder.add_child(mouseItem)
+		party.itemHolder.item = item
+		party.itemHolder.add_child(mouseItem)
+		party.UpdateGold(-(item.buyPrice))
 		item = null
-		itemHolder.itemCatcher = get_parent()
-	#elif(mouseItem && !item && itemHolder.itemCatcher == get_parent()):
+		Globals.shop.hasShopItem = true
+	elif(Globals.shop.hasShopItem && !item):
+		party.UpdateGold(party.itemHolder.item.buyPrice)
+		Globals.shop.hasShopItem = false
+		party.itemHolder.remove_child(party.itemHolder.item)
+		Globals.shop.AddShopItem(party.itemHolder.item)
+		party.itemHolder.item = null
 		
-
-	shop.UpdateMiniPartyCards()
+		
+		
+		
+		
+		

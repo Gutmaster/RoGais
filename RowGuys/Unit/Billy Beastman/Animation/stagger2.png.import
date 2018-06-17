@@ -7,10 +7,7 @@ path="res://.import/stagger2.png-ebbddecb83d9608f7e2a41babc653319.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/stagger2.png"
-source_md5="55cad2e2b1f256ad2e22039cb7a5ad5a"
-
 dest_files=[ "res://.import/stagger2.png-ebbddecb83d9608f7e2a41babc653319.stex" ]
-dest_md5="d5cc9135c579338a54aaf2991e312a7e"
 
 [params]
 

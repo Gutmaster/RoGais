@@ -7,10 +7,7 @@ path="res://.import/RoomIcon.jpg-307f997b5e0e236d11a6bd02c7bbd116.stex"
 [deps]
 
 source_file="res://Dungeon/Room/RoomIcon.jpg"
-source_md5="83a92ea33581efb18e14cb423ebe6489"
-
 dest_files=[ "res://.import/RoomIcon.jpg-307f997b5e0e236d11a6bd02c7bbd116.stex" ]
-dest_md5="c23295b14d372aca590488d65369336c"
 
 [params]
 

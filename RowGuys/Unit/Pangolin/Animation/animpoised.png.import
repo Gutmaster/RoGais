@@ -7,10 +7,7 @@ path="res://.import/animpoised.png-5f5b8f05e1ec4397a3a60b3c99181cbc.stex"
 [deps]
 
 source_file="res://Unit/Pangolin/Animation/animpoised.png"
-source_md5="1fa01695c95de645edbb59428c1e4b58"
-
 dest_files=[ "res://.import/animpoised.png-5f5b8f05e1ec4397a3a60b3c99181cbc.stex" ]
-dest_md5="227c923e9c8c2d9c3f71aad71d1c7f0f"
 
 [params]
 

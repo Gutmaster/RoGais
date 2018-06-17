@@ -7,10 +7,7 @@ path="res://.import/Background.png-73263d1a72a18090665562a2bb1a6ffa.stex"
 [deps]
 
 source_file="res://Combat/Queue/Background.png"
-source_md5="9797ace961f1f3cecfc2824a0524a503"
-
 dest_files=[ "res://.import/Background.png-73263d1a72a18090665562a2bb1a6ffa.stex" ]
-dest_md5="37a868c02c32cf20df8436f163fbd2ac"
 
 [params]
 

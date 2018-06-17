@@ -7,10 +7,7 @@ path="res://.import/Portrait.png-0df1c6ad42dea66ed07a7a49a9f7f9ad.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Portrait.png"
-source_md5="2ca68cabf8ecc3aa15384c723637b64a"
-
 dest_files=[ "res://.import/Portrait.png-0df1c6ad42dea66ed07a7a49a9f7f9ad.stex" ]
-dest_md5="b022a727d8d3f87a77beaf6c1ac4981b"
 
 [params]
 

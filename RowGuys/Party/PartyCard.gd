@@ -36,4 +36,5 @@ func _on_Portrait3_pressed():
 
 
 func _on_SkillTree_pressed():
-	Globals.ChangeScene(unit.skillTree)
+	if(!(party.itemHolder.item)):
+		Globals.ChangeScene(unit.skillTree)

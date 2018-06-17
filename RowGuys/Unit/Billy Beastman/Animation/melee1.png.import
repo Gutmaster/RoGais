@@ -7,10 +7,7 @@ path="res://.import/melee1.png-c30144235a412a276861cede2b0ac2c6.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/melee1.png"
-source_md5="a6cfd35d43de058faf12b066cc94ddff"
-
 dest_files=[ "res://.import/melee1.png-c30144235a412a276861cede2b0ac2c6.stex" ]
-dest_md5="f0b0754cb359ff02cf33ff556b68240d"
 
 [params]
 

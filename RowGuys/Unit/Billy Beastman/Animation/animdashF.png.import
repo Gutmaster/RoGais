@@ -7,10 +7,7 @@ path="res://.import/animdashF.png-eb0364e1021a8c8843c5ae458bba37f6.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/animdashF.png"
-source_md5="58e86f45a5856506b8948eb6c6d1ab86"
-
 dest_files=[ "res://.import/animdashF.png-eb0364e1021a8c8843c5ae458bba37f6.stex" ]
-dest_md5="64b39fd6f9a0ca2762b472f66a4d17a1"
 
 [params]
 

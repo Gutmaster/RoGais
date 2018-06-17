@@ -7,10 +7,7 @@ path="res://.import/portrait.png-03f057e0920d8d3c9eb405a7d44e4e82.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/portrait.png"
-source_md5="b3fb015d7295c17e625818c1aa029b3a"
-
 dest_files=[ "res://.import/portrait.png-03f057e0920d8d3c9eb405a7d44e4e82.stex" ]
-dest_md5="0000f9775754f5b242edbe98a4bd736f"
 
 [params]
 

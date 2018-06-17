@@ -7,10 +7,7 @@ path="res://.import/Idle3.png-f2f82b470fe8478283b39e0a2d81fc3b.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/Idle3.png"
-source_md5="deef5f341bd0a37d4521841bb4d49fed"
-
 dest_files=[ "res://.import/Idle3.png-f2f82b470fe8478283b39e0a2d81fc3b.stex" ]
-dest_md5="01f7db9ed1b732331d435998260a2fbd"
 
 [params]
 

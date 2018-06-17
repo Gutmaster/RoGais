@@ -7,10 +7,7 @@ path="res://.import/Dance2.png-0bf886878a7357ac150c88d592f1fb97.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/Dance2.png"
-source_md5="941cfcec213ead2975b644fcaba41bff"
-
 dest_files=[ "res://.import/Dance2.png-0bf886878a7357ac150c88d592f1fb97.stex" ]
-dest_md5="c0572929b9be5b50f9f3731c7fdad2a2"
 
 [params]
 

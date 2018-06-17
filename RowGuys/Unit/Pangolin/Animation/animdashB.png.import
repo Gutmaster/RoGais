@@ -7,10 +7,7 @@ path="res://.import/animdashB.png-9bda1988a58253cc6519988f5280b506.stex"
 [deps]
 
 source_file="res://Unit/Pangolin/Animation/animdashB.png"
-source_md5="e73e6f9378e06a836104a6755b8f5aa4"
-
 dest_files=[ "res://.import/animdashB.png-9bda1988a58253cc6519988f5280b506.stex" ]
-dest_md5="2c3bf24dd14ecd54989d40ef04219f6a"
 
 [params]
 

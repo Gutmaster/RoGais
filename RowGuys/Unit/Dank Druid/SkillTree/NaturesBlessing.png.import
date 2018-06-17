@@ -7,10 +7,7 @@ path="res://.import/NaturesBlessing.png-b792be03a7c6e6e6407f0b7313a184b4.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/SkillTree/NaturesBlessing.png"
-source_md5="c36a01bbc6da157ba8547268403ee957"
-
 dest_files=[ "res://.import/NaturesBlessing.png-b792be03a7c6e6e6407f0b7313a184b4.stex" ]
-dest_md5="2be883a9f25ee616e7821cd6e68450c8"
 
 [params]
 

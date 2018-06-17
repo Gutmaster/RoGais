@@ -7,10 +7,7 @@ path="res://.import/Idle3.png-90668546ce10d54f182665121a280d2f.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/Idle3.png"
-source_md5="811fac4e8823b64b7e8e1f5c00809407"
-
 dest_files=[ "res://.import/Idle3.png-90668546ce10d54f182665121a280d2f.stex" ]
-dest_md5="dc3c652f91594e857e72578720766c04"
 
 [params]
 

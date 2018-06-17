@@ -7,10 +7,7 @@ path="res://.import/Start1.png-fae68714f05850b82758f250a64e5cfb.stex"
 [deps]
 
 source_file="res://Terrain/Ensnaring Vines/Start1.png"
-source_md5="7b05cbd7999dc381df11bd024d058e5e"
-
 dest_files=[ "res://.import/Start1.png-fae68714f05850b82758f250a64e5cfb.stex" ]
-dest_md5="bf6c3279275dc0a196fa5019086adb6b"
 
 [params]
 

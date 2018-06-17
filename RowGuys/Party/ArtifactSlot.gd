@@ -18,6 +18,9 @@ func _on_Slot_focus_entered():
 			add_child(item)
 			party.artifactContainer.add_child(item)
 			get_parent().get_node("Description").set_text(item.description)
+			
+			if(Globals.shop && Globals.shop.hasShopItem):
+				Globals.shop.hasShopItem = false
 		elif(mouseItem == null && item):
 			party.itemHolder.item = item
 			get_parent().get_node("Description").set_text("")
@@ -33,8 +36,8 @@ func _on_Slot_focus_entered():
 			get_parent().get_node("Description").set_text(item.description)
 			party.artifactContainer.add_child(item)
 			party.itemHolder.itemCatcher = self
+			
+			if(Globals.shop && Globals.shop.hasShopItem):
+				Globals.shop.hasShopItem = false
 	
 		party.UpdatePartyCards()
-		
-		if(Globals.shop):
-			Globals.shop.UpdateShopPartyCards()

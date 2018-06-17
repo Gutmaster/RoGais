@@ -7,10 +7,7 @@ path="res://.import/animtoss4.png-703ffca41595086bb88fc7d22cffb454.stex"
 [deps]
 
 source_file="res://Unit/Pangolin/Animation/animtoss4.png"
-source_md5="5045db36ba50a542bccfd6fdb8af84d3"
-
 dest_files=[ "res://.import/animtoss4.png-703ffca41595086bb88fc7d22cffb454.stex" ]
-dest_md5="bba3bee238fcc0ea9471d865707c5153"
 
 [params]
 

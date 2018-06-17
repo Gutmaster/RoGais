@@ -7,10 +7,7 @@ path="res://.import/ShiftForward1.png-490a1b1b4d41d4ed7793d220228c29ee.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/ShiftForward1.png"
-source_md5="0a372ced6d59e6e7ebe1793363cc17b2"
-
 dest_files=[ "res://.import/ShiftForward1.png-490a1b1b4d41d4ed7793d220228c29ee.stex" ]
-dest_md5="0281512102679a70f80af8ca03266517"
 
 [params]
 

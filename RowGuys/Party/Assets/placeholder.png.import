@@ -7,10 +7,7 @@ path="res://.import/placeholder.png-f61088a99dd108429d8d1f7b1b8a5b0a.stex"
 [deps]
 
 source_file="res://Party/Assets/placeholder.png"
-source_md5="3ada0ecfa7be0648c0950caab4e3416a"
-
 dest_files=[ "res://.import/placeholder.png-f61088a99dd108429d8d1f7b1b8a5b0a.stex" ]
-dest_md5="b1021cefa74d9af34524b175e99a1f99"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/LM.png-c67b55944fc2fcfcb057e84a15191505.stex"
 [deps]
 
 source_file="res://Combat/Assets/LM.png"
-source_md5="71d60d5878c402d2ac0546a2240a6ca7"
-
 dest_files=[ "res://.import/LM.png-c67b55944fc2fcfcb057e84a15191505.stex" ]
-dest_md5="7aadbeb812c3a9cf986967d19657b41e"
 
 [params]
 

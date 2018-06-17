@@ -7,10 +7,7 @@ path="res://.import/AdvanceHover.png-f270f13507fa4acfd27c47914432b9ef.stex"
 [deps]
 
 source_file="res://Combat/Assets/AdvanceHover.png"
-source_md5="e75ee454020a2472a5050532d7f830a3"
-
 dest_files=[ "res://.import/AdvanceHover.png-f270f13507fa4acfd27c47914432b9ef.stex" ]
-dest_md5="c6ce54486be85ce2cb3ae50db6d1ea03"
 
 [params]
 

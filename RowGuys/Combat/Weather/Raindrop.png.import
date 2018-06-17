@@ -7,10 +7,7 @@ path="res://.import/Raindrop.png-c4fcc5f41e16fb6cca8ae19402d16e7d.stex"
 [deps]
 
 source_file="res://Combat/Weather/Raindrop.png"
-source_md5="3c8ffb8337fffd0c6a922c4181648bcc"
-
 dest_files=[ "res://.import/Raindrop.png-c4fcc5f41e16fb6cca8ae19402d16e7d.stex" ]
-dest_md5="9d04221040d9c821b1519aba629bc497"
 
 [params]
 

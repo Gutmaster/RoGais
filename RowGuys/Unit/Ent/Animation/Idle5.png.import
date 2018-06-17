@@ -7,10 +7,7 @@ path="res://.import/Idle5.png-a262e7dc89a2354521aba93fb91aae03.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/Idle5.png"
-source_md5="b310de7aa525f028b53f0670aed25fd3"
-
 dest_files=[ "res://.import/Idle5.png-a262e7dc89a2354521aba93fb91aae03.stex" ]
-dest_md5="c05ae3a7a4ee975dd0d61068ef6f8097"
 
 [params]
 

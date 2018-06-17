@@ -7,10 +7,7 @@ path="res://.import/partyButton.png-ff77f9091d0241bbeb70f877b2e7f267.stex"
 [deps]
 
 source_file="res://Party/Assets/partyButton.png"
-source_md5="5256f68ebf6fd0c5ccbe4dd914a99761"
-
 dest_files=[ "res://.import/partyButton.png-ff77f9091d0241bbeb70f877b2e7f267.stex" ]
-dest_md5="7568bec889227673d5fd026696113299"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/PartyIcon.jpg-c656dfb42b09b7dc0adfadb0d8d546de.stex"
 [deps]
 
 source_file="res://Dungeon/Assets/PartyIcon.jpg"
-source_md5="092ff77510a6fa2f1a1ee96372c8ee90"
-
 dest_files=[ "res://.import/PartyIcon.jpg-c656dfb42b09b7dc0adfadb0d8d546de.stex" ]
-dest_md5="3c4f1b2ecd44ded9a6e0e138cc50652d"
 
 [params]
 

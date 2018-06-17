@@ -4,11 +4,8 @@ extends AnimatedSprite
 var QSScene = load("res://Party/QuickStats/QuickStats.tscn")
 var quickStats
 
-var PCScene = load("res://Party/MiniPartyCard.tscn")
+var PCScene = load("res://Party/PartyCard.tscn")
 var partyCard
-
-#var MPCScene = load("res://Party/MiniPartyCard.tscn")
-#var miniPartyCard
 
 enum ROW{
 front,

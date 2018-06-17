@@ -7,10 +7,7 @@ path="res://.import/background-1.png-2b41a46169e17235d97b7b7ed00f217a.stex"
 [deps]
 
 source_file="res://Overworld/background-1.png"
-source_md5="1c9408034dcf20676d835f14e6906f18"
-
 dest_files=[ "res://.import/background-1.png-2b41a46169e17235d97b7b7ed00f217a.stex" ]
-dest_md5="ed901347a5555d7cd87b49991f8afa35"
 
 [params]
 

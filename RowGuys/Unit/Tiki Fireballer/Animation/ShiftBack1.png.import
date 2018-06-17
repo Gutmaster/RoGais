@@ -7,10 +7,7 @@ path="res://.import/ShiftBack1.png-256f232607e809925bd2191a9ad585ac.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/ShiftBack1.png"
-source_md5="2b314cf26cecfa8562208e94a31e38a3"
-
 dest_files=[ "res://.import/ShiftBack1.png-256f232607e809925bd2191a9ad585ac.stex" ]
-dest_md5="19c44ed50ae9b75a749ab35377f74c73"
 
 [params]
 

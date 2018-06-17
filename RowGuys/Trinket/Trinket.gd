@@ -19,5 +19,22 @@ func _ready():
 	pass
 
 
+func Init():
+	pass
+
+
 func Upkeep(unit):
 	pass
+
+
+func PullRandom():
+	randomize()
+	return get_child(randi()%get_child_count())
+
+
+func Clone():
+	var temp = duplicate()
+	temp.iType = ITYPE.trinket
+	temp.Init()
+	
+	return temp

@@ -7,10 +7,7 @@ path="res://.import/Artifact.png-402fd16e5296d2285324e2406e5e3d8b.stex"
 [deps]
 
 source_file="res://Artifact/Artifact.png"
-source_md5="2759935ecd89bac011145babd664b310"
-
 dest_files=[ "res://.import/Artifact.png-402fd16e5296d2285324e2406e5e3d8b.stex" ]
-dest_md5="334ec2049e6862c41c2a7601f9f3af3c"
 
 [params]
 

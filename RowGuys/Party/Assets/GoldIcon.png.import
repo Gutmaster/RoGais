@@ -7,10 +7,7 @@ path="res://.import/GoldIcon.png-90dadbc3b8f7dc76d07fc6da0981588d.stex"
 [deps]
 
 source_file="res://Party/Assets/GoldIcon.png"
-source_md5="47432edc795e64ec0f4200c23060b96d"
-
 dest_files=[ "res://.import/GoldIcon.png-90dadbc3b8f7dc76d07fc6da0981588d.stex" ]
-dest_md5="f58613f7d8d5bbed4148f66a52b0632e"
 
 [params]
 

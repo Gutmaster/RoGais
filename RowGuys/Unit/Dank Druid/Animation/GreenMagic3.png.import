@@ -7,10 +7,7 @@ path="res://.import/GreenMagic3.png-0a78b97a2af0bd53fef225432ee6e8fb.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/GreenMagic3.png"
-source_md5="4aa74fbf7b1b458bd0b2d8aea59d41bf"
-
 dest_files=[ "res://.import/GreenMagic3.png-0a78b97a2af0bd53fef225432ee6e8fb.stex" ]
-dest_md5="762144b7355769230479c5f8ddbd6198"
 
 [params]
 

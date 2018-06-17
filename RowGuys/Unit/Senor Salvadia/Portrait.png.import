@@ -7,10 +7,7 @@ path="res://.import/Portrait.png-6cee6961709c9b2d29fba1546df47805.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Portrait.png"
-source_md5="619b8a22d936fa42994a875c72aab940"
-
 dest_files=[ "res://.import/Portrait.png-6cee6961709c9b2d29fba1546df47805.stex" ]
-dest_md5="df27bf164bb6c6b7064ceb23028d229c"
 
 [params]
 

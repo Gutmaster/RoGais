@@ -7,10 +7,7 @@ path="res://.import/PlayPressed.png-c9262e0bd4e0c3f5c0c2cb7bdd6b3046.stex"
 [deps]
 
 source_file="res://Main Menu/PlayPressed.png"
-source_md5="9be3f7062b65439de42c59566b9a60a0"
-
 dest_files=[ "res://.import/PlayPressed.png-c9262e0bd4e0c3f5c0c2cb7bdd6b3046.stex" ]
-dest_md5="651ed9ca2cec1ddb5ba7f2775eeca2bd"
 
 [params]
 

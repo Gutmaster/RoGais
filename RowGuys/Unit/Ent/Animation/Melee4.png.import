@@ -7,10 +7,7 @@ path="res://.import/Melee4.png-8fcf82e09b2a19fe9d19fc467eebd3ec.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/Melee4.png"
-source_md5="2dae7bb1422f6ec8402463c1a32bef4b"
-
 dest_files=[ "res://.import/Melee4.png-8fcf82e09b2a19fe9d19fc467eebd3ec.stex" ]
-dest_md5="ee368726b2be930ca85188d504e64553"
 
 [params]
 

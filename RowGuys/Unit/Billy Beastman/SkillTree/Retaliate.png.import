@@ -7,10 +7,7 @@ path="res://.import/Retaliate.png-13f328f8dc88a87c12f6d3396e482ab3.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/SkillTree/Retaliate.png"
-source_md5="e8033fa27af3dcd57a5a765b8bab9611"
-
 dest_files=[ "res://.import/Retaliate.png-13f328f8dc88a87c12f6d3396e482ab3.stex" ]
-dest_md5="1fd9a54de4b4a3cf8b1c1a9159414240"
 
 [params]
 

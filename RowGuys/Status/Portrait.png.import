@@ -7,10 +7,7 @@ path="res://.import/Portrait.png-78535bacbb4b42e9d8f644788f7279a3.stex"
 [deps]
 
 source_file="res://Status/Portrait.png"
-source_md5="7360206bdd858a3e7dfbdb736fa7687c"
-
 dest_files=[ "res://.import/Portrait.png-78535bacbb4b42e9d8f644788f7279a3.stex" ]
-dest_md5="3886fcc1556807ac9dc0cac774c977b5"
 
 [params]
 

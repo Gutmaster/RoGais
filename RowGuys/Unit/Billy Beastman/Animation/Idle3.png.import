@@ -7,10 +7,7 @@ path="res://.import/Idle3.png-d83f2b7c043d54ca926441faa407d597.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/Idle3.png"
-source_md5="0e85eeb3d26d3b43008d89e0648777d4"
-
 dest_files=[ "res://.import/Idle3.png-d83f2b7c043d54ca926441faa407d597.stex" ]
-dest_md5="c1f109c8ee2a3118e7b7b4ad3bc0fbf6"
 
 [params]
 

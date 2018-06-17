@@ -7,10 +7,7 @@ path="res://.import/Bite3.png-032d448d62093652e237b2f18b0d8663.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/Bite3.png"
-source_md5="46855755d4b8ea9ab84d3b33f05ad371"
-
 dest_files=[ "res://.import/Bite3.png-032d448d62093652e237b2f18b0d8663.stex" ]
-dest_md5="db31628cc8d4fe9909841323892b2cf3"
 
 [params]
 

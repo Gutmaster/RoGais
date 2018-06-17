@@ -7,10 +7,7 @@ path="res://.import/stagger2.png-061e90f0af9112bd4598d523818cef7b.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/stagger2.png"
-source_md5="351d4d2e141ce01f592548aa94988a12"
-
 dest_files=[ "res://.import/stagger2.png-061e90f0af9112bd4598d523818cef7b.stex" ]
-dest_md5="9bbe4d3847300aa65d8f4b8e35767a15"
 
 [params]
 

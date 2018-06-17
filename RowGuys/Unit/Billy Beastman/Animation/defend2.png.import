@@ -7,10 +7,7 @@ path="res://.import/defend2.png-a990f3e4d65546cad3e3bb78de186344.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/defend2.png"
-source_md5="e0107ba610a507c34a8cc831faff91ed"
-
 dest_files=[ "res://.import/defend2.png-a990f3e4d65546cad3e3bb78de186344.stex" ]
-dest_md5="bdd48299e0920141348b37a7cdf2a72c"
 
 [params]
 

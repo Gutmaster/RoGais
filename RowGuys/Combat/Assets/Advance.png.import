@@ -7,10 +7,7 @@ path="res://.import/Advance.png-e03f7c5cf2fef59d8b7119b768f4de79.stex"
 [deps]
 
 source_file="res://Combat/Assets/Advance.png"
-source_md5="14c1f002600a0b0ac7aa64214eb56c33"
-
 dest_files=[ "res://.import/Advance.png-e03f7c5cf2fef59d8b7119b768f4de79.stex" ]
-dest_md5="e0753bf77514f8e5b1e0c92d9ead94cf"
 
 [params]
 

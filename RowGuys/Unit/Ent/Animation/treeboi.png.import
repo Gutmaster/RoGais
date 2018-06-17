@@ -7,10 +7,7 @@ path="res://.import/treeboi.png-25f619bd593f033f3c1365c42e771517.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/treeboi.png"
-source_md5="a5bb6cc5936674f5e881bc72bde65f21"
-
 dest_files=[ "res://.import/treeboi.png-25f619bd593f033f3c1365c42e771517.stex" ]
-dest_md5="d39a30aa4d5413b9a618e47b16a905ea"
 
 [params]
 

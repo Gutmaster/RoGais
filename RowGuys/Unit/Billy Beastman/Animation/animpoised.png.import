@@ -7,10 +7,7 @@ path="res://.import/animpoised.png-1c04415b779b64c8230c0038146ee15b.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/Animation/animpoised.png"
-source_md5="1fa01695c95de645edbb59428c1e4b58"
-
 dest_files=[ "res://.import/animpoised.png-1c04415b779b64c8230c0038146ee15b.stex" ]
-dest_md5="227c923e9c8c2d9c3f71aad71d1c7f0f"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/GooShoppe.png-5aa88f4101757b29989effe2ec84577c.stex"
 [deps]
 
 source_file="res://Overworld/Objects/GooShoppe.png"
-source_md5="c91a80cb4f494959833cd8a37d4a1ff9"
-
 dest_files=[ "res://.import/GooShoppe.png-5aa88f4101757b29989effe2ec84577c.stex" ]
-dest_md5="ae0c99a58811fd7afd4ad7998448f46b"
 
 [params]
 

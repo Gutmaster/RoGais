@@ -7,10 +7,7 @@ path="res://.import/SellButton.png-c0a1db32802465f3c8e136b26b9daf69.stex"
 [deps]
 
 source_file="res://Party/Assets/SellButton.png"
-source_md5="aabad5821466fa368f1cf853af32ee5d"
-
 dest_files=[ "res://.import/SellButton.png-c0a1db32802465f3c8e136b26b9daf69.stex" ]
-dest_md5="cd00cc6bb7eec3425785ab68378cf8c3"
 
 [params]
 

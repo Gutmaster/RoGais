@@ -16,6 +16,9 @@ func _on_Slot_focus_entered():
 			party.itemHolder.remove_child(item)
 			party.itemHolder.item = null
 			add_child(item)
+			
+			if(Globals.shop && Globals.shop.hasShopItem):
+				Globals.shop.hasShopItem = false
 		elif(mouseItem == null && item):
 			party.itemHolder.item = item
 			item = null
@@ -26,8 +29,8 @@ func _on_Slot_focus_entered():
 			party.itemHolder.item = item
 			item = mouseItem
 			party.itemHolder.itemCatcher = self
+			
+			if(Globals.shop && Globals.shop.hasShopItem):
+				Globals.shop.hasShopItem = false
 	
 		party.UpdatePartyCards()
-	
-	if(Globals.shop):
-		Globals.shop.UpdateShopPartyCards()

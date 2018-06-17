@@ -7,10 +7,7 @@ path="res://.import/stagger2.png-2f49bf92866a8f733d785f70af362c06.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/stagger2.png"
-source_md5="1d45e045b32eec80ab534eac0fa17193"
-
 dest_files=[ "res://.import/stagger2.png-2f49bf92866a8f733d785f70af362c06.stex" ]
-dest_md5="3e64bbfb38906fb168eb92bef2e353c1"
 
 [params]
 

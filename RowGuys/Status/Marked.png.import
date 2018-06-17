@@ -7,10 +7,7 @@ path="res://.import/Marked.png-5487e0fc92597f8fdcb8c7dd9ede8fcd.stex"
 [deps]
 
 source_file="res://Status/Marked.png"
-source_md5="57e036befffc403ebd9af361f1e7b977"
-
 dest_files=[ "res://.import/Marked.png-5487e0fc92597f8fdcb8c7dd9ede8fcd.stex" ]
-dest_md5="b8b47e051840f64a51a145f00225ce67"
 
 [params]
 

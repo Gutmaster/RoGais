@@ -7,10 +7,7 @@ path="res://.import/BG.jpg-b27451674fc39d5a8f58d8d279c78400.stex"
 [deps]
 
 source_file="res://Dungeon/Assets/BG.jpg"
-source_md5="80aa1f26158e61fabac5d9b36328ca61"
-
 dest_files=[ "res://.import/BG.jpg-b27451674fc39d5a8f58d8d279c78400.stex" ]
-dest_md5="10ac993e596e10e0cb8db606571fc66c"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Fireball1.png-b6dd517ec275b6319f367be58b85dc92.stex"
 [deps]
 
 source_file="res://Effect/Fireball/Fireball1.png"
-source_md5="04a91a78e2aedb4dc26d069083ead75f"
-
 dest_files=[ "res://.import/Fireball1.png-b6dd517ec275b6319f367be58b85dc92.stex" ]
-dest_md5="7d3871cca10d64a0fd4984ce61184219"
 
 [params]
 

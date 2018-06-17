@@ -3,7 +3,10 @@ extends "res://Trinket/Trinket.gd"
 
 
 func _ready():
-	description = "Raises all stats but unit suffers 1HP loss every upkeep."
+	pass
+
+
+func Init():
 	stats.Vitality += 1
 	stats.Stamina += 1
 	stats.Strength += 1
@@ -12,8 +15,10 @@ func _ready():
 	stats.Willpower += 1
 	stats.Speed += 1
 	
-	buyPrice = 5
-	sellPrice = 2
+	buyPrice = 6
+	sellPrice = 4
+	
+	description = "Raises all stats but unit suffers 1HP loss every upkeep."
 
 
 func Upkeep(unit):

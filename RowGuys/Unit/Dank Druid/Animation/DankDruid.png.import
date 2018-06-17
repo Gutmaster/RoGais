@@ -7,10 +7,7 @@ path="res://.import/DankDruid.png-302568dfef6c75b8c82cec70fa33225c.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/DankDruid.png"
-source_md5="23da6215e2c667e79a5c3cca1f6bd861"
-
 dest_files=[ "res://.import/DankDruid.png-302568dfef6c75b8c82cec70fa33225c.stex" ]
-dest_md5="a83a3518e79fda8bfe2858ac40bf195e"
 
 [params]
 

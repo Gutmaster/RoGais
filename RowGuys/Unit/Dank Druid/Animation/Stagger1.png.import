@@ -7,10 +7,7 @@ path="res://.import/Stagger1.png-2c29bef49795aebbdbca4ec6f0796f00.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/Stagger1.png"
-source_md5="58dbe93fd2eb6694e09674cb55795eb6"
-
 dest_files=[ "res://.import/Stagger1.png-2c29bef49795aebbdbca4ec6f0796f00.stex" ]
-dest_md5="1c11266f6b0e3900486178e4d44c6d23"
 
 [params]
 

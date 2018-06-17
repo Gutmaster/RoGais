@@ -7,10 +7,7 @@ path="res://.import/ShiftBack.png-241e5fdda640134694b609be93f07dd8.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/ShiftBack.png"
-source_md5="a827e3cb2c4148482295fb0b389164f3"
-
 dest_files=[ "res://.import/ShiftBack.png-241e5fdda640134694b609be93f07dd8.stex" ]
-dest_md5="d9d86c541a1bd4c384a986a4af467498"
 
 [params]
 

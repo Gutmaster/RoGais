@@ -7,10 +7,7 @@ path="res://.import/Frenzy.png-974071754fb44f2fcaae1b0ac276a1da.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/SkillTree/Frenzy.png"
-source_md5="afb8962a26455d7c038ce66525cee593"
-
 dest_files=[ "res://.import/Frenzy.png-974071754fb44f2fcaae1b0ac276a1da.stex" ]
-dest_md5="02f13294439d58edd85cee805c36faa3"
 
 [params]
 

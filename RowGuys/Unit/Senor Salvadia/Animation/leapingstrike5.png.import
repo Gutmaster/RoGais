@@ -7,10 +7,7 @@ path="res://.import/leapingstrike5.png-0fe4546fdec35379fc0e02bc71686950.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/leapingstrike5.png"
-source_md5="482b9c3314dc840d59db266da4d48368"
-
 dest_files=[ "res://.import/leapingstrike5.png-0fe4546fdec35379fc0e02bc71686950.stex" ]
-dest_md5="9a9ed6a8c5dc8d916e48ae71c98cf2c2"
 
 [params]
 

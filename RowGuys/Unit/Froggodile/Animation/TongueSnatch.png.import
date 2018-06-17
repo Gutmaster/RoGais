@@ -7,10 +7,7 @@ path="res://.import/TongueSnatch.png-0b3f0a90c8025c42d3f3ab1a27f6ba95.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/TongueSnatch.png"
-source_md5="976adb821c6ebb1296d6bc17c782e852"
-
 dest_files=[ "res://.import/TongueSnatch.png-0b3f0a90c8025c42d3f3ab1a27f6ba95.stex" ]
-dest_md5="0108d83894c5f131c0b60b048d2db67e"
 
 [params]
 

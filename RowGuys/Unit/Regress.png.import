@@ -7,10 +7,7 @@ path="res://.import/Regress.png-4ed50d1269c91595fd31d0fddea80e01.stex"
 [deps]
 
 source_file="res://Unit/Regress.png"
-source_md5="c2e2337a29f770098ff0c91bd9a13668"
-
 dest_files=[ "res://.import/Regress.png-4ed50d1269c91595fd31d0fddea80e01.stex" ]
-dest_md5="e2577f0e95733e66fb0faccd1b9aaff9"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/SenorSalvadia.png-ced104a5efc0838a046c263d8607061d.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/SenorSalvadia.png"
-source_md5="8daf3562be52191d9728645d9ddf5f8a"
-
 dest_files=[ "res://.import/SenorSalvadia.png-ced104a5efc0838a046c263d8607061d.stex" ]
-dest_md5="0972ed63d802ae224abafc3d601133c8"
 
 [params]
 

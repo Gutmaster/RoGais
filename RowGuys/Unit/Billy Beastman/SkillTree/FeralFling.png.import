@@ -7,10 +7,7 @@ path="res://.import/FeralFling.png-28f5e96cbe824470bfaba0226091a2d3.stex"
 [deps]
 
 source_file="res://Unit/Billy Beastman/SkillTree/FeralFling.png"
-source_md5="56fd085d2e573e756c48630c09cda803"
-
 dest_files=[ "res://.import/FeralFling.png-28f5e96cbe824470bfaba0226091a2d3.stex" ]
-dest_md5="491016b970fec2a50aec29c7e756ebff"
 
 [params]
 

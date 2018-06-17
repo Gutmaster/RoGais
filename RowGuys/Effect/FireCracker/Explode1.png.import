@@ -7,10 +7,7 @@ path="res://.import/Explode1.png-57335e323af98d15eba139de555a5a57.stex"
 [deps]
 
 source_file="res://Effect/FireCracker/Explode1.png"
-source_md5="a4e65f50b3ed76495c403db8ee174288"
-
 dest_files=[ "res://.import/Explode1.png-57335e323af98d15eba139de555a5a57.stex" ]
-dest_md5="ea2debe5929b0156988353d8952b5026"
 
 [params]
 

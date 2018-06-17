@@ -7,10 +7,7 @@ path="res://.import/Start2.png-c1ed2149fcc288c2f6613e4c7305d7a6.stex"
 [deps]
 
 source_file="res://Terrain/Earth Barrier/Start2.png"
-source_md5="3811fdd2df8e927e5fb914a3dd47f64d"
-
 dest_files=[ "res://.import/Start2.png-c1ed2149fcc288c2f6613e4c7305d7a6.stex" ]
-dest_md5="143f98ae04f97ecf117b099dfe286f09"
 
 [params]
 

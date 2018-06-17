@@ -7,10 +7,7 @@ path="res://.import/marker2.png-342c25189e960e463b9855e352756428.stex"
 [deps]
 
 source_file="res://Overworld/Marker/marker2.png"
-source_md5="d772c48f4c7f7aa775a49242c67da42d"
-
 dest_files=[ "res://.import/marker2.png-342c25189e960e463b9855e352756428.stex" ]
-dest_md5="2f917cf17fc3574d406e1df7be60093e"
 
 [params]
 

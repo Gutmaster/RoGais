@@ -7,10 +7,7 @@ path="res://.import/froggodile.png-80ccac5936f9eef15ad6765a5a390065.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/froggodile.png"
-source_md5="70ccc3c4d7accf640fe7ca26e5e108b3"
-
 dest_files=[ "res://.import/froggodile.png-80ccac5936f9eef15ad6765a5a390065.stex" ]
-dest_md5="51d0e99407eef3763ba81e7b2575c82f"
 
 [params]
 

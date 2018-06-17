@@ -7,10 +7,7 @@ path="res://.import/Enemy.png-cb6b27d55b0c4f8fc7bff8908a93ea40.stex"
 [deps]
 
 source_file="res://Overworld/Objects/Enemy.png"
-source_md5="2ed05a0c4a323f39b04a57a6df39bf4f"
-
 dest_files=[ "res://.import/Enemy.png-cb6b27d55b0c4f8fc7bff8908a93ea40.stex" ]
-dest_md5="61c8f65d03f98b245794f140ff36fe7b"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/skilltreebuttonhover.png-c4cf322ff58fa9a0fb857eee43418945.st
 [deps]
 
 source_file="res://Party/Assets/skilltreebuttonhover.png"
-source_md5="d18c991fa2d88e1a67791fb2d55b3814"
-
 dest_files=[ "res://.import/skilltreebuttonhover.png-c4cf322ff58fa9a0fb857eee43418945.stex" ]
-dest_md5="28663479296362a384a1162631301446"
 
 [params]
 

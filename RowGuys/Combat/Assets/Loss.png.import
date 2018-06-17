@@ -7,10 +7,7 @@ path="res://.import/Loss.png-08f8092b3c5fd0d58055e369e647657c.stex"
 [deps]
 
 source_file="res://Combat/Assets/Loss.png"
-source_md5="64487b8f44fbeeced65d9914a1c434f0"
-
 dest_files=[ "res://.import/Loss.png-08f8092b3c5fd0d58055e369e647657c.stex" ]
-dest_md5="265e350f4a1dec8e743b787b302ed312"
 
 [params]
 

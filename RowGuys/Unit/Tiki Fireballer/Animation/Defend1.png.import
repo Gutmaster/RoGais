@@ -7,10 +7,7 @@ path="res://.import/Defend1.png-1a5c792b498d0730ec726123194ca07a.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/Defend1.png"
-source_md5="083ce1553d3fbc7e131a0fc78b4dd71a"
-
 dest_files=[ "res://.import/Defend1.png-1a5c792b498d0730ec726123194ca07a.stex" ]
-dest_md5="c4271fca56087ee561ec6c8bdbc09222"
 
 [params]
 

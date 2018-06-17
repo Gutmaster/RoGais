@@ -7,10 +7,7 @@ path="res://.import/swamppan.png-0abbc7bf242b2e40997c9ed4ebed964c.stex"
 [deps]
 
 source_file="res://Combat/Assets/swamppan.png"
-source_md5="99c352c1ca8d102c6741d713a923ecc5"
-
 dest_files=[ "res://.import/swamppan.png-0abbc7bf242b2e40997c9ed4ebed964c.stex" ]
-dest_md5="24c3826a723e6287ba100a0ca16348be"
 
 [params]
 

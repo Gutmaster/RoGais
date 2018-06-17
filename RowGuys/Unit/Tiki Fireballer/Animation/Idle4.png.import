@@ -7,10 +7,7 @@ path="res://.import/Idle4.png-d26375c590235119a798a01dd4be0ee7.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/Idle4.png"
-source_md5="5d22c8ca7543a0776c4879de53bda83b"
-
 dest_files=[ "res://.import/Idle4.png-d26375c590235119a798a01dd4be0ee7.stex" ]
-dest_md5="8c8aeb085325e12ea99d5497c6c91a82"
 
 [params]
 

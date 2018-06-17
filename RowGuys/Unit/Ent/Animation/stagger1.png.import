@@ -7,10 +7,7 @@ path="res://.import/stagger1.png-4eb0832d8bbdc55da21f3c7b32c9d2c7.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/stagger1.png"
-source_md5="7a281a8528464c17cbbff7976dd84002"
-
 dest_files=[ "res://.import/stagger1.png-4eb0832d8bbdc55da21f3c7b32c9d2c7.stex" ]
-dest_md5="8ec0c50edafb0a4395e28c845550456d"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Poison.png-f8da12ddd1ea69d51cd1fb9a1a7ac564.stex"
 [deps]
 
 source_file="res://Status/Poison.png"
-source_md5="4f9a34136badeb109a880b97033bc3e1"
-
 dest_files=[ "res://.import/Poison.png-f8da12ddd1ea69d51cd1fb9a1a7ac564.stex" ]
-dest_md5="1c51effef6cc8657f18bb08d85db7ded"
 
 [params]
 

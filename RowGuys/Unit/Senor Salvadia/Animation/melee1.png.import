@@ -7,10 +7,7 @@ path="res://.import/melee1.png-c335ac7dd0b03c71b8a7dae586876165.stex"
 [deps]
 
 source_file="res://Unit/Senor Salvadia/Animation/melee1.png"
-source_md5="e0a6010732923025c34cdcfd37414bb3"
-
 dest_files=[ "res://.import/melee1.png-c335ac7dd0b03c71b8a7dae586876165.stex" ]
-dest_md5="5c6b2078ac2cb26e97217255e31753bd"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/Melee2.png-b281632e97a4d5e08d7e34e8e08d84b3.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/Melee2.png"
-source_md5="125c4d528a1456d9bf7951ab0aed0a3f"
-
 dest_files=[ "res://.import/Melee2.png-b281632e97a4d5e08d7e34e8e08d84b3.stex" ]
-dest_md5="71382535eb1f784629825a5a4aa701d6"
 
 [params]
 

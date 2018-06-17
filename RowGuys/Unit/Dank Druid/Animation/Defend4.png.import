@@ -7,10 +7,7 @@ path="res://.import/Defend4.png-2eade5f715249ab48939d34ba02f04ae.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/Defend4.png"
-source_md5="dc839127629f0f54b94da3dfeec6c093"
-
 dest_files=[ "res://.import/Defend4.png-2eade5f715249ab48939d34ba02f04ae.stex" ]
-dest_md5="d2731c3a582920caa1fd41c11f11ca83"
 
 [params]
 

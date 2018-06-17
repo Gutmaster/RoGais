@@ -7,10 +7,7 @@ path="res://.import/Idle3.png-267a6a13e578c66814f5318599b40244.stex"
 [deps]
 
 source_file="res://Unit/Dank Druid/Animation/Idle3.png"
-source_md5="d89b9fe2d70bec03704d98d56095971c"
-
 dest_files=[ "res://.import/Idle3.png-267a6a13e578c66814f5318599b40244.stex" ]
-dest_md5="566cf26eb49a910085b1d0d7e7f8e817"
 
 [params]
 

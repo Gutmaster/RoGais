@@ -7,10 +7,7 @@ path="res://.import/PoisonBite3.png-fb7cebc39614a5a8cf0344074828dd60.stex"
 [deps]
 
 source_file="res://Unit/Froggodile/Animation/PoisonBite3.png"
-source_md5="6edabdf360e5867cb132af7a564d412c"
-
 dest_files=[ "res://.import/PoisonBite3.png-fb7cebc39614a5a8cf0344074828dd60.stex" ]
-dest_md5="b4552a18ad7f5e59c4aff3d8b8a0f2a9"
 
 [params]
 

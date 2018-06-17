@@ -7,10 +7,7 @@ path="res://.import/Portrait.png-dbe6568d19608201ed629d68d7acf0e2.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Portrait.png"
-source_md5="d475dd36ada88f1416b1cd0f6f328a5e"
-
 dest_files=[ "res://.import/Portrait.png-dbe6568d19608201ed629d68d7acf0e2.stex" ]
-dest_md5="078ac8222a5b8dc1d10c89e40acc1d42"
 
 [params]
 

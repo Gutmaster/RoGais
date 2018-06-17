@@ -7,10 +7,7 @@ path="res://.import/Blockade3.png-46faf06053ca668345f009cc66b9bb8b.stex"
 [deps]
 
 source_file="res://Unit/Ent/Animation/Blockade3.png"
-source_md5="cc383aa280b3bbdafc5032c3146a90ac"
-
 dest_files=[ "res://.import/Blockade3.png-46faf06053ca668345f009cc66b9bb8b.stex" ]
-dest_md5="e9f0e848957ab87eda5607b85da65893"
 
 [params]
 

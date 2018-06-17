@@ -7,10 +7,7 @@ path="res://.import/RingOfTribute.png-040cd80643e58adb08d81c66bc9d37ca.stex"
 [deps]
 
 source_file="res://Trinket/RingOfTribute.png"
-source_md5="d9b2244e9c8a2ab356b468b0b6adaf1f"
-
 dest_files=[ "res://.import/RingOfTribute.png-040cd80643e58adb08d81c66bc9d37ca.stex" ]
-dest_md5="faff8faeef3696d3f62536157d9d0869"
 
 [params]
 

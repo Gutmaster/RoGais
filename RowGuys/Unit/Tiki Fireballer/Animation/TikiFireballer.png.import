@@ -7,10 +7,7 @@ path="res://.import/TikiFireballer.png-8e297f255d6971b8bcf606fa201a05c7.stex"
 [deps]
 
 source_file="res://Unit/Tiki Fireballer/Animation/TikiFireballer.png"
-source_md5="4931d4575c9878d2a030e393e95a31b3"
-
 dest_files=[ "res://.import/TikiFireballer.png-8e297f255d6971b8bcf606fa201a05c7.stex" ]
-dest_md5="75ee03baa7ed4d53590b04194ee4455b"
 
 [params]
 
