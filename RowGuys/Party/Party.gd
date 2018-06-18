@@ -133,7 +133,7 @@ func UpdatePartyCards():
 	for j in range(1,6):
 		var panelString = "Panel" + str(j)
 		if(find_node(panelString).get_child_count()):
-			call_deferred("find_node(panelString).remove_child", find_node(panelString).get_child(0))
+			find_node(panelString).remove_child(find_node(panelString).get_child(0))
 	
 	for i in range(count):
 		var unit

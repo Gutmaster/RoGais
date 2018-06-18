@@ -2,6 +2,7 @@ extends "res://Unit/Unit.gd"
 
 
 var frenzy = null
+var mark = null
 
 
 func _ready():

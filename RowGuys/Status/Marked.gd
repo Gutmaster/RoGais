@@ -8,5 +8,6 @@ func _ready():
 
 
 func Init(hun):
+	power = 1
 	hunter = hun
 	type = STATUS.marked

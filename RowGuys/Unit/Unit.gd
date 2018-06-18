@@ -159,6 +159,10 @@ func Upkeep():
 	TerrainUpkeep()
 	StatusCheck()
 	StanceBonus()
+	
+	if(hp <= 0):
+		return
+	
 	if(teamLeft && party.artifactContainer.get_child(0) != null):
 		party.artifactContainer.get_child(0).Upkeep(self)
 	if(trinket1 != null && trinket1.item != null):
@@ -268,7 +272,9 @@ func CombatDamage(source, dmg):
 			dmg *= 1.5
 			print("Marked Bonus", str(dmg))
 	
-	UpdateHP(-dmg)
+	if(dmg > 0):
+		UpdateHP(-dmg)
+	
 	stance.PostAction(self, source)
 
 
@@ -379,21 +385,9 @@ func _on_Unit_animation_finished():
 func StatusCheck():
 	for i in range(status.size()):
 		status[i].Upkeep(self)
-		
-		"""quickStats.find_node("StatusPower").text = str(status[i].power)
-		
-		if(self.is_in_group("Party")):
-			partyCard.find_node("StatusPower").text = str(status[i].power)"""
-		
 		if(status.size() && status[i].power <= 0):
 			status.remove(i)
-			"""quickStats.find_node("StatusIcon").texture = null
-			quickStats.find_node("StatusPower").text = ""
-			
-			if(self.is_in_group("Party")):
-				partyCard.find_node("StatusIcon").texture = null
-				partyCard.find_node("StatusPower").text = ""
-"""
+
 
 func SeekStatus(sts):
 	for i in range(status.size()):
@@ -401,6 +395,15 @@ func SeekStatus(sts):
 		if(status[i].type == sts.type):
 			return status[i]
 	return sts
+
+
+func SeekStatusPos(sts):
+	for i in range(status.size()):
+		print(status[i].type, sts.type)
+		if(status[i].type == sts.type):
+			return i
+	print("Status Not Found")
+	return -1
 
 
 func StatusCure():
@@ -440,12 +443,19 @@ func Poison(var power):
 func Mark(hunter):
 	var temp = find_node("Marked").duplicate()
 	temp.Init(hunter)
-	var effect = SeekStatus(temp)
 	
-	if(effect == temp):
-		status.push_back(effect)
-		quickStats.find_node("Status").add_child(effect)
-		quickStats.print_tree()
+	
+	if(hunter.mark != null):
+		var i = hunter.mark.SeekStatusPos(temp)
+		var tempy = hunter.mark.SeekStatus(temp)
+		hunter.mark.quickStats.find_node("Status").remove_child(tempy)
+		hunter.mark.status.remove(i)
+	
+	
+	hunter.mark = self
+	status.push_back(temp)
+	quickStats.find_node("Status").add_child(temp)
+	quickStats.print_tree()
 
 
 func ReParent(destination):
