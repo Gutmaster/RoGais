@@ -656,9 +656,14 @@ func AIRandomMelee():
 			var target = action.targetOptions[r]
 			target = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton").ProtectStanceCheck(action, target)
 		
-			action.Animate(self, target)
-			action.phase = 1
-			cAction = action
+	var action = FindAction("Melee")
+	action.FindTargetOptions(team.enemy)
+	
+	randomize()
+	if(action.targetOptions.size()):
+		var target = action.targetOptions[randi()%action.targetOptions.size()]
+		
+		action.Init(self, target)
 
 
 func PassCheck():

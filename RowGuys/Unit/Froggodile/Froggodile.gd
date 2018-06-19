@@ -9,7 +9,7 @@ func Init():
 	idName = "Froggodile"
 	
 	bStats.Stamina = 5
-	bStats.Speed = 10
+	bStats.Speed = 4
 	bStats.Strength = 3
 	bStats.Vitality = 4
 	

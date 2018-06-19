@@ -1,8 +1,9 @@
 extends "res://Unit/Unit.gd"
 
 
-var frenzy = null
+var frenzy = false
 var mark = null
+var bloodsong = false
 
 
 func _ready():
@@ -12,11 +13,12 @@ func _ready():
 func Init():
 	idName = "Billy Beastman"
 	
-	bStats.Vitality = 8
+	bStats.Vitality = 80
 	bStats.Stamina = 5
 	bStats.Endurance = 3
 	bStats.Strength = 3
 	bStats.Speed = 5
+	bStats.Willpower = 3
 	
 	SharedInit()
 	defaultRow = ROW.front
@@ -32,3 +34,5 @@ func CombatDamage(source, dmg):
 	.CombatDamage(source, dmg)
 	if(frenzy):
 		source.Mark(self)
+	if(bloodsong && dmg > 0):
+		initiative += aStats.Willpower*3

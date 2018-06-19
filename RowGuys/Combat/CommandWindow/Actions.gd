@@ -43,6 +43,7 @@ func TargetCheck(target):
 		for i in range(user.cAction.targetOptions.size()):
 			if(user.cAction.targetOptions[i] == target):
 				TargetSelected(user.cAction, target)
+				return
 
 
 func ActionSelected(action):

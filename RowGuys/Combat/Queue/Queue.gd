@@ -27,7 +27,7 @@ func QueueUpdate():
 		temp.initiative += temp.aStats.Speed
 		if(temp.initiative > nextUnit.initiative):
 			nextUnit = temp
-			
+	
 	combatNode.activeUnit = nextUnit
 	combatNode.activeUnit.initiative = 0
 	
@@ -46,7 +46,7 @@ func QueuePredict():
 			temp.qInitiative += temp.aStats.Speed
 			if(temp.qInitiative > nextUnit.qInitiative):
 				nextUnit = temp
-				
+		
 		queue[i].unit = nextUnit
 		nextUnit.qInitiative = 0
 	

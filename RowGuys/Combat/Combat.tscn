@@ -70,7 +70,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Gravity", "Initial Velocity", "Spread", "Trail" ]
 
-[node name="Combat" type="Node2D"]
+[node name="Combat" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Mouse" ]
@@ -87,7 +87,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 margin_top = -1.0
 margin_bottom = 63.0
-rect_clip_content = false
 mouse_filter = 1
 
 [node name="Victory" type="TextureButton" parent="HUD" index="1"]

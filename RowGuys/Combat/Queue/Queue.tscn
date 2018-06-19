@@ -4,14 +4,15 @@
 [ext_resource path="res://Combat/Queue/Background.png" type="Texture" id=2]
 [ext_resource path="res://Combat/Queue/QueueSlot.tscn" type="PackedScene" id=3]
 
-[node name="Queue" type="PanelContainer"]
+[node name="Queue" type="PanelContainer" index="0"]
 
 anchor_left = 0.35
 anchor_top = 0.05
 anchor_right = 0.65
 anchor_bottom = 0.05
-margin_top = -3.8147e-06
+margin_top = -3.8147e-006
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -31,6 +32,7 @@ margin_top = 7.0
 margin_right = 569.0
 margin_bottom = 57.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -50,6 +52,7 @@ margin_top = 7.0
 margin_right = 569.0
 margin_bottom = 57.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -58,6 +61,8 @@ alignment = 0
 _sections_unfolded = [ "Margin", "Mouse" ]
 
 [node name="ActiveUnit" parent="ActiveSplit" index="0" instance=ExtResource( 3 )]
+
+rect_clip_content = false
 
 [node name="Crud" type="Control" parent="ActiveSplit" index="1"]
 
@@ -69,6 +74,7 @@ margin_left = 54.0
 margin_right = 54.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -85,6 +91,7 @@ margin_left = 26.0
 margin_right = 508.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -94,44 +101,54 @@ _sections_unfolded = [ "Margin", "Mouse", "Rect" ]
 
 [node name="Next1" parent="ActiveSplit/Crud/Inactive" index="0" instance=ExtResource( 3 )]
 
+rect_clip_content = false
+
 [node name="Next2" parent="ActiveSplit/Crud/Inactive" index="1" instance=ExtResource( 3 )]
 
 margin_left = 54.0
 margin_right = 104.0
+rect_clip_content = false
 
 [node name="Next3" parent="ActiveSplit/Crud/Inactive" index="2" instance=ExtResource( 3 )]
 
 margin_left = 108.0
 margin_right = 158.0
+rect_clip_content = false
 
 [node name="Next4" parent="ActiveSplit/Crud/Inactive" index="3" instance=ExtResource( 3 )]
 
 margin_left = 162.0
 margin_right = 212.0
+rect_clip_content = false
 
 [node name="Next5" parent="ActiveSplit/Crud/Inactive" index="4" instance=ExtResource( 3 )]
 
 margin_left = 216.0
 margin_right = 266.0
+rect_clip_content = false
 
 [node name="Next6" parent="ActiveSplit/Crud/Inactive" index="5" instance=ExtResource( 3 )]
 
 margin_left = 270.0
 margin_right = 320.0
+rect_clip_content = false
 
 [node name="Next7" parent="ActiveSplit/Crud/Inactive" index="6" instance=ExtResource( 3 )]
 
 margin_left = 324.0
 margin_right = 374.0
+rect_clip_content = false
 
 [node name="Next8" parent="ActiveSplit/Crud/Inactive" index="7" instance=ExtResource( 3 )]
 
 margin_left = 378.0
 margin_right = 428.0
+rect_clip_content = false
 
 [node name="Next9" parent="ActiveSplit/Crud/Inactive" index="8" instance=ExtResource( 3 )]
 
 margin_left = 432.0
 margin_right = 482.0
+rect_clip_content = false
 
 
