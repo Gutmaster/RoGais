@@ -82,7 +82,7 @@ func Execute2():
 	CombatMath(user, target)
 	CombatMath(user, target2)
 	target2.TempPlay("Stagger")
-	target2.initiative -= user.aStats.Strength
+	combatNode.get_node("HUD/Queue").PushBack(target2, 5)
 	target.row = target2.row
 	target.rowRef = target2.rowRef
 	combatNode.SetUnitPos()

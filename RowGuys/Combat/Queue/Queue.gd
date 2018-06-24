@@ -5,22 +5,53 @@ var queue = []
 
 onready var combatNode = get_node("/root/Combat")
 onready var uList = get_node("/root/Globals").combatScene.get_node("UnitList")
+#onready var queue = find_node("Inactive")
+#onready var active = find_node("Active/0")
 
 
 func _ready():
-	queue.push_back($ActiveSplit/ActiveUnit)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next1)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next2)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next3)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next4)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next5)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next6)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next7)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next8)
-	queue.push_back($ActiveSplit/Crud/Inactive/Next9)
+	queue.push_back(get_node("Slots/0"))
+	queue.push_back(get_node("Slots/1"))
+	queue.push_back(get_node("Slots/2"))
+	queue.push_back(get_node("Slots/3"))
+	queue.push_back(get_node("Slots/4"))
+	queue.push_back(get_node("Slots/5"))
+	queue.push_back(get_node("Slots/6"))
+	queue.push_back(get_node("Slots/7"))
+	queue.push_back(get_node("Slots/8"))
+	queue.push_back(get_node("Slots/9"))
+
+
+func Init():
+	for i in range(10):
+		var slot = load("res://Combat/Queue/QueueSlot.tscn").instance()
+		slot.unit = GetNext()
+		slot.set_texture(slot.unit.portrait)
+		queue[i].add_child(slot)
+
+
+func QueueNext():
+	var nextUnit = GetNext()
+	
+	var slot = load("res://Combat/Queue/QueueSlot.tscn").instance()
+	slot.unit = nextUnit
+	slot.set_texture(nextUnit.portrait)
+	
+	queue[9].add_child(slot)
+	slot.Appear()
 
 
 func QueueUpdate():
+	queue[0].remove_child(queue[0].get_child(0))
+	
+	for i in range(1, queue.size()):
+		queue[i].get_child(0).Migrate(queue[i-1])
+	
+	QueueNext()
+	combatNode.activeUnit = queue[0].get_child(0).unit
+
+
+func GetNext():
 	var nextUnit = combatNode.activeUnit
 	for i in range(uList.get_child_count()):
 		var temp = uList.get_child(i)
@@ -28,17 +59,32 @@ func QueueUpdate():
 		if(temp.initiative > nextUnit.initiative):
 			nextUnit = temp
 	
-	combatNode.activeUnit = nextUnit
-	combatNode.activeUnit.initiative = 0
-	
-	QueuePredict()
+	nextUnit.initiative = 0
+	return nextUnit
 
 
-func QueuePredict():
+func PushBack(target, power):
+	var slot
+	for i in range(9):
+		if(target == queue[i].get_child(0).unit):
+			slot = queue[i]
+			while(i + power > 9):
+				power -= 1
+			if(power > 0):
+				slot.get_child(0).Migrate(queue[i+power])
+				for j in range(1, power+1):
+					queue[i+j].get_child(0).Migrate(queue[i+j-1])
+			return
+
+
+func QueueClear():
+	for i in range(queue.size()):
+		queue[i].remove_child(0)
+
+"""func QueuePredict():
 	for i in range(uList.get_child_count()):
 		uList.get_child(i).qInitiative = uList.get_child(i).initiative
 		
-	queue[0].unit = combatNode.activeUnit
 	for i in range(1, 10):
 		var nextUnit = combatNode.activeUnit
 		for j in range(uList.get_child_count()):
@@ -51,4 +97,4 @@ func QueuePredict():
 		nextUnit.qInitiative = 0
 	
 	for i in range(queue.size()):
-		queue[i].set_texture(queue[i].unit.portrait)
+		queue[i].set_texture(queue[i].unit.portrait)"""

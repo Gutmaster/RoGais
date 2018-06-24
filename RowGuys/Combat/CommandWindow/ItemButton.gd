@@ -28,7 +28,7 @@ func _on_Item_id_pressed(ID):
 	
 	var found = false
 	
-	for i in range(1, 8):
+	for i in range(7):
 		if(!found):
 			var slot = combatNode.party.itemList[i]
 			

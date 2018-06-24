@@ -46,7 +46,7 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	
 	SetUnitPos()
 	activeUnit = uList.get_child(0)
-	$HUD/Queue.QueueUpdate()
+	$HUD/Queue.Init()
 	$HUD/CommandWindow.Init()
 	
 	midBattle = true

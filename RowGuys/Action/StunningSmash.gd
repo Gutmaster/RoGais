@@ -25,5 +25,4 @@ func _process(delta):
 func Execute():
 	CombatMath(user, target)
 	target.TempPlay("Stagger")
-	target.initiative -= user.aStats.Strength
-	combatNode.get_node("HUD/Queue").QueuePredict()
+	combatNode.get_node("HUD/Queue").PushBack(target, 1)
