@@ -84,6 +84,11 @@ func SetUnitPos():
 
 
 func _process(delta):
+	AIWait = false
+	for i in range(uList.get_child_count()):
+		if(uList.get_child(i).AIWait):
+			AIWait = true
+			break
 	if(activeUnit.AI && !AIWait):
 		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
 			activeUnit.AICmd()

@@ -30,14 +30,14 @@ func Init():
 		queue[i].add_child(slot)
 
 
-func QueueNext():
+func InsertNext(pos):
 	var nextUnit = GetNext()
 	
 	var slot = load("res://Combat/Queue/QueueSlot.tscn").instance()
 	slot.unit = nextUnit
 	slot.set_texture(nextUnit.portrait)
 	
-	queue[9].add_child(slot)
+	queue[pos].add_child(slot)
 	slot.Appear()
 
 
@@ -47,7 +47,7 @@ func QueueUpdate():
 	for i in range(1, queue.size()):
 		queue[i].get_child(0).Migrate(queue[i-1])
 	
-	QueueNext()
+	InsertNext(9)
 	combatNode.activeUnit = queue[0].get_child(0).unit
 
 
@@ -77,9 +77,31 @@ func PushBack(target, power):
 			return
 
 
+func RemoveUnit(unit):
+	var slots = 0
+	for i in range(queue.size()):
+		if(queue[i].get_child(0).unit == unit):
+			queue[i].remove_child(queue[i].get_child(0))
+			slots += 1
+	
+	var count = 0
+	var i = 0
+	while(i < queue.size()):
+		if(!queue[i].get_child_count()):
+			count += 1
+		elif(count):
+			queue[i].get_child(0).Migrate(queue[i - count])
+			i -= count
+			count = 0
+		i += 1
+	
+	for i in range(slots):
+		InsertNext(9 - i)
+
+
 func QueueClear():
 	for i in range(queue.size()):
-		queue[i].remove_child(0)
+		queue[i].remove_child(queue[i].get_child(0))
 
 """func QueuePredict():
 	for i in range(uList.get_child_count()):

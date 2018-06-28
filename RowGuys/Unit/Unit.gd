@@ -28,6 +28,7 @@ marked}
 var animFlag = null
 var commandShow = false
 var animQueue = []
+var AIWait = false
 
 var lastPos = Vector2(0,0)
 var tweenBack = false
@@ -288,17 +289,22 @@ func UpdateHP(var dif):
 	$HPChange.Set(dif, Color(1, 0, 0))
 	
 	if(hp <= 0):
-		ReParent(combatNode.get_node("Deadzone"))
-		combatNode.SetUnitPos()
-		set_visible(false)
-		
-		if(self.is_in_group("Party")):
-			self.remove_from_group("Party")
-		
-		if(self == combatNode.activeUnit):
-			combatNode.PassTurn()
-		else:
-			combatNode.get_node("HUD/Queue").QueuePredict()
+		Die()
+
+
+
+func Die():
+	ReParent(combatNode.get_node("Deadzone"))
+	combatNode.SetUnitPos()
+	set_visible(false)
+	
+	if(self.is_in_group("Party")):
+		self.remove_from_group("Party")
+	
+	if(self == combatNode.activeUnit):
+		combatNode.PassTurn()
+	
+	combatNode.find_node("Queue").RemoveUnit(self)
 
 
 func UpdateAP(var dif):
@@ -351,7 +357,7 @@ func ActionPlay(anim):
 
 
 func TempPlay(anim, cShow = false):
-	combatNode.AIWait = true
+	AIWait = true
 	animQueue.push_back(anim)
 	play(anim)
 	animFlag = ANIMFLAG.temp
@@ -371,7 +377,6 @@ func _on_Unit_animation_finished():
 	if(commandShow):
 		if(!AI):
 			combatNode.get_node("HUD/CommandWindow").show()
-		combatNode.AIWait = false
 		commandShow = false
 	if(animFlag == ANIMFLAG.temp):
 		animQueue.pop_back()
@@ -380,6 +385,7 @@ func _on_Unit_animation_finished():
 	
 	play(animQueue.back())
 	animFlag = null
+	AIWait = false
 
 
 func StatusCheck():

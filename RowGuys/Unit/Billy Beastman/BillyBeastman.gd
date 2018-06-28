@@ -16,7 +16,7 @@ func Init():
 	bStats.Vitality = 80
 	bStats.Stamina = 5
 	bStats.Endurance = 3
-	bStats.Strength = 3
+	bStats.Strength = 10
 	bStats.Speed = 5
 	bStats.Willpower = 3
 	
