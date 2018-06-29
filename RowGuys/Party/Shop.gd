@@ -38,7 +38,7 @@ func ShopInit():
 		AddShopItem(party.itemCatalogue.PullRandom())
 		AddShopItem(party.itemCatalogue.PullRandom())
 		AddShopItem(party.itemCatalogue.PullRandom())
-		AddShopItem(party.trinketCatalogue.get_node("Tribute Ring"))
+		AddShopItem(party.trinketCatalogue.PullRandom())
 	
 	find_node("FoodCount").text = str(party.food)
 	find_node("GoldCount").text = str(party.gold)
@@ -89,8 +89,8 @@ func _on_ExitButton_pressed():
 		Globals.shop = false
 
 
-func AddShopItem(item):
-	var newItem = item.Clone()
+func AddShopItem(newItem):
+	#var newItem = item.Clone()
 	var found = false
 	
 	for i in range(1, 6):

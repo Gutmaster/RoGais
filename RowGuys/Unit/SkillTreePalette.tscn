@@ -10,7 +10,7 @@
 [ext_resource path="res://Fonts/CommandFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Unit/NodeDescription.gd" type="Script" id=9]
 
-[node name="Background" type="Sprite"]
+[node name="Background" type="Sprite" index="0"]
 
 pause_mode = 2
 texture = ExtResource( 1 )
@@ -179,6 +179,30 @@ lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 9 )
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
+
+[node name="SkillPoints" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 969.0
+margin_right = 23.0
+margin_bottom = 1005.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="Regress" to="." method="_on_Regress_pressed"]
 

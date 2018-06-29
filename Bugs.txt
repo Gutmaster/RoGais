@@ -1,3 +1,2 @@
-Still a softlock somewhere
 Quickstats orientation goes off with multiple status effects?
 Reparenting stuff giving errors still with party cards

@@ -25,8 +25,11 @@ onready var foodCount2 = find_node("FoodCount2")
 onready var goldCount = find_node("GoldCount")
 onready var goldCount2 = find_node("GoldCount2")
 
+var foodLabel
+var goldLabel
+
 onready var itemList = []
-onready var itemHolder = $ItemHolder
+onready var itemHolder = $CanvasLayer/ItemHolder
 
 
 func _ready():
@@ -53,12 +56,10 @@ func _input(event):
 
 
 func _process(delta):
-	var round_value = round(food)
-	foodCount.text = str(round_value)
-	foodCount2.text = str(round_value)
-	round_value = round(gold)
-	goldCount.text = str(round_value)
-	goldCount2.text = str(round_value)
+	foodCount.text = str(round(foodLabel))
+	foodCount2.text = str(round(foodLabel))
+	goldCount.text = str(round(goldLabel))
+	goldCount2.text = str(round(goldLabel))
 
 
 func AddUnit(var unit):
@@ -76,14 +77,14 @@ func AddUnit(var unit):
 
 func UpdateFood(dif):
 	food += dif
-	#$FTween.interpolate_property(self, "food", food, food + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	#$FTween.start()
+	$FTween.interpolate_property(self, "foodLabel", food, food + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$FTween.start()
 
 
 func UpdateGold(dif):
 	gold += dif
-	#$GTween.interpolate_property(self, "gold", gold, gold + dif, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	#$GTween.start()
+	$GTween.interpolate_property(self, "goldLabel", gold, gold + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$GTween.start()
 
 
 func _on_PartyButton_pressed():
@@ -112,7 +113,6 @@ func PartyPause():
 			if(itemHolder.itemCatcher.item.iType == ITYPE.artifact):
 				itemHolder.itemCatcher.item.Acquire()
 				artifactContainer.add_child(itemHolder.itemCatcher.item.duplicate())
-			
 	
 	get_tree().paused = !(get_tree().paused)
 	$PartyMenu.visible = !($PartyMenu.visible)
@@ -147,12 +147,13 @@ func UpdatePartyCards():
 		
 		var panelString = "Panel" + str(i+1)
 	
-		unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
+		"""unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
 		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
 		unit.partyCard.find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
 		unit.partyCard.find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
 		unit.partyCard.find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
-	
+		unit.partyCard.find_node("XPBar").set_value((float(unit.xp)/unit.xpReq) * 100)
+		
 		unit.partyCard.find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
 		unit.partyCard.find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
 		unit.partyCard.find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
@@ -161,8 +162,9 @@ func UpdatePartyCards():
 		unit.partyCard.find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
 		unit.partyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
 		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
-		
+		"""
 		find_node(panelString).add_child(unit.partyCard)
+
 
 
 func AddArtifact(artifact):
@@ -190,3 +192,27 @@ func AddItem(item):
 				slot.item = item
 				slot.add_child(item)
 				print(slot.get_name(), slot.get_child_count())
+
+
+func EnableSlots():
+	find_node("ArtifactSlot").disabled = false
+	
+	for i in range(1, 8):
+		var slotString = "Slot" + str(i)
+		find_node(slotString).disabled = false
+		
+	for i in range($Units.get_child_count()):
+		$Units.get_child(i).partyCard.find_node("TrinketSlot1").disabled = false
+		$Units.get_child(i).partyCard.find_node("TrinketSlot2").disabled = false
+
+
+func DisableSlots():
+	find_node("ArtifactSlot").disabled = true
+	
+	for i in range(1, 8):
+		var slotString = "Slot" + str(i)
+		find_node(slotString).disabled = true
+		
+	for i in range($Units.get_child_count()):
+		$Units.get_child(i).partyCard.find_node("TrinketSlot1").disabled = true
+		$Units.get_child(i).partyCard.find_node("TrinketSlot2").disabled = true

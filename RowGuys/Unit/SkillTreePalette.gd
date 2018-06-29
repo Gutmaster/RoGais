@@ -19,6 +19,10 @@ func _ready():
 	$"Nature's Blessing".Unlock()"""
 
 
+func process():
+	$SkillPoints.text = str(unit.skillPoints)
+
+
 func _unhandled_input(event):
 	if event is InputEventKey \
 	and event.pressed and event.scancode == KEY_ESCAPE:

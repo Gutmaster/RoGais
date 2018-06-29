@@ -1,5 +1,4 @@
-[gd_resource type="StyleBoxFlat" load_steps=1 format=2]
-
+[gd_resource type="StyleBoxFlat" format=2]
 
 [resource]
 
@@ -8,8 +7,24 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 bg_color = Color( 0.0162506, 0.832031, 0.0289972, 1 )
-light_color = Color( 0.237442, 0.964844, 0.282905, 1 )
-dark_color = Color( 0.0994415, 0.519531, 0.165081, 1 )
-border_size = 2
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
 border_blend = false
-draw_bg = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+

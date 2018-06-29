@@ -10,7 +10,6 @@ item}
 onready var iType = ITYPE.item
 
 var power = 0
-var iteemo = 42
 
 var buyPrice = 5
 var sellPrice = 2
@@ -28,7 +27,7 @@ func Init():
 
 func PullRandom():
 	randomize()
-	return get_child(randi()%get_child_count())
+	return get_child(randi()%get_child_count()).Clone()
 
 
 func Clone():

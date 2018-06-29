@@ -27,6 +27,10 @@ func _ready():
 		$"Frenzy".Apply(3)
 
 
+func _process(delta):
+	$SkillPoints.text = str(unit.skillPoints)
+
+
 func _unhandled_input(event):
 	if event is InputEventKey \
 	and event.pressed and event.scancode == KEY_ESCAPE:

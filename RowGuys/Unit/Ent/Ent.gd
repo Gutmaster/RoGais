@@ -13,6 +13,10 @@ func Init():
 	bStats.Strength = 6
 	bStats.Vitality = 8
 	
+	xpReward = 7
+	goldReward = 5
+	itemVal = 10
+	
 	SharedInit()
 	defaultRow = ROW.middle
 	

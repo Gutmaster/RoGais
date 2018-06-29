@@ -1,7 +1,7 @@
 extends TextureRect
 
 
-var unit
+onready var unit = get_parent().unit
 var connections = []
 var mouseHover = false
 var locked = true
@@ -22,7 +22,9 @@ func _process(delta):
 
 func _on_STNode_focus_entered():
 	release_focus()
-	Activate()
+	if(unit.skillPoints):
+		Activate()
+		unit.skillPoints -= 1
 
 
 func Unlock():

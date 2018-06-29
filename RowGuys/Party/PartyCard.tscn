@@ -1,14 +1,15 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Party/PartyCard.gd" type="Script" id=1]
 [ext_resource path="res://Party/Assets/placeholder.png" type="Texture" id=2]
-[ext_resource path="res://Party/QuickStats/hpbar.tres" type="StyleBox" id=3]
-[ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=4]
-[ext_resource path="res://Party/QuickStats/apbar.tres" type="StyleBox" id=5]
-[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Party/TrinketSlot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Party/Assets/skilltreebutton.png" type="Texture" id=8]
-[ext_resource path="res://Party/Assets/skilltreebuttonhover.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Party/QuickStats/hpbar.tres" type="StyleBox" id=4]
+[ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=5]
+[ext_resource path="res://Party/QuickStats/apbar.tres" type="StyleBox" id=6]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Party/TrinketSlot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Party/Assets/skilltreebutton.png" type="Texture" id=9]
+[ext_resource path="res://Party/Assets/skilltreebuttonhover.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFontData" id=1]
 
@@ -62,23 +63,119 @@ use_filter = false
 font_data = SubResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="StyleBoxFlat" id=9]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.0162506, 0.832031, 0.793791, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=10]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.179688, 0.151611, 0.151611, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="DynamicFont" id=11]
 
 size = 24
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=12]
 
 size = 24
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="PartyCard" type="PanelContainer" index="0"]
+[sub_resource type="ParticlesMaterial" id=13]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 10.0
+flatness = 0.0
+gravity = Vector3( -200, 0, 0 )
+initial_velocity = 200.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 1.0
+scale = 5.0
+scale_random = 1.0
+color = Color( 0.188766, 0.542969, 0.468254, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
+
+[node name="PartyCard" type="PanelContainer"]
 
 self_modulate = Color( 0.222656, 0.17482, 0.17482, 1 )
 anchor_left = 0.0
@@ -339,6 +436,28 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="Level" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 99.0
+margin_right = 104.0
+margin_bottom = 123.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Lvl: 1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
 
 anchor_left = 0.0
@@ -372,8 +491,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/fg = ExtResource( 3 )
-custom_styles/bg = ExtResource( 4 )
+custom_styles/fg = ExtResource( 4 )
+custom_styles/bg = ExtResource( 5 )
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -400,8 +519,36 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/fg = ExtResource( 5 )
-custom_styles/bg = ExtResource( 4 )
+custom_styles/fg = ExtResource( 6 )
+custom_styles/bg = ExtResource( 5 )
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 33.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Margin", "Rect", "Size Flags", "custom_styles" ]
+
+[node name="XPBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 68.0
+margin_right = 100.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 100, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/fg = SubResource( 9 )
+custom_styles/bg = SubResource( 10 )
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -457,7 +604,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 11 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -511,7 +658,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = "  VIT 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -533,7 +680,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = " STA 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -555,7 +702,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = " STR 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -577,7 +724,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = " END 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -615,7 +762,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = " WIS 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -637,7 +784,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = "WILL 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -659,7 +806,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 text = " SPD 4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -703,7 +850,7 @@ custom_constants/separation = 20
 alignment = 0
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="TrinketSlot" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0" instance=ExtResource( 7 )]
+[node name="TrinketSlot" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="0" instance=ExtResource( 8 )]
 
 margin_top = 38.0
 margin_right = 50.0
@@ -711,7 +858,7 @@ margin_bottom = 90.0
 size_flags_vertical = 4
 _sections_unfolded = [ "Focus", "Rect", "Size Flags" ]
 
-[node name="TrinketSlot2" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="1" instance=ExtResource( 7 )]
+[node name="TrinketSlot2" parent="MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/HBoxContainer2" index="1" instance=ExtResource( 8 )]
 
 margin_left = 70.0
 margin_top = 38.0
@@ -759,10 +906,34 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
 _sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Textures" ]
+
+[node name="LvlParticles" type="Particles2D" parent="." index="1"]
+
+position = Vector2( 31.6225, 191.843 )
+rotation = -1.5708
+emitting = false
+amount = 20
+lifetime = 3.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 13 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Time", "Transform" ]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
 

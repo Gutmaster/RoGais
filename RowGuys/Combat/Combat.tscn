@@ -1,34 +1,33 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Combat/Scripts/Combat.gd" type="Script" id=1]
-[ext_resource path="res://Combat/Queue/Queue.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Combat/Assets/Victory.png" type="Texture" id=3]
+[ext_resource path="res://Combat/RewardScreen/RewardScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Combat/Queue/Queue.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Combat/Assets/Loss.png" type="Texture" id=4]
-[ext_resource path="res://Combat/Scripts/Victory.gd" type="Script" id=5]
-[ext_resource path="res://Combat/Scripts/Loss.gd" type="Script" id=6]
-[ext_resource path="res://Combat/CommandWindow/CommandWindow.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Combat/Assets/Advance.png" type="Texture" id=8]
-[ext_resource path="res://Combat/Assets/AdvancePressed.png" type="Texture" id=9]
-[ext_resource path="res://Combat/Assets/AdvanceHover.png" type="Texture" id=10]
-[ext_resource path="res://Combat/Advance.gd" type="Script" id=11]
-[ext_resource path="res://Effect/EffectCatalogue.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Terrain/TerrainCatalogue.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Combat/Background.gd" type="Script" id=14]
-[ext_resource path="res://Combat/Assets/BG1.png" type="Texture" id=15]
-[ext_resource path="res://Combat/Assets/BG2.png" type="Texture" id=16]
-[ext_resource path="res://Combat/Assets/LB.png" type="Texture" id=17]
-[ext_resource path="res://Combat/Scripts/Row.gd" type="Script" id=18]
-[ext_resource path="res://Combat/Scripts/RowArea2D.gd" type="Script" id=19]
-[ext_resource path="res://Combat/Assets/LM.png" type="Texture" id=20]
-[ext_resource path="res://Combat/Assets/LF.png" type="Texture" id=21]
-[ext_resource path="res://Combat/Assets/RF.png" type="Texture" id=22]
-[ext_resource path="res://Combat/Assets/RM.png" type="Texture" id=23]
-[ext_resource path="res://Combat/Assets/RB.png" type="Texture" id=24]
-[ext_resource path="res://Unit/Team.gd" type="Script" id=25]
-[ext_resource path="res://Unit/TeamLeft.gd" type="Script" id=26]
-[ext_resource path="res://Unit/TeamRight.gd" type="Script" id=27]
-[ext_resource path="res://Combat/Deadzone.gd" type="Script" id=28]
-[ext_resource path="res://Combat/Weather/Raindrop.png" type="Texture" id=29]
+[ext_resource path="res://Combat/Scripts/Loss.gd" type="Script" id=5]
+[ext_resource path="res://Combat/CommandWindow/CommandWindow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Combat/Assets/Advance.png" type="Texture" id=7]
+[ext_resource path="res://Combat/Assets/AdvancePressed.png" type="Texture" id=8]
+[ext_resource path="res://Combat/Assets/AdvanceHover.png" type="Texture" id=9]
+[ext_resource path="res://Combat/Advance.gd" type="Script" id=10]
+[ext_resource path="res://Effect/EffectCatalogue.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Terrain/TerrainCatalogue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Combat/Background.gd" type="Script" id=13]
+[ext_resource path="res://Combat/Assets/BG1.png" type="Texture" id=14]
+[ext_resource path="res://Combat/Assets/BG2.png" type="Texture" id=15]
+[ext_resource path="res://Combat/Assets/LB.png" type="Texture" id=16]
+[ext_resource path="res://Combat/Scripts/Row.gd" type="Script" id=17]
+[ext_resource path="res://Combat/Scripts/RowArea2D.gd" type="Script" id=18]
+[ext_resource path="res://Combat/Assets/LM.png" type="Texture" id=19]
+[ext_resource path="res://Combat/Assets/LF.png" type="Texture" id=20]
+[ext_resource path="res://Combat/Assets/RF.png" type="Texture" id=21]
+[ext_resource path="res://Combat/Assets/RM.png" type="Texture" id=22]
+[ext_resource path="res://Combat/Assets/RB.png" type="Texture" id=23]
+[ext_resource path="res://Unit/Team.gd" type="Script" id=24]
+[ext_resource path="res://Unit/TeamLeft.gd" type="Script" id=25]
+[ext_resource path="res://Unit/TeamRight.gd" type="Script" id=26]
+[ext_resource path="res://Combat/Deadzone.gd" type="Script" id=27]
+[ext_resource path="res://Combat/Weather/Raindrop.png" type="Texture" id=28]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -77,45 +76,21 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="HUD" type="CanvasLayer" parent="." index="0"]
 
-layer = 1
+layer = 10
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Queue" parent="HUD" index="0" instance=ExtResource( 2 )]
+[node name="RewardScreen" parent="HUD" index="0" instance=ExtResource( 2 )]
+
+visible = false
+
+[node name="Queue" parent="HUD" index="1" instance=ExtResource( 3 )]
 
 margin_top = -1.0
 margin_bottom = 63.0
 mouse_filter = 1
-
-[node name="Victory" type="TextureButton" parent="HUD" index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 813.0
-margin_top = 183.0
-margin_right = 1113.0
-margin_bottom = 333.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 1
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 1
-shortcut = null
-group = null
-texture_normal = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Mouse", "Textures" ]
 
 [node name="Loss" type="TextureRect" parent="HUD" index="2"]
 
@@ -134,10 +109,10 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 0
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Mouse" ]
 
-[node name="CommandWindow" parent="HUD" index="3" instance=ExtResource( 7 )]
+[node name="CommandWindow" parent="HUD" index="3" instance=ExtResource( 6 )]
 
 [node name="Advance" type="TextureButton" parent="HUD" index="4"]
 
@@ -161,30 +136,30 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 10 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="EffectCatalogue" parent="." index="1" instance=ExtResource( 12 )]
+[node name="EffectCatalogue" parent="." index="1" instance=ExtResource( 11 )]
 
-[node name="TerrainCatalogue" parent="." index="2" instance=ExtResource( 13 )]
+[node name="TerrainCatalogue" parent="." index="2" instance=ExtResource( 12 )]
 
 [node name="Background" type="Node2D" parent="." index="3"]
 
 position = Vector2( 960, 540 )
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="BG1" type="Sprite" parent="Background" index="0"]
 
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="BG2" type="Sprite" parent="Background" index="1"]
 
 position = Vector2( 1920, 0 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Row" type="Sprite" parent="." index="4"]
@@ -192,8 +167,8 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="LB" type="Sprite" parent="Row" index="0"]
 
 position = Vector2( 285, 610 )
-texture = ExtResource( 17 )
-script = ExtResource( 18 )
+texture = ExtResource( 16 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LB" index="0"]
@@ -226,7 +201,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LB/Area2D" index="0"]
 
@@ -237,8 +212,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="LM" type="Sprite" parent="Row" index="1"]
 
 position = Vector2( 515, 610 )
-texture = ExtResource( 20 )
-script = ExtResource( 18 )
+texture = ExtResource( 19 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LM" index="0"]
@@ -273,7 +248,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LM/Area2D" index="0"]
 
@@ -284,8 +259,8 @@ polygon = PoolVector2Array( -9.57709, 6.40045, 232.313, 9.29449, 436.611, -579.8
 [node name="LF" type="Sprite" parent="Row" index="2"]
 
 position = Vector2( 738.268, 610.615 )
-texture = ExtResource( 21 )
-script = ExtResource( 18 )
+texture = ExtResource( 20 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/LF" index="0"]
@@ -317,7 +292,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/LF/Area2D" index="0"]
 
@@ -329,8 +304,8 @@ polygon = PoolVector2Array( -26.9517, 41.1525, 212.543, 35.3643, 332.862, -540.6
 
 editor/display_folded = true
 position = Vector2( 1174.08, 613.268 )
-texture = ExtResource( 22 )
-script = ExtResource( 18 )
+texture = ExtResource( 21 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="UnitLine" type="Line2D" parent="Row/RF" index="0"]
@@ -362,7 +337,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RF/Area2D" index="0"]
 
@@ -374,8 +349,8 @@ polygon = PoolVector2Array( -64.9926, 297.805, 184.699, 292.033, -33.6064, -277.
 
 editor/display_folded = true
 position = Vector2( 1405.88, 610 )
-texture = ExtResource( 23 )
-script = ExtResource( 18 )
+texture = ExtResource( 22 )
+script = ExtResource( 17 )
 
 [node name="UnitLine" type="Line2D" parent="Row/RM" index="0"]
 
@@ -406,7 +381,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RM/Area2D" index="0"]
 
@@ -418,8 +393,8 @@ polygon = PoolVector2Array( -11.4614, 297.541, 227.588, 285.173, -59.884, -286.8
 
 editor/display_folded = true
 position = Vector2( 1650, 610 )
-texture = ExtResource( 24 )
-script = ExtResource( 18 )
+texture = ExtResource( 23 )
+script = ExtResource( 17 )
 
 [node name="UnitLine" type="Line2D" parent="Row/RB" index="0"]
 
@@ -451,7 +426,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Row/RB/Area2D" index="0"]
 
@@ -463,20 +438,20 @@ polygon = PoolVector2Array( 3.52478, 285.173, 262.7, 301.095, -126.162, -286.841
 
 [node name="Team" type="Node2D" parent="." index="6"]
 
-script = ExtResource( 25 )
+script = ExtResource( 24 )
 
 [node name="TeamLeft" type="Node2D" parent="." index="7"]
 
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 
 [node name="TeamRight" type="Node2D" parent="." index="8"]
 
-script = ExtResource( 27 )
+script = ExtResource( 26 )
 
 [node name="Deadzone" type="Node2D" parent="." index="9"]
 
 position = Vector2( 423.414, 64.6882 )
-script = ExtResource( 28 )
+script = ExtResource( 27 )
 
 [node name="Rain" type="Particles2D" parent="." index="10"]
 
@@ -496,7 +471,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 1 )
-texture = ExtResource( 29 )
+texture = ExtResource( 28 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -512,8 +487,6 @@ autostart = false
 [connection signal="tree_entered" from="." to="." method="_on_Combat_tree_entered"]
 
 [connection signal="tree_exited" from="." to="." method="_on_Combat_tree_exited"]
-
-[connection signal="pressed" from="HUD/Victory" to="HUD/Victory" method="_on_Victory_pressed"]
 
 [connection signal="visibility_changed" from="HUD/Loss" to="HUD/Loss" method="_on_Loss_visibility_changed"]
 

@@ -16,6 +16,10 @@ var hoverUnit = null
 var approaching = false
 var midBattle = false
 var AIWait = false
+var xp = 0
+var gold = 0
+var itemVal = 0
+
 onready var globals = get_node("/root/Globals")
 onready var combatNode = globals.combatScene
 onready var party = globals.party
@@ -48,6 +52,8 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	activeUnit = uList.get_child(0)
 	$HUD/Queue.Init()
 	$HUD/CommandWindow.Init()
+	
+	party.DisableSlots()
 	
 	midBattle = true
 	globals.ReParentParty(self)
@@ -102,8 +108,9 @@ func _process(delta):
 		if(uList.get_child(i).team == get_node("TeamLeft")):
 			battleloss = false
 	if(battlewin):
-		$HUD/Victory.show()
 		$HUD/CommandWindow.hide()
+		$HUD/RewardScreen.Init(xp, gold, itemVal)
+		set_process(false)
 	elif(battleloss):
 		get_node("HUD/Loss").show()
 		set_process(false)
@@ -231,7 +238,11 @@ func EndBattle():
 	globals.LoadUnitsFromBattle(uList)
 	globals.ReParentParty(globals.prevScene)
 	globals.ChangeScene(globals.prevScene)
+	
+	xp = 0
+	gold = 0
+	itemVal = 0
 
 
 func _on_Combat_tree_exited():
-	$HUD/Victory.hide()
+	pass

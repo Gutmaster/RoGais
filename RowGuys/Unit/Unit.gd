@@ -71,11 +71,18 @@ var bStats = {"Vitality" : 1, "Stamina" : 1, "Strength" : 1, "Wisdom" : 1, "Endu
 var mStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 var aStats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 
-
+var lvl = 1
 var hp = 0
 var ap = 0
 var xp = 0
-var xpReq = 0
+var xpLabel = 0
+var xpScale = [0, 5, 10, 20, 35, 55, 80, 110]
+var xpReq = xpScale[lvl]
+var xpReward = 1
+var attributePoints = 0
+var skillPoints = 0
+var goldReward = 1
+var itemVal = 1
 var flags = {"fireCrit": false}
 
 var lastAnim = null
@@ -154,6 +161,9 @@ func MiniPartyCardInit():
 
 func _process(delta):
 	HoverMod()
+	CardRefresh()
+	if(xpLabel >= xpReq):
+		LevelUp()
 
 
 func Upkeep():
@@ -300,7 +310,10 @@ func Die():
 	
 	if(self.is_in_group("Party")):
 		self.remove_from_group("Party")
-	
+	else:
+		combatNode.xp += xpReward
+		combatNode.gold += goldReward
+		combatNode.itemVal += itemVal
 	if(self == combatNode.activeUnit):
 		combatNode.PassTurn()
 	
@@ -313,6 +326,17 @@ func UpdateAP(var dif):
 		ap = aStats.Stamina
 	elif(ap < 0):
 		ap = 0
+
+
+func UpdateXP(dif):
+	var dest = xp+dif
+	if(dest > xpReq):
+		dest = xpReq
+		
+	print(dest)
+	$XPTween.interpolate_property(self, "xpLabel", xpLabel, dest, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$XPTween.start()
+	xp += dif
 
 
 func FindAction(var action):
@@ -515,6 +539,23 @@ func Size():
 	return frames.get_frame(animation, frame).get_size()
 
 
+func LevelUp():
+	lvl += 1
+	attributePoints += 1
+	skillPoints += 1
+	
+	xp -= xpReq
+	xpReq = xpScale[lvl]
+	
+	partyCard.find_node("LvlParticles").restart()
+	partyCard.find_node("Level").text = "Lvl: " + str(lvl)
+	
+	var dest = xp
+	if(dest > xpReq):
+		dest = xpReq
+	
+	$XPTween.interpolate_property(self, "xpLabel", 0, dest, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
 #version for outside of combat
 func UpdateHealth(var dif):
 	hp += dif
@@ -632,6 +673,25 @@ func RefreshStats():
 	ApplyStats()
 
 
+func CardRefresh():
+	if(partyCard == null):
+		return
+	
+	partyCard.find_node("HPFrac").set_text("HP " + str(hp) + "/" + str(aStats.Vitality))
+	partyCard.find_node("APFrac").set_text("AP " + str(ap) + "/" + str(aStats.Stamina))
+	partyCard.find_node("XPFrac").set_text("XP " + str(round(xpLabel)) + "/" + str(xpReq))
+	partyCard.find_node("HPBar").set_value((float(hp)/aStats.Vitality) * 100)
+	partyCard.find_node("APBar").set_value((float(ap)/aStats.Stamina) * 100)
+	partyCard.find_node("XPBar").set_value((float(xpLabel)/xpReq) * 100)
+	
+	partyCard.find_node("VitStat").set_text(" VIT " + str(aStats.Vitality))
+	partyCard.find_node("StaStat").set_text(" STA " + str(aStats.Stamina))
+	partyCard.find_node("StrStat").set_text(" STR " + str(aStats.Strength))
+	partyCard.find_node("EndStat").set_text(" END " + str(aStats.Endurance))
+
+	partyCard.find_node("WisStat").set_text(" WIS " + str(aStats.Wisdom))
+	partyCard.find_node("WillStat").set_text("WILL " + str(aStats.Willpower))
+	partyCard.find_node("SpeedStat").set_text(" SPD " + str(aStats.Speed))
 #################AI CODE#########################################
 func AIAdvance():
 	if(!combatNode.get_node("Row/LF").FindOccupants().size() &&
