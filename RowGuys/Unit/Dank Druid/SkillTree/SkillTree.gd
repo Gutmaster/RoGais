@@ -20,9 +20,12 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event is InputEventKey \
-	and event.pressed and event.scancode == KEY_ESCAPE:
-		get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
+	if(event is InputEventKey):
+		if(event.pressed):
+			if(event.scancode == KEY_ESCAPE):
+				get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
+			if(event.scancode == KEY_UP):
+				unit.skillPoints = 100
 
 
 func _on_Regress_pressed():

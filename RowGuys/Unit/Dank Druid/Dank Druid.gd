@@ -14,7 +14,7 @@ func Init():
 	bStats.Strength = 5
 	bStats.Wisdom = 3
 	bStats.Vitality = 4
-	bStats.Stamina = 7
+	bStats.Stamina = 6
 	bStats.Speed = 2
 	
 	SharedInit()
