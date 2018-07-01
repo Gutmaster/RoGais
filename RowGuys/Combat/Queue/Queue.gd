@@ -41,7 +41,7 @@ func InsertNext(pos):
 	slot.Appear()
 
 
-func QueueUpdate():
+func Update():
 	queue[0].remove_child(queue[0].get_child(0))
 	
 	for i in range(1, queue.size()):
@@ -99,7 +99,7 @@ func RemoveUnit(unit):
 		InsertNext(9 - i)
 
 
-func QueueClear():
+func Clear():
 	for i in range(queue.size()):
 		queue[i].remove_child(queue[i].get_child(0))
 

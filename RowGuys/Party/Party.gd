@@ -182,36 +182,31 @@ func AddItem(item):
 	item = item.Clone()
 	var found = false
 	
-	for i in range(1, 8):
+	for i in range(7):
 		if(!found):
-			var slotString = "Slot" + str(i)
-			var slot = find_node(slotString)
-		
-			if(slot.item == null):
+			if(itemList[i].item == null):
 				found = true
-				slot.item = item
-				slot.add_child(item)
-				print(slot.get_name(), slot.get_child_count())
+				itemList[i].item = item
+				itemList[i].add_child(item)
+				print(itemList[i].get_name(), itemList[i].get_child_count())
 
 
 func EnableSlots():
-	find_node("ArtifactSlot").disabled = false
+	artifactSlot.disabled = false
 	
-	for i in range(1, 8):
-		var slotString = "Slot" + str(i)
-		find_node(slotString).disabled = false
-		
+	for i in range(7):
+		itemList[i].disabled = false
+	
 	for i in range($Units.get_child_count()):
 		$Units.get_child(i).partyCard.find_node("TrinketSlot1").disabled = false
 		$Units.get_child(i).partyCard.find_node("TrinketSlot2").disabled = false
 
 
 func DisableSlots():
-	find_node("ArtifactSlot").disabled = true
+	artifactSlot.disabled = true
 	
-	for i in range(1, 8):
-		var slotString = "Slot" + str(i)
-		find_node(slotString).disabled = true
+	for i in range(7):
+		itemList[i].disabled = true
 		
 	for i in range($Units.get_child_count()):
 		$Units.get_child(i).partyCard.find_node("TrinketSlot1").disabled = true

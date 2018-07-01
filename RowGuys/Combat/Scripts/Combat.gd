@@ -59,6 +59,8 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	globals.ReParentParty(self)
 	globals.enemyParty.get_node("HUD").visible = true
 	globals.ReParentParty(self, globals.enemyParty)
+	
+	set_process(true)
 
 
 func SetUnitPos():
@@ -118,7 +120,7 @@ func _process(delta):
 
 func PassTurn():
 	get_node("HUD/CommandWindow").hide()
-	get_node("HUD/Queue").QueueUpdate()
+	$HUD/Queue.Update()
 	activeUnit.Upkeep()
 	
 	if(!activeUnit.AI):
@@ -232,6 +234,8 @@ func EndBattle():
 		$Row.get_child(i).SetTerrain(get_node("TerrainCatalogue/Default").duplicate())
 	
 	$Deadzone.Dump()
+	
+	$HUD/Queue.Clear()
 	
 	midBattle = false
 	remove_child(globals.enemyParty)
