@@ -1,41 +1,57 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Unit/Froggodile/Animation/froggodile.png" type="Texture" id=1]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=2]
-[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=3]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=4]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=5]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=6]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=7]
-[ext_resource path="res://Unit/Unit.gd" type="Script" id=8]
-[ext_resource path="res://Unit/Area2D.gd" type="Script" id=9]
-[ext_resource path="res://Action/ActionCatalogue.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Stance/StanceCatalogue.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Status/StatusCatalogue.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=13]
-[ext_resource path="res://Unit/HPChange.gd" type="Script" id=14]
+[ext_resource path="res://Unit/Dank Druid/Animation/DankDruid.png" type="Texture" id=1]
+[ext_resource path="res://Unit/Dank Druid/Animation/Idle2.png" type="Texture" id=2]
+[ext_resource path="res://Unit/Dank Druid/Animation/Idle3.png" type="Texture" id=3]
+[ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic1.png" type="Texture" id=4]
+[ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic2.png" type="Texture" id=5]
+[ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic3.png" type="Texture" id=6]
+[ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic4.png" type="Texture" id=7]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftForward.png" type="Texture" id=8]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend1.png" type="Texture" id=9]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend2.png" type="Texture" id=10]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend3.png" type="Texture" id=11]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend4.png" type="Texture" id=12]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftBack.png" type="Texture" id=13]
+[ext_resource path="res://Unit/Unit.gd" type="Script" id=14]
+[ext_resource path="res://Unit/Area2D.gd" type="Script" id=15]
+[ext_resource path="res://Action/ActionCatalogue.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Stance/StanceCatalogue.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Status/StatusCatalogue.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=19]
+[ext_resource path="res://Unit/HPChange.gd" type="Script" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Melee",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "ShiftForward",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Defend",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "ShiftBack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Toss",
+"name": "GreenMagic",
 "speed": 5.0
 } ]
 
@@ -50,7 +66,7 @@ _sections_unfolded = [ "Resource" ]
 
 frames = SubResource( 1 )
 animation = "Placeholder"
-script = ExtResource( 8 )
+script = ExtResource( 14 )
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -61,7 +77,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 9 )
+script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
@@ -97,15 +113,15 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="ActionCatalogue" parent="." index="4" instance=ExtResource( 10 )]
+[node name="ActionCatalogue" parent="." index="4" instance=ExtResource( 16 )]
 
 visible = false
 
-[node name="StanceCatalogue" parent="." index="5" instance=ExtResource( 11 )]
+[node name="StanceCatalogue" parent="." index="5" instance=ExtResource( 17 )]
 
 visible = false
 
-[node name="StatusCatalogue" parent="." index="6" instance=ExtResource( 12 )]
+[node name="StatusCatalogue" parent="." index="6" instance=ExtResource( 18 )]
 
 visible = false
 
@@ -124,12 +140,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 19 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 14 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="animation_finished" from="." to="." method="_on_Unit_animation_finished"]
