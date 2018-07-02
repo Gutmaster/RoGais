@@ -1,7 +1,7 @@
-extends Sprite
+extends "res://Unit/SkillTreeBase.gd"
+
 
 var UNLOCK = false
-var unit = null
 
 
 func _ready():
@@ -25,19 +25,9 @@ func _ready():
 		$"Frenzy".Apply(1)
 		$"Frenzy".Apply(2)
 		$"Frenzy".Apply(3)
+	
+	$LevelCard.Init(unit)
 
 
 func _process(delta):
-	$SkillPoints.text = str(unit.skillPoints)
-
-
-func _unhandled_input(event):
-	if(event is InputEventKey):
-		if(event.pressed):
-			if(event.scancode == KEY_ESCAPE):
-				get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
-			if(event.scancode == KEY_UP):
-				unit.skillPoints = 100
-
-func _on_Regress_pressed():
-	get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
+	.process()

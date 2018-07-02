@@ -76,7 +76,7 @@ var hp = 0
 var ap = 0
 var xp = 0
 var xpLabel = 0
-var xpScale = [0, 5, 10, 20, 35, 55, 80, 110]
+var xpScale = [0, 5, 10, 20, 35, 55, 80, 110, 145, 185, 240, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300]
 var xpReq = xpScale[lvl]
 var xpReward = 1
 var attributePoints = 0
@@ -692,6 +692,8 @@ func CardRefresh():
 	partyCard.find_node("WisStat").set_text(" WIS " + str(aStats.Wisdom))
 	partyCard.find_node("WillStat").set_text("WILL " + str(aStats.Willpower))
 	partyCard.find_node("SpeedStat").set_text(" SPD " + str(aStats.Speed))
+
+
 #################AI CODE#########################################
 func AIAdvance():
 	if(!combatNode.get_node("Row/LF").FindOccupants().size() &&

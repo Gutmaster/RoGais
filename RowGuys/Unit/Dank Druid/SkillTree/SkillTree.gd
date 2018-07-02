@@ -1,7 +1,4 @@
-extends Sprite
-
-
-var unit = null
+extends "res://Unit/SkillTreeBase.gd"
 
 
 func _ready():
@@ -17,16 +14,8 @@ func _ready():
 	
 	
 	$"Nature's Blessing".Unlock()
+	$LevelCard.Init(unit)
 
 
-func _unhandled_input(event):
-	if(event is InputEventKey):
-		if(event.pressed):
-			if(event.scancode == KEY_ESCAPE):
-				get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
-			if(event.scancode == KEY_UP):
-				unit.skillPoints = 100
-
-
-func _on_Regress_pressed():
-	get_node("/root/Globals").ChangeScene(get_node("/root/Globals").prevSceneST)
+func _process(delta):
+	.process()
