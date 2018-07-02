@@ -6,11 +6,12 @@ func _ready():
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
 	animation = "GreenMagic"
 	apCost = 3
+	keyFrame = 3
 
 
 func _process(delta):
 	if(phase == 1):
-		if(user.frame+1 >= user.frames.get_frame_count(animation)):
+		if(user.frame >= keyFrame):
 			Execute()
 			actionMenu.ActionFinished(self)
 
@@ -23,4 +24,3 @@ func Execute():
 		beast.hp += 1
 		beast.aStats.Endurance += 1
 	combatNode.SetUnitPos()
-	combatNode.get_node("HUD/Queue").QueuePredict()

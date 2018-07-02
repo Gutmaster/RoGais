@@ -8,16 +8,16 @@
 [ext_resource path="res://Unit/Dank Druid/Animation/Defend2.png" type="Texture" id=6]
 [ext_resource path="res://Unit/Dank Druid/Animation/Defend3.png" type="Texture" id=7]
 [ext_resource path="res://Unit/Dank Druid/Animation/Defend4.png" type="Texture" id=8]
-[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=9]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=10]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=11]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=12]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=13]
-[ext_resource path="res://Unit/Dank Druid/Animation/ShiftForward.png" type="Texture" id=14]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=15]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=16]
-[ext_resource path="res://Unit/Dank Druid/Animation/ShiftBack.png" type="Texture" id=17]
-[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=18]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftForward.png" type="Texture" id=9]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=10]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=11]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftBack.png" type="Texture" id=12]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss1.png" type="Texture" id=13]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss2.png" type="Texture" id=14]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss3.png" type="Texture" id=15]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animtoss4.png" type="Texture" id=16]
+[ext_resource path="res://Dungeon/Assets/animdashB.png" type="Texture" id=17]
+[ext_resource path="res://Unit/Billy Beastman/Animation/animdashF.png" type="Texture" id=18]
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic1.png" type="Texture" id=19]
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic2.png" type="Texture" id=20]
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic3.png" type="Texture" id=21]
@@ -37,29 +37,29 @@ animations = [ {
 "name": "Defend",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Dance",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "ShiftForward",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Stagger",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "ShiftBack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Toss",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Dance",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 22 ) ],

@@ -712,22 +712,13 @@ func AIApproach():
 
 
 func AIRandomMelee():
-	if(row == ROW.front):
-		var action = actionList[0]
-		action.set_process(true)
-		actionList[0].FindTargetOptions(team.enemy)
-		randomize()
-		if(action.targetOptions.size()):
-			var r = randi()%action.targetOptions.size()
-			var target = action.targetOptions[r]
-			target = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton").ProtectStanceCheck(action, target)
-		
 	var action = FindAction("Melee")
 	action.FindTargetOptions(team.enemy)
-	
 	randomize()
 	if(action.targetOptions.size()):
-		var target = action.targetOptions[randi()%action.targetOptions.size()]
+		var r = randi()%action.targetOptions.size()
+		var target = action.targetOptions[r]
+		target = actionMenu.ProtectStanceCheck(action, target)
 		
 		action.Init(self, target)
 
