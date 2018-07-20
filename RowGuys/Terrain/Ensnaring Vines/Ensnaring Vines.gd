@@ -3,7 +3,7 @@ extends "res://Terrain/TerrainCatalogue.gd"
 
 func _ready():
 	tags.exists = true
-	gClock = 2
+	gClock = 1
 
 
 func _process(delta):
@@ -22,6 +22,7 @@ func _on_Ensnaring_Vines_animation_finished():
 
 
 func Sprout():
+	$SFX.play()
 	var victims = get_parent().FindOccupants()
 	for i in range(victims.size()):
 		victims[i].UpdateHP(-1)

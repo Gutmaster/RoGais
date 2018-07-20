@@ -14,3 +14,5 @@ func Init():
 	
 	SharedInit()
 	defaultRow = ROW.front
+	
+	SFX.hit = load("res://SFX/Wood.wav")

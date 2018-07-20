@@ -108,7 +108,6 @@ func MeleeInit(usr, trgt, free):
 
 
 func Execute():
-	target.TempPlay("Stagger")
 	CombatMath(user, target)
 
 
@@ -160,7 +159,7 @@ func ActionShift(unit, left, speed = 0.5):
 	
 	unit.shifting = true
 		
-	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.Size().y/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.height/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	unit.get_node("Tween").start()
 
 

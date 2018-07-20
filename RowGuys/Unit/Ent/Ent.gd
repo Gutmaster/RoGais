@@ -22,7 +22,8 @@ func Init():
 	
 	actionList.push_back(get_node("ActionCatalogue/Blockade"))
 	actionList.push_back(get_node("ActionCatalogue/Sweeping Strike"))
-
+	
+	SFX.hit = load("res://SFX/Wood.wav")
 
 func AICmd():
 	if(PassCheck()):

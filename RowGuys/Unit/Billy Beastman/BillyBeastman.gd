@@ -28,6 +28,8 @@ func Init():
 
 	skillTree = load("res://Unit/Billy Beastman/SkillTree/BeastmanTree.tscn").instance()
 	skillTree.unit = self
+	
+	SFX.hit = load("res://SFX/Oof.wav")
 
 
 func CombatDamage(source, dmg):

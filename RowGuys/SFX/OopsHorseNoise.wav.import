@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OopsHorseNoise.wav-9a81409120eea7721cb6092ae7eff599.sample"
+
+[deps]
+
+source_file="res://SFX/OopsHorseNoise.wav"
+dest_files=[ "res://.import/OopsHorseNoise.wav-9a81409120eea7721cb6092ae7eff599.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

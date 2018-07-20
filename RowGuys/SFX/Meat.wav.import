@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Meat.wav-e98287dd36e325ef8a0913e59a628eee.sample"
+
+[deps]
+
+source_file="res://SFX/Meat.wav"
+dest_files=[ "res://.import/Meat.wav-e98287dd36e325ef8a0913e59a628eee.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

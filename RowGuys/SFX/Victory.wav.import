@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Yell.wav-8693ec4594adbc9b3b9b8a560384efb6.sample"
+path="res://.import/Victory.wav-0151adc9d6b4def5145c5c7bcb149395.sample"
 
 [deps]
 
-source_file="res://Unit/Senor Salvadia/SFX/Yell.wav"
-dest_files=[ "res://.import/Yell.wav-8693ec4594adbc9b3b9b8a560384efb6.sample" ]
+source_file="res://SFX/Victory.wav"
+dest_files=[ "res://.import/Victory.wav-0151adc9d6b4def5145c5c7bcb149395.sample" ]
 
 [params]
 

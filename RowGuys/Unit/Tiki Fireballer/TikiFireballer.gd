@@ -20,6 +20,10 @@ func Init():
 	
 	actionList.push_back(get_node("ActionCatalogue/Fireball"))
 	stanceList.push_back(get_node("StanceCatalogue/Fire Dance"))
+	
+	SFX.hit = load("res://SFX/OopsHorseNoise.wav")
+	var SFXPatch = {"fbtravel": load("res://SFX/FireballTravel.wav"), "fbhit": load("res://SFX/FireballHit.wav")}
+	merge_dir(SFX, SFXPatch)
 
 
 func Starve():

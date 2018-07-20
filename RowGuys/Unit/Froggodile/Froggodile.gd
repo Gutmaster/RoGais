@@ -10,7 +10,7 @@ func Init():
 	
 	bStats.Stamina = 5
 	bStats.Speed = 4
-	bStats.Strength = 3
+	bStats.Strength = 5
 	bStats.Vitality = 4
 	
 	xpReward = 3
@@ -22,6 +22,11 @@ func Init():
 	
 	actionList.push_back(get_node("ActionCatalogue/Tongue Snatch"))
 	actionList.push_back(get_node("ActionCatalogue/Poison Jaws"))
+	
+	SFX.hit = load("res://SFX/Whack.wav")
+	
+	var SFXPatch = {"tongue": load("res://SFX/Tongue.wav"), "poisonbite": load("res://SFX/PoisonJaws.wav")}
+	merge_dir(SFX, SFXPatch)
 
 
 func AICmd():

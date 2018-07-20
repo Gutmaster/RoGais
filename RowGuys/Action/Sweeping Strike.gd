@@ -21,6 +21,7 @@ func FindTargetOptions(var userTeam):
 
 
 func Execute():
+	user.SFXPlay(user.SFX.melee)
 	user.UpdateAP(-apCost)
 	
 	var loopo = true

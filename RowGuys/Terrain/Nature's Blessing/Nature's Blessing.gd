@@ -1,7 +1,7 @@
 extends "res://Terrain/TerrainCatalogue.gd"
 
 var sproutPhase = 0
-var level = 1
+
 
 func _ready():
 	tags.exists = true
@@ -36,6 +36,7 @@ func _on_Natures_Blessing_animation_finished():
 
 
 func Sprout():
+	$SFX.play()
 	gClock = 2
 	sproutPhase += 1
 	

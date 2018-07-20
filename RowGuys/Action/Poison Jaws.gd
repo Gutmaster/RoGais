@@ -23,6 +23,6 @@ func _process(delta):
 
 
 func Execute():
-	target.TempPlay("Stagger")
+	user.SFXPlay(user.SFX.poisonbite)
 	target.Poison(effectPower)
 	CombatMath(user, target)

@@ -20,6 +20,8 @@ var xp = 0
 var gold = 0
 var itemVal = 0
 
+onready var SFX = {"victory": load("res://SFX/Victory.wav")}
+
 onready var globals = get_node("/root/Globals")
 onready var combatNode = globals.combatScene
 onready var party = globals.party
@@ -110,9 +112,7 @@ func _process(delta):
 		if(uList.get_child(i).team == get_node("TeamLeft")):
 			battleloss = false
 	if(battlewin):
-		$HUD/CommandWindow.hide()
-		$HUD/RewardScreen.Init(xp, gold, itemVal)
-		set_process(false)
+		GoToRewards()
 	elif(battleloss):
 		get_node("HUD/Loss").show()
 		set_process(false)
@@ -132,6 +132,7 @@ func Advance(targetTeam):
 	$Row.hide()
 	for i in range(uList.get_child_count()):
 		var unit = uList.get_child(i)
+		unit.SFXPlay(unit.SFX.footsteps)
 		if(unit.team == targetTeam):
 			if(targetTeam == $TeamLeft):
 				unit.Shift(false, 0.5, unit.animation, unit.animation, true)
@@ -215,6 +216,14 @@ func AddTempUnit(var unit, var team, var AI = true, var row = unit.defaultRow):
 	globals.party.get_node("HUD/VBoxContainer/HBoxContainer/Unit Cards").add_child(unit.quickStats)
 
 
+func GoToRewards():
+	SFXPlay(SFX.victory)
+	$HUD/CommandWindow.hide()
+	$HUD/Advance.disabled = true
+	$HUD/RewardScreen.Init(xp, gold, itemVal)
+	set_process(false)
+
+
 func EndBattle():
 	var loopo = true
 	while(loopo):
@@ -250,3 +259,8 @@ func EndBattle():
 
 func _on_Combat_tree_exited():
 	pass
+
+
+func SFXPlay(sfx):
+	$SFX.stream = sfx
+	$SFX.play()

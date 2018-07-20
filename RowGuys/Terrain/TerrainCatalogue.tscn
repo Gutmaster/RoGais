@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Terrain/TerrainCatalogue.gd" type="Script" id=1]
 [ext_resource path="res://Terrain/Default.gd" type="Script" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://Terrain/Ensnaring Vines/Start2.png" type="Texture" id=11]
 [ext_resource path="res://Terrain/Ensnaring Vines/Ensnaring Vines.gd" type="Script" id=12]
 [ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=13]
-[ext_resource path="res://Terrain/Nature's Blessing/Nature's Blessing.gd" type="Script" id=14]
+[ext_resource path="res://SFX/Vines.wav" type="AudioStream" id=14]
+[ext_resource path="res://Terrain/Nature's Blessing/Nature's Blessing.gd" type="Script" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -43,7 +44,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TerrainCatalogue" type="AnimatedSprite"]
+[node name="TerrainCatalogue" type="AnimatedSprite" index="0"]
 
 animation = "default"
 playing = true
@@ -140,12 +141,23 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
+[node name="SFX" type="AudioStreamPlayer2D" parent="Ensnaring Vines" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [node name="Nature's Blessing" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 1240, 0 )
 frames = SubResource( 2 )
 animation = "Start"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="GrowthLabel" type="Label" parent="Nature's Blessing" index="0"]
 
@@ -191,6 +203,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Nature's Blessing" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="animation_finished" from="Earth Barrier" to="Earth Barrier" method="_on_Earth_Barrier_animation_finished"]
 

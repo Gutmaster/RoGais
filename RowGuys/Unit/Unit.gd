@@ -30,6 +30,8 @@ var commandShow = false
 var animQueue = []
 var AIWait = false
 
+var SFX = {"hit": null, "melee": null, "shift": null, "footsteps": null}
+
 var lastPos = Vector2(0,0)
 var tweenBack = false
 
@@ -125,6 +127,10 @@ func SharedInit():
 	actionList.push_back(get_node("ActionCatalogue/Melee"))
 	stanceList.push_back(get_node("StanceCatalogue/Wait"))
 	stanceList.push_back(get_node("StanceCatalogue/Defend"))
+	
+	SFX.melee = load("res://SFX/Whack.wav")
+	SFX.shift = load("res://SFX/Swish.wav")
+	SFX.footsteps = load("res://SFX/TeamFootsteps.wav")
 
 
 func CharCardInit():
@@ -239,6 +245,8 @@ func Shift(left, speed = 0.5, animB = "ShiftBack", animF = "ShiftForward", advan
 				row = ROW.back
 	
 	shifting = true
+	if(!advance):
+		SFXPlay(SFX.shift)
 	
 	$Tween.interpolate_property(self, "position", position, rowRef.position - Vector2(0, height/3) + rowRef.get_node("UnitLine").get_point_position(partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
@@ -284,6 +292,8 @@ func CombatDamage(source, dmg):
 			print("Marked Bonus", str(dmg))
 	
 	if(dmg > 0):
+		TempPlay("Stagger")
+		SFXPlay(SFX.hit)
 		UpdateHP(-dmg)
 	
 	stance.PostAction(self, source)
@@ -410,6 +420,11 @@ func _on_Unit_animation_finished():
 	play(animQueue.back())
 	animFlag = null
 	AIWait = false
+
+
+func SFXPlay(sfx):
+	$SFX.stream = sfx
+	$SFX.play()
 
 
 func StatusCheck():
@@ -692,6 +707,18 @@ func CardRefresh():
 	partyCard.find_node("WisStat").set_text(" WIS " + str(aStats.Wisdom))
 	partyCard.find_node("WillStat").set_text("WILL " + str(aStats.Willpower))
 	partyCard.find_node("SpeedStat").set_text(" SPD " + str(aStats.Speed))
+
+
+static func merge_dir(target, patch):
+	for key in patch:
+		if target.has(key):
+			var tv = target[key]
+			if typeof(tv) == TYPE_DICTIONARY:
+				merge_dir(tv, patch[key])
+			else:
+				target[key] = patch[key]
+		else:
+			target[key] = patch[key]
 
 
 #################AI CODE#########################################

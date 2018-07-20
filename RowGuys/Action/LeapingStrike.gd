@@ -39,4 +39,5 @@ func _process(delta):
 	if(phase == 1):
 		if(user.frame >= keyFrame):
 			Execute()
+			user.SFXPlay(user.SFX.melee)
 			actionMenu.ActionFinished(self)

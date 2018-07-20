@@ -10,6 +10,7 @@ func _ready():
 
 
 func Execute():
+	user.SFXPlay(user.SFX.tongue)
 	CombatMath(user, target)
 
 

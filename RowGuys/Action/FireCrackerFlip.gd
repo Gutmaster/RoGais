@@ -49,6 +49,7 @@ func FindTargetOptions(var team):
 
 
 func Execute():
+	user.SFXPlay(user.SFX.fbhit)
 	user.UpdateAP(-apCost)
 	var loopo = true
 	while(loopo):

@@ -7,7 +7,7 @@ var maxhp = 10
 var hp = 10
 
 var gClock = 0
-
+var level = 0
 
 func _ready():
 	position = Vector2(0, 0)

@@ -5,12 +5,13 @@ func _ready():
 	animation = "GreenMagic"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
 	apCost = 4
+	keyFrame = 3
 	set_process(true)
 
 
 func _process(delta):
 	if(phase == 1):
-		if(user.frame+1 >= user.frames.get_frame_count(animation)):
+		if(user.frame >= keyFrame):
 			Execute()
 			actionMenu.ActionFinished(self)
 
@@ -26,6 +27,7 @@ func FindTargetOptions(var team):
 
 
 func Execute():
+	user.SFXPlay(user.SFX.vines)
 	user.UpdateAP(-apCost)
 	
 	for i in range(user.terrainList.size()):
