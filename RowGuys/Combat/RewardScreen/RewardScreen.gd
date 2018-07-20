@@ -10,6 +10,8 @@ var returnDest
 var xpLabel
 var goldLabel
 
+
+
 func _ready():
 	pass
 
@@ -27,11 +29,13 @@ func Init(xp, gold, itemVal):
 	
 	bottomRow = party.bottomRow
 	returnDest = party.bottomRow.get_parent()
-	bottomRow.get_parent().remove_child(bottomRow)      
+	bottomRow.get_parent().remove_child(bottomRow)
 	find_node("PartyItems").add_child(bottomRow)
 	
 	for i in range(uList.get_child_count()):
 		var unit = uList.get_child(i)
+		if(unit.partyCard == null):
+			continue
 		unit.partyCard.get_parent().remove_child(unit.partyCard)
 		$UnitSlots.add_child(unit.partyCard)
 		unit.UpdateXP(xp)
@@ -74,12 +78,13 @@ func Exit():
 	
 	for i in range(uList.get_child_count()):
 		var unit = uList.get_child(i)
-	
-		unit.partyCard.get_parent().remove_child(unit.partyCard)
-	
-		var panelString = "Panel" + str(i+1)
-		print(panelString)
-		party.find_node(panelString).add_child(unit.partyCard)
+		
+		if(unit.partyCard != null):
+			unit.partyCard.get_parent().remove_child(unit.partyCard)
+			
+			var panelString = "Panel" + str(i+1)
+			print(panelString)
+			party.find_node(panelString).add_child(unit.partyCard)
 
 
 func _on_Victory_pressed():
