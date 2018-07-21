@@ -1,36 +1,42 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Event/EventMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Event/Overworld/GooShoppeEvent.gd" type="Script" id=2]
-[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Event/Visuals/GooShoppe.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Item/Red Goo.png" type="Texture" id=5]
-[ext_resource path="res://Party/Shop.tscn" type="PackedScene" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-
-size = 24
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Settings" ]
+[ext_resource path="res://Party/Shop.gd" type="Script" id=5]
+[ext_resource path="res://Party/ShopSlot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Party/Assets/FoodBuy.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Party/Assets/FoodSell.png" type="Texture" id=9]
+[ext_resource path="res://Party/Assets/SellButton.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/CommandFont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Party/Assets/ExitButton.png" type="Texture" id=12]
+[ext_resource path="res://Party/Assets/FoodIcon.png" type="Texture" id=13]
+[ext_resource path="res://Party/Assets/GoldIcon.png" type="Texture" id=14]
+[ext_resource path="res://Party/ArtifactSlot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Party/Slot.tscn" type="PackedScene" id=16]
 
 [node name="EventMenu" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
-[node name="Dialogue" parent="CenterContainer/EventMenu" index="2"]
+[node name="Dialogue" parent="Container/EventMenu" index="2"]
 
-text = "You find the shop. You can practically already taste that good goo."
+text = "You can see a strange hut with signs advertisings goo littered everywhere about it."
 
-[node name="ShopButton" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="0"]
+[node name="Visual" parent="Container/EventMenu" index="3"]
+
+texture = ExtResource( 3 )
+
+[node name="Enter" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 900.0
-margin_bottom = 35.0
+margin_right = 599.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -38,25 +44,25 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Enter the Shop"
+text = "Take a look."
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ExitButton" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="1"]
+[node name="Exit" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 39.0
-margin_right = 900.0
-margin_bottom = 73.0
+margin_top = 24.0
+margin_right = 599.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -74,15 +80,1181 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Sprite" type="Sprite" parent="CenterContainer/EventMenu/Panel3" index="0"]
+[node name="Shop" type="CanvasLayer" parent="." index="1"]
 
-position = Vector2( 66, 56 )
-texture = ExtResource( 5 )
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
 
-[node name="Shop" parent="." index="1" instance=ExtResource( 6 )]
+[node name="ShopMenu" type="MarginContainer" parent="Shop" index="0"]
 
-[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/ShopButton" to="." method="_on_ShopButton_pressed"]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 1124.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
 
-[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[node name="Panel2" type="Panel" parent="Shop/ShopMenu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1074.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop/ShopMenu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1074.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1795.0
+margin_bottom = 999.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="ShopInv" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 334.0
+margin_bottom = 974.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+_sections_unfolded = [ "Grow Direction", "Rect", "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 327.0
+margin_bottom = 967.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 100
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Title" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Shop Inventory"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Items" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 128.0
+margin_right = 320.0
+margin_bottom = 233.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Label" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Items:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ItemRow" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 53.0
+margin_right = 320.0
+margin_bottom = 105.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="ItemSlot1" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="0" instance=ExtResource( 6 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+
+[node name="ItemSlot2" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="1" instance=ExtResource( 6 )]
+
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 52.0
+
+[node name="ItemSlot3" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="2" instance=ExtResource( 6 )]
+
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 52.0
+
+[node name="ItemSlot4" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="3" instance=ExtResource( 6 )]
+
+margin_left = 162.0
+margin_right = 212.0
+margin_bottom = 52.0
+
+[node name="ItemSlot5" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="4" instance=ExtResource( 6 )]
+
+margin_left = 216.0
+margin_right = 266.0
+margin_bottom = 52.0
+
+[node name="ItemSlot6" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Items/ItemRow" index="5" instance=ExtResource( 6 )]
+
+margin_left = 270.0
+margin_right = 320.0
+margin_bottom = 52.0
+
+[node name="Trinkets" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 333.0
+margin_right = 320.0
+margin_bottom = 438.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Label2" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Trinkets:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TrinketRow" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 53.0
+margin_right = 320.0
+margin_bottom = 105.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="TrinketSlot1" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="0" instance=ExtResource( 6 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+
+[node name="TrinketSlot2" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="1" instance=ExtResource( 6 )]
+
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 52.0
+
+[node name="TrinketSlot3" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="2" instance=ExtResource( 6 )]
+
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 52.0
+
+[node name="TrinketSlot4" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="3" instance=ExtResource( 6 )]
+
+margin_left = 162.0
+margin_right = 212.0
+margin_bottom = 52.0
+
+[node name="TrinketSlot5" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="4" instance=ExtResource( 6 )]
+
+margin_left = 216.0
+margin_right = 266.0
+margin_bottom = 52.0
+
+[node name="TrinketSlot6" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Trinkets/TrinketRow" index="5" instance=ExtResource( 6 )]
+
+margin_left = 270.0
+margin_right = 320.0
+margin_bottom = 52.0
+
+[node name="Artifacts" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 538.0
+margin_right = 320.0
+margin_bottom = 643.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Label3" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Artifacts:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ArtifactRow" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 53.0
+margin_right = 320.0
+margin_bottom = 105.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="ArtifactSlot1" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="0" instance=ExtResource( 6 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+
+[node name="ArtifactSlot2" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="1" instance=ExtResource( 6 )]
+
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 52.0
+
+[node name="ArtifactSlot3" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="2" instance=ExtResource( 6 )]
+
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 52.0
+
+[node name="ArtifactSlot4" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="3" instance=ExtResource( 6 )]
+
+margin_left = 162.0
+margin_right = 212.0
+margin_bottom = 52.0
+
+[node name="ArtifactSlot5" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="4" instance=ExtResource( 6 )]
+
+margin_left = 216.0
+margin_right = 266.0
+margin_bottom = 52.0
+
+[node name="ArtifactSlot6" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Artifacts/ArtifactRow" index="5" instance=ExtResource( 6 )]
+
+margin_left = 270.0
+margin_right = 320.0
+margin_bottom = 52.0
+
+[node name="Food" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer" index="4"]
+
+self_modulate = Color( 1, 0.696503, 0.402344, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 743.0
+margin_right = 320.0
+margin_bottom = 960.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "Size Flags", "Visibility", "custom_constants" ]
+
+[node name="Label" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Food"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 53.0
+margin_right = 320.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="BuyFood" type="TextureButton" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 75.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+_sections_unfolded = [ "Material", "Rect", "Textures", "Visibility" ]
+
+[node name="FoodPrice" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 25.0
+margin_right = 122.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "$7"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SellFood" type="TextureButton" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 147.0
+margin_right = 222.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+
+[node name="SellPrice" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 247.0
+margin_top = 25.0
+margin_right = 270.0
+margin_bottom = 49.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "$4"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SellButton" type="TextureButton" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 35.0
+margin_top = 153.0
+margin_right = 285.0
+margin_bottom = 217.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+_sections_unfolded = [ "Mouse", "Size Flags", "Textures" ]
+
+[node name="SellingPrice" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/SellButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 127.0
+margin_top = 11.0
+margin_right = 167.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 11 )
+text = "$2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="RightColumn" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 364.0
+margin_right = 1770.0
+margin_bottom = 974.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1399.0
+margin_bottom = 967.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Top" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1392.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 50
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="PanelContainer" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/Top" index="0"]
+
+self_modulate = Color( 0.753906, 0.753906, 0.753906, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1092.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Size Flags", "Visibility" ]
+
+[node name="Description" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/Top/PanelContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1085.0
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Item Description here"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "Visibility", "custom_fonts" ]
+
+[node name="ExitButton" type="TextureButton" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/Top" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1142.0
+margin_right = 1392.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 154.0
+margin_right = 1392.0
+margin_bottom = 960.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 75
+custom_constants/margin_top = 20
+custom_constants/margin_left = 75
+custom_constants/margin_bottom = 20
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 75.0
+margin_top = 20.0
+margin_right = 1317.0
+margin_bottom = 786.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 10
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="PartyCards" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1242.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="LeftColumn" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 596.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
+
+[node name="MiniPanel1" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/LeftColumn" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 596.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
+
+[node name="MiniPanel3" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/LeftColumn" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 257.0
+margin_right = 596.0
+margin_bottom = 499.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="MiniPanel5" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/LeftColumn" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 514.0
+margin_right = 596.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
+
+[node name="RightColumn" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 646.0
+margin_right = 1242.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="MiniPanel2" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/RightColumn" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 596.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
+
+[node name="MiniPanel4" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/RightColumn" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 257.0
+margin_right = 596.0
+margin_bottom = 499.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
+
+[node name="MiniPanel6" type="PanelContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/PartyCards/RightColumn" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 514.0
+margin_right = 596.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
+
+[node name="Bottom" type="VBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 766.0
+margin_right = 1242.0
+margin_bottom = 766.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Resources" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom" index="0"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1242.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="FoodTex" type="TextureRect" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/Resources" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+stretch_mode = 0
+
+[node name="FoodCount" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/Resources" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_right = 51.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "00"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="GoldTex" type="TextureRect" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/Resources" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_right = 80.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+stretch_mode = 0
+
+[node name="GoldCount" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/Resources" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_right = 106.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "00"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+
+[node name="PartyInv" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom" index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1242.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="ArtifactSlot" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv" index="0" instance=ExtResource( 15 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+
+[node name="ArtifactDescription" type="Label" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 14.0
+margin_right = 410.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "Artifact: Artifact Description goes here"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Inventory" type="HBoxContainer" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 772.0
+margin_right = 1242.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 10
+size_flags_vertical = 1
+custom_constants/separation = 10
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Slot1" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="0" instance=ExtResource( 16 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+
+[node name="Slot2" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="1" instance=ExtResource( 16 )]
+
+margin_left = 60.0
+margin_right = 110.0
+margin_bottom = 52.0
+
+[node name="Slot3" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="2" instance=ExtResource( 16 )]
+
+margin_left = 120.0
+margin_right = 170.0
+margin_bottom = 52.0
+
+[node name="Slot4" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="3" instance=ExtResource( 16 )]
+
+margin_left = 180.0
+margin_right = 230.0
+margin_bottom = 52.0
+
+[node name="Slot5" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="4" instance=ExtResource( 16 )]
+
+margin_left = 240.0
+margin_right = 290.0
+margin_bottom = 52.0
+
+[node name="Slot6" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="5" instance=ExtResource( 16 )]
+
+margin_left = 300.0
+margin_right = 350.0
+margin_bottom = 52.0
+
+[node name="Slot7" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="6" instance=ExtResource( 16 )]
+
+margin_left = 360.0
+margin_right = 410.0
+margin_bottom = 52.0
+
+[node name="Slot8" parent="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/MarginContainer/VBoxContainer/Bottom/PartyInv/Inventory" index="7" instance=ExtResource( 16 )]
+
+margin_left = 420.0
+margin_right = 470.0
+margin_bottom = 52.0
+
+[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Enter" to="." method="_on_Enter_pressed"]
+
+[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+
+[connection signal="pressed" from="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer/BuyFood" to="Shop" method="_on_BuyFood_pressed"]
+
+[connection signal="pressed" from="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer/SellFood" to="Shop" method="_on_SellFood_pressed"]
+
+[connection signal="pressed" from="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/SellButton" to="Shop" method="_on_SellButton_pressed"]
+
+[connection signal="pressed" from="Shop/ShopMenu/MarginContainer/HBoxContainer/RightColumn/VBoxContainer/Top/ExitButton" to="Shop" method="_on_ExitButton_pressed"]
 
 

@@ -158,7 +158,7 @@ func ActionShift(unit, left, speed = 0.5):
 				unit.row = unit.ROW.back
 	
 	unit.shifting = true
-		
+	
 	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.height/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	unit.get_node("Tween").start()
 

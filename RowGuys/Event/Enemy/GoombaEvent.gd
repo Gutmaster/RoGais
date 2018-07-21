@@ -5,7 +5,7 @@ func _ready():
 	pass
 
 
-func _on_FightButton_pressed():
+func _on_Fight_pressed():
 	if(eventMenu.visible):
 		close_event()
 		
@@ -16,7 +16,7 @@ func _on_FightButton_pressed():
 		get_parent().queue_free()
 
 
-func _on_RunButton_pressed():
+func _on_Retreat_pressed():
 	if(eventMenu.visible):
 		print("run")
 		close_event()

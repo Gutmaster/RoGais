@@ -23,7 +23,7 @@ func Init():
 	skillTree = load("res://Unit/Dank Druid/SkillTree/DruidTree.tscn").instance()
 	skillTree.unit = self
 	
-	SFX.hit = load("res://SFX/Uaagh.wav")
+	SFX.hit = load("res://SFX/Oof.wav")
 	var SFXPatch = {"vines": load("res://SFX/Vines.mp3")}
 	merge_dir(SFX, SFXPatch)
 

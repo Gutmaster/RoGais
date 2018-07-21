@@ -35,7 +35,7 @@ func MoveParty():
 	if(!visited):
 		randomize()
 		$Event.replace_by_instance(events[randi()%events.size()])
-		$Event/CenterContainer.visible = true
+		$Event/Container.visible = true
 		get_parent().eventActive = true
 	
 	visited = true

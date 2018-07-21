@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-onready var eventMenu = $EventMenu/CenterContainer
+onready var eventMenu = $EventMenu/Container
 
 
 func _ready():

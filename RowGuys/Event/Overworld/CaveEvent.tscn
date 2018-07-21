@@ -1,63 +1,29 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Event/EventMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Event/Overworld/CaveEvent.gd" type="Script" id=2]
-[ext_resource path="res://Overworld/Objects/Dungeon.png" type="Texture" id=3]
+[ext_resource path="res://Event/Visuals/Cave.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=4]
 
-[sub_resource type="DynamicFontData" id=1]
-
-hinting = 2
-font_path = "res://Fonts/Comfortaa-Bold.ttf"
-
-[sub_resource type="DynamicFont" id=2]
-
-size = 24
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFontData" id=3]
-
-hinting = 2
-font_path = "res://Fonts/Comfortaa-Bold.ttf"
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 24
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 3 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="SpriteFrames" id=5]
-
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[node name="EventMenu" instance=ExtResource( 1 )]
+[node name="EventMenu" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
-[node name="CenterContainer" parent="." index="0"]
+[node name="Dialogue" parent="Container/EventMenu" index="2"]
 
-editor/display_folded = true
+text = "Hey it's a cave take a peek eh?"
 
-[node name="Dialogue" parent="CenterContainer/EventMenu" index="2"]
+[node name="Visual" parent="Container/EventMenu" index="3"]
 
-text = "You see a cave. How curious are you?"
+texture = ExtResource( 3 )
 
-[node name="EnterButton" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="0"]
+[node name="Enter" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 900.0
+margin_right = 599.0
 margin_bottom = 34.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -66,24 +32,24 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Very!!! (Enter)"
+text = "Enter"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="RunButton" type="Button" parent="CenterContainer/EventMenu/MarginContainer/VBoxContainer" index="1"]
+[node name="Leave" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 38.0
-margin_right = 900.0
+margin_right = 599.0
 margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -92,26 +58,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Meh... (Leave)"
+text = "Leave"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="CenterContainer/EventMenu/Panel3" index="0"]
+[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Enter" to="." method="_on_Enter_pressed"]
 
-position = Vector2( 32.6252, 30.0495 )
-scale = Vector2( 0.3, 0.3 )
-frames = SubResource( 5 )
-animation = "default"
-_sections_unfolded = [ "Transform" ]
-
-[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/EnterButton" to="." method="_on_EnterButton_pressed"]
-
-[connection signal="pressed" from="CenterContainer/EventMenu/MarginContainer/VBoxContainer/RunButton" to="." method="_on_RunButton_pressed"]
+[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Leave" to="." method="_on_Leave_pressed"]
 
 

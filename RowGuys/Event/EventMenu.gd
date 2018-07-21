@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-onready var eventMenu = $CenterContainer
+onready var eventMenu = $Container
 
 onready var party = get_node("/root/Globals").party
 
@@ -9,7 +9,7 @@ signal partyChoice
 
 
 func _ready():
-	$CenterContainer.visible = false
+	$Container.visible = false
 
 
 func close_event():
@@ -19,5 +19,5 @@ func close_event():
 	Globals.eventScene = null
 
 
-func _on_CenterContainer_visibility_changed():
-	$CenterContainer.rect_global_position = get_viewport().size/2 - $CenterContainer.rect_size
+func _on_Container_visibility_changed():
+	$Container.rect_global_position = get_viewport().size/2 - $Container.rect_size

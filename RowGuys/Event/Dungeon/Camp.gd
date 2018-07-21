@@ -2,7 +2,7 @@ extends "res://Event/Dungeon/BaseDungeonScene.gd"
 
 
 onready var foodCost = party.get_child_count()*2
-onready var Rest = get_node("CenterContainer/EventMenu/MarginContainer/VBoxContainer/Rest")
+onready var Rest = get_node("Container/EventMenu/VBoxContainer/Rest")
 
 
 func _ready():
@@ -23,10 +23,10 @@ func _on_Rest_pressed():
 	for i in units.get_child_count():
 		units.get_child(i).UpdateHealth(units.get_child(i).stats.Vitality/2)
 	$EventResult.replace_by_instance()
-	$EventResult/CenterContainer/EventResult/Text.text = "The party establishes watch order and a few hours pass by in relative peace. You prepare to leave."
+	$EventResult/Container/EventResult/Text.text = "The party establishes watch order and a few hours pass by in relative peace. You prepare to leave."
 
 
 func _on_Leave_pressed():
 	DisableButtons()
 	$EventResult.replace_by_instance()
-	$EventResult/CenterContainer/EventResult/Text.text = "There's no time for relaxation, you move out."
+	$EventResult/Container/EventResult/Text.text = "There's no time for relaxation, you move out."
