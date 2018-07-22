@@ -13,7 +13,7 @@ func _on_Fight_pressed():
 		get_node("/root/Globals").travelScene = get_tree().get_current_scene()
 		get_node("/root/Globals").ChangeScene(get_node("/root/Globals").combatScene)
 		
-		get_parent().queue_free()
+		get_parent().call_deferred("queue_free")
 
 
 func _on_Retreat_pressed():

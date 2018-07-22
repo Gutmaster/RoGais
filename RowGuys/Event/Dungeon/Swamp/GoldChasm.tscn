@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Event/Dungeon/BaseDungeonScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Event/Dungeon/Swamp/GoldChasm.gd" type="Script" id=2]
 [ext_resource path="res://Event/Visuals/GoldPit.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=4]
 
+[sub_resource type="DynamicFontData" id=3]
+
+hinting = 2
+font_path = "res://Fonts/Comfortaa-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [node name="GoldChasm" instance=ExtResource( 1 )]
 
 layer = 1
 script = ExtResource( 2 )
 
-[node name="Dialogue" parent="Container/EventMenu" index="2"]
+[node name="Text" parent="Container/EventMenu" index="2"]
 
 text = "Gold shines from the bottom of an otherwise pitch depth of water."
 
@@ -18,7 +31,7 @@ text = "Gold shines from the bottom of an otherwise pitch depth of water."
 
 texture = ExtResource( 3 )
 
-[node name="Retrieve" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
+[node name="Retrieve" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
 
 light_mask = 0
 anchor_left = 0.0
@@ -44,7 +57,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="Ignore" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
+[node name="Ignore" type="Button" parent="Container/EventMenu/ChoiceList" index="1"]
 
 light_mask = 0
 anchor_left = 0.0
@@ -71,14 +84,114 @@ flat = false
 align = 1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="PartyChoice" parent="." index="2" instance_placeholder="res://Event/PartyChoice.tscn"]
+[node name="Party" parent="." index="1"]
 
-[node name="EventResult" parent="." index="3" instance_placeholder="res://Event/EventResult.tscn"]
+visible = true
 
-layer = 3
+[node name="UnitSource" type="Button" parent="ButtonBank" index="0"]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Retrieve" to="." method="_on_Retrieve_pressed"]
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 447.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Example"
+flat = false
+align = 1
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Ignore" to="." method="_on_Ignore_pressed"]
+[node name="Proceed" type="Button" parent="ButtonBank" index="1"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 216.0
+margin_right = 606.0
+margin_bottom = 250.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Proceed"
+flat = false
+align = 1
+
+[node name="UnitChoice" type="Label" parent="TextBank" index="0"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 606.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "Choose a unit."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Ignore" type="Label" parent="TextBank" index="1"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 606.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "No telling what's in that water, better move on."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Retrieve" to="." method="_on_Retrieve_pressed"]
+
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Ignore" to="." method="_on_Ignore_pressed"]
+
+[connection signal="pressed" from="ButtonBank/Proceed" to="." method="_on_Proceed_pressed"]
 
 

@@ -24,7 +24,7 @@ func Init():
 	skillTree.unit = self
 	
 	SFX.hit = load("res://SFX/Oof.wav")
-	var SFXPatch = {"vines": load("res://SFX/Vines.mp3")}
+	var SFXPatch = {"vines": load("res://SFX/Vines.wav")}
 	merge_dir(SFX, SFXPatch)
 
 

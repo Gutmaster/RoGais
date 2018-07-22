@@ -7,7 +7,7 @@ trinket,
 item}
 
 
-var starting_food = 5
+var starting_food = 50
 var starting_gold = 10
 var food = 0
 var gold = 0

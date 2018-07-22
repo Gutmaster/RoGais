@@ -12,17 +12,15 @@ script = ExtResource( 2 )
 
 [node name="Party" type="Node2D" parent="." index="0"]
 
-visible = false
+[node name="Text" parent="Container/EventMenu" index="2"]
 
-[node name="Dialogue" parent="Container/EventMenu" index="2"]
-
-text = "Eyes lurkin in the dark"
+text = "Eyes in the dark"
 
 [node name="Visual" parent="Container/EventMenu" index="3"]
 
 texture = ExtResource( 3 )
 
-[node name="Fight" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
+[node name="Fight" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
 
 light_mask = 0
 anchor_left = 0.0
@@ -46,8 +44,7 @@ group = null
 text = "Fight!"
 flat = false
 align = 1
-_sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Fight" to="." method="_on_Fight_pressed"]
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Fight" to="." method="_on_Fight_pressed"]
 
 

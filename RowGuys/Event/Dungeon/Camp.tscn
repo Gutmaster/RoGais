@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Event/Dungeon/BaseDungeonScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Event/Dungeon/Camp.gd" type="Script" id=2]
 [ext_resource path="res://Event/Visuals/Rest.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=4]
 
-[node name="Camp" index="0" instance=ExtResource( 1 )]
+[sub_resource type="DynamicFontData" id=3]
+
+hinting = 2
+font_path = "res://Fonts/Comfortaa-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Camp" instance=ExtResource( 1 )]
 
 layer = 1
 script = ExtResource( 2 )
 
-[node name="Dialogue" parent="Container/EventMenu" index="2"]
+[node name="Text" parent="Container/EventMenu" index="2"]
 
 text = "This looks like a nice place to rest"
 
@@ -18,7 +31,7 @@ text = "This looks like a nice place to rest"
 
 texture = ExtResource( 3 )
 
-[node name="Rest" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
+[node name="Rest" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
 
 light_mask = 0
 anchor_left = 0.0
@@ -44,7 +57,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="Leave" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
+[node name="Leave" type="Button" parent="Container/EventMenu/ChoiceList" index="1"]
 
 light_mask = 0
 anchor_left = 0.0
@@ -71,12 +84,97 @@ flat = false
 align = 1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[node name="EventResult" parent="." index="2" instance_placeholder="res://Event/EventResult.tscn"]
+[node name="Party" parent="." index="1"]
 
-layer = 3
+visible = true
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Rest" to="." method="_on_Rest_pressed"]
+[node name="TextBank" parent="." index="2"]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Leave" to="." method="_on_Leave_pressed"]
+visible = false
+
+[node name="Leave" type="Label" parent="TextBank" index="0"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 606.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "No time for rest, you better push on."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Rest" type="Label" parent="TextBank" index="1"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 606.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "The party establishes watch order and a few hours pass by in relative peace. You prepare to leave."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ButtonBank" parent="." index="3"]
+
+visible = false
+
+[node name="Proceed" type="Button" parent="ButtonBank" index="0"]
+
+light_mask = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 216.0
+margin_right = 606.0
+margin_bottom = 250.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Proceed"
+flat = false
+align = 1
+
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Rest" to="." method="_on_Rest_pressed"]
+
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Leave" to="." method="_on_Leave_pressed"]
+
+[connection signal="pressed" from="ButtonBank/Proceed" to="." method="_on_Proceed_pressed"]
 
 
