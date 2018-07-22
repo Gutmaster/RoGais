@@ -21,22 +21,23 @@
 
 script = ExtResource( 2 )
 
-[node name="Dialogue" parent="Container/EventMenu" index="2"]
+[node name="Text" parent="Container/EventMenu" index="2"]
 
-text = "You can see a strange hut with signs advertisings goo littered everywhere about it."
+text = "Goo and stuff"
 
 [node name="Visual" parent="Container/EventMenu" index="3"]
 
 texture = ExtResource( 3 )
 
-[node name="Enter" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
+[node name="Enter" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
 
+light_mask = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 599.0
-margin_bottom = 20.0
+margin_bottom = 34.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -49,20 +50,20 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Take a look."
+text = "Enter"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Exit" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
+[node name="Leave" type="Button" parent="Container/EventMenu/ChoiceList" index="1"]
 
+light_mask = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 24.0
+margin_top = 38.0
 margin_right = 599.0
-margin_bottom = 44.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -78,7 +79,6 @@ group = null
 text = "Leave"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Shop" type="CanvasLayer" parent="." index="1"]
 
@@ -1245,9 +1245,9 @@ margin_left = 420.0
 margin_right = 470.0
 margin_bottom = 52.0
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Enter" to="." method="_on_Enter_pressed"]
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Enter" to="." method="_on_Enter_pressed"]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Leave" to="." method="_on_Leave_pressed"]
 
 [connection signal="pressed" from="Shop/ShopMenu/MarginContainer/HBoxContainer/ShopInv/VBoxContainer/Food/HBoxContainer/BuyFood" to="Shop" method="_on_BuyFood_pressed"]
 
