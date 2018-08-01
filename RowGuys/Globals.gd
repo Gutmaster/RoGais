@@ -5,11 +5,12 @@ var enemyParty
 
 var packedParty = load("res://Party/Party.tscn")
 var packedCombat = load("res://Combat/Combat.tscn")
-var packedTravel = load("res://Overworld/Travel.tscn")
+var packedOverworld = load("res://Overworld/Overworld.tscn")
 
 var party
 var combatScene
 var travelScene
+var overworldScene
 var dungeonScene
 var eventScene
 
@@ -24,7 +25,7 @@ onready var root = get_tree().get_root()
 
 func _ready():
 	combatScene = packedCombat.instance()
-	travelScene = packedTravel.instance()
+	overworldScene = packedOverworld.instance()
 	party = packedParty.instance()
 	
 	LoadParty()

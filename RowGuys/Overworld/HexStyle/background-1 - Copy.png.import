@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Enemy.png-cb6b27d55b0c4f8fc7bff8908a93ea40.stex"
+path="res://.import/background-1 - Copy.png-12b26a3e33def7e5e5c34ca50e228b87.stex"
 
 [deps]
 
-source_file="res://Overworld/Objects/Enemy.png"
-dest_files=[ "res://.import/Enemy.png-cb6b27d55b0c4f8fc7bff8908a93ea40.stex" ]
+source_file="res://Overworld/HexStyle/background-1 - Copy.png"
+dest_files=[ "res://.import/background-1 - Copy.png-12b26a3e33def7e5e5c34ca50e228b87.stex" ]
 
 [params]
 

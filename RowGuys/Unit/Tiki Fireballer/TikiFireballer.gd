@@ -27,7 +27,6 @@ func Init():
 
 
 func Starve():
-	Subtributes(starveNerf)
 	starveLvl += 1
 	starveNerf.Vitality = -starveLvl
 	starveNerf.Stamina = -starveLvl

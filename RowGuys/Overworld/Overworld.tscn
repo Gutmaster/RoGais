@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Overworld/Overworld.gd" type="Script" id=1]
+[ext_resource path="res://Dungeon/Assets/BG.jpg" type="Texture" id=2]
+[ext_resource path="res://Overworld/Node/Node.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dungeon/Assets/PartyIcon.jpg" type="Texture" id=4]
+[ext_resource path="res://Overworld/Party.gd" type="Script" id=5]
+
+[node name="Overworld" type="Node2D" index="0"]
+
+pause_mode = 2
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 1083.09, 605.444 )
+scale = Vector2( 1.1515, 1.1529 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node1" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 294.656, 186.616 )
+
+[node name="Node2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 761.196, 874.147 )
+
+[node name="Node3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 1586.23, 392.875 )
+
+[node name="PartyIcon" type="Sprite" parent="." index="4"]
+
+position = Vector2( -100, 300 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tween" type="Tween" parent="PartyIcon" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="tween_completed" from="PartyIcon/Tween" to="PartyIcon" method="_on_Tween_tween_completed"]
+
+

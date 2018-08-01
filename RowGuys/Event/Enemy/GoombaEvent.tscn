@@ -9,15 +9,15 @@
 
 script = ExtResource( 2 )
 
-[node name="Dialogue" parent="Container/EventMenu" index="2"]
+[node name="Text" parent="Container/EventMenu" index="2"]
 
-text = "I will drink from your skull!"
+text = "Skull please"
 
 [node name="Visual" parent="Container/EventMenu" index="3"]
 
 texture = ExtResource( 3 )
 
-[node name="Fight" type="Button" parent="Container/EventMenu/VBoxContainer" index="0"]
+[node name="Fight" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -42,7 +42,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Retreat" type="Button" parent="Container/EventMenu/VBoxContainer" index="1"]
+[node name="Retreat" type="Button" parent="Container/EventMenu/ChoiceList" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -63,13 +63,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Run Away!"
+text = "Retreat!"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Fight" to="." method="_on_Fight_pressed"]
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Fight" to="." method="_on_Fight_pressed"]
 
-[connection signal="pressed" from="Container/EventMenu/VBoxContainer/Retreat" to="." method="_on_Retreat_pressed"]
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Retreat" to="." method="_on_Retreat_pressed"]
 
 

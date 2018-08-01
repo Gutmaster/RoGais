@@ -62,6 +62,7 @@ var height
 var width
 
 var eatFlag = true
+var eatRate = 1
 var starveLvl = 0
 var starveNerf = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 
@@ -587,10 +588,16 @@ func Eat():
 	starveLvl -= 1
 	if(starveLvl < 0):
 		starveLvl = 0
+	StarveUpdate()
 
 
 func Starve():
 	starveLvl += 1
+	StarveUpdate()
+	Addributes(starveNerf)
+
+
+func StarveUpdate():
 	starveNerf.Vitality = -starveLvl
 	starveNerf.Stamina = -starveLvl
 	starveNerf.Strength = -starveLvl
@@ -625,23 +632,6 @@ func Addributes(mod):
 		hp = aStats.Vitality
 	if(ap > aStats.Stamina):
 		ap = aStats.Stamina
-
-
-"""func Subtributes(mod):
-	mStats.Vitality -= mod.Vitality
-	mStats.Strength -= mod.Strength
-	mStats.Endurance -= mod.Endurance
-	mStats.Stamina -= mod.Stamina
-	mStats.Willpower -= mod.Willpower
-	mStats.Wisdom -= mod.Wisdom
-	mStats.Speed -= mod.Speed
-	
-	ApplyStats()
-	
-	if(hp > aStats.Vitality):
-		hp = aStats.Vitality
-	if(ap > aStats.Stamina):
-		ap = aStats.Stamina"""
 
 
 func ApplyStats():

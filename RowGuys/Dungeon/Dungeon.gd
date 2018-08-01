@@ -46,4 +46,3 @@ func Init():
 	
 	$Room1/Light.enabled = true
 	$Party.Move($Room1)
-

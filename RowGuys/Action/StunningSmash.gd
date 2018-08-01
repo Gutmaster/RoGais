@@ -25,5 +25,4 @@ func _process(delta):
 func Execute():
 	user.SFXPlay(user.SFX.melee)
 	CombatMath(user, target)
-	target.TempPlay("Stagger")
 	combatNode.get_node("HUD/Queue").PushBack(target, 1)

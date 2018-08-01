@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/marker0.png-9d65afa1b0bdb4028092741210621a02.stex"
+path="res://.import/PlayerN.png-6fe074e183a38078b3095d84edf1580c.stex"
 
 [deps]
 
-source_file="res://Overworld/Marker/marker0.png"
-dest_files=[ "res://.import/marker0.png-9d65afa1b0bdb4028092741210621a02.stex" ]
+source_file="res://Overworld/BrandenStyle/Player/PlayerN.png"
+dest_files=[ "res://.import/PlayerN.png-6fe074e183a38078b3095d84edf1580c.stex" ]
 
 [params]
 

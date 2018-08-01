@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background-1.png-2b41a46169e17235d97b7b7ed00f217a.stex"
+path="res://.import/background-1.png-01661eabb12bfe01f0c0485cbb310147.stex"
 
 [deps]
 
-source_file="res://Overworld/background-1.png"
-dest_files=[ "res://.import/background-1.png-2b41a46169e17235d97b7b7ed00f217a.stex" ]
+source_file="res://Overworld/HexStyle/Hex/Assets/Prototype/background-1.png"
+dest_files=[ "res://.import/background-1.png-01661eabb12bfe01f0c0485cbb310147.stex" ]
 
 [params]
 

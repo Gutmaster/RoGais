@@ -10,7 +10,7 @@ func _ready():
 
 func Move(var room):
 	nextRoom = room
-	$Tween.interpolate_property(self, "position", position, room.position, 0.8, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.interpolate_property(self, "position", position, room.position + room.polygon[3]/2, 0.8, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
 	get_parent().moveFlag = true
 

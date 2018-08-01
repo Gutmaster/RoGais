@@ -7,7 +7,7 @@ func _ready():
 	animation = "LeapingStrike"
 	apCost = 3
 	atkMod = 1
-	keyFrame = 3
+	keyFrame = 2
 	tags.melee = true
 
 

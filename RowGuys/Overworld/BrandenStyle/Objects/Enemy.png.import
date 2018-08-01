@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dungeon.png-7c4a177fa55f730e1de55d09a656062e.stex"
+path="res://.import/Enemy.png-00ae8d7f23d0ca626b9e3ad36e398d54.stex"
 
 [deps]
 
-source_file="res://Overworld/Objects/Dungeon.png"
-dest_files=[ "res://.import/Dungeon.png-7c4a177fa55f730e1de55d09a656062e.stex" ]
+source_file="res://Overworld/BrandenStyle/Objects/Enemy.png"
+dest_files=[ "res://.import/Enemy.png-00ae8d7f23d0ca626b9e3ad36e398d54.stex" ]
 
 [params]
 

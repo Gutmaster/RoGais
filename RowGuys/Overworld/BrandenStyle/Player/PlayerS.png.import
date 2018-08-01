@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GooShoppe.png-5aa88f4101757b29989effe2ec84577c.stex"
+path="res://.import/PlayerS.png-683d85fb98e16b9cc6731b498e9a71bd.stex"
 
 [deps]
 
-source_file="res://Overworld/Objects/GooShoppe.png"
-dest_files=[ "res://.import/GooShoppe.png-5aa88f4101757b29989effe2ec84577c.stex" ]
+source_file="res://Overworld/BrandenStyle/Player/PlayerS.png"
+dest_files=[ "res://.import/PlayerS.png-683d85fb98e16b9cc6731b498e9a71bd.stex" ]
 
 [params]
 

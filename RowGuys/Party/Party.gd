@@ -76,15 +76,16 @@ func AddUnit(var unit):
 
 
 func UpdateFood(dif):
+	#$Tween.interpolate_property(self, "foodLabel", food, food + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	#$Tween.start()
 	food += dif
-	$FTween.interpolate_property(self, "foodLabel", food, food + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	$FTween.start()
+	foodLabel = food
 
 
 func UpdateGold(dif):
+	$Tween.interpolate_property(self, "goldLabel", gold, gold + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
 	gold += dif
-	$GTween.interpolate_property(self, "goldLabel", gold, gold + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	$GTween.start()
 
 
 func _on_PartyButton_pressed():

@@ -50,4 +50,4 @@ func LoadUnitChoice():
 
 func _on_Proceed_pressed():
 	queue_free()
-	get_node("/root/Dungeon").eventActive = false
+	get_node("/root/Overworld").eventActive = false

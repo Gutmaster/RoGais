@@ -20,5 +20,5 @@ func _on_Fight_pressed():
 
 
 func close_event():
-	get_node("/root/Dungeon").eventActive = false
+	get_node("/root/Overworld").eventActive = false
 	queue_free()
