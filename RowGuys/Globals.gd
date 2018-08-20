@@ -3,6 +3,8 @@ extends Node
 
 var enemyParty
 
+var defaultCursor = load("res://Mouse.png")
+
 var packedParty = load("res://Party/Party.tscn")
 var packedCombat = load("res://Combat/Combat.tscn")
 var packedOverworld = load("res://Overworld/Overworld.tscn")

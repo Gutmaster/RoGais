@@ -16,7 +16,7 @@ func _input_event(viewport, event, shape_idx):
 	elif event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT:
 		emit_signal("unitClicked", get_parent())
-		var Action = get_node("/root/Combat/HUD/CommandWindow/VBoxContainer/ActionButton")
+		var Action = get_node("/root/Combat/HUD/CommandWindow/Action")
 		if(Action.targetMode):
 			Action.target = get_parent()
 

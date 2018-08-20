@@ -9,7 +9,7 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT:
-		combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton").TargetCheck(get_parent())
+		combatNode.get_node("HUD/CommandWindow/Action").TargetCheck(get_parent())
 
 
 func _on_Area2D_mouse_entered():

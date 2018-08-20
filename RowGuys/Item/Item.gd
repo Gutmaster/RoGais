@@ -1,4 +1,4 @@
-extends TextureRect
+extends TextureButton
 
 onready var party = get_node("/root/Globals").party
 
@@ -25,9 +25,8 @@ func Init():
 	pass
 
 
-func PullRandom():
-	randomize()
-	return get_child(randi()%get_child_count()).Clone()
+func UseCheck():
+	pass
 
 
 func Clone():

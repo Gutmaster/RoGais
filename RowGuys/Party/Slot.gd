@@ -40,7 +40,6 @@ func _on_Slot_focus_entered():
 		party.itemHolder.item = item
 		print(party.itemHolder.item.description)
 		item = null
-		print(party.itemHolder.item.description)
 		party.itemHolder.itemCatcher = self
 	elif(mouseItem != null && item):
 		party.itemHolder.remove_child(mouseItem)

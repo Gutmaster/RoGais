@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Advance.png-e03f7c5cf2fef59d8b7119b768f4de79.stex"
+path="res://.import/AdvancePressed.png-fb64e0ebc2ffd2ef602db3e74ad1e196.stex"
 
 [deps]
 
-source_file="res://Combat/Assets/Advance.png"
-dest_files=[ "res://.import/Advance.png-e03f7c5cf2fef59d8b7119b768f4de79.stex" ]
+source_file="res://Combat/HUD/CommandWindow/AdvancePressed.png"
+dest_files=[ "res://.import/AdvancePressed.png-fb64e0ebc2ffd2ef602db3e74ad1e196.stex" ]
 
 [params]
 

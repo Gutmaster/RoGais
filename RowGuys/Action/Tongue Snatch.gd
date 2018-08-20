@@ -15,6 +15,7 @@ func Execute():
 
 
 func _process(delta):
+	print(phase)
 	if(phase == 1):
 		if(user.frame >= keyFrame):
 			user.playing = false
@@ -27,11 +28,12 @@ func _process(delta):
 			Execute()
 			if(target.hp > 0):
 				ActionShift(target, !target.teamLeft, 0.2)
-			phase = 3
-	elif(phase == 3):
-		if(projectile == null):
-			user.playing = true
-			actionMenu.ActionFinished(self)
+			phase = 0
+
+
+func Cleanup():
+	user.playing = true
+	actionMenu.ActionFinished(self)
 
 
 func FindTargetOptions(var enemyTeam):

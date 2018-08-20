@@ -59,8 +59,9 @@ func LoadCombat(var PartyLeft, var PartyRight):
 	
 	midBattle = true
 	globals.ReParentParty(self)
-	globals.enemyParty.get_node("HUD").visible = true
-	globals.ReParentParty(self, globals.enemyParty)
+	party.get_node("HUD").hide()
+	#globals.enemyParty.get_node("HUD").visible = true
+	#globals.ReParentParty(self, globals.enemyParty)
 	
 	set_process(true)
 
@@ -155,6 +156,7 @@ func Advance(targetTeam):
 
 func _on_ApproachTimer_timeout():
 	$HUD/CommandWindow.show()
+	$HUD/CommandWindow/Advance.Check()
 	$Row.show()
 	var units = get_tree().get_nodes_in_group("Approach")
 	for i in units:
@@ -219,8 +221,7 @@ func AddTempUnit(var unit, var team, var AI = true, var row = unit.defaultRow):
 func GoToRewards():
 	SFXPlay(SFX.victory)
 	$HUD/CommandWindow.hide()
-	$HUD/Advance.disabled = true
-	$HUD/RewardScreen.Init(xp, gold, itemVal)
+	$EndScreen/RewardScreen.Init(xp, gold, itemVal)
 	set_process(false)
 
 
@@ -247,9 +248,10 @@ func EndBattle():
 	$HUD/Queue.Clear()
 	
 	midBattle = false
-	remove_child(globals.enemyParty)
+	#remove_child(globals.enemyParty)
 	globals.LoadUnitsFromBattle(uList)
 	globals.ReParentParty(globals.prevScene)
+	party.get_node("HUD").show()
 	globals.ChangeScene(globals.prevScene)
 	
 	xp = 0

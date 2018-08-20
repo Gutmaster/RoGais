@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AdvancePressed.png-ca8723a587d4d528e79dafd767856944.stex"
+path="res://.import/Stance.png-40aaae952c3f245eeb299f428b19a92c.stex"
 
 [deps]
 
-source_file="res://Combat/Assets/AdvancePressed.png"
-dest_files=[ "res://.import/AdvancePressed.png-ca8723a587d4d528e79dafd767856944.stex" ]
+source_file="res://Combat/HUD/CommandWindow/Stance.png"
+dest_files=[ "res://.import/Stance.png-40aaae952c3f245eeb299f428b19a92c.stex" ]
 
 [params]
 

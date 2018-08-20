@@ -12,7 +12,7 @@ var starting_gold = 10
 var food = 0
 var gold = 0
 
-onready var itemCatalogue = preload("res://Item/Item.tscn").instance()
+onready var itemCatalogue = preload("res://Item/ItemCatalogue.tscn").instance()
 onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
 onready var trinketCatalogue = preload("res://Trinket/Trinket.tscn").instance()
 
@@ -128,7 +128,7 @@ func UpdatePartyCards():
 		uList = $Units
 		count = uList.get_child_count()
 	else:
-		uList = get_tree().get_nodes_in_group("Party")
+		uList = Globals.combatScene.get_tree().get_nodes_in_group("Party")
 		count = uList.size()
 
 	for j in range(1,6):

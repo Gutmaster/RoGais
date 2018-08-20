@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 
 
 const critChance = 0.1
@@ -23,13 +23,14 @@ signal finished
 var phase = 0
 var keyFrame = 0
 
+var active = false
 var apCost
 var atkMod = 0
 var effectPower = 0
 var critMod = 1
 
 onready var combatNode = get_node("/root/Globals").combatScene
-onready var actionMenu = combatNode.get_node("HUD/CommandWindow/VBoxContainer/ActionButton")
+onready var actionMenu = combatNode.get_node("HUD/CommandWindow/Action")
 
 onready var uList = combatNode.get_node("UnitList")
 
@@ -82,7 +83,7 @@ func Init(usr, trgt, free = false):
 	phase = 1
 	user.cAction = self
 	set_process(true)
-	user.TempPlay(animation, true)
+	user.TempPlay(animation)
 
 
 func MeleeInit(usr, trgt, free):
@@ -93,7 +94,7 @@ func MeleeInit(usr, trgt, free):
 	phase = 1
 	user.cAction = self
 	set_process(true)
-	user.TempPlay(animation, true)
+	user.TempPlay(animation)
 	
 	usr.lastPos = usr.position
 	

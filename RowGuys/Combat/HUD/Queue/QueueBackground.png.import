@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AdvanceHover.png-f270f13507fa4acfd27c47914432b9ef.stex"
+path="res://.import/QueueBackground.png-9d4c805ad4f791738e2aeba9d57d2de9.stex"
 
 [deps]
 
-source_file="res://Combat/Assets/AdvanceHover.png"
-dest_files=[ "res://.import/AdvanceHover.png-f270f13507fa4acfd27c47914432b9ef.stex" ]
+source_file="res://Combat/HUD/Queue/QueueBackground.png"
+dest_files=[ "res://.import/QueueBackground.png-9d4c805ad4f791738e2aeba9d57d2de9.stex" ]
 
 [params]
 

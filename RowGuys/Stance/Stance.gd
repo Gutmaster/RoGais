@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 
 
 onready var combatNode = get_node("/root/Globals").combatScene
@@ -33,7 +33,7 @@ func PostAction(unit, target):
 func UseCheck():
 	if(combatNode.activeUnit.ap < apCost):
 		return false
-		
+	
 	for i in range(userRows.size()):
 		if(combatNode.activeUnit.row == userRows[i]):
 			return true

@@ -38,7 +38,9 @@ func _process(delta):
 func _on_Tween_tween_completed(object, key):
 	$Tween.set_active(false)
 	if(phase == 3):
-		get_parent().activeUnit.cAction.projectile = null
+		user.print_tree()
+		user.cAction.projectile = null
+		user.cAction.Cleanup()
 		queue_free()
 		get_parent().remove_child(self)
 	else:

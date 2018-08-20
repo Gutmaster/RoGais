@@ -10,9 +10,9 @@ onready var partyIcon = get_parent().get_node("PartyIcon")
 
 
 func _ready():
-	events.push_back(load("res://Event/Dungeon/Swamp/GoldChasm.tscn"))
+	#events.push_back(load("res://Event/Dungeon/Swamp/GoldChasm.tscn"))
 	events.push_back(load("res://Event/Dungeon/Swamp/Ambush.tscn"))
-	events.push_back(load("res://Event/Dungeon/Camp.tscn"))
+	#events.push_back(load("res://Event/Dungeon/Camp.tscn"))
 
 
 func _process(delta):
