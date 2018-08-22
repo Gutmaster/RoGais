@@ -16,10 +16,9 @@ func _ready():
 
 
 func close_event():
-	if(get_tree().get_current_scene() == get_node("/root/Globals").travelScene):
-		$"../../Player".state = $"../../Player".STATES.STOPPED
 	eventMenu.visible = false
 	Globals.eventScene = null
+	get_node("/root/Overworld").eventActive = false
 
 
 func _on_Container_visibility_changed():

@@ -1,23 +1,29 @@
 extends "res://Event/EventMenu.gd"
 
 
+onready var eParty = load("res://Party/EnemyParty.tscn")
+
+
 func _ready():
-	pass
+	eParty = eParty.instance()
+	add_child(eParty)
+	eParty.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
+	eParty.AddUnit(load("res://Unit/Froggodile/Froggodile.tscn"))
+	eParty.AddUnit(load("res://Unit/Ent/Ent.tscn"))
+	eParty.get_node("HUD").visible = false
 
 
 func _on_Fight_pressed():
-	if(eventMenu.visible):
-		close_event()
-		
-		get_node("/root/Globals").enemyParty = get_parent().party
-		get_node("/root/Globals").travelScene = get_tree().get_current_scene()
-		get_node("/root/Globals").ChangeScene(get_node("/root/Globals").combatScene)
-		
-		get_parent().call_deferred("queue_free")
+	close_event()
+	get_node("/root/Globals").enemyParty = eParty
+	get_node("/root/Globals").ChangeScene(get_node("/root/Globals").combatScene)
+
+
+func close_event():
+	get_node("/root/Overworld").eventActive = false
+	queue_free()
 
 
 func _on_Retreat_pressed():
 	if(eventMenu.visible):
-		print("run")
 		close_event()
-		get_parent().wait()

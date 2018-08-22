@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Overworld/Overworld.gd" type="Script" id=1]
 [ext_resource path="res://Dungeon/Assets/BG.jpg" type="Texture" id=2]
-[ext_resource path="res://Overworld/Node/Node.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Overworld/Node/Shop Node.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Overworld/Node/Shop Node.gd" type="Script" id=5]
-[ext_resource path="res://Dungeon/Assets/PartyIcon.jpg" type="Texture" id=6]
-[ext_resource path="res://Overworld/Party.gd" type="Script" id=7]
+[ext_resource path="res://Overworld/Node/Swamp/Start.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dungeon/Assets/PartyIcon.jpg" type="Texture" id=4]
+[ext_resource path="res://Overworld/Party.gd" type="Script" id=5]
 
 [node name="Overworld" type="Node2D"]
 
@@ -21,28 +19,15 @@ scale = Vector2( 1.1515, 1.1529 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Node1" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Start" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 294.656, 186.616 )
+position = Vector2( 1074.29, 1005.04 )
 
-[node name="Node2" parent="." index="2" instance=ExtResource( 3 )]
+[node name="PartyIcon" type="Sprite" parent="." index="2"]
 
-position = Vector2( 515.649, 820.127 )
-
-[node name="Node3" parent="." index="3" instance=ExtResource( 3 )]
-
-position = Vector2( 1586.23, 392.875 )
-
-[node name="Shop Node" parent="." index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 132.595, 486.183 )
+position = Vector2( 1093.36, 1296.92 )
+texture = ExtResource( 4 )
 script = ExtResource( 5 )
-
-[node name="PartyIcon" type="Sprite" parent="." index="5"]
-
-position = Vector2( -100, 300 )
-texture = ExtResource( 6 )
-script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tween" type="Tween" parent="PartyIcon" index="0"]

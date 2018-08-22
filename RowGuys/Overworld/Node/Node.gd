@@ -10,9 +10,7 @@ onready var partyIcon = get_parent().get_node("PartyIcon")
 
 
 func _ready():
-	#events.push_back(load("res://Event/Dungeon/Swamp/GoldChasm.tscn"))
-	events.push_back(load("res://Event/Dungeon/Swamp/Ambush.tscn"))
-	#events.push_back(load("res://Event/Dungeon/Camp.tscn"))
+	$NodeInfo.find_node("Type").text = "Node"
 
 
 func _process(delta):
@@ -34,5 +32,9 @@ func MoveParty():
 func HoverMod():
 	if(mouseHover):
 		self_modulate = Color(1,1,0.4,1)
+		if(partyIcon.currentNode != self):
+			$NodeInfo.Update(partyIcon.position, position)
+			$NodeInfo.show()
 	else:
 		self_modulate = Color(1,1,1,1)
+		$NodeInfo.hide()

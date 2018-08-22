@@ -12,6 +12,4 @@ func _on_Enter_pressed():
 
 func _on_Leave_pressed():
 	if(eventMenu.visible):
-		print("exit")
 		close_event()
-		get_parent().wait()

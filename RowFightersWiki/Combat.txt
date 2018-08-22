@@ -5,15 +5,14 @@ Creation-Date: 2017-12-05T19:59:06-08:00
 ====== Combat ======
 Created Tuesday 05 December 2017
 
-Combat is turn based and [[Combat:Rows|row]] based. One party chooses all of their actions, then the opposing party chooses all of theirs. Each unit has a set amount of AP to work with. They can use this to move forwards or backwards into a new row, choose combat actions, or take a [[Combat:Stances|stance]] and end their turn. Combat Party most likely consists of 4 units on the player's team, and any number of enemies.
+Combat is turn based and [[Combat:Rows|row]] based. Units act one at a time. Each unit has a set amount of AP to work with. They can use this to move forwards or backwards into a new row, choose combat actions, or take a [[Combat:Stances|stance]] and end their turn. Combat Party most likely consists of 4 units on the player's team, and any number of enemies.
 
 Combat plays out as follows.
 
 Battle is initiated in overmap or however the hell that'll work.
  1. Animations for battle start.
 2. Entry Effects are applied to units and the terrain.
-3. Turn Order is decided.
+3. Turn Order is decided by initiative
 4. Upkeep effects are applied(poison, etc.)
-5. Active team chooses actions for their party members in order, each unit's actions are all chosen before moving to the following unit. Units act in the order that you ordered them to act, there is no inititive or speed stat. When all actions have been chosen they must be confirmed, before this they may be changed.
-6. Active team's actions take place.
-7. Repeat steps 4-6, switching teams until the battle is over.
+5. Active Unit may choose to take an Action, Use an Item, and Take a Stance to end their turn.
+6. Repeat 4 and 5

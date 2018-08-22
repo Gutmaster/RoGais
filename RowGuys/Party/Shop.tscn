@@ -16,7 +16,7 @@
 
 [node name="Shop" type="CanvasLayer" index="0"]
 
-layer = 2
+layer = 5
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )

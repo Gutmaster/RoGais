@@ -23,7 +23,7 @@ func _process(delta):
 			set_process(false)
 
 
-func Move(node):
+func Move(node, free = false):
 	nextNode = node
 	var distance = position.distance_to(node.position)
 	travelTime = distance/200
@@ -34,7 +34,8 @@ func Move(node):
 	totalCycles = distance/100
 	cycle = 1
 	timeTraveled = 0
-	set_process(true)
+	if(!free):
+		set_process(true)
 	get_parent().moveFlag = true
 
 

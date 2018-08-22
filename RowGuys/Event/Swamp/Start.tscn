@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Event/EventMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Event/Swamp/Start.gd" type="Script" id=2]
+[ext_resource path="res://Event/Swamp/Visuals/Start.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/EventFont.tres" type="DynamicFont" id=4]
+
+[node name="EventMenu" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Text" parent="Container/EventMenu" index="2"]
+
+text = "You step into a vast bog with towering oak trees and boggy badtimes."
+
+[node name="Visual" parent="Container/EventMenu" index="3"]
+
+texture = ExtResource( 3 )
+
+[node name="Confirm" type="Button" parent="Container/EventMenu/ChoiceList" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 599.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Neat!"
+flat = false
+align = 1
+
+[connection signal="pressed" from="Container/EventMenu/ChoiceList/Confirm" to="." method="_on_Confirm_pressed"]
+
+

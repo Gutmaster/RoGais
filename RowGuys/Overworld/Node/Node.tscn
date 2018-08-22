@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Dungeon/Room/RoomIcon.jpg" type="Texture" id=1]
 [ext_resource path="res://Overworld/Node/Node.gd" type="Script" id=2]
 [ext_resource path="res://Overworld/Node/Area2D.gd" type="Script" id=3]
 [ext_resource path="res://Dungeon/Room/Light.png" type="Texture" id=4]
+[ext_resource path="res://Overworld/Node/NodeInfo.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -57,6 +58,8 @@ shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow", "Visibility" ]
 
 [node name="Event" parent="." index="2" instance_placeholder="res://Event/EventMenu.tscn"]
+
+[node name="NodeInfo" parent="." index="3" instance=ExtResource( 5 )]
 
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_Area2D_mouse_entered"]
 
