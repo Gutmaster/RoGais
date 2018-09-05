@@ -3,10 +3,16 @@ extends "Action.gd"
 
 func _ready():
 	userRows = [combatNode.ROW.front]
+	targetWholeRows = [combatNode.ROW.front]
 	animation = "FireCrackerFlip"
 	apCost = 4
 	atkMod = 4
 	tags.fire = true
+
+
+func SetInfo():
+	.SetInfo()
+	infoBox.find_node("MoveMF").set_texture(moveLeft)
 
 
 func UseCheck():

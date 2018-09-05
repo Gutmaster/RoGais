@@ -11,6 +11,11 @@ func _ready():
 	tags.melee = true
 
 
+func SetInfo():
+	.SetInfo()
+	infoBox.find_node("MoveMF").set_texture(moveRight)
+
+
 func Init(usr, trgt, free = false):
 	MeleeInit(usr, trgt, free)
 	user.rowRef = user.team.rpos.front

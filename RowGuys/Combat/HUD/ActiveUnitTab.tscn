@@ -8,7 +8,7 @@
 [ext_resource path="res://Party/QuickStats/barbg.tres" type="StyleBox" id=6]
 [ext_resource path="res://Party/QuickStats/apbar.tres" type="StyleBox" id=7]
 
-[node name="ActiveUnitTab" type="Container" index="0"]
+[node name="ActiveUnitTab" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0

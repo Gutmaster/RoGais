@@ -7,15 +7,13 @@
 [ext_resource path="res://Unit/Dank Druid/SkillTree/Nature's Blessing.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Unit/Dank Druid/SkillTree/Reclaim.tscn" type="PackedScene" id=6]
 
-[node name="Background" index="0" instance=ExtResource( 1 )]
+[node name="Background" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
 [node name="Ensnaring Vines" parent="." index="3" instance=ExtResource( 3 )]
 
-[node name="Minor Beast" parent="." index="4" groups=[
-"skillnodes",
-] instance=ExtResource( 4 )]
+[node name="Minor Beast" parent="." index="4" instance=ExtResource( 4 )]
 
 [node name="Nature's Blessing" parent="." index="5" instance=ExtResource( 5 )]
 

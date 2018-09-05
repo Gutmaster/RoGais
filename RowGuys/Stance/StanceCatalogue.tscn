@@ -1,19 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Stance/Stance.gd" type="Script" id=1]
-[ext_resource path="res://Stance/Icons/Wait.png" type="Texture" id=2]
-[ext_resource path="res://Action/Icons/Blockade.png" type="Texture" id=3]
-[ext_resource path="res://Stance/Wait.gd" type="Script" id=4]
-[ext_resource path="res://Stance/Icons/Defend.png" type="Texture" id=5]
-[ext_resource path="res://Stance/Defend.gd" type="Script" id=6]
-[ext_resource path="res://Stance/Icons/Protect.png" type="Texture" id=7]
-[ext_resource path="res://Stance/Protect.gd" type="Script" id=8]
-[ext_resource path="res://Stance/Icons/FireDance.png" type="Texture" id=9]
-[ext_resource path="res://Stance/Fire Dance.gd" type="Script" id=10]
-[ext_resource path="res://Stance/Icons/Retaliate.png" type="Texture" id=11]
-[ext_resource path="res://Stance/Retaliate.gd" type="Script" id=12]
+[ext_resource path="res://Stance/Stance.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Stance/Wait.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Stance/Defend.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Stance/Fire Dance.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Stance/Retaliate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Stance/Protect.tscn" type="PackedScene" id=6]
 
-[node name="StanceCatalogue" type="GridContainer" index="0"]
+[node name="StanceCatalogue" type="GridContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -30,147 +24,33 @@ size_flags_vertical = 0
 columns = 1
 _sections_unfolded = [ "Mouse" ]
 
-[node name="Stance" type="TextureButton" parent="." index="0"]
+[node name="Stance" parent="." index="0" instance=ExtResource( 1 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 50.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-script = ExtResource( 1 )
-_sections_unfolded = [ "Mouse" ]
+margin_bottom = 50.0
 
-[node name="Wait" type="TextureButton" parent="." index="1"]
+[node name="Wait" parent="." index="1" instance=ExtResource( 2 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 4.0
-margin_right = 50.0
-margin_bottom = 54.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 2 )
-texture_disabled = ExtResource( 3 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Mouse", "Textures" ]
+margin_top = 54.0
+margin_bottom = 104.0
 
-[node name="Defend" type="TextureButton" parent="." index="2"]
+[node name="Defend" parent="." index="2" instance=ExtResource( 3 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 58.0
-margin_right = 50.0
-margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 5 )
-texture_disabled = ExtResource( 3 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Mouse", "Textures" ]
+margin_top = 108.0
+margin_bottom = 158.0
 
-[node name="Protect" type="TextureButton" parent="." index="3"]
+[node name="Fire Dance" parent="." index="3" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 112.0
-margin_right = 50.0
-margin_bottom = 162.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-script = ExtResource( 8 )
-_sections_unfolded = [ "Mouse", "Textures" ]
+margin_top = 162.0
+margin_bottom = 212.0
 
-[node name="Fire Dance" type="TextureButton" parent="." index="4"]
+[node name="Retaliate" parent="." index="4" instance=ExtResource( 5 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 166.0
-margin_right = 50.0
-margin_bottom = 216.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 9 )
-script = ExtResource( 10 )
-_sections_unfolded = [ "Mouse", "Textures" ]
+margin_top = 216.0
+margin_bottom = 266.0
 
-[node name="Retaliate" type="TextureButton" parent="." index="5"]
+[node name="Protect" parent="." index="5" instance=ExtResource( 6 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 220.0
-margin_right = 50.0
-margin_bottom = 270.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 11 )
-script = ExtResource( 12 )
-_sections_unfolded = [ "Mouse", "Textures" ]
+margin_top = 270.0
+margin_bottom = 320.0
 
 

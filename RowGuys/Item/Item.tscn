@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Item/Item.gd" type="Script" id=1]
+[ext_resource path="res://InfoBox/ItemInfo.tscn" type="PackedScene" id=2]
+
+[node name="Item" type="TextureButton"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+script = ExtResource( 1 )
+_sections_unfolded = [ "Mouse" ]
+
+[node name="ItemInfo" parent="." index="0" instance=ExtResource( 2 )]
+
+[connection signal="mouse_entered" from="." to="." method="_on_Item_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_Item_mouse_exited"]
+
+

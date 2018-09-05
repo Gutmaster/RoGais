@@ -4,6 +4,7 @@ extends "Action.gd"
 func _ready():
 	animation = "BigSwing"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
+	targetWholeRows = [combatNode.ROW.front]
 	apCost = 5
 	set_process(true)
 

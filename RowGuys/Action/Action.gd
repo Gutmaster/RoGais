@@ -1,5 +1,6 @@
 extends TextureButton
 
+var mouseHover = false
 
 const critChance = 0.1
 
@@ -7,6 +8,9 @@ var level = 1
 
 var userRows = []
 var targetRows = []
+var targetWholeRows = []
+var targetFriendlyRows = []
+var targetWholeFriendlyRows = []
 
 var targetOptions = []
 var targets = []
@@ -34,9 +38,74 @@ onready var actionMenu = combatNode.get_node("HUD/CommandWindow/Action")
 
 onready var uList = combatNode.get_node("UnitList")
 
+onready var targetEnemyUnit = load("res://InfoBox/Assets/TargetableEnemyUnit.png")
+onready var targetEnemyRow = load("res://InfoBox/Assets/TargetableEnemyRow.png")
+onready var targetFriendlyUnit = load("res://InfoBox/Assets/TargetableFriendlyUnit.png")
+onready var targetFriendlyRow = load("res://InfoBox/Assets/TargetableFriendlyRow.png")
+onready var userRow = load("res://InfoBox/Assets/UsableRow.png")
+onready var moveLeft = load("res://InfoBox/Assets/MoveLeft.png")
+onready var moveRight = load("res://InfoBox/Assets/MoveRight.png")
+
+onready var infoBox = get_node("ActionInfo/Box")
+var delay = false
+onready var parent = get_parent()
+
 
 func _ready():
-	set_process(false)
+	delay = true
+
+
+func _process(delta):
+	if(delay):
+		SetInfo()
+		delay = false
+		
+	MouseHover()
+
+
+func SetInfo():
+	#infoBox.rect_global_position = rect_global_position + Vector2(rect_size.x, -rect_size.y)
+	infoBox.find_node("AP").get_node("Amount").text = str(apCost)
+	
+	for i in range(userRows.size()):
+		if(userRows[i] == combatNode.ROW.front):
+			find_node("LF").get_node("UR").set_texture(userRow)
+		if(userRows[i] == combatNode.ROW.middle):
+			find_node("LM").get_node("UR").set_texture(userRow)
+		if(userRows[i] == combatNode.ROW.back):
+			find_node("LB").get_node("UR").set_texture(userRow)
+	
+	for i in range(targetRows.size()):
+		if(targetRows[i] == combatNode.ROW.front):
+			find_node("RF").set_texture(targetEnemyUnit)
+		if(targetRows[i] == combatNode.ROW.middle):
+			find_node("RM").set_texture(targetEnemyUnit)
+		if(targetRows[i] == combatNode.ROW.back):
+			find_node("RB").set_texture(targetEnemyUnit)
+	
+	for i in range(targetWholeRows.size()):
+		if(targetWholeRows[i] == combatNode.ROW.front):
+			find_node("RF").set_texture(targetEnemyRow)
+		if(targetWholeRows[i] == combatNode.ROW.middle):
+			find_node("RM").set_texture(targetEnemyRow)
+		if(targetWholeRows[i] == combatNode.ROW.back):
+			find_node("RB").set_texture(targetEnemyRow)
+	
+	for i in range(targetFriendlyRows.size()):
+		if(targetFriendlyRows[i] == combatNode.ROW.front):
+			find_node("LF").set_texture(targetFriendlyUnit)
+		if(targetFriendlyRows[i] == combatNode.ROW.middle):
+			find_node("LM").set_texture(targetFriendlyUnit)
+		if(targetFriendlyRows[i] == combatNode.ROW.back):
+			find_node("LB").set_texture(targetFriendlyUnit)
+	
+	for i in range(targetWholeFriendlyRows.size()):
+		if(targetWholeFriendlyRows[i] == combatNode.ROW.front):
+			find_node("LF").set_texture(targetFriendlyRow)
+		if(targetWholeFriendlyRows[i] == combatNode.ROW.middle):
+			find_node("LM").set_texture(targetFriendlyRow)
+		if(targetWholeFriendlyRows[i] == combatNode.ROW.back):
+			find_node("LB").set_texture(targetFriendlyRow)
 
 
 func UseCheck():
@@ -184,3 +253,25 @@ func TargetedShift(unit, target, speed = 0.5, animB = "ShiftBack", animF = "Shif
 	
 	unit.get_node("Tween").interpolate_property(unit, "position", unit.position, unit.rowRef.position - Vector2(0, unit.height/3) + unit.rowRef.get_node("UnitLine").get_point_position(unit.partyIndex), speed, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	unit.get_node("Tween").start()
+
+
+func _on_Action_mouse_entered():
+	var cmdTest = get_parent().get_parent().get_parent().find_node("InfoAnchor")
+	if(cmdTest != null):
+		infoBox.rect_global_position = cmdTest.rect_global_position
+	else:
+		infoBox.rect_global_position = get_parent().get_parent().find_node("InfoAnchor").rect_global_position
+	mouseHover = true
+	find_node("Box").visible = true
+
+
+func _on_Action_mouse_exited():
+	mouseHover = false
+	find_node("Box").visible = false
+
+
+func MouseHover():
+	if(mouseHover):
+		self_modulate = Color(1,1,0.4,1)
+	else:
+		self_modulate = Color(1,1,1,1)

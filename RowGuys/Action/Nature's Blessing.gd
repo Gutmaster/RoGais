@@ -4,6 +4,8 @@ extends "Action.gd"
 func _ready():
 	animation = "GreenMagic"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
+	targetWholeRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
+	targetWholeFriendlyRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
 	apCost = 4
 	set_process(true)
 	keyFrame = 3

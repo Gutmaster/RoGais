@@ -2,7 +2,7 @@ extends "res://Item/Item.gd"
 
 
 func _ready():
-	pass
+	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
 
 
 func Init():

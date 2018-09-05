@@ -15,6 +15,7 @@ func RangedUpgrade():
 	animation = "GreenMagic"
 	tags.melee = false
 	level = 2
+	SetInfo()
 
 
 func _process(delta):

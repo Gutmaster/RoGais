@@ -33,7 +33,8 @@ func LoadActions():
 	DumpActions()
 	var unit = combatNode.activeUnit
 	for i in range(unit.actionList.size()):
-		var action = unit.actionList[i].duplicate()
+		var action = unit.actionList[i]
+		action.parent.remove_child(action)
 		$List.add_child(action)
 		action.connect("pressed", self, "ActionPressed", [action])
 		if(!action.UseCheck()):
@@ -44,7 +45,9 @@ func LoadActions():
 
 func DumpActions():
 	while($List.get_child_count()):
+		var action = $List.get_child(0)
 		$List.remove_child($List.get_child(0))
+		action.parent.add_child(action)
 
 
 func TargetCheck(target):
@@ -137,6 +140,8 @@ func ActionPressed(action):
 	else:
 		NTActionSelected(action)
 	
+	action.mouseHover = false
+	action.find_node("Box").visible = false
 	disabled = true
 	_on_Action_toggled(false)
 

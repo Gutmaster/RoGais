@@ -4,6 +4,7 @@ extends "Action.gd"
 func _ready():
 	animation = "TongueSnatch"
 	userRows = [combatNode.ROW.back, combatNode.ROW.middle, combatNode.ROW.front]
+	targetRows = [combatNode.ROW.back, combatNode.ROW.middle]
 	apCost = 3
 	atkMod = -1
 	keyFrame = 1

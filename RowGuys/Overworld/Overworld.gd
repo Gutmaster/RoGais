@@ -25,21 +25,17 @@ func _ready():
 
 func Init():
 	randomize()
-	var nodeCount = randi()%10 + 5
+	var nodeCount = randi()%5 + 10
 	
 	for i in range(nodeCount):
-		var a = randi()%3
-		print(a)
-		var newNode = nodeTypes[a].instance()
+		var newNode = nodeTypes[randi()%3].instance()
 		add_child(newNode)
-		print(newNode.find_node("Type").text)
 		var loopo = true
 		while(loopo):
 			loopo = false
 			newNode.position = Vector2(randi()%int(get_viewport_rect().size.x), randi()%int(get_viewport_rect().size.y - 100))
 			for j in range(nodeArray.size()):
 				if(nodeArray[j].position.distance_to(newNode.position) < 50):
-					print(newNode.position)
 					loopo = true
 		nodeArray.push_back(newNode)
 		newNode.get_node("NodeInfo").AdjustPosition()

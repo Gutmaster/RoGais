@@ -118,7 +118,8 @@ func PartyPause():
 	get_tree().paused = !(get_tree().paused)
 	$PartyMenu.visible = !($PartyMenu.visible)
 	$HUD.visible = !($HUD.visible)
-
+	if(get_tree().paused):
+		$HUD.visible = false
 
 func UpdatePartyCards():
 	var uList

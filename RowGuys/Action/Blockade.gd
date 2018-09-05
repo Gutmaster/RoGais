@@ -4,6 +4,8 @@ extends "Action.gd"
 func _ready():
 	animation = "Blockade"
 	userRows = [combatNode.ROW.front, combatNode.ROW.middle, combatNode.ROW.back]
+	targetWholeRows = [combatNode.ROW.back]
+	
 	apCost = 5
 	set_process(true)
 

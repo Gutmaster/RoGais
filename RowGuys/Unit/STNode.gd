@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 
 onready var unit = get_parent().unit
@@ -12,6 +12,7 @@ var maxLvl = 3
 
 
 func _ready():
+	get_child(0).connect("pressed", self, "ActivateCheck")
 	self_modulate = color
 
 
@@ -22,7 +23,11 @@ func _process(delta):
 
 func _on_STNode_focus_entered():
 	release_focus()
-	if(unit.skillPoints):
+	ActivateCheck()
+
+
+func ActivateCheck():
+	if(unit.skillPoints && !locked):
 		Activate()
 		unit.skillPoints -= 1
 

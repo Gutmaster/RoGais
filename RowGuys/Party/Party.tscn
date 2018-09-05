@@ -48,7 +48,7 @@ use_filter = false
 font_data = SubResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Party" type="CanvasLayer"]
+[node name="Party" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 10

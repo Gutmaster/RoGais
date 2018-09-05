@@ -13,7 +13,8 @@ func LoadStances():
 	DumpStances()
 	var unit = combatNode.activeUnit
 	for i in range(unit.stanceList.size()):
-		var stance = unit.stanceList[i].duplicate()
+		var stance = unit.stanceList[i]
+		stance.parent.remove_child(stance)
 		$List.add_child(stance)
 		stance.connect("pressed", self, "StancePressed", [stance])
 		if(!stance.UseCheck()):
@@ -24,7 +25,9 @@ func LoadStances():
 
 func DumpStances():
 	while($List.get_child_count()):
-		$List.remove_child($List.get_child(0))
+		var stance = $List.get_child(0)
+		$List.remove_child(stance)
+		stance.parent.add_child(stance)
 
 
 func StancePressed(stance):
