@@ -1,5 +1,6 @@
 extends TextureRect
 
+var mouseHover = false
 
 var unit
 onready var combatNode = get_node("/root/Globals").combatScene
@@ -12,10 +13,15 @@ func _ready():
 
 func _process(delta):
 	if(unit != null):
-		if(combatNode.hoverUnit == unit):
-			self_modulate = Color(1,1,0.4,1)
-		else:
-			self_modulate = Color(1,1,1,1)
+		if(mouseHover):
+			if(!unit.infoCard.visible):
+				var anchor = combatNode.get_node("HUD/UnitInfoAnchor")
+				if(anchor.get_child(0)):
+					combatNode.RemoveInfo()
+				anchor.add_child(unit.infoCard)
+				anchor.rect_global_position = get_global_rect().position + Vector2(75, 0)
+				unit.infoCard.SetValues()
+				unit.infoCard.visible = true
 
 
 func Migrate(dest):
@@ -37,8 +43,8 @@ func Appear():
 
 
 func _on_QueueSlot_mouse_entered():
-	combatNode.hoverUnit = unit
+	mouseHover = true
 
 
 func _on_QueueSlot_mouse_exited():
-	combatNode.hoverUnit = null
+	mouseHover = false

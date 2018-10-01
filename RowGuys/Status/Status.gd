@@ -7,7 +7,7 @@ marked}
 
 var type = null
 var power = 0
-var pwrLabel = null
+onready var pwrLabel = get_node("Power")
 var hunter = null
 
 func _ready():

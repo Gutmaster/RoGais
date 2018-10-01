@@ -98,11 +98,12 @@ func _process(delta):
 	AIWait = false
 	for i in range(uList.get_child_count()):
 		if(uList.get_child(i).AIWait):
+			print(uList.get_child(i).get_name())
 			AIWait = true
 			break
 	if(activeUnit.AI && !AIWait):
 		if(!activeUnit.shifting && activeUnit.cAction == null && !activeUnit.is_in_group("Approach")):
-			activeUnit.AICmd()
+			activeUnit.AICommand()
 	
 	
 	var battlewin = true
@@ -115,7 +116,7 @@ func _process(delta):
 	if(battlewin):
 		GoToRewards()
 	elif(battleloss):
-		get_node("HUD/Loss").show()
+		get_node("EndScreen/Loss").show()
 		set_process(false)
 
 
@@ -186,6 +187,12 @@ func _on_ApproachTimer_timeout():
 	for i in range($Row.get_child_count()):
 		print($Row.get_child(i).terrain.get_name())
 	$Background.scrollDir = null
+
+
+func RemoveInfo():
+	var anchor = get_node("HUD/UnitInfoAnchor")
+	anchor.get_child(0).visible = false
+	anchor.remove_child(anchor.get_child(0))
 
 
 func AddUnit(var unit, var team, var AI = false, var row = unit.defaultRow):

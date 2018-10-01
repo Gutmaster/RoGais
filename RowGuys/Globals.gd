@@ -22,6 +22,15 @@ var currentScene
 var prevScene
 var prevSceneST
 
+
+var black = Color(0, 0, 0)
+var white = Color(1, 1, 1)
+var red = Color(1, 0 , 0)
+var green = Color(0, 1, 0)
+var blue = Color(0, 0, 1)
+var yellow = Color(1, 1, 0)
+
+
 onready var root = get_tree().get_root()
 
 

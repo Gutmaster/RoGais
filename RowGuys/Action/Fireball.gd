@@ -9,6 +9,7 @@ func _ready():
 	tags.spec = true
 	tags.fire = true
 	keyFrame = 3
+	descript[0] = "1. Lobs a fireball at another unit."
 
 
 func _process(delta):

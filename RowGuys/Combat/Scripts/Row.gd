@@ -1,9 +1,12 @@
-extends Node2D
+extends Sprite
 
 enum ROW{
 front,
 middle,
 back}
+
+var width
+var height
 
 var row = null
 
@@ -18,6 +21,8 @@ onready var terrain = combatNode.get_node("TerrainCatalogue/Default").duplicate(
 
 
 func _ready():
+	width = texture.get_width()
+	height = texture.get_height()
 	if(get_name() == "LB" || get_name() == "LM" || get_name() == "LF"):
 		left = true
 	if(get_name() == "LB" || get_name() == "RB"):
@@ -27,7 +32,6 @@ func _ready():
 	if(get_name() == "LF" || get_name() == "RF"):
 		row = ROW.front
 	add_child(terrain)
-	pass
 
 
 func _process(delta):

@@ -16,12 +16,6 @@ func Init():
 		$ShiftRight.disabled = true
 
 
-"""func _on_CommandWindow_visibility_changed():
-	if(visible):
-		$Action.LoadActions()
-		$Stance.LoadStances()"""
-
-
 func SetOoBShift():
 	if(unit.rowRef.terrain.tags.trapping):
 		$ShiftLeft.disabled = true

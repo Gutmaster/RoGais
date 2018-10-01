@@ -29,11 +29,11 @@ func Execute():
 	while(loopo):
 		loopo = false
 		for i in range(uList.get_child_count()):
-			if(uList.get_child(i).rowRef == target && uList.get_child(i).checkFlag == false):
+			var unit = uList.get_child(i)
+			if(unit.rowRef == target && unit.checkFlag == false):
 				loopo = true
-				uList.get_child(i).checkFlag = true
-				uList.get_child(i).TempPlay("Stagger")
-				uList.get_child(i).UpdateHP(-(user.aStats.Strength - uList.get_child(i).aStats.Endurance))
+				unit.checkFlag = true
+				CombatMath(user, unit)
 				break
 	
 	for i in range(uList.get_child_count()):

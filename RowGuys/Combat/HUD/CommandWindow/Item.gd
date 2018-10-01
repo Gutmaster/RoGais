@@ -1,13 +1,22 @@
 extends TextureButton
 
+var mouseHover = false
 
 onready var combatNode = get_node("/root/Globals").combatScene
 onready var action = get_parent().get_node("Action")
 onready var stance = get_parent().get_node("Stance")
+onready var globals = get_node("/root/Globals")
 
 
 func _ready():
 	pass
+
+
+func _process(delta):
+	if(mouseHover):
+		self_modulate = globals.yellow
+	else:
+		self_modulate = globals.white
 
 
 func LoadItems():
@@ -58,3 +67,11 @@ func _on_Item_toggled(button_pressed):
 		action._on_Action_toggled(false)
 	else:
 		$List.hide()
+
+
+func _on_Item_mouse_entered():
+	mouseHover = true
+
+
+func _on_Item_mouse_exited():
+	mouseHover = false

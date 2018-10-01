@@ -38,7 +38,7 @@ func _on_Slot_focus_entered():
 			Globals.shop.hasShopItem = false
 	elif(mouseItem == null && item):
 		party.itemHolder.item = item
-		print(party.itemHolder.item.description)
+		print(party.itemHolder.item.descript[0])
 		item = null
 		party.itemHolder.itemCatcher = self
 	elif(mouseItem != null && item):

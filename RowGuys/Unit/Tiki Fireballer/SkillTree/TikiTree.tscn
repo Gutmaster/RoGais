@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Unit/SkillTreeBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/TikiTree.gd" type="Script" id=2]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/Fireball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/FireDance.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/Rift.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/PalmStrike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Unit/Tiki Fireballer/SkillTree/Fasting.tscn" type="PackedScene" id=7]
+
+[node name="Background" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Pause", "Transform" ]
+
+[node name="Fireball" parent="." index="4" groups=[
+"skillnodes",
+] instance=ExtResource( 3 )]
+
+margin_left = 918.0
+margin_top = 935.0
+margin_right = 918.0
+margin_bottom = 935.0
+
+[node name="Fire Dance" parent="." index="5" groups=[
+"skillnodes",
+] instance=ExtResource( 4 )]
+
+margin_left = 919.0
+margin_top = 801.0
+margin_right = 919.0
+margin_bottom = 801.0
+
+[node name="Rift" parent="." index="6" groups=[
+"skillnodes",
+] instance=ExtResource( 5 )]
+
+margin_left = 1088.0
+margin_top = 535.0
+margin_right = 1088.0
+margin_bottom = 535.0
+
+[node name="Palm Strike" parent="." index="7" groups=[
+"skillnodes",
+] instance=ExtResource( 6 )]
+
+margin_left = 777.0
+margin_top = 661.0
+margin_right = 777.0
+margin_bottom = 661.0
+
+[node name="Fasting" parent="." index="8" groups=[
+"skillnodes",
+] instance=ExtResource( 7 )]
+
+margin_left = 1024.0
+margin_top = 661.0
+margin_right = 1024.0
+margin_bottom = 661.0
+
+[connection signal="mouse_entered" from="Fasting" to="." method="_on_STNode_mouse_entered"]
+
+[connection signal="mouse_exited" from="Fasting" to="." method="_on_STNode_mouse_exited"]
+
+

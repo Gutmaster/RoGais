@@ -6,6 +6,7 @@ var UNLOCK = false
 
 func _ready():
 	$"Retaliate".connections.push_back($"Feral Fling")
+	$"Retaliate".connections.push_back($"Jeer")
 	$"Feral Fling".connections.push_back($"Frenzy")
 	$"Frenzy".connections.push_back($"Bloodsong")
 	

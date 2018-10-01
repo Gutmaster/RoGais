@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Item/Item.gd" type="Script" id=1]
-[ext_resource path="res://InfoBox/ItemInfo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://InfoBox/ActionInfo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://InfoBox/Description.tscn" type="PackedScene" id=3]
 
 [node name="Item" type="TextureButton"]
 
@@ -24,7 +25,9 @@ group = null
 script = ExtResource( 1 )
 _sections_unfolded = [ "Mouse" ]
 
-[node name="ItemInfo" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Info" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Description" parent="." index="1" instance=ExtResource( 3 )]
 
 [connection signal="mouse_entered" from="." to="." method="_on_Item_mouse_entered"]
 

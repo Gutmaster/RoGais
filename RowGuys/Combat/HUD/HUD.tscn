@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Combat/HUD/Queue/Queue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Combat/HUD/ActiveUnitTab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fonts/CommandFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Combat/HUD/FrameCount.gd" type="Script" id=4]
 [ext_resource path="res://Combat/HUD/CommandWindow/CommandWindow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Combat/HUD/Anchor.gd" type="Script" id=6]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -51,5 +52,24 @@ margin_left = 229.0
 margin_top = 887.0
 margin_right = 604.0
 margin_bottom = 1079.0
+
+[node name="UnitInfoAnchor" type="Control" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1658.0
+margin_top = 626.0
+margin_right = 1698.0
+margin_bottom = 666.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Mouse" ]
 
 

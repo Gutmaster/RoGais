@@ -5,6 +5,8 @@ func _ready():
 	animation = "Retaliate"
 	userRows = [combatNode.ROW.front]
 	apCost = 4
+	descript[0] = "1. Strike back at any unit that deals melee damage to this unit."
+	descript[1] = "2. Remain in this stance after retaliating."
 
 
 func PostAction(unit, target):

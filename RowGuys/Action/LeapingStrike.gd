@@ -9,6 +9,7 @@ func _ready():
 	atkMod = 1
 	keyFrame = 2
 	tags.melee = true
+	descript[0] = "1. Advance from the middle and strike an enemy."
 
 
 func SetInfo():

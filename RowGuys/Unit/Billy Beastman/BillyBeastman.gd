@@ -13,9 +13,9 @@ func _ready():
 func Init():
 	idName = "Billy Beastman"
 	
-	bStats.Vitality = 6
+	bStats.Vitality = 20
 	bStats.Stamina = 5
-	bStats.Endurance = 3
+	bStats.Endurance = 1
 	bStats.Strength = 4
 	bStats.Speed = 5
 	bStats.Willpower = 3
@@ -23,18 +23,14 @@ func Init():
 	SharedInit()
 	defaultRow = ROW.front
 	
-	actionList.push_back(get_node("ActionCatalogue/Stunning Smash"))
-	stanceList.push_back(get_node("StanceCatalogue/Protect"))
-
 	skillTree = load("res://Unit/Billy Beastman/SkillTree/BeastmanTree.tscn").instance()
 	skillTree.unit = self
 	
 	SFX.hit = load("res://SFX/Oof.wav")
 
 
-func CombatDamage(source, dmg):
-	.CombatDamage(source, dmg)
+func SpecialCheck(source):
 	if(frenzy):
 		source.Mark(self)
-	if(bloodsong && dmg > 0):
+	if(bloodsong):
 		initiative += aStats.Willpower*3

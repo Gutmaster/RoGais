@@ -24,5 +24,8 @@ func _process(delta):
 
 func Execute():
 	user.SFXPlay(user.SFX.poisonbite)
-	target.Poison(effectPower)
 	CombatMath(user, target)
+
+
+func OnHit():
+	target.Poison(effectPower)

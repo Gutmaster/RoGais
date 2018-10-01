@@ -6,6 +6,7 @@ func _ready():
 
 
 func Apply(level):
+	.Apply(level)
 	var unit = get_parent().unit
 	if(level == 1):
 		unit.bloodsong = true

@@ -1,10 +1,16 @@
 extends AnimatedSprite
 
+var width
+var height
+
 var tags = {"exists": false, "blocking": false, "target": false, "trapping": false}
 var stats = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "Endurance" : 0, "Willpower" : 0, "Speed" : 0}
 
 var maxhp = 10
 var hp = 10
+
+var user
+var action
 
 var gClock = 0
 var level = 0
@@ -13,7 +19,7 @@ func _ready():
 	position = Vector2(0, 0)
 
 
-func Init(left):
+func Init(left, usr = null, actn = null):
 	if(!left):
 		set_flip_h(true)
 	animation = "Start"
@@ -27,3 +33,7 @@ func Upkeep():
 		return false
 	
 	return true
+
+
+func OccupantUpkeep(occupant):
+	pass

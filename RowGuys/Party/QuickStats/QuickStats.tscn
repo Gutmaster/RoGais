@@ -13,7 +13,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 99.9803, 42.0003 )
 
-[node name="QuickStats" type="PanelContainer" index="0"]
+[node name="QuickStats" type="PanelContainer"]
 
 light_mask = 2
 anchor_left = 0.0
@@ -94,7 +94,6 @@ _sections_unfolded = [ "Mouse", "Visibility", "custom_fonts" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" index="1"]
 
-editor/display_folded = true
 light_mask = 2
 anchor_left = 0.0
 anchor_top = 0.0

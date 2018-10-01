@@ -34,6 +34,6 @@ func Execute():
 	var tList = target.FindOccupants()
 
 	for i in range(tList.size()):
-		tList[i].UpdateHP(-(user.aStats.Strength - tList[i].aStats.Endurance))
-		if(tList[i].visible):
-			tList[i].Shift(tList[i].PickRandShiftDir(), 0.4, "Toss", "Toss")
+		CombatMath(user, tList[i], false)
+		if(tList[i].alive):
+			tList[i].Shift(tList[i].PickRandShiftDir(), 0.4, "Stagger", "Stagger")

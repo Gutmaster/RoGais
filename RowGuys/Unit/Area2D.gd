@@ -28,3 +28,6 @@ func _on_Area2D_mouse_entered():
 func _on_Area2D_mouse_exited():
 	#if(get_parent().combatNode.hoverUnit == self):
 		get_parent().combatNode.hoverUnit = null
+		var anchor = get_parent().combatNode.get_node("HUD/UnitInfoAnchor")
+		if(anchor.get_child(0)):
+			get_parent().combatNode.RemoveInfo()

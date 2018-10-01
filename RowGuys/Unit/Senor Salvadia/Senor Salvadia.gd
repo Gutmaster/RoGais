@@ -20,10 +20,6 @@ func Init():
 	skillTree = load("res://Unit/Senor Salvadia/SkillTree/SenorTree.tscn").instance()
 	skillTree.unit = self
 	
-	actionList.push_back(get_node("ActionCatalogue/Tongue Snatch"))
-	actionList.push_back(get_node("ActionCatalogue/Leaping Strike"))
-	#actionList.push_back(get_node("ActionCatalogue/Firecracker Flip"))
-	
 	SFX.hit = load("res://SFX/Oof.wav")
-	var SFXPatch = {"tongue": load("res://SFX/Tongue.wav"), "fbhit": load("res://SFX/FireballHit.wav")}
+	var SFXPatch = {"lasso": load("res://SFX/Tongue.wav"), "fbhit": load("res://SFX/FireballHit.wav")}
 	merge_dir(SFX, SFXPatch)

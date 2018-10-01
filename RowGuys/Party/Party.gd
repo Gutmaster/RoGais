@@ -132,10 +132,10 @@ func UpdatePartyCards():
 		uList = Globals.combatScene.get_tree().get_nodes_in_group("Party")
 		count = uList.size()
 
-	for j in range(1,6):
+	"""for j in range(1,6):
 		var panelString = "Panel" + str(j)
 		if(find_node(panelString).get_child_count()):
-			find_node(panelString).remove_child(find_node(panelString).get_child(0))
+			find_node(panelString).remove_child(find_node(panelString).get_child(0))"""
 	
 	for i in range(count):
 		var unit
@@ -165,7 +165,7 @@ func UpdatePartyCards():
 		unit.partyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
 		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
 		"""
-		find_node(panelString).add_child(unit.partyCard)
+		#find_node(panelString).add_child(unit.partyCard)
 
 
 

@@ -1,6 +1,6 @@
 extends TextureButton
 
-
+var mouseHover = false
 var targetMode
 var target
 onready var targetingCursor = load("res://Combat/HUD/CommandWindow/TargetingCursor.png")
@@ -11,6 +11,8 @@ var disI = false
 onready var combatNode = get_node("/root/Globals").combatScene
 onready var item = get_parent().get_node("Item")
 onready var stance = get_parent().get_node("Stance")
+onready var globals = get_node("/root/Globals")
+
 
 func _ready():
 	pass
@@ -21,6 +23,10 @@ func _process(delta):
 		if(target != null):
 			TargetCheck(target)
 			target = null
+	if(mouseHover):
+		self_modulate = globals.yellow
+	else:
+		self_modulate = globals.white
 
 
 func _unhandled_input(event):
@@ -91,7 +97,7 @@ func TargetModeOn():
 	targetMode = true
 	var user = combatNode.activeUnit
 	for i in range(user.cAction.targetOptions.size()):
-		user.cAction.targetOptions[i].color = Color(0.6,0.1,0.1,1)
+		user.cAction.targetOptions[i].color = globals.red
 
 
 func TargetModeOff():
@@ -141,7 +147,7 @@ func ActionPressed(action):
 		NTActionSelected(action)
 	
 	action.mouseHover = false
-	action.find_node("Box").visible = false
+	action.infoBox.visible = false
 	disabled = true
 	_on_Action_toggled(false)
 
@@ -155,3 +161,11 @@ func _on_Action_toggled(button_pressed):
 		item._on_Item_toggled(false)
 	else:
 		$List.hide()
+
+
+func _on_Action_mouse_entered():
+	mouseHover = true
+
+
+func _on_Action_mouse_exited():
+	mouseHover = false

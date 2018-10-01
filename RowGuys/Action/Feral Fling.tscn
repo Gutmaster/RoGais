@@ -4,7 +4,7 @@
 [ext_resource path="res://Action/Icons/FeralFling.png" type="Texture" id=2]
 [ext_resource path="res://Action/Feral Fling.gd" type="Script" id=3]
 
-[node name="Feral Fling" index="0" instance=ExtResource( 1 )]
+[node name="Feral Fling" instance=ExtResource( 1 )]
 
 texture_normal = ExtResource( 2 )
 script = ExtResource( 3 )

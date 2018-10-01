@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Passive/Passive.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Passive/Assets/Fasting.png" type="Texture" id=2]
+[ext_resource path="res://Passive/Fasting.gd" type="Script" id=3]
+
+[node name="Fasting" instance=ExtResource( 1 )]
+
+margin_right = 50.0
+margin_bottom = 52.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Textures" ]
+
+

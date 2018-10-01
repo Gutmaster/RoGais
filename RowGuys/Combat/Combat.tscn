@@ -454,10 +454,6 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="tree_entered" from="." to="." method="_on_Combat_tree_entered"]
-
-[connection signal="tree_exited" from="." to="." method="_on_Combat_tree_exited"]
-
 [connection signal="visibility_changed" from="EndScreen/Loss" to="EndScreen/Loss" method="_on_Loss_visibility_changed"]
 
 [connection signal="mouse_entered" from="Row/LB/Area2D" to="Row/LB/Area2D" method="_on_Area2D_mouse_entered"]

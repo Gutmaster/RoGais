@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Terrain/TerrainCatalogue.gd" type="Script" id=1]
 [ext_resource path="res://Terrain/Default.gd" type="Script" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://Fonts/QuickStatsFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://SFX/Vines.wav" type="AudioStream" id=14]
 [ext_resource path="res://Terrain/Nature's Blessing/Nature's Blessing.gd" type="Script" id=15]
+[ext_resource path="res://Terrain/Magma Rift/Loop.png" type="Texture" id=16]
+[ext_resource path="res://Terrain/Magma Rift/Start1.png" type="Texture" id=17]
+[ext_resource path="res://Terrain/Magma Rift/Start2.png" type="Texture" id=18]
+[ext_resource path="res://Terrain/Magma Rift/Magma Rift.gd" type="Script" id=19]
+[ext_resource path="res://SFX/FireballHit.wav" type="AudioStream" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -44,7 +49,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TerrainCatalogue" type="AnimatedSprite" index="0"]
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Loop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "Start",
+"speed": 5.0
+} ]
+
+[node name="TerrainCatalogue" type="AnimatedSprite"]
 
 animation = "default"
 playing = true
@@ -215,10 +234,53 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
+[node name="Magma Rift" type="AnimatedSprite" parent="." index="4"]
+
+position = Vector2( -20, 600 )
+frames = SubResource( 3 )
+animation = "Start"
+script = ExtResource( 19 )
+
+[node name="LifeLabel" type="Label" parent="Magma Rift" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = 250.0
+margin_right = -10.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.550781, 0.10112, 0.10112, 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Magma Rift" index="1"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [connection signal="animation_finished" from="Earth Barrier" to="Earth Barrier" method="_on_Earth_Barrier_animation_finished"]
 
 [connection signal="animation_finished" from="Ensnaring Vines" to="Ensnaring Vines" method="_on_Ensnaring_Vines_animation_finished"]
 
 [connection signal="animation_finished" from="Nature's Blessing" to="Nature's Blessing" method="_on_Natures_Blessing_animation_finished"]
+
+[connection signal="animation_finished" from="Magma Rift" to="Magma Rift" method="_on_Magma_Rift_animation_finished"]
 
 

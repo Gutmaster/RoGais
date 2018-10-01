@@ -42,3 +42,11 @@ func Regress():
 
 func _on_Background_tree_entered():
 	request_ready()
+
+
+func HideUnusedDescript():
+	var skillnodes = get_tree().get_nodes_in_group("skillnodes")
+	for i in skillnodes:
+		for j in range(i.maxLvl):
+			if(i.action.descriptArray[j] == ""):
+				i.action.descriptBox.get_node("Level" + str(j + 1)).hide()

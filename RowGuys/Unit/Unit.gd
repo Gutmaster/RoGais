@@ -4,6 +4,9 @@ extends AnimatedSprite
 var QSScene = load("res://Party/QuickStats/QuickStats.tscn")
 var quickStats
 
+var infoCardScene = load("res://InfoBox/UnitInfo.tscn")
+var infoCard
+
 var PCScene = load("res://Party/PartyCard.tscn")
 var partyCard
 
@@ -25,6 +28,8 @@ normal,
 poison,
 marked}
 
+var alive = true
+
 var animFlag = null
 var animQueue = []
 var AIWait = false
@@ -42,6 +47,7 @@ var portrait = null
 var AI = false
 var AIAction = false
 var AIShift = false
+var taunter = null
 
 var team = null
 var teamLeft = false
@@ -131,12 +137,19 @@ func SharedInit():
 	SFX.melee = load("res://SFX/Whack.wav")
 	SFX.shift = load("res://SFX/Swish.wav")
 	SFX.footsteps = load("res://SFX/TeamFootsteps.wav")
+	
+	InfoCardInit()
 
 
 func CharCardInit():
 	quickStats = QSScene.instance()
 	quickStats.find_node("Name").set_text(get_name())
 	quickStats.unit = self
+
+
+func InfoCardInit():
+	infoCard = infoCardScene.instance()
+	infoCard.Init(self)
 
 
 func PartyCardInit():
@@ -174,6 +187,7 @@ func _process(delta):
 
 func Upkeep():
 	TerrainUpkeep()
+	rowRef.terrain.OccupantUpkeep(self)
 	StatusCheck()
 	StanceBonus()
 	
@@ -283,18 +297,33 @@ func PickRandShiftDir():
 		return false
 
 
-func CombatDamage(source, dmg):
+func CombatDamage(source, dmg, action, anim = true):
+	var interrupt = stance.Interrupt(self, source)
+	
+	if(interrupt == stance.INTERRUPT.evade):
+		TempPlay("FireCrackerFlip")
+		SFXPlay(SFX.shift)
+		return
+	else:
+		SpecialCheck(source)
+		action.OnHit()
+	
 	for i in range(status.size()):
 		if(status[i].type == STATUS.marked && status[i].hunter == source):
 			dmg *= 1.5
 			print("Marked Bonus", str(dmg))
 	
 	if(dmg > 0):
-		TempPlay("Stagger")
+		if(anim):
+			TempPlay("Stagger")
 		SFXPlay(SFX.hit)
 		UpdateHP(-dmg)
 	
 	stance.PostAction(self, source)
+
+
+func SpecialCheck(source):
+	pass
 
 
 func UpdateHP(var dif):
@@ -312,6 +341,7 @@ func UpdateHP(var dif):
 
 
 func Die():
+	alive = false
 	ReParent(combatNode.get_node("Deadzone"))
 	combatNode.SetUnitPos()
 	set_visible(false)
@@ -473,9 +503,8 @@ func Poison(var power):
 		effect.power += power - aStats.Endurance
 		print(effect.power)
 		
-		quickStats.find_node("Status").add_child(effect)
-		
-		quickStats.print_tree()
+		#quickStats.find_node("Status").add_child(effect)
+		infoCard.find_node("Status").add_child(effect)
 
 
 func Mark(hunter):
@@ -486,14 +515,13 @@ func Mark(hunter):
 	if(hunter.mark != null):
 		var i = hunter.mark.SeekStatusPos(temp)
 		var tempy = hunter.mark.SeekStatus(temp)
-		hunter.mark.quickStats.find_node("Status").remove_child(tempy)
+		hunter.mark.infoCard.find_node("Status").remove_child(tempy)
 		hunter.mark.status.remove(i)
 	
 	
 	hunter.mark = self
 	status.push_back(temp)
-	quickStats.find_node("Status").add_child(temp)
-	quickStats.print_tree()
+	infoCard.find_node("Status").add_child(temp)
 
 
 func ReParent(destination):
@@ -509,16 +537,23 @@ func Clone():
 
 func HoverMod():
 	if(combatNode.hoverUnit == self):
-		self_modulate = Color(1,1,0.4,1)
-		#quickStats.self_modulate = Color(1,1,0.4,1)
+		self_modulate = globals.yellow
+		if(!infoCard.visible):
+			var anchor = combatNode.get_node("HUD/UnitInfoAnchor")
+			if(anchor.get_child(0)):
+				combatNode.RemoveInfo()
+			anchor.add_child(infoCard)
+			anchor.rect_global_position = position + Vector2(width/2 - 10, -height/2)
+			infoCard.SetValues()
+			infoCard.visible = true
 	else:
 		self_modulate = color
-		#quickStats.self_modulate = Color(1,1,1,1)
 
 
 func _on_Tween_tween_completed(object, key):
 	combatNode.get_node("HUD/CommandWindow/Action").LoadActions()
 	shifting = false
+	rowRef.terrain.OccupantUpkeep(self)
 	$Tween.set_active(false)
 
 
@@ -693,6 +728,27 @@ static func merge_dir(target, patch):
 
 
 #################AI CODE#########################################
+#Common AI Code
+func AICommand():
+	if(taunter != null):
+		AITaunted()
+	else:
+		AICmd()
+
+
+func AITaunted():
+	if(PassCheck()):
+		return
+	
+	if(!AIShift):
+		AIApproach()
+		AIShift = true
+	elif(!AIAction):
+		if(row == ROW.front):
+			AITargetMelee(taunter)
+		AIAction = true
+
+
 func AIAdvance():
 	if(!combatNode.get_node("Row/LF").FindOccupants().size() &&
 	   !combatNode.get_node("Row/RB").terrain.tags.trapping):
@@ -721,6 +777,12 @@ func AIRandomMelee():
 		target = actionMenu.ProtectStanceCheck(action, target)
 		
 		action.Init(self, target)
+
+
+func AITargetMelee(target):
+	var action = FindAction("Melee")
+	target = actionMenu.ProtectStanceCheck(action, target)
+	action.Init(self, target)
 
 
 func PassCheck():

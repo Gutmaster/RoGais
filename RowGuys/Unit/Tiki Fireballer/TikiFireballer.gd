@@ -1,6 +1,9 @@
 extends "res://Unit/Unit.gd"
 
 
+var fasting = false
+
+
 func _ready():
 	pass
 
@@ -18,8 +21,8 @@ func Init():
 	SharedInit()
 	defaultRow = ROW.back
 	
-	actionList.push_back(get_node("ActionCatalogue/Fireball"))
-	stanceList.push_back(get_node("StanceCatalogue/Fire Dance"))
+	skillTree = load("res://Unit/Tiki Fireballer/SkillTree/TikiTree.tscn").instance()
+	skillTree.unit = self
 	
 	SFX.hit = load("res://SFX/OopsHorseNoise.wav")
 	var SFXPatch = {"fbtravel": load("res://SFX/FireballTravel.wav"), "fbhit": load("res://SFX/FireballHit.wav")}
@@ -27,6 +30,10 @@ func Init():
 
 
 func Starve():
+	if(!fasting):
+		.Starve()
+		return
+	
 	starveLvl += 1
 	starveNerf.Vitality = -starveLvl
 	starveNerf.Stamina = -starveLvl

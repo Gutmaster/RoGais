@@ -8,7 +8,7 @@ func _ready():
 	gClock = 2
 
 
-func Init(left):
+func Init(left, usr = null, actn = null):
 	if(!left):
 		set_flip_h(true)
 	animation = "Start"

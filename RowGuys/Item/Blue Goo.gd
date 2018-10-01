@@ -10,7 +10,7 @@ func Init():
 	buyPrice = 5
 	sellPrice = 2
 	
-	description = "Invigorating blue goo, tastes funny"
+	descript[0] = "Invigorating blue goo, tastes funny"
 
 
 func Use(unit):

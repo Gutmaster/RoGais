@@ -8,14 +8,14 @@
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic2.png" type="Texture" id=6]
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic3.png" type="Texture" id=7]
 [ext_resource path="res://Unit/Dank Druid/Animation/GreenMagic4.png" type="Texture" id=8]
-[ext_resource path="res://Unit/Dank Druid/Animation/Defend1.png" type="Texture" id=9]
-[ext_resource path="res://Unit/Dank Druid/Animation/Defend2.png" type="Texture" id=10]
-[ext_resource path="res://Unit/Dank Druid/Animation/Defend3.png" type="Texture" id=11]
-[ext_resource path="res://Unit/Dank Druid/Animation/Defend4.png" type="Texture" id=12]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=13]
-[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=14]
-[ext_resource path="res://Unit/Dank Druid/Animation/ShiftBack.png" type="Texture" id=15]
-[ext_resource path="res://Unit/Dank Druid/Animation/ShiftForward.png" type="Texture" id=16]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger1.png" type="Texture" id=9]
+[ext_resource path="res://Unit/Dank Druid/Animation/Stagger2.png" type="Texture" id=10]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftForward.png" type="Texture" id=11]
+[ext_resource path="res://Unit/Dank Druid/Animation/ShiftBack.png" type="Texture" id=12]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend1.png" type="Texture" id=13]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend2.png" type="Texture" id=14]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend3.png" type="Texture" id=15]
+[ext_resource path="res://Unit/Dank Druid/Animation/Defend4.png" type="Texture" id=16]
 [ext_resource path="res://Unit/Dank Druid/Dank Druid.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -31,14 +31,24 @@ animations = [ {
 "name": "Melee",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Defend",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Stagger",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Toss",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "ShiftForward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "ShiftBack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
@@ -46,14 +56,9 @@ animations = [ {
 "name": "GreenMagic",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "ShiftBack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "ShiftForward",
+"name": "Defend",
 "speed": 5.0
 } ]
 

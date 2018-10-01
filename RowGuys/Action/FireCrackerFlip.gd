@@ -8,6 +8,7 @@ func _ready():
 	apCost = 4
 	atkMod = 4
 	tags.fire = true
+	descript[0] = "1. Retreat and do minor damage to all enemies in the opposing front row."
 
 
 func SetInfo():

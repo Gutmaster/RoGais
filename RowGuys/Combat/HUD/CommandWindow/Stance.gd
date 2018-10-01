@@ -1,12 +1,22 @@
 extends TextureButton
 
+var mouseHover = false
 
 onready var combatNode = get_node("/root/Globals").combatScene
 onready var item = get_parent().get_node("Item")
 onready var action = get_parent().get_node("Action")
+onready var globals = get_node("/root/Globals")
+
 
 func _ready():
 	pass
+
+
+func _process(delta):
+	if(mouseHover):
+		self_modulate = globals.yellow
+	else:
+		self_modulate = globals.white
 
 
 func LoadStances():
@@ -35,6 +45,8 @@ func StancePressed(stance):
 	user.ChangeStance(stance)
 	user.ap -= stance.apCost
 	combatNode.call_deferred("PassTurn")
+	stance.mouseHover = false
+	stance.infoBox.visible = false
 	action.disabled = false
 	item.disabled = false
 	_on_Stance_toggled(false)
@@ -49,3 +61,11 @@ func _on_Stance_toggled(button_pressed):
 		item._on_Item_toggled(false)
 	else:
 		$List.hide()
+
+
+func _on_Stance_mouse_entered():
+	mouseHover = true
+
+
+func _on_Stance_mouse_exited():
+	mouseHover = false

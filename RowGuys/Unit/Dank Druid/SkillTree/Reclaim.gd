@@ -11,3 +11,4 @@ func Apply(level):
 		unit.actionList.push_back(unit.get_node("ActionCatalogue/Reclaim"))
 	elif(level == 2):
 		unit.get_node("ActionCatalogue/Reclaim").RangedUpgrade()
+		$Reclaim.RangedUpgrade()

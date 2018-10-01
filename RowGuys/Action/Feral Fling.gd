@@ -12,6 +12,14 @@ func _ready():
 	apCost = 3
 	keyFrame = 3
 	tags.melee = true
+	descript[0] = "1. Tosses a unit from the front row randomly to the middle or back."
+	descript[1] = "2. The toss can be targeted at additional units, stunning them."
+
+
+func SetInfo():
+	.SetInfo()
+	infoBox.find_node("MoveFM").set_texture(moveRight)
+	infoBox.find_node("MoveFB").set_texture(doubleMoveRight)
 
 
 func Init(usr, trgt, free = false):

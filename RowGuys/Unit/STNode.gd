@@ -6,24 +6,20 @@ var connections = []
 var mouseHover = false
 var locked = true
 var activated = false
-var color = Color(0.1, 0.1, 0.1, 1)
+var color = Color(0.2, 0.2, 0.2, 1)
 var lvl = 0
 var maxLvl = 3
+onready var action = get_child(0)
 
 
 func _ready():
-	get_child(0).connect("pressed", self, "ActivateCheck")
-	self_modulate = color
+	action.connect("pressed", self, "ActivateCheck")
+	action.modulate = color
 
 
 func _process(delta):
 	if(!locked):
 		HoverMod()
-
-
-func _on_STNode_focus_entered():
-	release_focus()
-	ActivateCheck()
 
 
 func ActivateCheck():
@@ -43,15 +39,15 @@ func Activate():
 			activated = true
 			color = Color(1, 1, 1, 1)
 			for i in range(connections.size()):
-				connections[i].Unlock()
+				if(connections[i].locked):
+					connections[i].Unlock()
 		if(lvl < maxLvl):
 			lvl += 1
 			Apply(lvl)
-			find_node("Description" + str(lvl)).Activate()
 
 
 func Apply(level):
-	print(level)
+	action.descriptBox.get_node("Level" + str(lvl)).set("custom_colors/font_color", (Color(1, 1, 1)))
 
 
 func AddLines():
@@ -66,9 +62,9 @@ func AddLines():
 
 func HoverMod():
 	if(mouseHover):
-		self_modulate = Color(1,1,0.4,1)
+		get_child(0).modulate = Color(1,1,0.4,1)
 	else:
-		self_modulate = color
+		get_child(0).modulate = color
 
 
 func _on_STNode_mouse_entered():

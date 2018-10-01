@@ -21,9 +21,7 @@ func _ready():
 func _process(delta):
 	if(party.itemHolder.item):
 		sellPrice.text = "$" + str(party.itemHolder.item.sellPrice)
-		print(party.itemHolder.item.get_name())
-		print(party.itemHolder.item.description)
-		find_node("Description").set_text(party.itemHolder.item.description)
+		find_node("Description").set_text(party.itemHolder.item.descript[0])
 	else:
 		sellPrice.text = " "
 		find_node("Description").set_text(" ")
