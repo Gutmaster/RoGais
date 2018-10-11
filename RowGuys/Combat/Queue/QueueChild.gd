@@ -16,7 +16,7 @@ func _process(delta):
 		if(mouseHover):
 			if(!unit.infoCard.visible):
 				var anchor = combatNode.get_node("HUD/UnitInfoAnchor")
-				if(anchor.get_child(0)):
+				if(anchor.get_child_count()):
 					combatNode.RemoveInfo()
 				anchor.add_child(unit.infoCard)
 				anchor.rect_global_position = get_global_rect().position + Vector2(75, 0)

@@ -4,7 +4,7 @@
 [ext_resource path="res://Combat/Queue/Background.png" type="Texture" id=2]
 [ext_resource path="res://Combat/Queue/Spacer.png" type="Texture" id=3]
 
-[node name="Queue" type="PanelContainer" index="0"]
+[node name="Queue" type="PanelContainer"]
 
 anchor_left = 0.35
 anchor_top = 0.05

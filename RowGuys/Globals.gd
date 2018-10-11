@@ -6,10 +6,12 @@ var enemyParty
 var defaultCursor = load("res://Mouse.png")
 
 var packedParty = load("res://Party/Party.tscn")
+var packedBuildMenu = load("res://Build Menu/BuildMenu.tscn")
 var packedCombat = load("res://Combat/Combat.tscn")
 var packedOverworld = load("res://Overworld/Overworld.tscn")
 
 var party
+var buildScene
 var combatScene
 var travelScene
 var overworldScene
@@ -35,6 +37,7 @@ onready var root = get_tree().get_root()
 
 
 func _ready():
+	buildScene = packedBuildMenu.instance()
 	combatScene = packedCombat.instance()
 	overworldScene = packedOverworld.instance()
 	party = packedParty.instance()

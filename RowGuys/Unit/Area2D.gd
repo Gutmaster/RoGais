@@ -6,8 +6,6 @@ signal unitClicked
 
 func _ready():
 	pass
-	#print(get_parent().get_node("ActionCatalogue/Feral Fling").get_name(), "CONNECTO")
-	#get_parent().get_node("ActionCatalogue/Feral Fling").connect("unitClicked", self, "Target")
 
 
 func _input_event(viewport, event, shape_idx):
@@ -17,7 +15,7 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == BUTTON_LEFT:
 		emit_signal("unitClicked", get_parent())
 		var Action = get_node("/root/Combat/HUD/CommandWindow/Action")
-		if(Action.targetMode):
+		if(Action!= null && Action.targetMode):
 			Action.target = get_parent()
 
 """

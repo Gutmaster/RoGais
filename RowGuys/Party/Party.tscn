@@ -65,7 +65,6 @@ visible = false
 
 [node name="PartyMenu" type="Control" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -349,7 +348,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 54.0
-margin_right = 890.0
+margin_right = 944.0
 margin_bottom = 109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -367,7 +366,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 829.0
+margin_right = 883.0
 margin_bottom = 102.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -383,7 +382,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 263.0
+margin_right = 317.0
 margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -401,7 +400,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 256.0
+margin_right = 310.0
 margin_bottom = 88.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -418,7 +417,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 249.0
+margin_right = 303.0
 margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -531,7 +530,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 29.0
-margin_right = 249.0
+margin_right = 303.0
 margin_bottom = 81.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -563,10 +562,18 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ArtifactSlot" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/ArtifactRow" index="1" instance=ExtResource( 5 )]
+[node name="ArtifactSlot1" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/ArtifactRow" index="1" instance=ExtResource( 5 )]
 
 margin_left = 199.0
 margin_right = 249.0
+margin_bottom = 52.0
+size_flags_horizontal = 10
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
+
+[node name="ArtifactSlot2" parent="PartyMenu/HBoxContainer/BottomRow/HBoxContainer/ResourcesContainer/VBoxContainer/ArtifactRow" index="2" instance=ExtResource( 5 )]
+
+margin_left = 253.0
+margin_right = 303.0
 margin_bottom = 52.0
 size_flags_horizontal = 10
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Size Flags" ]
@@ -577,8 +584,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 267.0
-margin_right = 822.0
+margin_left = 321.0
+margin_right = 876.0
 margin_bottom = 95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

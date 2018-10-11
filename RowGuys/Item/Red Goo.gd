@@ -9,7 +9,7 @@ func Init():
 	power = 5
 	buyPrice = 5
 	sellPrice = 2
-	
+	bpCost = 1
 	descript[0] = "Healing red goo"
 
 

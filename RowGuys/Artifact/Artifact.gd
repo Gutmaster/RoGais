@@ -1,10 +1,12 @@
-extends TextureRect
+extends "res://InfoBox/InfoTemplate.gd"
 
 
 enum ITYPE{
 artifact,
 trinket,
 item}
+
+var bpCost
 
 onready var iType = ITYPE.artifact
 
@@ -18,9 +20,12 @@ var enemyMod = {"Vitality" : 0, "Stamina" : 0, "Strength" : 0, "Wisdom" : 0, "En
 var buyPrice = 5
 var sellPrice = 2
 
-var description = ""
 
 func _ready():
+	descript[0] = "Default Artifact"
+
+
+func _process(delta):
 	pass
 
 
@@ -37,3 +42,11 @@ func Clone():
 	temp.iType = ITYPE.artifact
 	
 	return temp
+
+
+func _on_Artifact_mouse_entered():
+	HoverInfo()
+
+
+func _on_Artifact_mouse_exited():
+	NoHover()

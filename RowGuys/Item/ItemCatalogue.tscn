@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Item/ItemCatalogue.gd" type="Script" id=1]
-[ext_resource path="res://Item/Item.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Item/Red Goo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Item/Blue Goo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Build Menu/Assets/ITBG.png" type="Texture" id=1]
+[ext_resource path="res://Item/ItemCatalogue.gd" type="Script" id=2]
+[ext_resource path="res://Item/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Item/Red Goo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Item/Blue Goo.tscn" type="PackedScene" id=5]
 
-[node name="ItemCatalogue" type="GridContainer"]
+[node name="ItemCatalogue" type="TextureRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -19,20 +20,44 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-columns = 1
-script = ExtResource( 1 )
+texture = ExtResource( 1 )
+stretch_mode = 0
+script = ExtResource( 2 )
 _sections_unfolded = [ "Focus", "Mouse" ]
 
-[node name="Item" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Grid" type="GridContainer" parent="." index="0"]
 
-[node name="Red Goo" parent="." index="1" instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 80.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 5
+_sections_unfolded = [ "Rect" ]
 
-margin_top = 4.0
-margin_bottom = 54.0
+[node name="Item" parent="Grid" index="0" instance=ExtResource( 3 )]
 
-[node name="Blue Goo" parent="." index="2" instance=ExtResource( 4 )]
+visible = false
 
-margin_top = 58.0
-margin_bottom = 108.0
+[node name="Red Goo" parent="Grid" index="1" instance=ExtResource( 4 )]
+
+margin_bottom = 50.0
+mouse_filter = 1
+
+[node name="Blue Goo" parent="Grid" index="2" instance=ExtResource( 5 )]
+
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+mouse_filter = 1
 
 

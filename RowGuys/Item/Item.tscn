@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Item/Item.gd" type="Script" id=1]
 [ext_resource path="res://InfoBox/ActionInfo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://InfoBox/Description.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Item" type="TextureButton"]
 
@@ -28,6 +37,30 @@ _sections_unfolded = [ "Mouse" ]
 [node name="Info" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="Description" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="BPCost" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 11.0
+margin_right = 63.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1 BP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [connection signal="mouse_entered" from="." to="." method="_on_Item_mouse_entered"]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex"
+path="res://.import/BuildMenuBackground.png-6e2ab72255e2a6f9b51a7506168b58f2.stex"
 
 [deps]
 
-source_file="res://Artifact/Pretty Rock.png"
-dest_files=[ "res://.import/Pretty Rock.png-0aa2e62ef8b29e64ce1610bc7167d3fd.stex" ]
+source_file="res://Build Menu/Assets/BuildMenuBackground.png"
+dest_files=[ "res://.import/BuildMenuBackground.png-6e2ab72255e2a6f9b51a7506168b58f2.stex" ]
 
 [params]
 

@@ -28,6 +28,7 @@ normal,
 poison,
 marked}
 
+var selector = null
 var alive = true
 
 var animFlag = null
@@ -540,7 +541,7 @@ func HoverMod():
 		self_modulate = globals.yellow
 		if(!infoCard.visible):
 			var anchor = combatNode.get_node("HUD/UnitInfoAnchor")
-			if(anchor.get_child(0)):
+			if(anchor.get_child_count()):
 				combatNode.RemoveInfo()
 			anchor.add_child(infoCard)
 			anchor.rect_global_position = position + Vector2(width/2 - 10, -height/2)

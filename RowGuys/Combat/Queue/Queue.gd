@@ -5,8 +5,6 @@ var queue = []
 
 onready var combatNode = get_node("/root/Combat")
 onready var uList = get_node("/root/Globals").combatScene.get_node("UnitList")
-#onready var queue = find_node("Inactive")
-#onready var active = find_node("Active/0")
 
 
 func _ready():

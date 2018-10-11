@@ -8,7 +8,7 @@ item}
 
 onready var iType = ITYPE.item
 
-
+var bpCost
 var power = 0
 
 var buyPrice = 5
@@ -16,11 +16,12 @@ var sellPrice = 2
 
 
 func _ready():
-	pass
+	Init()
 
 
 func _process(delta):
-	pass
+	if($BPCost.visible):
+		$BPCost.text = str(bpCost) + " BP"
 
 
 func Init():

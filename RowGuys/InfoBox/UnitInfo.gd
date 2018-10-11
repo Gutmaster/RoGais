@@ -14,6 +14,7 @@ func _ready():
 
 func Init(u):
 	unit = u
+	SetValues()
 
 
 func SetValues():

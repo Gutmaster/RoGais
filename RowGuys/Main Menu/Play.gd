@@ -1,13 +1,16 @@
 extends TextureButton
 
 
+onready var globals = get_node("/root/Globals")
+
+
 func _ready():
 	pass
 
 
 func _on_Play_pressed():
-	LoadParty()
-	get_node("/root/Globals").ChangeScene(get_node("/root/Globals").overworldScene)
+	get_parent().remove_child(globals.party)
+	globals.ChangeScene(globals.buildScene)
 
 
 func LoadParty():

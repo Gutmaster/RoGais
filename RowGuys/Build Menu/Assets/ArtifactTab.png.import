@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Artifact.png-402fd16e5296d2285324e2406e5e3d8b.stex"
+path="res://.import/ArtifactTab.png-783cd90baa4a04a2e56aa3285db3d75e.stex"
 
 [deps]
 
-source_file="res://Artifact/Artifact.png"
-dest_files=[ "res://.import/Artifact.png-402fd16e5296d2285324e2406e5e3d8b.stex" ]
+source_file="res://Build Menu/Assets/ArtifactTab.png"
+dest_files=[ "res://.import/ArtifactTab.png-783cd90baa4a04a2e56aa3285db3d75e.stex" ]
 
 [params]
 

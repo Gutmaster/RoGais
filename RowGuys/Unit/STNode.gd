@@ -23,9 +23,8 @@ func _process(delta):
 
 
 func ActivateCheck():
-	if(unit.skillPoints && !locked):
+	if(unit.skillPoints && !locked && lvl < maxLvl):
 		Activate()
-		unit.skillPoints -= 1
 
 
 func Unlock():
@@ -42,6 +41,7 @@ func Activate():
 				if(connections[i].locked):
 					connections[i].Unlock()
 		if(lvl < maxLvl):
+			unit.skillPoints -= 1
 			lvl += 1
 			Apply(lvl)
 

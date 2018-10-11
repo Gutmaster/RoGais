@@ -17,7 +17,6 @@ func Init():
 	bStats.Stamina = 7
 	bStats.Speed = 4
 	
-	
 	SharedInit()
 	defaultRow = ROW.back
 	

@@ -93,17 +93,14 @@ func SetInfo():
 
 func HoverInfo():
 	infoBox.parent.remove_child(infoBox)
-	var anchor = get_parent().get_parent().get_parent().find_node("Anchor")
+	descriptBox.parent.remove_child(descriptBox)
+	var anchor = get_tree().get_current_scene().find_node("Anchor")
 	if(anchor != null):
 		anchor.add_child(infoBox)
-	else:
-		anchor = get_parent().get_parent().find_node("Anchor")
-		anchor.add_child(infoBox)
-		descriptBox.parent.remove_child(descriptBox)
 		anchor.add_child(descriptBox)
 		descriptBox.visible = true
-	mouseHover = true
-	infoBox.visible = true
+		infoBox.visible = true
+		mouseHover = true
 
 
 func NoHover():

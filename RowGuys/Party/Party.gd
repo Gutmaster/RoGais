@@ -13,10 +13,10 @@ var food = 0
 var gold = 0
 
 onready var itemCatalogue = preload("res://Item/ItemCatalogue.tscn").instance()
-onready var artifactCatalogue = preload("res://Artifact/Artifact.tscn").instance()
+onready var artifactCatalogue = preload("res://Artifact/ArtifactCatalogue.tscn").instance()
 onready var trinketCatalogue = preload("res://Trinket/Trinket.tscn").instance()
 
-onready var artifactSlot = find_node("ArtifactSlot")
+onready var artifactSlot = find_node("ArtifactSlot1")
 onready var artifactContainer = find_node("ArtifactContainer")
 onready var bottomRow = find_node("BottomRow")
 
@@ -33,21 +33,14 @@ onready var itemHolder = $CanvasLayer/ItemHolder
 
 
 func _ready():
-	$HUD.visible = true
+	$HUD.visible = false
 	$PartyMenu.visible = false
 	
 	UpdateFood(starting_food)
 	UpdateGold(starting_gold)
 	
-	var startifact = artifactCatalogue.get_node("Pretty Rock").duplicate()
-	
-	AddArtifact(startifact)
-	
 	for i in range(1,8):
 		itemList.push_back(find_node("Slot" + str(i)))
-		
-	AddItem(itemCatalogue.get_node("Red Goo"))
-	AddItem(trinketCatalogue.get_node("Tribute Ring"))
 
 
 func _input(event):
@@ -63,12 +56,11 @@ func _process(delta):
 
 
 func AddUnit(var unit):
-	unit = unit.instance()
-	unit.Init()
+	#unit = unit.instance()
+	#unit.Init()
 	$Units.add_child(unit, true)
 	unit.CharCardInit()
 	unit.PartyCardInit()
-	#unit.MiniPartyCardInit()
 	unit.teamLeft = true
 	var panelString = "Panel" + str($Units.get_child_count())
 	find_node(panelString).add_child(unit.partyCard)
@@ -76,8 +68,6 @@ func AddUnit(var unit):
 
 
 func UpdateFood(dif):
-	#$Tween.interpolate_property(self, "foodLabel", food, food + dif, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	#$Tween.start()
 	food += dif
 	foodLabel = food
 
@@ -121,6 +111,7 @@ func PartyPause():
 	if(get_tree().paused):
 		$HUD.visible = false
 
+
 func UpdatePartyCards():
 	var uList
 	var count
@@ -131,11 +122,6 @@ func UpdatePartyCards():
 	else:
 		uList = Globals.combatScene.get_tree().get_nodes_in_group("Party")
 		count = uList.size()
-
-	"""for j in range(1,6):
-		var panelString = "Panel" + str(j)
-		if(find_node(panelString).get_child_count()):
-			find_node(panelString).remove_child(find_node(panelString).get_child(0))"""
 	
 	for i in range(count):
 		var unit
@@ -146,33 +132,14 @@ func UpdatePartyCards():
 			unit = uList[i]
 		
 		unit.RefreshStats()
-		
-		var panelString = "Panel" + str(i+1)
-	
-		"""unit.partyCard.find_node("HPFrac").set_text("HP " + str(unit.hp) + "/" + str(unit.aStats.Vitality))
-		unit.partyCard.find_node("APFrac").set_text("AP " + str(unit.ap) + "/" + str(unit.aStats.Stamina))
-		unit.partyCard.find_node("XPFrac").set_text("XP " + str(unit.xp) + "/" + str(unit.xpReq))
-		unit.partyCard.find_node("HPBar").set_value((float(unit.hp)/unit.aStats.Vitality) * 100)
-		unit.partyCard.find_node("APBar").set_value((float(unit.ap)/unit.aStats.Stamina) * 100)
-		unit.partyCard.find_node("XPBar").set_value((float(unit.xp)/unit.xpReq) * 100)
-		
-		unit.partyCard.find_node("VitStat").set_text(" VIT " + str(unit.aStats.Vitality))
-		unit.partyCard.find_node("StaStat").set_text(" STA " + str(unit.aStats.Stamina))
-		unit.partyCard.find_node("StrStat").set_text(" STR " + str(unit.aStats.Strength))
-		unit.partyCard.find_node("EndStat").set_text(" END " + str(unit.aStats.Endurance))
-	
-		unit.partyCard.find_node("WisStat").set_text(" WIS " + str(unit.aStats.Wisdom))
-		unit.partyCard.find_node("WillStat").set_text("WILL " + str(unit.aStats.Willpower))
-		unit.partyCard.find_node("SpeedStat").set_text(" SPD " + str(unit.aStats.Speed))
-		"""
-		#find_node(panelString).add_child(unit.partyCard)
+
 
 
 
 func AddArtifact(artifact):
 	artifactSlot.add_child(artifact)
 	artifactSlot.item = artifact
-	bottomRow.find_node("Description").set_text(artifact.description)
+	bottomRow.find_node("Description").set_text(artifact.descript[0])
 	
 	artifactContainer.add_child(artifact.duplicate())
 	
